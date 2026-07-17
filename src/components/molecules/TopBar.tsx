@@ -19,7 +19,7 @@ export function TopBar() {
 
   return (
     <header className="sticky top-0 z-30 h-topbar border-b border-line bg-surface">
-      <div className="mx-auto flex h-full max-w-content items-center justify-between px-6">
+      <div className="mx-auto flex h-full max-w-content items-center justify-between px-4 sm:px-6">
         <div className="flex items-center gap-2.5">
           <span className="text-title-sm font-semibold tracking-tight">
             {t('app.name')}

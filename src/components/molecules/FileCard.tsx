@@ -129,13 +129,14 @@ export function FileCard({ item }: { item: FileItem }) {
       ref={setNodeRef}
       style={style}
       className={cn(
-        'group rounded-lg border border-line bg-surface shadow-xs transition-shadow duration-normal',
+        'group flex flex-col rounded-lg border border-line bg-surface shadow-xs transition-shadow duration-normal sm:flex-row sm:items-center sm:gap-2',
         isDragging && 'shadow-lg',
         accentTone === 'danger' && 'border-l-2 border-l-danger',
         accentTone === 'warn' && 'border-l-2 border-l-warn'
       )}
     >
-      <div className="flex items-center gap-2 px-3 py-3">
+      {/* 主信息组：移动端第一行 / 桌面端左段 */}
+      <div className="flex min-w-0 flex-1 items-center gap-2 px-3 py-3">
         {/* 序号徽章：直观显示合并顺序 */}
         <span
           className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-subtle text-caption font-semibold text-fg-muted"
@@ -143,21 +144,6 @@ export function FileCard({ item }: { item: FileItem }) {
         >
           {(index ?? 0) + 1}
         </span>
-
-        {/* 拖拽手柄：常驻显示，本身是 button 可键盘操作 */}
-        <button
-          type="button"
-          aria-label={t('file.dragHandle', { name: item.name })}
-          className={cn(
-            iconBtn,
-            'w-7 shrink-0 cursor-grab active:cursor-grabbing',
-            isDragging && 'opacity-60'
-          )}
-          {...attributes}
-          {...listeners}
-        >
-          <GripVertical size={20} aria-hidden />
-        </button>
 
         <Thumbnail bitmap={item.thumbnail} size={64} />
 
@@ -182,7 +168,38 @@ export function FileCard({ item }: { item: FileItem }) {
           )}
         </div>
 
-        <Badge tone={item.mode === 'all' ? 'neutral' : 'brand'}>
+        {/* 删除：移动端行末 / 桌面端左段末 */}
+        <button
+          type="button"
+          onClick={() => removeFile(item.id)}
+          aria-label={t('file.remove', { name: item.name })}
+          className={cn(iconBtn, 'shrink-0')}
+        >
+          <Trash2 size={20} aria-hidden />
+        </button>
+      </div>
+
+      {/* 操作组：移动端第二行 / 桌面端右段 */}
+      <div className="flex items-center gap-2 border-t border-line-subtle px-3 py-2 sm:border-t-0 sm:py-3">
+        {/* 拖拽手柄：桌面端显示，移动端隐藏（触屏用上移/下移排序） */}
+        <button
+          type="button"
+          aria-label={t('file.dragHandle', { name: item.name })}
+          className={cn(
+            iconBtn,
+            'hidden w-7 shrink-0 cursor-grab touch-none active:cursor-grabbing sm:inline-flex',
+            isDragging && 'opacity-60'
+          )}
+          {...attributes}
+          {...listeners}
+        >
+          <GripVertical size={20} aria-hidden />
+        </button>
+
+        <Badge
+          tone={item.mode === 'all' ? 'neutral' : 'brand'}
+          className="min-w-0 flex-1 truncate sm:flex-none"
+        >
           {rangeLabel}
         </Badge>
 
@@ -227,25 +244,18 @@ export function FileCard({ item }: { item: FileItem }) {
           aria-expanded={item.expanded}
           className={cn(
             iconBtn,
-            'transition-transform duration-fast',
+            'shrink-0 transition-transform duration-fast',
             item.expanded && 'rotate-180'
           )}
         >
           <ChevronDown size={20} aria-hidden />
         </button>
-
-        <button
-          type="button"
-          onClick={() => removeFile(item.id)}
-          aria-label={t('file.remove', { name: item.name })}
-          className={iconBtn}
-        >
-          <Trash2 size={20} aria-hidden />
-        </button>
       </div>
 
       {item.expanded && item.status === 'ready' && (
-        <PageRangeSelector item={item} />
+        <div className="w-full basis-full">
+          <PageRangeSelector item={item} />
+        </div>
       )}
     </div>
   );

@@ -33,7 +33,7 @@ export function Workbench() {
   return (
     <div className="flex min-h-full flex-col">
       <TopBar />
-      <main className="mx-auto w-full max-w-content flex-1 px-6 py-8">
+      <main className="mx-auto w-full max-w-content flex-1 px-4 py-5 sm:px-6 sm:py-8">
         {files.length === 0 ? (
           <div className="flex flex-col gap-4">
             <DropZone />

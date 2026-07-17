@@ -77,7 +77,7 @@ export function DropZone({ compact }: DropZoneProps) {
         onDragLeave={() => setDragOver(false)}
         onDrop={onDrop}
         className={cn(
-          'flex w-full flex-col items-center justify-center gap-4 rounded-lg border-2 border-dashed px-6 py-12 text-center transition-colors duration-normal ease-standard',
+          'flex w-full flex-col items-center justify-center gap-4 rounded-lg border-2 border-dashed px-4 py-10 text-center transition-colors duration-normal ease-standard sm:px-6 sm:py-12',
           dragOver
             ? 'border-brand bg-brand-subtle'
             : 'border-line-strong bg-surface'

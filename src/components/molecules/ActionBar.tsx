@@ -35,8 +35,8 @@ export function ActionBar() {
       : 0;
 
   return (
-    <div className="sticky bottom-0 z-20 border-t border-line bg-surface">
-      <div className="mx-auto flex max-w-content flex-col gap-2 px-6 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+    <div className="sticky bottom-0 z-20 border-t border-line bg-surface pb-[env(safe-area-inset-bottom)]">
+      <div className="mx-auto flex max-w-content flex-col gap-2 px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:px-6">
         <div className="flex flex-col gap-1">
           <p className="font-mono text-sm text-fg-secondary">
             {t('action.summary', {
@@ -70,6 +70,7 @@ export function ActionBar() {
             disabled={disabled || blocked}
             onClick={() => void runMerge()}
             icon={<Download size={16} aria-hidden />}
+            className="w-full sm:w-auto"
           >
             {processing.active ? t('action.merging') : t('action.merge')}
           </Button>
