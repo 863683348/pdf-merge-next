@@ -22,7 +22,7 @@ ctx.onmessage = async (e: MessageEvent) => {
       const bytes = await item.file.arrayBuffer();
       let src: PDFDocument;
       try {
-        src = await PDFDocument.load(bytes, { updateMetadata: false });
+        src = await PDFDocument.load(bytes, { updateMetadata: false, ignoreEncryption: true });
       } catch (loadErr) {
         if (loadErr instanceof EncryptedPDFError) {
           throw new Error(`${ENC_PREFIX}${item.file.name}`);
