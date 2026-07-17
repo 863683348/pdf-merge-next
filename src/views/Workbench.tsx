@@ -6,6 +6,7 @@ import { TopBar } from '../components/molecules/TopBar';
 import { DropZone } from '../components/molecules/DropZone';
 import { FileList } from '../components/organisms/FileList';
 import { ActionBar } from '../components/molecules/ActionBar';
+import { FaqSection } from '../components/organisms/FaqSection';
 import { useT } from '../i18n/provider';
 
 function OnboardLine({ onDismiss }: { onDismiss: () => void }) {
@@ -45,6 +46,8 @@ export function Workbench() {
             <DropZone compact />
           </div>
         )}
+
+        <FaqSection />
       </main>
       <ActionBar />
     </div>
