@@ -6,6 +6,7 @@ export const dict: DictMap = {
   zh: {
     // ---- 元信息 / 品牌 ----
     'app.name': 'PDF 合并',
+    'nav.pricing': '定价',
     'app.tagline': '本地离线 · 隐私优先',
 
     // ---- 主题切换 ----
@@ -123,13 +124,14 @@ export const dict: DictMap = {
     'footer.faq': '常见问题',
     'footer.blog': '博客',
     'footer.contact': '联系我们',
+    'footer.pricing': '定价',
     'footer.copyright': '© {year} MergeLocal。文件本地处理，不上传服务器。',
 
     // ---- 定价页 ----
     'pricing.title': '简单透明的定价',
     'pricing.subtitle': '免费版已满足日常需求，Pro 版解锁全部能力。',
     'pricing.free.name': '免费版',
-    'pricing.free.price': '¥0',
+    'pricing.free.price': '$0',
     'pricing.free.desc': '日常 PDF 合并足够了',
     'pricing.free.feature1': '最多 5 个文件',
     'pricing.free.feature2': '单文件上限 100 MB',
@@ -138,8 +140,9 @@ export const dict: DictMap = {
     'pricing.free.feature5': '本地离线处理',
     'pricing.free.cta': '当前方案',
     'pricing.pro.name': 'Pro 版',
-    'pricing.pro.price': '¥ 49',
+    'pricing.pro.price': '$7',
     'pricing.pro.period': '/月',
+    'pricing.monthly.desc': '灵活，按需付费',
     'pricing.pro.desc': '适合高频使用和大型文档',
     'pricing.pro.feature1': '不限文件个数',
     'pricing.pro.feature2': '单文件上限 500 MB',
@@ -150,17 +153,24 @@ export const dict: DictMap = {
     'pricing.pro.cta': '订阅 Pro',
     'pricing.pro.ctaSub': '可随时取消',
     'pricing.yearly.name': 'Pro 年付',
-    'pricing.yearly.price': '¥ 399',
+    'pricing.yearly.price': '$49',
     'pricing.yearly.period': '/年',
-    'pricing.yearly.desc': '省 32%，相当于 ¥33/月',
+    'pricing.yearly.desc': '省 42%，相当于 $4/月',
     'pricing.yearly.cta': '订阅年付',
     'pricing.yearly.ctaSub': '最受欢迎',
+    'pricing.yearly.altHint': '或 $49/年（省 42%）',
     'pricing.guarantee': '30 天无理由退款 · 安全支付',
     'pricing.note': 'Pro 版使用需要登录谷歌账号。支付由 PayPal 安全处理，你的支付信息不会存储在我们服务器上。',
     'pricing.subSuccess': '🎉 感谢订阅 Pro！所有 Pro 功能已解锁。',
     'pricing.subError': '支付未完成，请重试。',
     'pricing.proBadge': 'Pro',
     'pricing.loggedOut': '请先登录谷歌账号后再订阅。',
+    'pricing.billingMonthly': '月付',
+    'pricing.billingYearly': '年付',
+    'pricing.discountYearly': '省 42%',
+    'pricing.recommended': '最推荐',
+    'pricing.loadingPaypal': '正在加载 PayPal…',
+    'pricing.sandboxNote': '测试环境（Sandbox）：不会产生真实扣款',
 
     // ---- 隐私政策 ----
     'privacy.title': '隐私政策',
@@ -185,6 +195,7 @@ export const dict: DictMap = {
   en: {
     // ---- 元信息 / 品牌 ----
     'app.name': 'PDF Merge',
+    'nav.pricing': 'Pricing',
     'app.tagline': 'Local & offline · Privacy first',
 
     // ---- 主题切换 ----
@@ -302,6 +313,7 @@ export const dict: DictMap = {
     'footer.faq': 'FAQ',
     'footer.blog': 'Blog',
     'footer.contact': 'Contact',
+    'footer.pricing': 'Pricing',
     'footer.copyright': '© {year} MergeLocal. Files processed locally, never uploaded.',
 
     // ---- Pricing ----
@@ -319,6 +331,7 @@ export const dict: DictMap = {
     'pricing.pro.name': 'Pro',
     'pricing.pro.price': '$7',
     'pricing.pro.period': '/month',
+    'pricing.monthly.desc': 'Flexible, pay as you go',
     'pricing.pro.desc': 'For heavy users & large documents',
     'pricing.pro.feature1': 'Unlimited files',
     'pricing.pro.feature2': '500 MB per file',
@@ -334,12 +347,19 @@ export const dict: DictMap = {
     'pricing.yearly.desc': 'Save 42% — $4/mo',
     'pricing.yearly.cta': 'Subscribe Yearly',
     'pricing.yearly.ctaSub': 'Most popular',
+    'pricing.yearly.altHint': 'or $49/year (Save 42%)',
     'pricing.guarantee': '30-day money-back guarantee · Secure payment',
     'pricing.note': 'Pro requires signing in with Google. Payments are securely processed by PayPal; your payment info is never stored on our servers.',
     'pricing.subSuccess': '🎉 Thanks for subscribing! All Pro features are unlocked.',
     'pricing.subError': 'Payment not completed. Please try again.',
     'pricing.proBadge': 'Pro',
     'pricing.loggedOut': 'Please sign in with Google first before subscribing.',
+    'pricing.billingMonthly': 'Monthly',
+    'pricing.billingYearly': 'Yearly',
+    'pricing.discountYearly': 'Save 42%',
+    'pricing.recommended': 'Recommended',
+    'pricing.loadingPaypal': 'Loading PayPal…',
+    'pricing.sandboxNote': 'Test mode (Sandbox): no real charges',
 
     // ---- Privacy ----
     'privacy.title': 'Privacy Policy',

@@ -2,7 +2,6 @@
 
 import { X } from 'lucide-react';
 import { useAppStore } from '../store/useAppStore';
-import { TopBar } from '../components/molecules/TopBar';
 import { DropZone } from '../components/molecules/DropZone';
 import { FileList } from '../components/organisms/FileList';
 import { ActionBar } from '../components/molecules/ActionBar';
@@ -33,7 +32,6 @@ export function Workbench() {
 
   return (
     <div className="flex min-h-full flex-col">
-      <TopBar />
       <main className="mx-auto w-full max-w-content flex-1 px-4 py-5 sm:px-6 sm:py-8">
         {files.length === 0 ? (
           <div className="flex flex-col gap-4">

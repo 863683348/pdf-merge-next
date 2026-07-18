@@ -15,8 +15,9 @@ export function FaqSection() {
 
   return (
     <section
+      id="faq"
       aria-labelledby="faq-title"
-      className="mt-12 border-t border-line pt-8 pb-24 sm:pb-10"
+      className="mt-12 border-t border-line pt-8 pb-24 sm:pb-10 scroll-mt-20"
     >
       <h2 id="faq-title" className="text-lg font-semibold text-fg">
         {faqContent.title[lang]}

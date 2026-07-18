@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { LogOut } from 'lucide-react';
 import { useAppStore } from '../../store/useAppStore';
-import { decodeJwtPayload, readStoredUser } from '../../lib/auth';
+import { readStoredUser, fetchGoogleUser } from '../../lib/auth';
 import { useT } from '../../i18n/provider';
 
 const CLIENT_ID =
@@ -14,7 +14,8 @@ export function GoogleLoginButton() {
   const gaUser = useAppStore((s) => s.gaUser);
   const login = useAppStore((s) => s.login);
   const logout = useAppStore((s) => s.logout);
-  const initialized = useRef(false);
+  // OAuth2 token client（popup 模式，绕开 FedCM / 第三方 Cookie 限制）
+  const tokenClientRef = useRef<{ requestAccessToken: (o?: { prompt?: string }) => void } | null>(null);
   const [gsiReady, setGsiReady] = useState(false);
   const t = useT();
 
@@ -26,22 +27,21 @@ export function GoogleLoginButton() {
     }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // 等待 GSI 库加载并初始化
+  // 等待 GSI 库加载，初始化 OAuth2 token client
   useEffect(() => {
-    if (initialized.current) return;
     const tryInit = () => {
-      if (!window.google?.accounts?.id) return false;
-      initialized.current = true;
-      setGsiReady(true);
-      window.google.accounts.id.initialize({
+      const oauth2 = window.google?.accounts?.oauth2;
+      if (!oauth2 || tokenClientRef.current) return false;
+      tokenClientRef.current = oauth2.initTokenClient({
         client_id: CLIENT_ID,
-        callback: (response) => {
-          const user = decodeJwtPayload(response.credential);
+        scope: 'openid email profile',
+        callback: async (response: { access_token?: string; error?: string }) => {
+          if (response.error || !response.access_token) return;
+          const user = await fetchGoogleUser(response.access_token);
           if (user) login(user);
         },
-        auto_select: false,
-        cancel_on_tap_outside: false,
       });
+      setGsiReady(true);
       return true;
     };
     if (tryInit()) return;
@@ -53,7 +53,7 @@ export function GoogleLoginButton() {
 
   const handleSignIn = () => {
     try {
-      window.google?.accounts.id.prompt();
+      tokenClientRef.current?.requestAccessToken();
     } catch {
       /* noop */
     }

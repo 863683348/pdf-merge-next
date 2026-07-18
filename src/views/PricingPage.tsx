@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useT } from '@/i18n/provider';
 import { useRouter } from 'next/navigation';
 import { cn } from '@/lib/cn';
@@ -8,6 +8,15 @@ import { useAppStore } from '@/store/useAppStore';
 
 const CLIENT_ID =
   process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID ?? '';
+
+// 环境：sandbox 用 www.sandbox.paypal.com，live 用 www.paypal.com
+// 必须与 Client ID 环境一致，否则按钮加载失败
+const PAYPAL_ENV = process.env.NEXT_PUBLIC_PAYPAL_ENV ?? 'live';
+const PAYPAL_SDK_BASE =
+  PAYPAL_ENV === 'sandbox'
+    ? 'https://www.sandbox.paypal.com'
+    : 'https://www.paypal.com';
+const IS_SANDBOX = PAYPAL_ENV === 'sandbox';
 
 declare global {
   interface Window {
@@ -42,10 +51,75 @@ const PLAN_AMOUNTS: Record<Billing, string> = {
   yearly: '49.00',
 };
 
-export default function PricingPage() {
+// 共享的 PayPal SDK 加载器（多卡片复用，避免重复注入 script）
+let sdkPromise: Promise<void> | null = null;
+function ensurePaypalSdk(): Promise<void> {
+  if (typeof window === 'undefined') return Promise.resolve();
+  if (window.paypal) return Promise.resolve();
+  if (sdkPromise) return sdkPromise;
+  sdkPromise = new Promise<void>((resolve) => {
+    const existing = document.querySelector('script[src*="paypal.com/sdk"]');
+    if (existing) {
+      const timer = setInterval(() => {
+        if (window.paypal) {
+          clearInterval(timer);
+          resolve();
+        }
+      }, 100);
+      return;
+    }
+    const script = document.createElement('script');
+    script.src = `${PAYPAL_SDK_BASE}/sdk/js?client-id=${CLIENT_ID}&currency=USD&intent=capture`;
+    script.async = true;
+    script.onload = () => resolve();
+    script.onerror = () => resolve();
+    document.body.appendChild(script);
+  });
+  return sdkPromise;
+}
+
+function CheckIcon() {
+  return (
+    <svg className="mt-0.5 h-4 w-4 shrink-0 text-ok" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+    </svg>
+  );
+}
+
+function FreeCard() {
   const t = useT();
   const router = useRouter();
-  const [billing, setBilling] = useState<Billing>('monthly');
+  const features = [1, 2, 3, 4, 5].map((i) => t(`pricing.free.feature${i}`));
+
+  return (
+    <div className="flex flex-col rounded-xl border border-line bg-surface p-6 shadow-sm">
+      <h2 className="text-title font-semibold text-fg">{t('pricing.free.name')}</h2>
+      <p className="mt-1 text-sm text-fg-secondary">{t('pricing.free.desc')}</p>
+      <div className="mt-4 flex items-baseline gap-1">
+        <span className="text-display font-bold text-fg">{t('pricing.free.price')}</span>
+      </div>
+      <ul className="mt-6 flex-1 space-y-3">
+        {features.map((feat) => (
+          <li key={feat} className="flex items-start gap-2 text-sm text-fg">
+            <CheckIcon />
+            {feat}
+          </li>
+        ))}
+      </ul>
+      <button
+        type="button"
+        onClick={() => router.push('/')}
+        className="mt-6 w-full rounded-lg border border-line bg-surface px-4 py-2.5 text-sm font-semibold text-fg transition-colors duration-fast hover:bg-subtle"
+      >
+        {t('pricing.free.cta')}
+      </button>
+    </div>
+  );
+}
+
+function ProCard({ billing }: { billing: Billing }) {
+  const t = useT();
+  const router = useRouter();
   const gaUser = useAppStore((s) => s.gaUser);
   const subscription = useAppStore((s) => s.subscription);
   const setSubscription = useAppStore((s) => s.setSubscription);
@@ -55,94 +129,150 @@ export default function PricingPage() {
   const rendered = useRef(false);
 
   const isYearly = billing === 'yearly';
+  const recommended = isYearly;
+  const subscribed = !!subscription;
 
-  const proPrice = isYearly ? t('pricing.yearly.price') : t('pricing.pro.price');
-  const proPeriod = isYearly ? t('pricing.yearly.period') : t('pricing.pro.period');
+  const price = isYearly ? t('pricing.yearly.price') : t('pricing.pro.price');
+  const period = isYearly ? t('pricing.yearly.period') : t('pricing.pro.period');
+  const desc = isYearly ? t('pricing.yearly.desc') : t('pricing.monthly.desc');
+  const name = isYearly ? t('pricing.yearly.name') : t('pricing.pro.name');
+  const features = [1, 2, 3, 4, 5, 6].map((i) => t(`pricing.pro.feature${i}`));
 
-  // 加载 PayPal SDK
+  // 加载 PayPal SDK（共享单例）
   useEffect(() => {
-    if (!CLIENT_ID || rendered.current) return;
-    if (document.querySelector('script[src*="paypal.com/sdk"]')) {
-      setSdkReady(true);
-      return;
-    }
-    const script = document.createElement('script');
-    script.src = `https://www.paypal.com/sdk/js?client-id=${CLIENT_ID}&currency=USD&intent=capture`;
-    script.async = true;
-    script.onload = () => setSdkReady(true);
-    document.body.appendChild(script);
+    let alive = true;
+    ensurePaypalSdk().then(() => {
+      if (alive) setSdkReady(true);
+    });
     return () => {
-      // 不清理 script（复用）
+      alive = false;
     };
   }, []);
 
-  // 渲染 PayPal 按钮（sdk 就绪 + 已登录 + 未订阅 且 容器存在）
-  const renderButtons = useCallback(() => {
-    if (!sdkReady || !gaUser || subscription || !paypalRef.current) return;
+  // 渲染该卡片对应的 PayPal 按钮
+  useEffect(() => {
+    if (!sdkReady || !gaUser || subscribed || !paypalRef.current) return;
     if (rendered.current) return;
 
     try {
       const amount = PLAN_AMOUNTS[billing];
-      window.paypal?.Buttons({
-        createOrder: (_data: unknown, actions: { order: { create: (config: { purchase_units: Array<{ amount: { value: string }; description: string }> }) => Promise<string> } }) => {
-          return actions.order.create({
-            purchase_units: [{
-              amount: { value: amount },
-              description: isYearly ? 'MergeLocal Pro Yearly' : 'MergeLocal Pro Monthly',
-            }],
-          });
-        },
-        onApprove: (_data: unknown, actions: { order: { capture: () => Promise<Record<string, unknown>> } }) => {
-          return actions.order.capture().then(() => {
-            setSubscription({
-              plan: isYearly ? 'pro_yearly' : 'pro_monthly',
-              since: new Date().toISOString(),
+      window.paypal
+        ?.Buttons({
+          createOrder: (
+            _data: unknown,
+            actions: {
+              order: {
+                create: (config: {
+                  purchase_units: Array<{ amount: { value: string }; description: string }>;
+                }) => Promise<string>;
+              },
+            }
+          ) => {
+            return actions.order.create({
+              purchase_units: [
+                {
+                  amount: { value: amount },
+                  description: isYearly ? 'MergeLocal Pro Yearly' : 'MergeLocal Pro Monthly',
+                },
+              ],
             });
-            addToast('success', t('pricing.subSuccess'));
-          });
-        },
-        onError: () => {
-          addToast('error', t('pricing.subError'));
-        },
-        onCancel: () => {
-          /* 用户取消，静默 */
-        },
-        style: { layout: 'vertical', color: 'gold', shape: 'rect', label: 'paypal' },
-      }).render(paypalRef.current);
+          },
+          onApprove: (
+            _data: unknown,
+            actions: { order: { capture: () => Promise<Record<string, unknown>> } }
+          ) => {
+            return actions.order.capture().then(() => {
+              setSubscription({
+                plan: isYearly ? 'pro_yearly' : 'pro_monthly',
+                since: new Date().toISOString(),
+              });
+              addToast('success', t('pricing.subSuccess'));
+            });
+          },
+          onError: () => {
+            addToast('error', t('pricing.subError'));
+          },
+          onCancel: () => {
+            /* 用户取消，静默 */
+          },
+          style: { layout: 'vertical', color: 'gold', shape: 'rect', label: 'paypal' },
+        })
+        .render(paypalRef.current);
       rendered.current = true;
     } catch {
       /* noop */
     }
-  }, [sdkReady, gaUser, subscription, isYearly, billing, setSubscription, addToast, t]);
+  }, [sdkReady, gaUser, subscribed, isYearly, billing, setSubscription, addToast, t]);
 
-  useEffect(() => {
-    rendered.current = false;
-    if (paypalRef.current) paypalRef.current.innerHTML = '';
-    renderButtons();
-  }, [renderButtons]);
+  return (
+    <div
+      className={cn(
+        'relative flex flex-col rounded-xl border bg-surface p-6',
+        recommended ? 'border-brand shadow-glow' : 'border-line shadow-sm'
+      )}
+    >
+      {recommended && (
+        <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-brand px-3 py-1 text-caption font-semibold text-on-primary">
+          {t('pricing.recommended')}
+        </span>
+      )}
+      <div>
+        <h2 className="text-title font-semibold text-fg">{name}</h2>
+        <p className="mt-1 text-sm text-fg-secondary">{desc}</p>
+      </div>
+      <div className="mt-4 flex items-baseline gap-1">
+        <span className="text-display font-bold text-fg">{price}</span>
+        <span className="text-sm text-fg-secondary">{period}</span>
+      </div>
+      <ul className="mt-6 flex-1 space-y-3">
+        {features.map((feat) => (
+          <li key={feat} className="flex items-start gap-2 text-sm text-fg">
+            <CheckIcon />
+            {feat}
+          </li>
+        ))}
+      </ul>
 
-  // 切换计费时重新渲染
-  useEffect(() => {
-    rendered.current = false;
-  }, [billing]);
+      <div className="mt-6">
+        {subscribed ? (
+          <div className="w-full rounded-lg bg-ok-subtle px-4 py-3 text-center text-sm font-semibold text-ok">
+            {t('pricing.proBadge')} · {t('pricing.free.cta')}
+          </div>
+        ) : !gaUser ? (
+          <button
+            type="button"
+            onClick={() => router.push('/')}
+            className="w-full rounded-lg bg-brand px-4 py-2.5 text-sm font-semibold text-on-primary transition-colors duration-fast hover:bg-brand-hover"
+          >
+            {t('pricing.loggedOut')}
+          </button>
+        ) : (
+          <>
+            <div ref={paypalRef} className="min-h-[40px]" />
+            {!sdkReady && (
+              <div className="flex items-center justify-center gap-2 rounded-lg border border-line bg-surface px-4 py-3 text-sm text-fg-muted">
+                <svg className="h-4 w-4 animate-spin" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                </svg>
+                {t('pricing.loadingPaypal')}
+              </div>
+            )}
+            {IS_SANDBOX && (
+              <p className="mt-2 text-center text-caption text-fg-muted">
+                {t('pricing.sandboxNote')}
+              </p>
+            )}
+          </>
+        )}
+      </div>
+    </div>
+  );
+}
 
-  const plans = [
-    {
-      nameKey: 'pricing.free.name',
-      price: t('pricing.free.price'),
-      period: '',
-      features: [1, 2, 3, 4, 5].map((i) => t(`pricing.free.feature${i}`)),
-      highlight: false,
-      action: () => router.push('/'),
-    },
-    {
-      nameKey: 'pricing.pro.name',
-      price: proPrice,
-      period: proPeriod,
-      features: [1, 2, 3, 4, 5, 6].map((i) => t(`pricing.pro.feature${i}`)),
-      highlight: true,
-    },
-  ];
+export default function PricingPage() {
+  const t = useT();
+  const subscription = useAppStore((s) => s.subscription);
 
   return (
     <div className="mx-auto max-w-content px-4 py-10 sm:px-6 sm:py-16">
@@ -150,9 +280,7 @@ export default function PricingPage() {
       <div className="text-center">
         {subscription && (
           <div className="mb-4 inline-flex items-center gap-1.5 rounded-full bg-ok-subtle px-3 py-1 text-sm font-semibold text-ok">
-            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-            </svg>
+            <CheckIcon />
             {t('pricing.proBadge')}
           </div>
         )}
@@ -160,121 +288,11 @@ export default function PricingPage() {
         <p className="mt-2 text-body text-fg-secondary">{t('pricing.subtitle')}</p>
       </div>
 
-      {/* 计费切换 */}
-      <div className="mt-8 flex justify-center">
-        <div className="inline-flex rounded-md border border-line p-0.5">
-          <button
-            type="button"
-            onClick={() => setBilling('monthly')}
-            className={cn(
-              'rounded px-4 py-1.5 text-sm font-medium transition-colors duration-fast',
-              billing === 'monthly'
-                ? 'bg-brand-subtle text-brand'
-                : 'text-fg-secondary hover:text-fg'
-            )}
-          >
-            {t('pricing.free.name') === '免费版' ? '月付' : 'Monthly'}
-          </button>
-          <button
-            type="button"
-            onClick={() => setBilling('yearly')}
-            className={cn(
-              'rounded px-4 py-1.5 text-sm font-medium transition-colors duration-fast',
-              billing === 'yearly'
-                ? 'bg-brand-subtle text-brand'
-                : 'text-fg-secondary hover:text-fg'
-            )}
-          >
-            {t('pricing.free.name') === '免费版' ? '年付' : 'Yearly'}
-            <span className="ml-1.5 rounded-full bg-ok-subtle px-1.5 py-0.5 text-caption font-semibold text-ok">
-              -32%
-            </span>
-          </button>
-        </div>
-      </div>
-
-      {/* 方案卡片 */}
-      <div className="mt-8 grid gap-6 sm:grid-cols-2">
-        {/* 免费版 */}
-        <div className="flex flex-col rounded-xl border border-line bg-surface p-6 shadow-sm">
-          <h2 className="text-title font-semibold text-fg">{t('pricing.free.name')}</h2>
-          <p className="mt-1 text-sm text-fg-secondary">{t('pricing.free.desc')}</p>
-          <div className="mt-4 flex items-baseline gap-1">
-            <span className="text-display font-bold text-fg">{t('pricing.free.price')}</span>
-          </div>
-          <ul className="mt-6 flex-1 space-y-3">
-            {plans[0].features.map((feat) => (
-              <li key={feat} className="flex items-start gap-2 text-sm text-fg">
-                <svg className="mt-0.5 h-4 w-4 shrink-0 text-ok" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
-                {feat}
-              </li>
-            ))}
-          </ul>
-          <button
-            type="button"
-            onClick={() => router.push('/')}
-            className="mt-6 w-full rounded-lg border border-line bg-surface px-4 py-2.5 text-sm font-semibold text-fg transition-colors duration-fast hover:bg-subtle"
-          >
-            {t('pricing.free.cta')}
-          </button>
-        </div>
-
-        {/* Pro 版 */}
-        <div className="flex flex-col rounded-xl border border-brand bg-surface p-6 shadow-glow">
-          <div className="flex items-start justify-between">
-            <div>
-              <h2 className="text-title font-semibold text-fg">{t('pricing.pro.name')}</h2>
-              <p className="mt-1 text-sm text-fg-secondary">{t('pricing.pro.desc')}</p>
-            </div>
-            <span className="rounded-full bg-brand-subtle px-2.5 py-0.5 text-caption font-semibold text-brand">
-              {t('pricing.yearly.ctaSub')}
-            </span>
-          </div>
-          <div className="mt-4 flex items-baseline gap-1">
-            <span className="text-display font-bold text-fg">{proPrice}</span>
-            <span className="text-sm text-fg-secondary">{proPeriod}</span>
-          </div>
-          <ul className="mt-6 flex-1 space-y-3">
-            {plans[1].features.map((feat) => (
-              <li key={feat} className="flex items-start gap-2 text-sm text-fg">
-                <svg className="mt-0.5 h-4 w-4 shrink-0 text-ok" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
-                {feat}
-              </li>
-            ))}
-          </ul>
-
-          {/* 已订阅 */}
-          {subscription ? (
-            <div className="mt-6 w-full rounded-lg bg-ok-subtle px-4 py-3 text-center text-sm font-semibold text-ok">
-              {t('pricing.proBadge')} · {t('pricing.free.cta')}
-            </div>
-          ) : !gaUser ? (
-            <button
-              type="button"
-              onClick={() => router.push('/')}
-              className="mt-6 w-full rounded-lg bg-brand px-4 py-2.5 text-sm font-semibold text-on-primary transition-colors duration-fast hover:bg-brand-hover"
-            >
-              {t('pricing.loggedOut')}
-            </button>
-          ) : (
-            <>
-              <div ref={paypalRef} className="mt-4 min-h-[40px]" />
-              {!sdkReady && (
-                <div className="mt-4 flex items-center justify-center gap-2 rounded-lg border border-line bg-surface px-4 py-3 text-sm text-fg-muted">
-                  <svg className="h-4 w-4 animate-spin" fill="none" viewBox="0 0 24 24">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
-                  </svg>
-                  Loading PayPal...
-                </div>
-              )}
-            </>
-          )}
-        </div>
+      {/* 三张卡片：免费版 | Pro 年付(推荐) | Pro 月付 */}
+      <div className="mt-10 grid items-stretch gap-6 sm:grid-cols-3">
+        <FreeCard />
+        <ProCard billing="yearly" />
+        <ProCard billing="monthly" />
       </div>
 
       {/* 保障 + 备注 */}

@@ -45,7 +45,7 @@ export default function PrivacyPage() {
           <section>
             <h2 className="text-title font-semibold text-fg">联系我们</h2>
             <p className="mt-2">
-              如有隐私相关问题，请通过 mergelocal@example.com 联系我们。
+              如有隐私相关问题，请通过 ahmedlzany423@gmail.com 联系我们。
             </p>
           </section>
         </div>
@@ -84,7 +84,7 @@ export default function PrivacyPage() {
           <section>
             <h2 className="text-title font-semibold text-fg">Contact</h2>
             <p className="mt-2">
-              For privacy-related inquiries, contact us at mergelocal@example.com.
+              For privacy-related inquiries, contact us at ahmedlzany423@gmail.com.
             </p>
           </section>
         </div>

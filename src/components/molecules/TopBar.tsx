@@ -1,6 +1,7 @@
 'use client';
 
 import { RotateCcw } from 'lucide-react';
+import Link from 'next/link';
 import { useAppStore } from '../../store/useAppStore';
 import { SecureBadge } from './SecureBadge';
 import { ThemeToggle } from '../atoms/ThemeToggle';
@@ -26,6 +27,12 @@ export function TopBar() {
             {t('app.name')}
           </span>
           <SecureBadge className="hidden sm:inline-flex" />
+          <Link
+            href="/pricing"
+            className="ml-1 hidden rounded px-2 py-1 text-sm font-medium text-fg-secondary transition-colors duration-fast hover:bg-subtle hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-surface sm:inline-flex"
+          >
+            {t('nav.pricing')}
+          </Link>
         </div>
         <div className="flex items-center gap-1">
           {/* 语言切换：分段按钮 中 / EN */}

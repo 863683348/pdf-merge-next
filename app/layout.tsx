@@ -11,6 +11,7 @@ import '@fontsource/noto-sans-sc/500.css';
 import '@fontsource/jetbrains-mono/400.css';
 import Providers from './providers';
 import { Footer } from '@/components/organisms/Footer';
+import { TopBar } from '@/components/molecules/TopBar';
 import { faqContent } from '@/lib/faq';
 
 const SITE_URL = 'https://pdf-merge-next.vercel.app';
@@ -171,8 +172,11 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Providers>{children}</Providers>
-        <Footer />
+        <Providers>
+          <TopBar />
+          {children}
+          <Footer />
+        </Providers>
 
         {/* GA4: 仅在生产环境且设置了 NEXT_PUBLIC_GA_ID 时加载 */}
         {process.env.NODE_ENV === 'production' && GA_ID.length > 0 && (

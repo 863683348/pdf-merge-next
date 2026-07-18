@@ -4,9 +4,10 @@ import Link from 'next/link';
 import { useT } from '../../i18n/provider';
 
 const links = [
+  { key: 'pricing', href: '/pricing' },
   { key: 'privacy', href: '/privacy' },
   { key: 'terms', href: '/terms' },
-  { key: 'faq', href: '/' }, // FAQ 在首页
+  { key: 'faq', href: '/#faq' }, // FAQ 在首页
   { key: 'blog', href: '/blog' },
   { key: 'contact', href: '/contact' },
 ] as const;

@@ -3,9 +3,17 @@ import type { Lang } from './types';
 
 export type TParams = Record<string, string | number>;
 
-// 在模块加载时探测一次（SSR 环境无 navigator，回退 zh；客户端首帧已正确）。
+const VALID_LANGS: Lang[] = ['zh', 'en'];
+
+// 在模块加载时探测一次（SSR 环境无 navigator/localStorage，回退 zh；客户端优先读持久化偏好）。
 function detectLang(): Lang {
-  if (typeof navigator === 'undefined') return 'zh';
+  if (typeof window === 'undefined') return 'zh';
+  try {
+    const stored = localStorage.getItem(LANG_STORAGE_KEY) as Lang | null;
+    if (stored && VALID_LANGS.includes(stored)) return stored;
+  } catch {
+    // 隐私模式/localStorage 禁用 → 继续用 navigator
+  }
   return /^\s*zh/i.test(navigator.language) ? 'zh' : 'en';
 }
 

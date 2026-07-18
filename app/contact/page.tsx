@@ -11,8 +11,8 @@ export default function ContactPage() {
     {
       icon: Mail,
       labelKey: 'contact.email',
-      value: 'mergelocal@example.com',
-      href: 'mailto:mergelocal@example.com',
+      value: 'ahmedlzany423@gmail.com',
+      href: 'mailto:ahmedlzany423@gmail.com',
     },
     {
       icon: Github,

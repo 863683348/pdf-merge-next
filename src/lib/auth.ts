@@ -1,5 +1,6 @@
 // Google Identity Services (GIS) 认证 —— 纯前端，零注册
-// 通过 JWT id_token 解码获取用户信息，不做服务端验签（纯客户端场景足够）
+// 采用 OAuth 2.0 popup 流程（google.accounts.oauth2），绕开 FedCM / 第三方 Cookie 限制
+// 通过 access_token 调用 userinfo 接口获取用户信息
 
 declare global {
   interface Window {
@@ -31,6 +32,17 @@ declare global {
           disableAutoSelect: () => void;
           revoke: (hint: string, callback: (response: { error?: string }) => void) => void;
         };
+        oauth2: {
+          initTokenClient: (config: {
+            client_id: string;
+            scope: string;
+            callback: (response: { access_token?: string; error?: string }) => void;
+            error_callback?: (error: unknown) => void;
+          }) => {
+            requestAccessToken: (overrides?: { prompt?: string; login_hint?: string }) => void;
+            requestCode: (overrides?: { prompt?: string; login_hint?: string }) => void;
+          };
+        };
       };
     };
   }
@@ -45,7 +57,7 @@ export interface GoogleUser {
   picture: string; // 头像 URL
 }
 
-// 解码 JWT id_token 的 payload（不验签，仅读公开字段）
+// 解码 JWT id_token 的 payload（保留备用；OAuth2 popup 流程改用 access_token + userinfo）
 export function decodeJwtPayload(token: string): GoogleUser | null {
   try {
     const parts = token.split('.');
@@ -58,6 +70,26 @@ export function decodeJwtPayload(token: string): GoogleUser | null {
       name: String(payload.name ?? ''),
       email: String(payload.email ?? ''),
       picture: String(payload.picture ?? ''),
+    };
+  } catch {
+    return null;
+  }
+}
+
+// 用 OAuth2 access_token 调用 userinfo 接口换取用户信息
+export async function fetchGoogleUser(accessToken: string): Promise<GoogleUser | null> {
+  try {
+    const res = await fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
+      headers: { Authorization: `Bearer ${accessToken}` },
+    });
+    if (!res.ok) return null;
+    const data = (await res.json()) as Record<string, unknown>;
+    if (!data.sub || typeof data.sub !== 'string') return null;
+    return {
+      sub: data.sub,
+      name: String(data.name ?? ''),
+      email: String(data.email ?? ''),
+      picture: String(data.picture ?? ''),
     };
   } catch {
     return null;
