@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next';
+import Script from 'next/script';
 import './globals.css';
 // 字体：@fontsource 本地自托管，无外部请求
 import '@fontsource/inter/400.css';
@@ -12,6 +13,7 @@ import Providers from './providers';
 import { faqContent } from '@/lib/faq';
 
 const SITE_URL = 'https://pdf-merge-next.vercel.app';
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? '';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -169,6 +171,19 @@ export default function RootLayout({
       </head>
       <body>
         <Providers>{children}</Providers>
+
+        {/* GA4: 仅在生产环境且设置了 NEXT_PUBLIC_GA_ID 时加载 */}
+        {process.env.NODE_ENV === 'production' && GA_ID.length > 0 && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga4-init" strategy="afterInteractive">
+              {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}',{page_path:window.location.pathname});`}
+            </Script>
+          </>
+        )}
       </body>
     </html>
   );
