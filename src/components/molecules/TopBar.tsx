@@ -4,6 +4,7 @@ import { RotateCcw } from 'lucide-react';
 import { useAppStore } from '../../store/useAppStore';
 import { SecureBadge } from './SecureBadge';
 import { ThemeToggle } from '../atoms/ThemeToggle';
+import { GoogleLoginButton } from './GoogleLoginButton';
 import { useT, useLang } from '../../i18n/provider';
 import { setLang } from '../../i18n/core';
 import { cn } from '../../lib/cn';
@@ -73,6 +74,7 @@ export function TopBar() {
             </button>
           )}
           <ThemeToggle />
+          <GoogleLoginButton />
         </div>
       </div>
     </header>

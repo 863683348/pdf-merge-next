@@ -18,6 +18,11 @@ import {
 } from '../lib/constants';
 import { t } from '../i18n/core';
 import type { FileStatus } from '../types';
+import {
+  setStoredUser,
+  clearStoredUser,
+  type GoogleUser,
+} from '../lib/auth';
 
 // 与 engine.worker.ts 中的加密错误编码前缀保持一致
 const ENC_PREFIX = '__PDF_ENC__:';
@@ -73,6 +78,7 @@ interface AppState {
   resultError?: string;
   toasts: ToastItem[];
   onboarded: boolean;
+  gaUser: GoogleUser | null;
 
   addFiles: (files: File[]) => void;
   removeFile: (id: string) => void;
@@ -86,6 +92,9 @@ interface AppState {
   retryMerge: () => void;
   resetToWorkbench: () => void;
   dismissOnboarding: () => void;
+
+  login: (user: GoogleUser) => void;
+  logout: () => void;
 
   addToast: (kind: ToastKind, message: string) => void;
   removeToast: (id: string) => void;
@@ -123,6 +132,7 @@ export const useAppStore = create<AppState>((set, get) => ({
   resultError: undefined,
   toasts: [],
   onboarded: readOnboarded(),
+  gaUser: null, // 首次挂载由 login 组件从 localStorage 恢复
 
   addFiles: (incoming) => {
     if (!incoming || incoming.length === 0) return;
@@ -481,5 +491,20 @@ export const useAppStore = create<AppState>((set, get) => ({
 
   removeToast: (id) => {
     set((state) => ({ toasts: state.toasts.filter((to) => to.id !== id) }));
+  },
+
+  login: (user) => {
+    setStoredUser(user);
+    set({ gaUser: user });
+  },
+
+  logout: () => {
+    clearStoredUser();
+    set({ gaUser: null });
+    try {
+      window.google?.accounts.id.disableAutoSelect();
+    } catch {
+      /* noop */
+    }
   },
 }));

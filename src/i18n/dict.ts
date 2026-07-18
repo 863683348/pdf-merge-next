@@ -110,6 +110,12 @@ export const dict: DictMap = {
     'toast.parseError': '解析失败',
     'error.encryptedCannotMerge': '「{name}」已加密，无法合并，请先解密',
     'error.unknown': '未知错误',
+
+    // ---- 谷歌登录 ----
+    'auth.signIn': '登录',
+    'auth.signOut': '退出登录',
+    'auth.signInWithGoogle': '使用谷歌账号登录',
+    'auth.signedInAs': '已登录 {name}',
   },
 
   en: {
@@ -219,6 +225,12 @@ export const dict: DictMap = {
     'toast.parseError': 'Failed to parse',
     'error.encryptedCannotMerge': '"{name}" is encrypted and cannot be merged. Decrypt it first.',
     'error.unknown': 'Unknown error',
+
+    // ---- Google Sign-In ----
+    'auth.signIn': 'Sign in',
+    'auth.signOut': 'Sign out',
+    'auth.signInWithGoogle': 'Sign in with Google',
+    'auth.signedInAs': 'Signed in as {name}',
   },
 };
 

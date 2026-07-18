@@ -184,6 +184,14 @@ export default function RootLayout({
             </Script>
           </>
         )}
+
+        {/* Google Identity Services: 仅生产环境加载（Client ID 从环境变量取） */}
+        {process.env.NODE_ENV === 'production' && (
+          <Script
+            src="https://accounts.google.com/gsi/client"
+            strategy="afterInteractive"
+          />
+        )}
       </body>
     </html>
   );
