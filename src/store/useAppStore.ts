@@ -64,6 +64,13 @@ export interface ToastItem {
 
 export type View = 'workbench' | 'result';
 
+export interface SubscriptionInfo {
+  plan: 'pro_monthly' | 'pro_yearly';
+  since: string; // ISO date
+}
+
+const SUB_KEY = 'mergelocal-sub';
+
 interface Processing {
   active: boolean;
   done: number;
@@ -79,6 +86,7 @@ interface AppState {
   toasts: ToastItem[];
   onboarded: boolean;
   gaUser: GoogleUser | null;
+  subscription: SubscriptionInfo | null;
 
   addFiles: (files: File[]) => void;
   removeFile: (id: string) => void;
@@ -95,6 +103,8 @@ interface AppState {
 
   login: (user: GoogleUser) => void;
   logout: () => void;
+  setSubscription: (info: SubscriptionInfo) => void;
+  clearSubscription: () => void;
 
   addToast: (kind: ToastKind, message: string) => void;
   removeToast: (id: string) => void;
@@ -116,6 +126,24 @@ function readOnboarded(): boolean {
   }
 }
 
+function readStoredSub(): SubscriptionInfo | null {
+  try {
+    const raw = localStorage.getItem(SUB_KEY);
+    if (!raw) return null;
+    return JSON.parse(raw) as SubscriptionInfo;
+  } catch {
+    return null;
+  }
+}
+function writeStoredSub(info: SubscriptionInfo | null): void {
+  try {
+    if (info) localStorage.setItem(SUB_KEY, JSON.stringify(info));
+    else localStorage.removeItem(SUB_KEY);
+  } catch {
+    /* noop */
+  }
+}
+
 function computeSelectedCount(item: FileItem): number {
   if (item.status !== 'ready' || !item.pageCount) return 0;
   if (item.mode === 'all') return item.pageCount;
@@ -133,6 +161,7 @@ export const useAppStore = create<AppState>((set, get) => ({
   toasts: [],
   onboarded: readOnboarded(),
   gaUser: null, // 首次挂载由 login 组件从 localStorage 恢复
+  subscription: readStoredSub(),
 
   addFiles: (incoming) => {
     if (!incoming || incoming.length === 0) return;
@@ -506,5 +535,15 @@ export const useAppStore = create<AppState>((set, get) => ({
     } catch {
       /* noop */
     }
+  },
+
+  setSubscription: (info) => {
+    writeStoredSub(info);
+    set({ subscription: info });
+  },
+
+  clearSubscription: () => {
+    writeStoredSub(null);
+    set({ subscription: null });
   },
 }));

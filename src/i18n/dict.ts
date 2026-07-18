@@ -157,6 +157,10 @@ export const dict: DictMap = {
     'pricing.yearly.ctaSub': '最受欢迎',
     'pricing.guarantee': '30 天无理由退款 · 安全支付',
     'pricing.note': 'Pro 版使用需要登录谷歌账号。支付由 PayPal 安全处理，你的支付信息不会存储在我们服务器上。',
+    'pricing.subSuccess': '🎉 感谢订阅 Pro！所有 Pro 功能已解锁。',
+    'pricing.subError': '支付未完成，请重试。',
+    'pricing.proBadge': 'Pro',
+    'pricing.loggedOut': '请先登录谷歌账号后再订阅。',
 
     // ---- 隐私政策 ----
     'privacy.title': '隐私政策',
@@ -332,6 +336,10 @@ export const dict: DictMap = {
     'pricing.yearly.ctaSub': 'Most popular',
     'pricing.guarantee': '30-day money-back guarantee · Secure payment',
     'pricing.note': 'Pro requires signing in with Google. Payments are securely processed by PayPal; your payment info is never stored on our servers.',
+    'pricing.subSuccess': '🎉 Thanks for subscribing! All Pro features are unlocked.',
+    'pricing.subError': 'Payment not completed. Please try again.',
+    'pricing.proBadge': 'Pro',
+    'pricing.loggedOut': 'Please sign in with Google first before subscribing.',
 
     // ---- Privacy ----
     'privacy.title': 'Privacy Policy',
