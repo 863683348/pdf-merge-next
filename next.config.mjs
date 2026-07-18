@@ -1,12 +1,20 @@
 /** @type {import('next').NextConfig} */
 const csp = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://accounts.google.com https://apis.google.com",
-  "style-src 'self' 'unsafe-inline'",
+  // script: 自身 + 谷歌 GSI / PayPal SDK / GA4 / PayPal checkout
+  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://accounts.google.com https://apis.google.com https://*.paypal.com https://www.googletagmanager.com",
+  // style: 自身 + 谷歌 GSI / Google Fonts
+  "style-src 'self' 'unsafe-inline' https://accounts.google.com https://fonts.googleapis.com",
+  // img: 自身 + data/blob/任意 https（含 GA4 像素 + Google 用户头像）
   "img-src 'self' data: blob: https:",
-  "font-src 'self' data:",
-  "connect-src 'self' https://accounts.google.com https://apis.google.com",
+  // font: 自身 + Google Fonts
+  "font-src 'self' data: https://fonts.gstatic.com",
+  // connect: 自身 + 谷歌 + PayPal + GA4
+  "connect-src 'self' https://accounts.google.com https://apis.google.com https://*.paypal.com https://www.google-analytics.com https://www.googletagmanager.com",
+  // worker: 自身 + blob（pdfjs）
   "worker-src 'self' blob:",
+  // frame: Google OAuth 弹窗 + PayPal 支付弹窗
+  "frame-src 'self' https://accounts.google.com https://*.paypal.com",
   "frame-ancestors 'none'",
   "base-uri 'self'",
   "form-action 'self'",
