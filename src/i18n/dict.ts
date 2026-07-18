@@ -116,6 +116,66 @@ export const dict: DictMap = {
     'auth.signOut': '退出登录',
     'auth.signInWithGoogle': '使用谷歌账号登录',
     'auth.signedInAs': '已登录 {name}',
+
+    // ---- Footer ----
+    'footer.privacy': '隐私政策',
+    'footer.terms': '服务条款',
+    'footer.faq': '常见问题',
+    'footer.blog': '博客',
+    'footer.contact': '联系我们',
+    'footer.copyright': '© {year} MergeLocal。文件本地处理，不上传服务器。',
+
+    // ---- 定价页 ----
+    'pricing.title': '简单透明的定价',
+    'pricing.subtitle': '免费版已满足日常需求，Pro 版解锁全部能力。',
+    'pricing.free.name': '免费版',
+    'pricing.free.price': '¥0',
+    'pricing.free.desc': '日常 PDF 合并足够了',
+    'pricing.free.feature1': '最多 5 个文件',
+    'pricing.free.feature2': '单文件上限 100 MB',
+    'pricing.free.feature3': '总大小上限 200 MB',
+    'pricing.free.feature4': '无水印保真合并',
+    'pricing.free.feature5': '本地离线处理',
+    'pricing.free.cta': '当前方案',
+    'pricing.pro.name': 'Pro 版',
+    'pricing.pro.price': '¥ 49',
+    'pricing.pro.period': '/月',
+    'pricing.pro.desc': '适合高频使用和大型文档',
+    'pricing.pro.feature1': '不限文件个数',
+    'pricing.pro.feature2': '单文件上限 500 MB',
+    'pricing.pro.feature3': '总大小上限 2 GB',
+    'pricing.pro.feature4': '按页旋转',
+    'pricing.pro.feature5': '自动添加书签',
+    'pricing.pro.feature6': '优先技术支持',
+    'pricing.pro.cta': '订阅 Pro',
+    'pricing.pro.ctaSub': '可随时取消',
+    'pricing.yearly.name': 'Pro 年付',
+    'pricing.yearly.price': '¥ 399',
+    'pricing.yearly.period': '/年',
+    'pricing.yearly.desc': '省 32%，相当于 ¥33/月',
+    'pricing.yearly.cta': '订阅年付',
+    'pricing.yearly.ctaSub': '最受欢迎',
+    'pricing.guarantee': '30 天无理由退款 · 安全支付',
+    'pricing.note': 'Pro 版使用需要登录谷歌账号。支付由 PayPal 安全处理，你的支付信息不会存储在我们服务器上。',
+
+    // ---- 隐私政策 ----
+    'privacy.title': '隐私政策',
+    'privacy.updated': '最后更新：2026 年 7 月',
+
+    // ---- 服务条款 ----
+    'terms.title': '服务条款',
+    'terms.updated': '最后更新：2026 年 7 月',
+
+    // ---- 博客 ----
+    'blog.title': '博客',
+    'blog.desc': '关于 PDF 处理、隐私保护和工具技巧的文章。',
+    'blog.placeholder': '文章即将上线，敬请期待...',
+
+    // ---- 联系我们 ----
+    'contact.title': '联系我们',
+    'contact.desc': '有问题或建议？我们很乐意听取你的意见。',
+    'contact.email': '邮箱',
+    'contact.github': 'GitHub',
   },
 
   en: {
@@ -231,6 +291,66 @@ export const dict: DictMap = {
     'auth.signOut': 'Sign out',
     'auth.signInWithGoogle': 'Sign in with Google',
     'auth.signedInAs': 'Signed in as {name}',
+
+    // ---- Footer ----
+    'footer.privacy': 'Privacy Policy',
+    'footer.terms': 'Terms of Service',
+    'footer.faq': 'FAQ',
+    'footer.blog': 'Blog',
+    'footer.contact': 'Contact',
+    'footer.copyright': '© {year} MergeLocal. Files processed locally, never uploaded.',
+
+    // ---- Pricing ----
+    'pricing.title': 'Simple & Transparent Pricing',
+    'pricing.subtitle': 'The free plan covers daily needs. Pro unlocks everything.',
+    'pricing.free.name': 'Free',
+    'pricing.free.price': '$0',
+    'pricing.free.desc': 'Great for everyday PDF merging',
+    'pricing.free.feature1': 'Up to 5 files',
+    'pricing.free.feature2': '100 MB per file',
+    'pricing.free.feature3': '200 MB total',
+    'pricing.free.feature4': 'Watermark-free merge',
+    'pricing.free.feature5': 'Local offline processing',
+    'pricing.free.cta': 'Current plan',
+    'pricing.pro.name': 'Pro',
+    'pricing.pro.price': '$7',
+    'pricing.pro.period': '/month',
+    'pricing.pro.desc': 'For heavy users & large documents',
+    'pricing.pro.feature1': 'Unlimited files',
+    'pricing.pro.feature2': '500 MB per file',
+    'pricing.pro.feature3': '2 GB total',
+    'pricing.pro.feature4': 'Rotate pages',
+    'pricing.pro.feature5': 'Auto add bookmarks',
+    'pricing.pro.feature6': 'Priority support',
+    'pricing.pro.cta': 'Subscribe Pro',
+    'pricing.pro.ctaSub': 'Cancel anytime',
+    'pricing.yearly.name': 'Pro Yearly',
+    'pricing.yearly.price': '$49',
+    'pricing.yearly.period': '/year',
+    'pricing.yearly.desc': 'Save 42% — $4/mo',
+    'pricing.yearly.cta': 'Subscribe Yearly',
+    'pricing.yearly.ctaSub': 'Most popular',
+    'pricing.guarantee': '30-day money-back guarantee · Secure payment',
+    'pricing.note': 'Pro requires signing in with Google. Payments are securely processed by PayPal; your payment info is never stored on our servers.',
+
+    // ---- Privacy ----
+    'privacy.title': 'Privacy Policy',
+    'privacy.updated': 'Last updated: July 2026',
+
+    // ---- Terms ----
+    'terms.title': 'Terms of Service',
+    'terms.updated': 'Last updated: July 2026',
+
+    // ---- Blog ----
+    'blog.title': 'Blog',
+    'blog.desc': 'Articles about PDF processing, privacy, and tips.',
+    'blog.placeholder': 'Articles coming soon...',
+
+    // ---- Contact ----
+    'contact.title': 'Contact Us',
+    'contact.desc': 'Have questions or feedback? We\'d love to hear from you.',
+    'contact.email': 'Email',
+    'contact.github': 'GitHub',
   },
 };
 
