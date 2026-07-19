@@ -6,8 +6,20 @@ export const dict: DictMap = {
   zh: {
     // ---- 元信息 / 品牌 ----
     'app.name': 'PDF 合并',
+    'nav.home': '首页',
     'nav.pricing': '定价',
+    'nav.blog': '博客',
+    'nav.contact': '联系我们',
+    'nav.menu': '菜单',
     'app.tagline': '本地离线 · 隐私优先',
+
+    // ---- HTML title ----
+    'meta.title.home': 'PDF 合并 · 本地离线 · 隐私优先',
+    'meta.title.pricing': '定价',
+    'meta.title.blog': '博客',
+    'meta.title.contact': '联系我们',
+    'meta.title.privacy': '隐私政策',
+    'meta.title.terms': '服务条款',
 
     // ---- 主题切换 ----
     'theme.toLight': '切换到浅色主题',
@@ -48,11 +60,13 @@ export const dict: DictMap = {
     // ---- ActionBar (F2/F4/F6) ----
     'action.summary': '{files} 个文件 · 共 {pages} 页 · 已选 {selected} 页',
     'action.limit': '免费版：{files}/{maxFiles} 文件 · {size}/{maxSize} MB',
+    'action.limitPro': 'Pro 版：{files}/{maxFiles} 文件 · {size}/{maxSize} MB',
     'action.filesOverLimit': '文件数超过 {max} 个限制，请移除部分文件',
     'action.sizeOverLimit': '总大小超过 {max} MB 限制，请移除部分文件',
     'action.merge': '合并并下载',
     'action.merging': '合并中…',
     'action.emptyHint': '请至少添加一个 PDF',
+    'action.parsing': '正在解析 PDF，完成后即可合并…',
     'action.progress': '正在合并… {done} / {total} 页',
 
     // ---- FileCard (F3/F4/F5) ----
@@ -106,6 +120,9 @@ export const dict: DictMap = {
     'toast.freeFileLimit': '免费版最多 {max} 个文件，请移除部分文件或升级',
     'toast.freeSingleFileTooBig': '「{name}」({size}) 超过免费版 {max} MB 单文件上限，已跳过',
     'toast.freeTotalTooBig': '免费版总大小不能超过 {max} MB，请减少文件或升级',
+    'toast.limitFiles': '最多添加 {max} 个文件',
+    'toast.limitSingle': '「{name}」({size}) 超过 {max} MB 单文件上限，已跳过',
+    'toast.limitTotal': '文件总大小不能超过 {max} MB，请减少文件',
     'toast.mergeDone': '合并完成',
     'toast.mergeFailed': '合并失败：{message}',
     'toast.parseError': '解析失败',
@@ -159,7 +176,6 @@ export const dict: DictMap = {
     'pricing.yearly.cta': '订阅年付',
     'pricing.yearly.ctaSub': '最受欢迎',
     'pricing.yearly.altHint': '或 $49/年（省 42%）',
-    'pricing.guarantee': '30 天无理由退款 · 安全支付',
     'pricing.note': 'Pro 版使用需要登录谷歌账号。支付由 PayPal 安全处理，你的支付信息不会存储在我们服务器上。',
     'pricing.subSuccess': '🎉 感谢订阅 Pro！所有 Pro 功能已解锁。',
     'pricing.subError': '支付未完成，请重试。',
@@ -171,6 +187,7 @@ export const dict: DictMap = {
     'pricing.recommended': '最推荐',
     'pricing.loadingPaypal': '正在加载 PayPal…',
     'pricing.sandboxNote': '测试环境（Sandbox）：不会产生真实扣款',
+    'pricing.planConfig': '订阅计划配置中，暂未开放',
 
     // ---- 隐私政策 ----
     'privacy.title': '隐私政策',
@@ -184,6 +201,9 @@ export const dict: DictMap = {
     'blog.title': '博客',
     'blog.desc': '关于 PDF 处理、隐私保护和工具技巧的文章。',
     'blog.placeholder': '文章即将上线，敬请期待...',
+    'blog.featured.label': '精选 · Featured',
+    'blog.featured.title': '为什么本地离线 PDF 合并才是隐私正解',
+    'blog.featured.excerpt': '文件不上传服务器，合同、证件、财务报表更安全。免注册、无水印、免费。',
 
     // ---- 联系我们 ----
     'contact.title': '联系我们',
@@ -195,8 +215,20 @@ export const dict: DictMap = {
   en: {
     // ---- 元信息 / 品牌 ----
     'app.name': 'PDF Merge',
+    'nav.home': 'Home',
     'nav.pricing': 'Pricing',
+    'nav.blog': 'Blog',
+    'nav.contact': 'Contact',
+    'nav.menu': 'Menu',
     'app.tagline': 'Local & offline · Privacy first',
+
+    // ---- HTML title ----
+    'meta.title.home': 'PDF Merge · Local & Offline · Privacy First',
+    'meta.title.pricing': 'Pricing',
+    'meta.title.blog': 'Blog',
+    'meta.title.contact': 'Contact Us',
+    'meta.title.privacy': 'Privacy Policy',
+    'meta.title.terms': 'Terms of Service',
 
     // ---- 主题切换 ----
     'theme.toLight': 'Switch to light theme',
@@ -237,11 +269,13 @@ export const dict: DictMap = {
     // ---- ActionBar (F2/F4/F6) ----
     'action.summary': '{files} files · {pages} pages · {selected} selected',
     'action.limit': 'Free: {files}/{maxFiles} files · {size}/{maxSize} MB',
+    'action.limitPro': 'Pro: {files}/{maxFiles} files · {size}/{maxSize} MB',
     'action.filesOverLimit': 'Exceeds {max} file limit. Remove some files.',
     'action.sizeOverLimit': 'Exceeds {max} MB total limit. Remove some files.',
     'action.merge': 'Merge & Download',
     'action.merging': 'Merging…',
     'action.emptyHint': 'Add at least one PDF',
+    'action.parsing': 'Parsing PDF, ready to merge once done…',
     'action.progress': 'Merging… {done} / {total} pages',
 
     // ---- FileCard (F3/F4/F5) ----
@@ -295,6 +329,9 @@ export const dict: DictMap = {
     'toast.freeFileLimit': 'Free plan: up to {max} files. Remove some files or upgrade.',
     'toast.freeSingleFileTooBig': '"{name}" ({size}) exceeds the {max} MB free single-file limit and was skipped.',
     'toast.freeTotalTooBig': 'Free plan: total size cannot exceed {max} MB. Remove some files or upgrade.',
+    'toast.limitFiles': 'You can add up to {max} files',
+    'toast.limitSingle': '"{name}" ({size}) exceeds the {max} MB per-file limit and was skipped.',
+    'toast.limitTotal': 'Total size cannot exceed {max} MB. Remove some files.',
     'toast.mergeDone': 'Merge complete',
     'toast.mergeFailed': 'Merge failed: {message}',
     'toast.parseError': 'Failed to parse',
@@ -348,7 +385,6 @@ export const dict: DictMap = {
     'pricing.yearly.cta': 'Subscribe Yearly',
     'pricing.yearly.ctaSub': 'Most popular',
     'pricing.yearly.altHint': 'or $49/year (Save 42%)',
-    'pricing.guarantee': '30-day money-back guarantee · Secure payment',
     'pricing.note': 'Pro requires signing in with Google. Payments are securely processed by PayPal; your payment info is never stored on our servers.',
     'pricing.subSuccess': '🎉 Thanks for subscribing! All Pro features are unlocked.',
     'pricing.subError': 'Payment not completed. Please try again.',
@@ -360,6 +396,7 @@ export const dict: DictMap = {
     'pricing.recommended': 'Recommended',
     'pricing.loadingPaypal': 'Loading PayPal…',
     'pricing.sandboxNote': 'Test mode (Sandbox): no real charges',
+    'pricing.planConfig': 'Subscription plan is being configured and not available yet',
 
     // ---- Privacy ----
     'privacy.title': 'Privacy Policy',
@@ -373,6 +410,9 @@ export const dict: DictMap = {
     'blog.title': 'Blog',
     'blog.desc': 'Articles about PDF processing, privacy, and tips.',
     'blog.placeholder': 'Articles coming soon...',
+    'blog.featured.label': 'Featured',
+    'blog.featured.title': 'Why Local, Offline PDF Merging Wins on Privacy',
+    'blog.featured.excerpt': 'No upload, no server, no watermark. Your contracts, IDs, and statements stay on your device.',
 
     // ---- Contact ----
     'contact.title': 'Contact Us',

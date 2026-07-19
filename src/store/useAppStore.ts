@@ -7,9 +7,7 @@ import {
   MAX_SINGLE_FILE_MB,
   MAX_TOTAL_FILE_MB_DESKTOP,
   MAX_TOTAL_FILE_MB_MOBILE,
-  FREE_MAX_FILES,
-  FREE_MAX_SINGLE_FILE_MB,
-  FREE_MAX_TOTAL_FILE_MB,
+  getPlanLimits,
   MAX_TOASTS,
   TOAST_TTL,
   ONBOARD_KEY,
@@ -23,6 +21,7 @@ import {
   clearStoredUser,
   type GoogleUser,
 } from '../lib/auth';
+import { gtagEvent } from '../lib/analytics';
 
 // 与 engine.worker.ts 中的加密错误编码前缀保持一致
 const ENC_PREFIX = '__PDF_ENC__:';
@@ -166,13 +165,20 @@ export const useAppStore = create<AppState>((set, get) => ({
   addFiles: (incoming) => {
     if (!incoming || incoming.length === 0) return;
     const state = get();
+    const isPro = !!state.subscription;
+    const limits = getPlanLimits(isPro);
     const currentFiles = state.files;
     const currentTotalMB =
       currentFiles.reduce((s, f) => s + f.size, 0) / 1024 / 1024;
-    const wouldExceedFiles = currentFiles.length + incoming.length > FREE_MAX_FILES;
+    const wouldExceedFiles = currentFiles.length + incoming.length > limits.maxFiles;
 
     if (wouldExceedFiles) {
-      get().addToast('error', t('toast.freeFileLimit', { max: FREE_MAX_FILES }));
+      get().addToast(
+        'error',
+        isPro
+          ? t('toast.limitFiles', { max: limits.maxFiles })
+          : t('toast.freeFileLimit', { max: limits.maxFiles })
+      );
       return;
     }
 
@@ -187,15 +193,22 @@ export const useAppStore = create<AppState>((set, get) => ({
         continue;
       }
       const sizeMB = f.size / 1024 / 1024;
-      if (sizeMB > FREE_MAX_SINGLE_FILE_MB) {
+      if (sizeMB > limits.maxSingleFileMB) {
         get().addToast(
           'error',
-          t('toast.freeSingleFileTooBig', { name: f.name, size: formatBytes(f.size), max: FREE_MAX_SINGLE_FILE_MB })
+          isPro
+            ? t('toast.limitSingle', { name: f.name, size: formatBytes(f.size), max: limits.maxSingleFileMB })
+            : t('toast.freeSingleFileTooBig', { name: f.name, size: formatBytes(f.size), max: limits.maxSingleFileMB })
         );
         continue;
       }
-      if (sizeMB + currentTotalMB + accepted.reduce((s, x) => s + x.size, 0) / 1024 / 1024 > FREE_MAX_TOTAL_FILE_MB) {
-        get().addToast('error', t('toast.freeTotalTooBig', { max: FREE_MAX_TOTAL_FILE_MB }));
+      if (sizeMB + currentTotalMB + accepted.reduce((s, x) => s + x.size, 0) / 1024 / 1024 > limits.maxTotalFileMB) {
+        get().addToast(
+          'error',
+          isPro
+            ? t('toast.limitTotal', { max: limits.maxTotalFileMB })
+            : t('toast.freeTotalTooBig', { max: limits.maxTotalFileMB })
+        );
         break;
       }
       // 仍保留技术上限兜底（Free 阈值应更严格，但保留以防常量被改错）
@@ -229,6 +242,12 @@ export const useAppStore = create<AppState>((set, get) => ({
     }));
 
     set({ files: [...get().files, ...newItems] });
+
+    gtagEvent('file_added', {
+      count: accepted.length,
+      total_files: get().files.length,
+      is_pro: isPro,
+    });
 
     // 触发解析（异步，按结果回写）
     for (const item of newItems) {
@@ -453,6 +472,7 @@ export const useAppStore = create<AppState>((set, get) => ({
         };
       });
       get().addToast('success', t('toast.mergeDone'));
+      gtagEvent('merge_completed', { files: valid.length, pages: total });
     } catch (err: unknown) {
       const raw = err instanceof Error ? err.message : '';
       let message: string;
@@ -471,6 +491,7 @@ export const useAppStore = create<AppState>((set, get) => ({
         view: 'result',
       });
       get().addToast('error', message);
+      gtagEvent('merge_failed', { reason: message.slice(0, 120) });
     }
   },
 
@@ -525,6 +546,7 @@ export const useAppStore = create<AppState>((set, get) => ({
   login: (user) => {
     setStoredUser(user);
     set({ gaUser: user });
+    gtagEvent('login', { method: 'google' });
   },
 
   logout: () => {

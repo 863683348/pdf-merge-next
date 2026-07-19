@@ -6,27 +6,27 @@ import { useAppStore } from '../../store/useAppStore';
 import { Button } from '../atoms/Button';
 import { useT } from '../../i18n/provider';
 import { formatBytes } from '../../lib/format';
-import {
-  FREE_MAX_FILES,
-  FREE_MAX_TOTAL_FILE_MB,
-} from '../../lib/constants';
+import { getPlanLimits } from '../../lib/constants';
 
 export function ActionBar() {
   const files = useAppStore((s) => s.files);
   const processing = useAppStore((s) => s.processing);
+  const isPro = useAppStore((s) => !!s.subscription);
   const runMerge = useAppStore((s) => s.runMerge);
   const t = useT();
 
+  const limits = getPlanLimits(isPro);
   const valid = files.filter((f) => f.status === 'ready');
   const fileCount = valid.length;
+  const parsing = files.some((f) => f.status === 'parsing');
   const totalPages = valid.reduce((s, f) => s + (f.pageCount ?? 0), 0);
   const selectedPages = valid.reduce((s, f) => s + f.selectedCount, 0);
   const totalSizeBytes = valid.reduce((s, f) => s + f.size, 0);
   const totalSizeMB = totalSizeBytes / 1024 / 1024;
   const disabled = fileCount === 0 || processing.active;
 
-  const filesOverLimit = fileCount > FREE_MAX_FILES;
-  const sizeOverLimit = totalSizeMB > FREE_MAX_TOTAL_FILE_MB;
+  const filesOverLimit = fileCount > limits.maxFiles;
+  const sizeOverLimit = totalSizeMB > limits.maxTotalFileMB;
   const blocked = filesOverLimit || sizeOverLimit;
 
   const pct =
@@ -46,19 +46,19 @@ export function ActionBar() {
             })}
           </p>
           <p className="text-caption text-fg-muted">
-            {t('action.limit', {
+            {t(isPro ? 'action.limitPro' : 'action.limit', {
               files: fileCount,
-              maxFiles: FREE_MAX_FILES,
+              maxFiles: limits.maxFiles,
               size: formatBytes(totalSizeBytes),
-              maxSize: FREE_MAX_TOTAL_FILE_MB,
+              maxSize: limits.maxTotalFileMB,
             })}
           </p>
           {blocked && (
             <p className="flex items-center gap-1 text-caption text-danger">
               <AlertCircle size={14} aria-hidden />
               {filesOverLimit
-                ? t('action.filesOverLimit', { max: FREE_MAX_FILES })
-                : t('action.sizeOverLimit', { max: FREE_MAX_TOTAL_FILE_MB })}
+                ? t('action.filesOverLimit', { max: limits.maxFiles })
+                : t('action.sizeOverLimit', { max: limits.maxTotalFileMB })}
             </p>
           )}
         </div>
@@ -74,7 +74,12 @@ export function ActionBar() {
           >
             {processing.active ? t('action.merging') : t('action.merge')}
           </Button>
-          {fileCount === 0 && (
+          {fileCount === 0 && parsing && (
+            <span className="text-caption text-fg-muted">
+              {t('action.parsing')}
+            </span>
+          )}
+          {fileCount === 0 && !parsing && (
             <span className="text-caption text-fg-muted">
               {t('action.emptyHint')}
             </span>

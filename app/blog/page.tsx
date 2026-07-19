@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { PageShell } from '@/components/atoms/PageShell';
 import { useT } from '@/i18n/provider';
 
@@ -9,6 +10,21 @@ export default function BlogPage() {
   return (
     <PageShell titleKey="blog.title">
       <p className="mt-2 text-body text-fg-secondary">{t('blog.desc')}</p>
+
+      <Link
+        href="/blog/why-local-offline-pdf-merge"
+        className="mt-8 block rounded-xl border border-line bg-surface p-6 shadow-sm transition-colors duration-fast hover:bg-subtle"
+      >
+        <p className="text-caption font-semibold uppercase tracking-wide text-brand">
+          {t('blog.featured.label')}
+        </p>
+        <h2 className="mt-1 text-title font-semibold text-fg">
+          {t('blog.featured.title')}
+        </h2>
+        <p className="mt-2 text-sm text-fg-secondary">
+          {t('blog.featured.excerpt')}
+        </p>
+      </Link>
 
       <div className="mt-10 flex flex-col items-center justify-center rounded-xl border border-dashed border-line bg-subtle py-16">
         <svg

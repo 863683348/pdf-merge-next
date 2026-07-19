@@ -4,17 +4,31 @@ import type { Lang } from './types';
 export type TParams = Record<string, string | number>;
 
 const VALID_LANGS: Lang[] = ['zh', 'en'];
+const COOKIE_KEY = 'mergelocal-lang';
 
-// 在模块加载时探测一次（SSR 环境无 navigator/localStorage，回退 zh；客户端优先读持久化偏好）。
+// 在模块加载时探测一次（SSR 环境无 navigator/localStorage/cookie，回退 zh；客户端优先读持久化偏好）。
 function detectLang(): Lang {
   if (typeof window === 'undefined') return 'zh';
   try {
     const stored = localStorage.getItem(LANG_STORAGE_KEY) as Lang | null;
     if (stored && VALID_LANGS.includes(stored)) return stored;
   } catch {
-    // 隐私模式/localStorage 禁用 → 继续用 navigator
+    // 隐私模式/localStorage 禁用 → 继续用 cookie 或 navigator
   }
+  // 兜底：尝试读 cookie
+  const match = document.cookie.match(new RegExp(`(?:^|; )${COOKIE_KEY}=([^;]*)`));
+  const cookieLang = match?.[1] as Lang | undefined;
+  if (cookieLang && VALID_LANGS.includes(cookieLang)) return cookieLang;
   return /^\s*zh/i.test(navigator.language) ? 'zh' : 'en';
+}
+
+function setCookie(value: Lang): void {
+  if (typeof document === 'undefined') return;
+  try {
+    document.cookie = `${COOKIE_KEY}=${value}; Path=/; Max-Age=31536000; SameSite=Lax`;
+  } catch {
+    /* ignore */
+  }
 }
 
 let current: Lang = detectLang();
@@ -31,6 +45,7 @@ export function setLang(lang: Lang): void {
   } catch {
     /* 隐私模式下写入失败可忽略 */
   }
+  setCookie(lang);
   listeners.forEach((fn) => fn());
 }
 

@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next';
+import { cookies } from 'next/headers';
 import Script from 'next/script';
 import './globals.css';
 // 字体：@fontsource 本地自托管，无外部请求
@@ -12,10 +13,14 @@ import '@fontsource/jetbrains-mono/400.css';
 import Providers from './providers';
 import { Footer } from '@/components/organisms/Footer';
 import { TopBar } from '@/components/molecules/TopBar';
+import { AnalyticsPageview } from '@/components/atoms/AnalyticsPageview';
+import { DocumentTitle } from '@/components/atoms/DocumentTitle';
 import { faqContent } from '@/lib/faq';
+import type { Lang } from '@/i18n/types';
 
 const SITE_URL = 'https://pdf-merge-next.vercel.app';
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? '';
+const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_ID ?? '';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -52,6 +57,11 @@ export const metadata: Metadata = {
   authors: [{ name: 'MergeLocal' }],
   creator: 'MergeLocal',
   category: 'technology',
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
   alternates: {
     canonical: '/',
     languages: {
@@ -69,12 +79,21 @@ export const metadata: Metadata = {
       '纯浏览器端、文件不上传、免注册、无水印的隐私优先 PDF 合并工具。支持手机与中英双语。',
     locale: 'zh_CN',
     alternateLocale: ['en_US'],
+    images: [
+      {
+        url: '/og',
+        width: 1200,
+        height: 630,
+        alt: 'MergeLocal — 本地离线 PDF 合并，文件不上传',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'PDF 合并 · 本地离线 · 文件不上传 | MergeLocal',
     description:
       '纯浏览器端、文件不上传、免注册、无水印的隐私优先 PDF 合并工具。',
+    images: ['/og'],
   },
   robots: {
     index: true,
@@ -112,11 +131,11 @@ const jsonLd = {
       applicationCategory: 'UtilitiesApplication',
       operatingSystem: 'Any (browser)',
       inLanguage: ['zh-CN', 'en'],
-      offers: {
-        '@type': 'Offer',
-        price: '0',
-        priceCurrency: 'USD',
-      },
+      offers: [
+        { '@type': 'Offer', name: 'Free', price: '0', priceCurrency: 'USD' },
+        { '@type': 'Offer', name: 'Pro Monthly', price: '7', priceCurrency: 'USD' },
+        { '@type': 'Offer', name: 'Pro Yearly', price: '49', priceCurrency: 'USD' },
+      ],
       featureList: [
         'PDF 合并',
         '按页抽取',
@@ -157,13 +176,16 @@ const themeBootstrap = `
 })();
 `;
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const cookieStore = await cookies();
+  const serverLang = (cookieStore.get('mergelocal-lang')?.value ?? 'zh') as Lang;
+
   return (
-    <html lang="zh-CN" data-theme="light" suppressHydrationWarning>
+    <html lang={serverLang === 'zh' ? 'zh-CN' : 'en'} data-theme="light" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeBootstrap }} />
         <script
@@ -172,11 +194,15 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Providers>
+        <Providers serverLang={serverLang}>
+          <DocumentTitle />
           <TopBar />
           {children}
           <Footer />
         </Providers>
+
+        {/* SPA 路由切换时补发 GA4 page_view */}
+        <AnalyticsPageview />
 
         {/* GA4: 仅在生产环境且设置了 NEXT_PUBLIC_GA_ID 时加载 */}
         {process.env.NODE_ENV === 'production' && GA_ID.length > 0 && (
@@ -184,9 +210,10 @@ export default function RootLayout({
             <Script
               src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
               strategy="afterInteractive"
+              crossOrigin="anonymous"
             />
             <Script id="ga4-init" strategy="afterInteractive">
-              {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}',{page_path:window.location.pathname});`}
+              {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}');`}
             </Script>
           </>
         )}
@@ -196,7 +223,15 @@ export default function RootLayout({
           <Script
             src="https://accounts.google.com/gsi/client"
             strategy="afterInteractive"
+            crossOrigin="anonymous"
           />
+        )}
+
+        {/* Microsoft Clarity 热力图: 仅生产 + 设置了 NEXT_PUBLIC_CLARITY_ID 时加载 */}
+        {process.env.NODE_ENV === 'production' && CLARITY_ID.length > 0 && (
+          <Script id="ms-clarity" strategy="afterInteractive">
+            {`(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","${CLARITY_ID}");`}
+          </Script>
         )}
       </body>
     </html>

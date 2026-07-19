@@ -5,6 +5,7 @@ import { useT } from '@/i18n/provider';
 import { useRouter } from 'next/navigation';
 import { cn } from '@/lib/cn';
 import { useAppStore } from '@/store/useAppStore';
+import { gtagEvent } from '@/lib/analytics';
 
 const CLIENT_ID =
   process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID ?? '';
@@ -22,19 +23,28 @@ declare global {
   interface Window {
     paypal?: {
       Buttons: (config: {
-        createOrder: (data: unknown, actions: {
-          order: { create: (config: { purchase_units: Array<{ amount: { value: string }; description: string }> }) => Promise<string> };
-        }) => Promise<string> | string;
-        onApprove: (data: unknown, actions: {
-          order: { capture: () => Promise<Record<string, unknown>> };
-        }) => Promise<void>;
+        createSubscription?: (
+          data: unknown,
+          actions: {
+            subscription: {
+              create: (config: {
+                plan_id: string;
+                application_context?: Record<string, unknown>;
+              }) => Promise<string>;
+            };
+          }
+        ) => Promise<string> | string;
+        onApprove?: (
+          data: { subscriptionID: string },
+          actions: unknown
+        ) => Promise<void> | void;
         onError?: (err: unknown) => void;
         onCancel?: () => void;
         style?: {
           layout?: 'vertical' | 'horizontal';
           color?: 'gold' | 'blue' | 'silver' | 'white' | 'black';
           shape?: 'rect' | 'pill';
-          label?: 'paypal' | 'checkout' | 'buynow' | 'pay';
+          label?: 'paypal' | 'checkout' | 'buynow' | 'pay' | 'subscribe';
           tagline?: boolean;
         };
       }) => {
@@ -46,9 +56,11 @@ declare global {
 
 type Billing = 'monthly' | 'yearly';
 
-const PLAN_AMOUNTS: Record<Billing, string> = {
-  monthly: '7.00',
-  yearly: '49.00',
+// 订阅计划 ID（Billing Plan）。需提前在 PayPal 后台或用 REST API 创建，
+// 否则 PayPal 订阅按钮无法渲染。沙箱 plan 必须绑定沙箱 Client ID。
+const PLAN_IDS: Record<Billing, string> = {
+  monthly: process.env.NEXT_PUBLIC_PAYPAL_PLAN_MONTHLY ?? '',
+  yearly: process.env.NEXT_PUBLIC_PAYPAL_PLAN_YEARLY ?? '',
 };
 
 // 共享的 PayPal SDK 加载器（多卡片复用，避免重复注入 script）
@@ -69,8 +81,10 @@ function ensurePaypalSdk(): Promise<void> {
       return;
     }
     const script = document.createElement('script');
-    script.src = `${PAYPAL_SDK_BASE}/sdk/js?client-id=${CLIENT_ID}&currency=USD&intent=capture`;
+    // 订阅模式：必须加 vault=true&intent=subscription
+    script.src = `${PAYPAL_SDK_BASE}/sdk/js?client-id=${CLIENT_ID}&currency=USD&vault=true&intent=subscription`;
     script.async = true;
+    script.crossOrigin = 'anonymous';
     script.onload = () => resolve();
     script.onerror = () => resolve();
     document.body.appendChild(script);
@@ -137,6 +151,7 @@ function ProCard({ billing }: { billing: Billing }) {
   const desc = isYearly ? t('pricing.yearly.desc') : t('pricing.monthly.desc');
   const name = isYearly ? t('pricing.yearly.name') : t('pricing.pro.name');
   const features = [1, 2, 3, 4, 5, 6].map((i) => t(`pricing.pro.feature${i}`));
+  const planId = PLAN_IDS[billing];
 
   // 加载 PayPal SDK（共享单例）
   useEffect(() => {
@@ -149,45 +164,49 @@ function ProCard({ billing }: { billing: Billing }) {
     };
   }, []);
 
-  // 渲染该卡片对应的 PayPal 按钮
+  // 渲染该卡片对应的 PayPal 订阅按钮
   useEffect(() => {
     if (!sdkReady || !gaUser || subscribed || !paypalRef.current) return;
     if (rendered.current) return;
+    if (!planId) return; // 未配置 plan id，静默不渲染
 
     try {
-      const amount = PLAN_AMOUNTS[billing];
       window.paypal
         ?.Buttons({
-          createOrder: (
-            _data: unknown,
-            actions: {
-              order: {
-                create: (config: {
-                  purchase_units: Array<{ amount: { value: string }; description: string }>;
-                }) => Promise<string>;
-              },
-            }
-          ) => {
-            return actions.order.create({
-              purchase_units: [
+          createSubscription: (_data, actions) => {
+            gtagEvent('begin_checkout', {
+              currency: 'USD',
+              value: isYearly ? 49 : 7,
+              items: [
                 {
-                  amount: { value: amount },
-                  description: isYearly ? 'MergeLocal Pro Yearly' : 'MergeLocal Pro Monthly',
+                  item_id: isYearly ? 'pro_yearly' : 'pro_monthly',
+                  item_name: isYearly ? 'Pro Yearly' : 'Pro Monthly',
+                  price: isYearly ? 49 : 7,
+                  quantity: 1,
                 },
               ],
             });
+            return actions.subscription.create({ plan_id: planId });
           },
-          onApprove: (
-            _data: unknown,
-            actions: { order: { capture: () => Promise<Record<string, unknown>> } }
-          ) => {
-            return actions.order.capture().then(() => {
-              setSubscription({
-                plan: isYearly ? 'pro_yearly' : 'pro_monthly',
-                since: new Date().toISOString(),
-              });
-              addToast('success', t('pricing.subSuccess'));
+          onApprove: (data, _actions) => {
+            gtagEvent('purchase', {
+              currency: 'USD',
+              value: isYearly ? 49 : 7,
+              transaction_id: data.subscriptionID,
+              items: [
+                {
+                  item_id: isYearly ? 'pro_yearly' : 'pro_monthly',
+                  item_name: isYearly ? 'Pro Yearly' : 'Pro Monthly',
+                  price: isYearly ? 49 : 7,
+                  quantity: 1,
+                },
+              ],
             });
+            setSubscription({
+              plan: isYearly ? 'pro_yearly' : 'pro_monthly',
+              since: new Date().toISOString(),
+            });
+            addToast('success', t('pricing.subSuccess'));
           },
           onError: () => {
             addToast('error', t('pricing.subError'));
@@ -195,14 +214,14 @@ function ProCard({ billing }: { billing: Billing }) {
           onCancel: () => {
             /* 用户取消，静默 */
           },
-          style: { layout: 'vertical', color: 'gold', shape: 'rect', label: 'paypal' },
+          style: { layout: 'vertical', color: 'gold', shape: 'rect', label: 'subscribe' },
         })
         .render(paypalRef.current);
       rendered.current = true;
     } catch {
       /* noop */
     }
-  }, [sdkReady, gaUser, subscribed, isYearly, billing, setSubscription, addToast, t]);
+  }, [sdkReady, gaUser, subscribed, isYearly, billing, planId, setSubscription, addToast, t]);
 
   return (
     <div
@@ -246,6 +265,10 @@ function ProCard({ billing }: { billing: Billing }) {
           >
             {t('pricing.loggedOut')}
           </button>
+        ) : !planId ? (
+          <div className="w-full rounded-lg border border-line bg-surface px-4 py-2.5 text-center text-sm text-fg-muted">
+            {t('pricing.planConfig')}
+          </div>
         ) : (
           <>
             <div ref={paypalRef} className="min-h-[40px]" />
@@ -295,10 +318,9 @@ export default function PricingPage() {
         <ProCard billing="monthly" />
       </div>
 
-      {/* 保障 + 备注 */}
+      {/* 备注 */}
       <div className="mt-8 text-center">
-        <p className="text-sm font-medium text-ok">{t('pricing.guarantee')}</p>
-        <p className="mt-2 text-caption text-fg-muted">{t('pricing.note')}</p>
+        <p className="text-caption text-fg-muted">{t('pricing.note')}</p>
       </div>
     </div>
   );

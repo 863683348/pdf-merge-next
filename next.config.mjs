@@ -1,16 +1,16 @@
 /** @type {import('next').NextConfig} */
 const csp = [
   "default-src 'self'",
-  // script: 自身 + 谷歌 GSI / PayPal SDK / GA4 / PayPal checkout
-  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://accounts.google.com https://apis.google.com https://*.paypal.com https://www.googletagmanager.com",
+  // script: 自身 + 谷歌 GSI / PayPal SDK / GA4 / PayPal checkout / Microsoft Clarity
+  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://accounts.google.com https://apis.google.com https://*.paypal.com https://www.googletagmanager.com https://www.clarity.ms https://*.clarity.ms",
   // style: 自身 + 谷歌 GSI / Google Fonts
   "style-src 'self' 'unsafe-inline' https://accounts.google.com https://fonts.googleapis.com",
-  // img: 自身 + data/blob/任意 https（含 GA4 像素 + Google 用户头像）
-  "img-src 'self' data: blob: https:",
+  // img: 自身 + data/blob/任意 https（含 GA4 像素 + Google 用户头像 + Clarity）
+  "img-src 'self' data: blob: https: https://*.clarity.microsoft.com https://clarity.microsoft.com",
   // font: 自身 + Google Fonts
   "font-src 'self' data: https://fonts.gstatic.com",
-  // connect: 自身 + 谷歌 + PayPal + GA4
-  "connect-src 'self' https://accounts.google.com https://apis.google.com https://oauth2.googleapis.com https://www.googleapis.com https://*.paypal.com https://www.google-analytics.com https://www.googletagmanager.com",
+  // connect: 自身 + 谷歌 + PayPal + GA4 + Clarity
+  "connect-src 'self' https://accounts.google.com https://apis.google.com https://oauth2.googleapis.com https://www.googleapis.com https://*.paypal.com https://www.google-analytics.com https://www.googletagmanager.com https://*.clarity.ms https://clarity.microsoft.com",
   // worker: 自身 + blob（pdfjs）
   "worker-src 'self' blob:",
   // frame: Google OAuth 弹窗 + PayPal 支付弹窗
