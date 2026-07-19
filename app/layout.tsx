@@ -210,7 +210,6 @@ export default async function RootLayout({
             <Script
               src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
               strategy="afterInteractive"
-              crossOrigin="anonymous"
             />
             <Script id="ga4-init" strategy="afterInteractive">
               {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}');`}
@@ -223,7 +222,6 @@ export default async function RootLayout({
           <Script
             src="https://accounts.google.com/gsi/client"
             strategy="afterInteractive"
-            crossOrigin="anonymous"
           />
         )}
 

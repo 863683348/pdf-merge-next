@@ -1,6 +1,0 @@
-Contact: mailto:security@mergelocal.app
-Contact: https://pdf-merge-next.vercel.app/contact
-Expires: 2027-07-19T00:00:00Z
-Preferred-Languages: zh, en
-Canonical: https://pdf-merge-next.vercel.app/.well-known/security.txt
-Policy: https://pdf-merge-next.vercel.app/privacy
