@@ -18,7 +18,7 @@ import { DocumentTitle } from '@/components/atoms/DocumentTitle';
 import { faqContent } from '@/lib/faq';
 import type { Lang } from '@/i18n/types';
 
-const SITE_URL = 'https://pdf-merge-next.vercel.app';
+const SITE_URL = 'https://pdfmergenext.shop';
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? '';
 const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_ID ?? '';
 

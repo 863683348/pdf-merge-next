@@ -1,0 +1,6 @@
+Contact: mailto:security@mergelocal.app
+Contact: https://pdfmergenext.shop/contact
+Expires: 2027-07-19T00:00:00Z
+Preferred-Languages: zh, en
+Canonical: https://pdfmergenext.shop/.well-known/security.txt
+Policy: https://pdfmergenext.shop/privacy
