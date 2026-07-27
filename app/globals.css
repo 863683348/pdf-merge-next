@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   设计 Token —— 仅消费 Semantic 层，禁止硬编码色值
+   ============================================================ */
+:root {
+  /* 浅色主题（默认） */
+  --bg-primary: #f9fafb;
+  --bg-surface: #ffffff;
+  --bg-elevated: #ffffff;
+  --bg-subtle: #f3f4f6;
+  --bg-inset: #f3f4f6;
+
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+  --text-muted: #9ca3af;
+  --text-on-primary: #ffffff;
+
+  --border-default: #e5e7eb;
+  --border-strong: #d1d5db;
+  --border-subtle: #f0f1f3;
+  --border-focus: #2563eb;
+
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-primary-active: #1e40af;
+  --color-primary-subtle: rgba(37, 99, 235, 0.08);
+  --color-primary-subtle-2: rgba(37, 99, 235, 0.14);
+  --color-on-primary: #ffffff;
+
+  --color-success: #16a34a;
+  --color-success-subtle: rgba(22, 163, 74, 0.1);
+  --color-warning: #b45309;
+  --color-warning-subtle: rgba(217, 119, 6, 0.12);
+  --color-error: #dc2626;
+  --color-error-subtle: rgba(220, 38, 38, 0.1);
+
+  --font-display: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  --font-body: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace;
+
+  /* 浅色阴影 */
+  --shadow-xs: 0 1px 2px rgba(16, 24, 40, 0.05);
+  --shadow-sm: 0 1px 3px rgba(16, 24, 40, 0.08), 0 1px 2px rgba(16, 24, 40, 0.04);
+  --shadow-md: 0 4px 12px rgba(16, 24, 40, 0.08);
+  --shadow-lg: 0 12px 32px rgba(16, 24, 40, 0.12);
+  --shadow-focus: 0 0 0 3px rgba(37, 99, 235, 0.35);
+  --shadow-focus-color: rgba(37, 99, 235, 0.35);
+}
+
+[data-theme='dark'] {
+  --bg-primary: #0b0e14;
+  --bg-surface: #11151c;
+  --bg-elevated: #161b24;
+  --bg-subtle: #0e1219;
+  --bg-inset: #0e1219;
+
+  --text-primary: #f2f4f8;
+  --text-secondary: #9ba3b0;
+  --text-muted: #6b7280;
+  --text-on-primary: #0b0e14;
+
+  --border-default: #232a35;
+  --border-strong: #2e3744;
+  --border-subtle: #1a2029;
+  --border-focus: #3b82f6;
+
+  --color-primary: #3b82f6;
+  --color-primary-hover: #60a5fa;
+  --color-primary-active: #2563eb;
+  --color-primary-subtle: rgba(59, 130, 246, 0.16);
+  --color-primary-subtle-2: rgba(59, 130, 246, 0.24);
+  --color-on-primary: #0b0e14;
+
+  --color-success: #34d399;
+  --color-success-subtle: rgba(52, 211, 153, 0.14);
+  --color-warning: #fbbf24;
+  --color-warning-subtle: rgba(251, 191, 36, 0.14);
+  --color-error: #f87171;
+  --color-error-subtle: rgba(248, 113, 113, 0.14);
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.55);
+  --shadow-focus: 0 0 0 3px rgba(59, 130, 246, 0.45);
+  --shadow-focus-color: rgba(59, 130, 246, 0.45);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  html,
+  body {
+    height: 100%;
+  }
+  body {
+    margin: 0;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 24px;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  /* 焦点环：键盘可达时显示 2px 主色环 */
+  :focus-visible {
+    outline: none;
+  }
+}
+
+@layer utilities {
+  /* 细插入线（拖拽落点） */
+  .insert-line {
+    height: 2px;
+    border-radius: 9999px;
+    background: var(--color-primary);
+  }
+}
+
+/* 尊重 prefers-reduced-motion：关闭位移/缩放，仅保留必要 opacity 过渡 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .motion-safe-transform {
+    transform: none !important;
+  }
+}

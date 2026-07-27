@@ -28,19 +28,76 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Why Local, Offline PDF Merging Wins on Privacy · MergeLocal',
+    title: 'Why Local, Offline PDF Merging Wins on Privacy · PDFMergeNext',
     description: 'No upload, no server, no watermark. Keep contracts, IDs, and statements on your device.',
     url: `${SITE_URL}/blog/why-local-offline-pdf-merge`,
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Why Local, Offline PDF Merging Wins on Privacy · MergeLocal',
+    title: 'Why Local, Offline PDF Merging Wins on Privacy · PDFMergeNext',
     description: 'No upload, no server, no watermark. Keep contracts, IDs, and statements on your device.',
   },
 };
 
+// 文章级 FAQ（与全局 FAQ 不重复），专门覆盖本文 PAA 长尾词，并配 FAQPage schema 抢精选摘要。
+const ARTICLE_FAQ: { q: string; a: string }[] = [
+  {
+    q: '如何在不上传文件的情况下合并 PDF？',
+    a: '使用纯浏览器端工具（如 PDFMergeNext）：文件在本地用 pdf.js 解析、用 pdf-lib 重组，全程不发起任何上传请求。服务器看不到内容，因此无需上传即可完成合并与下载。',
+  },
+  {
+    q: '本地离线合并真的安全吗？',
+    a: '是的。因为文件从不离开你的设备，不存在服务器被攻破、内部人员越权或数据被用于训练的风险。断网也能工作，进一步证明没有数据外传。',
+  },
+  {
+    q: '免费版有什么限制？',
+    a: '免费版即可日常合并、免注册、无水印；Pro 版提供更高的批量额度与优先支持。具体见定价页，但隐私与本地处理对所有版本一致。',
+  },
+  {
+    q: '支持手机吗？',
+    a: '支持。工具为响应式网页应用，在手机浏览器中即可拖入 PDF、排序并合并，无需安装 App，同样不上传文件。',
+  },
+];
+
+const TOC = [
+  { id: 'lead', label: '一句话结论 / TL;DR' },
+  { id: 'privacy-risks', label: '在线合并工具的隐私隐患' },
+  { id: 'how-it-works', label: '本地离线合并如何工作' },
+  { id: 'who-should-use', label: '谁最应该用本地离线合并' },
+  { id: 'beyond-privacy', label: '不止隐私：免注册、无水印、免费' },
+  { id: 'myths', label: '常见误区' },
+  { id: 'faq', label: '常见问题' },
+];
+
 export default function ArticlePage() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: '首页', item: `${SITE_URL}/` },
+          { '@type': 'ListItem', position: 2, name: '博客', item: `${SITE_URL}/blog` },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: '为什么选择本地离线 PDF 合并',
+            item: `${SITE_URL}/blog/why-local-offline-pdf-merge`,
+          },
+        ],
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: ARTICLE_FAQ.map((it) => ({
+          '@type': 'Question',
+          name: it.q,
+          acceptedAnswer: { '@type': 'Answer', text: it.a },
+        })),
+      },
+    ],
+  };
+
   return (
     <article className="mx-auto max-w-content px-4 py-10 sm:px-6 sm:py-16">
       <header>
@@ -53,10 +110,39 @@ export default function ArticlePage() {
         <p className="mt-3 text-body text-fg-secondary">
           Why choose a local, offline PDF merger? Because privacy-first is the right answer.
         </p>
+        <p className="mt-4 inline-flex items-center gap-2 rounded-full bg-subtle px-3 py-1 text-caption font-medium text-fg-muted">
+          阅读约 5 分钟 · 5 min read
+        </p>
       </header>
 
+      {/* 目录锚点（降低跳出率 + 提升长文可读性） */}
+      <nav aria-label="文章目录" className="mt-8 rounded-xl border border-line bg-subtle p-5">
+        <p className="text-caption font-semibold uppercase tracking-wide text-fg-muted">目录 / Contents</p>
+        <ul className="mt-2 grid gap-1 sm:grid-cols-2">
+          {TOC.map((t) => (
+            <li key={t.id}>
+              <a href={`#${t.id}`} className="text-sm text-brand hover:underline">
+                {t.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
       <div className="mt-8 space-y-8 text-body text-fg">
-        <section>
+        <section id="lead" className="rounded-xl border border-brand/30 bg-brand/5 p-6">
+          <h2 className="text-title font-semibold text-fg">一句话结论</h2>
+          <p className="mt-2 text-fg-secondary">
+            本地离线 PDF 合并，指文件全程在你的浏览器内处理、<strong>不上传到任何服务器</strong>——合同、证件、财务报表等敏感文档不会被第三方看到。
+            它通常同时做到<strong>免注册、无水印、可免费使用</strong>。如果你在意隐私，这是更稳妥的默认选项。
+          </p>
+          <p className="mt-2 text-fg-secondary">
+            A local, offline PDF merger processes files entirely in your browser and never uploads them to any server —
+            so contracts, IDs, and statements stay on your device. It’s usually also sign-up-free, watermark-free, and free to use.
+          </p>
+        </section>
+
+        <section id="privacy-risks">
           <h2 className="text-title font-semibold text-fg">在线合并工具的隐私隐患</h2>
           <p className="mt-2 text-fg-secondary">
             大多数“免费在线 PDF 合并”会先把你的文件上传到服务商服务器，合并完成后再让你下载。
@@ -69,7 +155,7 @@ export default function ArticlePage() {
           </p>
         </section>
 
-        <section>
+        <section id="how-it-works">
           <h2 className="text-title font-semibold text-fg">本地离线合并如何工作</h2>
           <p className="mt-2 text-fg-secondary">
             本地离线（local / offline）合并直接在你的浏览器里完成：解析用 pdf.js，重组用 pdf-lib，整个过程不发起任何上传请求。
@@ -81,7 +167,7 @@ export default function ArticlePage() {
           </p>
         </section>
 
-        <section>
+        <section id="who-should-use">
           <h2 className="text-title font-semibold text-fg">谁最应该用本地离线合并</h2>
           <ul className="mt-2 list-disc space-y-1 pl-5 text-fg-secondary">
             <li>HR 与行政：合并员工合同、入职材料，避免敏感人事数据外泄。</li>
@@ -93,19 +179,19 @@ export default function ArticlePage() {
           </ul>
         </section>
 
-        <section>
+        <section id="beyond-privacy">
           <h2 className="text-title font-semibold text-fg">不止隐私：免注册、无水印、免费</h2>
           <p className="mt-2 text-fg-secondary">
             很多人以为“安全”就要牺牲体验。其实本地工具往往同时做到了：免注册（不用填邮箱密码）、无水印（输出干净专业）、
-            免费版即够日常使用。MergeLocal 在此基础上还支持拖拽排序、按页抽取、中英双语与手机端。
+            免费版即够日常使用。PDFMergeNext 在此基础上还支持拖拽排序、按页抽取、中英双语与手机端。
           </p>
           <p className="mt-2 text-fg-secondary">
             Local tools are often also the most frictionless: no sign-up, no watermark, and a free tier that covers daily use.
-            MergeLocal adds drag-to-reorder, per-page extraction, bilingual UI, and mobile support.
+            PDFMergeNext adds drag-to-reorder, per-page extraction, bilingual UI, and mobile support.
           </p>
         </section>
 
-        <section>
+        <section id="myths">
           <h2 className="text-title font-semibold text-fg">常见误区</h2>
           <p className="mt-2 text-fg-secondary">
             误区一：“本地工具更复杂。” 实际上现代网页工具打开即用，拖入文件、调整顺序、点击合并即可。
@@ -117,7 +203,7 @@ export default function ArticlePage() {
         <section className="rounded-xl border border-line bg-subtle p-6">
           <h2 className="text-title font-semibold text-fg">马上试试</h2>
           <p className="mt-2 text-fg-secondary">
-            打开 MergeLocal，添加你的 PDF，几秒内在本机完成合并与下载——文件从不上传。
+            打开 PDFMergeNext，添加你的 PDF，几秒内在本机完成合并与下载——文件从不上传。
           </p>
           <Link
             href="/"
@@ -126,7 +212,25 @@ export default function ArticlePage() {
             开始合并 →
           </Link>
         </section>
+
+        {/* 可见 FAQ 段：抢 People Also Ask + 配 FAQPage schema */}
+        <section id="faq" className="rounded-xl border border-line p-6">
+          <h2 className="text-title font-semibold text-fg">常见问题</h2>
+          <div className="mt-4 space-y-4">
+            {ARTICLE_FAQ.map((it) => (
+              <div key={it.q}>
+                <h3 className="text-base font-semibold text-fg">{it.q}</h3>
+                <p className="mt-1 text-fg-secondary">{it.a}</p>
+              </div>
+            ))}
+          </div>
+        </section>
       </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     </article>
   );
 }

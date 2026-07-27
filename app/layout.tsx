@@ -21,12 +21,13 @@ import type { Lang } from '@/i18n/types';
 const SITE_URL = 'https://pdfmergenext.shop';
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? '';
 const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_ID ?? '';
+const GOOGLE_CLIENT_ID = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID ?? '';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'PDF 合并 · 本地离线 · 文件不上传 | MergeLocal',
-    template: '%s · MergeLocal',
+    default: 'PDF 合并 · 本地离线 · 文件不上传 | PDFMergeNext',
+    template: '%s · PDFMergeNext',
   },
   description:
     '隐私优先的 PDF 合并工具：纯浏览器端、文件不上传、免注册、免安装、无水印，支持手机与中英双语。适合合同、财务报表、证件等敏感文档。 / A privacy-first, client-side PDF merger. Files never leave your device. No sign-up, no watermark, mobile-ready. 中文 / English.',
@@ -53,9 +54,9 @@ export const metadata: Metadata = {
     'PDF combiner no upload',
     'free PDF merge',
   ],
-  applicationName: 'MergeLocal',
-  authors: [{ name: 'MergeLocal' }],
-  creator: 'MergeLocal',
+  applicationName: 'PDFMergeNext',
+  authors: [{ name: 'PDFMergeNext' }],
+  creator: 'PDFMergeNext',
   category: 'technology',
   icons: {
     icon: '/favicon.svg',
@@ -73,8 +74,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: SITE_URL,
-    siteName: 'MergeLocal',
-    title: 'PDF 合并 · 本地离线 · 文件不上传 | MergeLocal',
+    siteName: 'PDFMergeNext',
+    title: 'PDF 合并 · 本地离线 · 文件不上传 | PDFMergeNext',
     description:
       '纯浏览器端、文件不上传、免注册、无水印的隐私优先 PDF 合并工具。支持手机与中英双语。',
     locale: 'zh_CN',
@@ -84,13 +85,13 @@ export const metadata: Metadata = {
         url: '/og',
         width: 1200,
         height: 630,
-        alt: 'MergeLocal — 本地离线 PDF 合并，文件不上传',
+        alt: 'PDFMergeNext — 本地离线 PDF 合并，文件不上传',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'PDF 合并 · 本地离线 · 文件不上传 | MergeLocal',
+    title: 'PDF 合并 · 本地离线 · 文件不上传 | PDFMergeNext',
     description:
       '纯浏览器端、文件不上传、免注册、无水印的隐私优先 PDF 合并工具。',
     images: ['/og'],
@@ -124,7 +125,7 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'WebApplication',
-      name: 'MergeLocal',
+      name: 'PDFMergeNext',
       url: SITE_URL,
       description:
         '隐私优先的纯浏览器端 PDF 合并工具：文件不上传、免注册、免安装、无水印，支持手机与中英双语。',
@@ -217,8 +218,8 @@ export default async function RootLayout({
           </>
         )}
 
-        {/* Google Identity Services: 仅生产环境加载（Client ID 从环境变量取） */}
-        {process.env.NODE_ENV === 'production' && (
+        {/* Google Identity Services: 有 Client ID 即加载（本地 dev 也走 sandbox） */}
+        {(process.env.NODE_ENV === 'production' || !!GOOGLE_CLIENT_ID) && (
           <Script
             src="https://accounts.google.com/gsi/client"
             strategy="afterInteractive"

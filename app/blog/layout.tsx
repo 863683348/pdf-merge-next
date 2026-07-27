@@ -19,14 +19,14 @@ export const metadata: Metadata = {
     languages: { 'zh-CN': '/blog', 'en-US': '/blog', 'x-default': '/blog' },
   },
   openGraph: {
-    title: '博客 Blog · MergeLocal',
+    title: '博客 Blog · PDFMergeNext',
     description: '本地离线、隐私优先 PDF 合并的使用指南与趋势。',
     url: `${SITE_URL}/blog`,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '博客 Blog · MergeLocal',
+    title: '博客 Blog · PDFMergeNext',
     description: '本地离线、隐私优先 PDF 合并的使用指南与趋势。',
   },
 };
