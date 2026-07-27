@@ -83,7 +83,8 @@ const commit = await api('POST', `/repos/${OWNER}/${REPO}/git/commits`, {
     '- P0: dynamic app/sitemap.ts (real lastmod/changefreq/priority/alternates) replaces static sitemap.xml\n' +
     '- P1: www->apex 301 redirect (next.config.mjs); blog BreadcrumbList + article FAQPage JSON-LD\n' +
     '- P2: branded app/not-found.tsx; blog article TOC/reading-time/lead/visible FAQ\n' +
-    '- Content: 2nd SEO blog "How to merge PDF without uploading" (how-to + DevTools verify + page-range)',
+    '- Content: 2nd SEO blog "How to merge PDF without uploading" (how-to + DevTools verify + page-range)\n' +
+    '- Content: 3rd comparison blog "PDFMergeNext vs Smallpdf vs iLovePDF" (9-dimension table + third-party data),',
   tree: tree.sha,
   parents: [parentSha],
 });
