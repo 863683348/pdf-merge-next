@@ -1,0 +1,26 @@
+# PDFMergeNext
+> 零上传、隐私优先的免费 PDF 在线合并工具。纯浏览器客户端运行，文件永不离开设备。无水印、无限制、免注册。
+> A privacy-first, zero-upload PDF merger that runs entirely in your browser. No watermarks, no limits, no signup.
+
+## Core Features / 核心功能
+- [PDF Merge Tool (Home)](https://pdfmergenext.shop/): Merge multiple PDFs locally in your browser. Supports drag-and-drop reorder, page-range selection (e.g. "1-3,5"), lossless merge via pdf-lib + WebAssembly. No upload, no watermark, unlimited file size and count.
+- [Pricing](https://pdfmergenext.shop/pricing): Free tier (unlimited merges, no watermark) and Pro plans (large-file support, priority features). Currently free.
+
+## Blog / 博客
+- [Why Local, Offline PDF Merge Matters — Privacy First](https://pdfmergenext.shop/blog/why-local-offline-pdf-merge): Why client-side PDF merging is the only truly private option. Covers GDPR, HIPAA, and China PIPL compliance. Client-side vs server-side architecture explained. Chinese / English bilingual.
+- [How to Merge PDF Without Uploading (Step-by-Step, Verifiable)](https://pdfmergenext.shop/blog/how-to-merge-pdf-without-uploading): Three methods compared (browser zero-upload, desktop apps, online services). Includes a DevTools verification tutorial to prove no data leaves your device. Covers page-range merge, mobile workflow, and privacy compliance.
+- [PDFMergeNext vs Smallpdf vs iLovePDF: Honest 2026 Comparison](https://pdfmergenext.shop/blog/pdfmergenext-vs-smallpdf-vs-ilovepdf): 9-dimension feature comparison table across privacy, free-tier limits, file size, batch merge, page selection, watermarks, registration, and pricing. Data sourced from fileconvertlab.com and scoutmytool.com third-party testing.
+
+## Support / 支持
+- [Contact](https://pdfmergenext.shop/contact): Get in touch with the team.
+- [Privacy Policy](https://pdfmergenext.shop/privacy): Data handling and privacy practices.
+- [Terms of Service](https://pdfmergenext.shop/terms): Terms and conditions.
+
+## Account / 账户
+- [Account](https://pdfmergenext.shop/account): Manage your account and subscription.
+
+## Technology / 技术栈
+- Framework: Next.js 15 (App Router)
+- PDF Processing: pdf-lib + WebAssembly (client-side, no server)
+- Fonts: Inter + Noto Sans SC (self-hosted, no external requests)
+- Lang: Chinese (zh-CN) / English (en-US) bilingual

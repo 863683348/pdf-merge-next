@@ -1,0 +1,148 @@
+# PDFMergeNext — Complete Site Reference
+
+> This file provides the full content of each page on PDFMergeNext for AI-powered search engines. For a summary with key links, see llms.txt.
+
+---
+
+## Home — PDF Merge Tool
+
+### PDFMergeNext — Zero-Upload, Privacy-First Free PDF Merger
+
+**URL:** https://pdfmergenext.shop/
+
+PDFMergeNext is a completely client-side PDF merging tool. All file processing happens locally in the browser using pdf-lib and WebAssembly. No files are uploaded to any server — the entire operation is verifiable using browser DevTools Network tab.
+
+#### Key Features
+- **Zero Upload**: Files never leave your device. Processing happens entirely in-browser.
+- **Batch Merge**: Drag and drop multiple PDFs, reorder them, and merge into one file.
+- **Page Selection**: Use syntax like `1-3,5` to extract specific pages from individual files.
+- **No Watermarks**: Output PDFs are clean with no branding or watermarks.
+- **Unlimited**: No file size limit, no file count limit, no daily operation limit.
+- **No Signup Required**: Use immediately with no account creation.
+- **Mobile Ready**: Responsive design works on desktop and mobile browsers.
+- **Bilingual**: Full Chinese (zh-CN) and English (en-US) interface support.
+
+#### Privacy & Compliance
+- Complies with GDPR (General Data Protection Regulation)
+- Complies with HIPAA (Health Insurance Portability and Accountability Act)
+- Complies with China PIPL (Personal Information Protection Law)
+- All processing local — even if network is disconnected, already-loaded pages continue working
+
+#### Use Cases
+- Legal contract consolidation
+- Academic thesis/scholarly paper compilation
+- Financial report aggregation
+- Document scanning/photocopy organization
+- Personal document archiving
+
+#### Technology
+- Built with Next.js 15 (App Router)
+- PDF processing via pdf-lib and WebAssembly
+- Self-hosted fonts (Inter, Noto Sans SC) — no external requests
+- All operations execute client-side in the browser
+
+---
+
+## Blog / Blog Posts
+
+### 1. Why Local, Offline PDF Merge Matters — Privacy First
+
+**URL:** https://pdfmergenext.shop/blog/why-local-offline-pdf-merge
+
+This article explains why choosing a client-side PDF merge tool is the only truly private option for handling sensitive documents.
+
+Key topics:
+- Traditional online PDF tools (Smallpdf, iLovePDF, Adobe) upload files to servers, posing risks for confidential documents
+- Even "auto-delete after 1 hour" policies mean your data transits through third-party infrastructure
+- GDPR, HIPAA, and China PIPL all require minimizing data exposure — client-side processing is the compliance-friendly architecture
+- PDFMergeNext uses pdf-lib + WebAssembly for 100% local processing
+- Available on desktop and mobile with Chinese/English bilingual UI
+
+---
+
+### 2. How to Merge PDF Without Uploading (Step-by-Step, Verifiable)
+
+**URL:** https://pdfmergenext.shop/blog/how-to-merge-pdf-without-uploading
+
+A practical tutorial covering three methods to merge PDFs without uploading to any server.
+
+#### Method comparison table:
+| Feature | PDFMergeNext (Zero-Upload) | Mac Preview / PDFsam | Smallpdf / iLovePDF |
+|---|---|---|---|
+| Privacy | ✅ Files never leave device | ✅ Fully offline | ❌ Upload to server |
+| Watermark | ✅ No watermark | ✅ No watermark | ⚠️ Limited free / watermark |
+| Page Selection | ✅ Free (1-3,5 syntax) | ✅ PDFsam supports | ⚠️ Pro only |
+| Mobile | ✅ Browser responsive | ❌ Desktop only | ✅ Mobile app |
+| File Size Limit | ✅ Unlimited | ✅ No limit | ❌ 15MB / 3MB free |
+
+#### DevTools Verification Tutorial
+Step-by-step guide using Chrome DevTools Network tab to verify that PDFMergeNext never uploads files:
+1. Open DevTools (F12) → Network tab
+2. Check "Disable cache"
+3. Filter by "pdf" or "blob"
+4. Drag a PDF file onto PDFMergeNext
+5. Observe: no network requests appear — all processing is local
+
+#### Advanced: Page-Range Merge
+Use syntax like `1-3,5` to extract specific pages from each PDF. For example, "1-3,5" selects pages 1, 2, 3, and 5 (skipping page 4). Useful for assembling custom documents from large files.
+
+#### Mobile Workflow
+PDFMergeNext works in mobile browsers. No app installation needed. The responsive interface adapts to any screen size.
+
+---
+
+### 3. PDFMergeNext vs Smallpdf vs iLovePDF: Honest 2026 Comparison
+
+**URL:** https://pdfmergenext.shop/blog/pdfmergenext-vs-smallpdf-vs-ilovepdf
+
+An honest 9-dimension comparison table across privacy, free-tier limits, batch merge, page selection, watermarks, registration, and pricing. Data sourced from fileconvertlab.com 7-tool test and scoutmytool.com 2026 comparison.
+
+#### 9-Dimension Comparison Table
+
+| Dimension | Smallpdf | iLovePDF | PDFMergeNext |
+|---|---|---|---|
+| Privacy Model | ❌ Server upload (Switzerland) | ❌ Server upload (EU) | ✅ Zero upload (client-side) |
+| File Retention | Deleted after 1h | Deleted after 2h | ✅ Never leaves device |
+| Free Daily Limit | ❌ 2 ops/day | ⚠️ No hard cap (but large files restricted) | ✅ Unlimited |
+| File Size Limit | ~15 MB (free) | ~3-100 MB (free) | ✅ Unlimited |
+| Batch Merge | ❌ Pro only ($9/mo) | ❌ 1 file/task | ✅ Unlimited |
+| Page Selection | ⚠️ Pro only (Organize PDF) | ⚠️ Premium only | ✅ Free (1-3,5 syntax) |
+| Watermark | ✅ No watermark (free) | ⚠️ May require signup | ✅ No watermark, ever |
+| Registration | ❌ Not required (but limited) | ❌ Not required (but limited) | ✅ No signup |
+| Paid Price | ~$9/month | ~€6/month | ✅ Currently free |
+
+#### Use Case Recommendations
+- **Daily merging (privacy important)**: PDFMergeNext — zero upload, no limits, no signup
+- **Batch merge (10+ files)**: PDFMergeNext or PDF24 — both unlimited; PDFMergeNext more private
+- **Legal/medical/financial docs**: PDFMergeNext — only choice (others upload to server)
+- **Selective page merge**: PDFMergeNext — free (1-3,5 syntax); competitors charge
+- **PDF to Word/Excel**: Smallpdf Pro — best conversion accuracy (paid)
+- **All-in-one PDF suite**: Smallpdf Pro / iLovePDF Premium — most comprehensive, but paid
+
+---
+
+## Other Pages / 其他页面
+
+### Pricing
+**URL:** https://pdfmergenext.shop/pricing
+Information about free and Pro plans. PDFMergeNext currently offers unlimited free merging with no watermarks. Pro plans (coming soon) add large-file support and advanced features.
+
+### Contact
+**URL:** https://pdfmergenext.shop/contact
+Contact form for support and inquiries.
+
+### Privacy Policy
+**URL:** https://pdfmergenext.shop/privacy
+Data handling practices and privacy compliance information.
+
+### Terms of Service
+**URL:** https://pdfmergenext.shop/terms
+Terms and conditions for using PDFMergeNext.
+
+### Account
+**URL:** https://pdfmergenext.shop/account
+User account management and subscription settings.
+
+---
+
+*Generated for AI search engine optimization (GEO). Last updated: 2026-07-28.*

@@ -84,7 +84,10 @@ const commit = await api('POST', `/repos/${OWNER}/${REPO}/git/commits`, {
     '- P1: www->apex 301 redirect (next.config.mjs); blog BreadcrumbList + article FAQPage JSON-LD\n' +
     '- P2: branded app/not-found.tsx; blog article TOC/reading-time/lead/visible FAQ\n' +
     '- Content: 2nd SEO blog "How to merge PDF without uploading" (how-to + DevTools verify + page-range)\n' +
-    '- Content: 3rd comparison blog "PDFMergeNext vs Smallpdf vs iLovePDF" (9-dimension table + third-party data),',
+    '- Content: 3rd comparison blog "PDFMergeNext vs Smallpdf vs iLovePDF" (9-dimension table + third-party data)\n' +
+    '- Geo: llms.txt + llms-full.txt for AI search engines (ChatGPT/Perplexity/Claude)\n' +
+    '- SEO: homepage static crawlable content + trust/privacy copy\n' +
+    '- Repo: README + GitHub homepage URL + topics optimization',
   tree: tree.sha,
   parents: [parentSha],
 });
