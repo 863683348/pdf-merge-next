@@ -87,7 +87,8 @@ const commit = await api('POST', `/repos/${OWNER}/${REPO}/git/commits`, {
     '- Content: 3rd comparison blog "PDFMergeNext vs Smallpdf vs iLovePDF" (9-dimension table + third-party data)\n' +
     '- Geo: llms.txt + llms-full.txt for AI search engines (ChatGPT/Perplexity/Claude)\n' +
     '- SEO: homepage static crawlable content + trust/privacy copy\n' +
-    '- Repo: README + GitHub homepage URL + topics optimization',
+    '- Repo: README + GitHub homepage URL + topics optimization\n' +
+    '- Link: README canonical link to pdfmergenext.shop (first backlink)',
   tree: tree.sha,
   parents: [parentSha],
 });

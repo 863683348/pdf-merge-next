@@ -1,8 +1,10 @@
-# MergeLocal · 纯浏览器端 PDF 合并
+# PDFMergeNext · 纯浏览器端 PDF 合并
+
+> 在线使用：[https://pdfmergenext.shop/](https://pdfmergenext.shop/)
 
 > 零上传、零注册、隐私优先的 PDF 合并工具。所有解析、合并、抽取、排序、旋转都在你的浏览器本地完成，**文件永远不会离开你的设备**。
 
-English: A fully client-side PDF merge tool. Everything runs in the browser — your files never leave your device.
+English: A fully client-side PDF merge tool. Everything runs in the browser — your files never leave your device. Try it online: [https://pdfmergenext.shop/](https://pdfmergenext.shop/).
 
 ## ✨ 功能
 
