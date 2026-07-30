@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { AdSlot } from '@/components/atoms/AdSlot';
 
 const SITE_URL = 'https://pdfmergenext.shop';
 
@@ -32,5 +33,13 @@ export const metadata: Metadata = {
 };
 
 export default function BlogLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      {children}
+      {/* AdSense 广告位 — 博客页面底部 */}
+      <div className="mx-auto max-w-content px-4 pb-12 sm:px-6">
+        <AdSlot />
+      </div>
+    </>
+  );
 }

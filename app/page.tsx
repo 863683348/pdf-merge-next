@@ -2,6 +2,7 @@
 
 import dynamic from 'next/dynamic';
 import { Spinner } from '@/components/atoms/Spinner';
+import { AdSlot } from '@/components/atoms/AdSlot';
 
 // 纯客户端工具：PDF 解析/合并、Web Worker、localStorage 等均在浏览器执行。
 // 关闭 SSR 以避免服务端访问 window/document/Worker 导致的报错与 hydration 不一致。
@@ -40,6 +41,11 @@ export default function Page() {
           。
         </p>
       </section>
+
+      {/* AdSense 广告位 — 首页 SEO 文案下方 */}
+      <div className="mx-auto max-w-3xl px-4">
+        <AdSlot />
+      </div>
     </>
   );
 }
