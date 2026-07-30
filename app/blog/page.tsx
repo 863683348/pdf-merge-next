@@ -61,6 +61,24 @@ export default function BlogPage() {
           全面的三工具对比——隐私、免费限制、挑页合并、水印、价格，附第三方实测数据。Honest comparison across privacy, free limits, page selection, watermarks, and pricing with third-party test data.
         </p>
       </Link>
+
+      <Link
+        href="/blog/merge-pdf-no-upload"
+        className="mt-6 block rounded-xl border border-line bg-surface p-6 shadow-sm transition-colors duration-fast hover:bg-subtle"
+      >
+        <p className="text-caption font-semibold uppercase tracking-wide text-brand">
+          PDF 合并 · 中文指南
+        </p>
+        <h2 className="mt-1 text-title font-semibold text-fg">
+          合并PDF不上传：安全免费的本地离线解决方案
+        </h2>
+        <p className="mt-1 text-sm font-medium text-fg-muted">
+          Merge PDF Without Uploading — Free & Secure Local Solution
+        </p>
+        <p className="mt-2 text-sm text-fg-secondary">
+          3 种不上传合并方案对比（浏览器/桌面/系统工具）、PDFMergeNext 完整使用步骤、隐私合规指南。
+        </p>
+      </Link>
     </PageShell>
   );
 }

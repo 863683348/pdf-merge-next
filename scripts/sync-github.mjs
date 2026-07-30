@@ -90,7 +90,8 @@ const commit = await api('POST', `/repos/${OWNER}/${REPO}/git/commits`, {
     '- Repo: README + GitHub homepage URL + topics optimization\n' +
     '- Link: README canonical link to pdfmergenext.shop (first backlink)\n' +
     '- P2: Article JSON-LD + related-posts module on 3 blogs (internal linking)\n' +
-    '- On-page: blog2 bilingual H1 + pricing static crawlable copy',
+    '- On-page: blog2 bilingual H1 + pricing static crawlable copy\n' +
+    '- Content: 4th blog "merge-pdf-no-upload" (Chinese pillar) + AlternativeTo submission draft',
   tree: tree.sha,
   parents: [parentSha],
 });

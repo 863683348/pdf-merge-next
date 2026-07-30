@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/blog/why-local-offline-pdf-merge', changefreq: 'weekly', priority: 0.8 },
     { path: '/blog/how-to-merge-pdf-without-uploading', changefreq: 'weekly', priority: 0.8 },
     { path: '/blog/pdfmergenext-vs-smallpdf-vs-ilovepdf', changefreq: 'weekly', priority: 0.8 },
+    { path: '/blog/merge-pdf-no-upload', changefreq: 'weekly', priority: 0.8 },
     { path: '/contact', changefreq: 'yearly', priority: 0.4 },
     { path: '/privacy', changefreq: 'yearly', priority: 0.3 },
     { path: '/terms', changefreq: 'yearly', priority: 0.3 },
