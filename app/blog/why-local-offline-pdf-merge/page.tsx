@@ -95,6 +95,19 @@ export default function ArticlePage() {
           acceptedAnswer: { '@type': 'Answer', text: it.a },
         })),
       },
+      {
+        '@type': 'Article',
+        headline: '为什么选择本地离线 PDF 合并？隐私优先才是正解',
+        description:
+          '为什么客户端 PDF 合并是唯一真正隐私安全的方案。涵盖 GDPR、HIPAA、中国个保法合规分析。',
+        author: { '@type': 'Person', name: 'PDFMergeNext' },
+        publisher: { '@type': 'Organization', name: 'PDFMergeNext' },
+        datePublished: '2026-07-22',
+        dateModified: '2026-07-27',
+        image: `${SITE_URL}/og`,
+        url: `${SITE_URL}/blog/why-local-offline-pdf-merge`,
+        mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE_URL}/blog/why-local-offline-pdf-merge` },
+      },
     ],
   };
 
@@ -231,6 +244,27 @@ export default function ArticlePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+
+      {/* 相关文章 */}
+      <section className="mx-auto mt-12 max-w-content px-4 sm:px-6">
+        <h2 className="text-title font-semibold text-fg">相关阅读 / Related</h2>
+        <div className="mt-4 grid gap-4 sm:grid-cols-2">
+          <a
+            href="/blog/how-to-merge-pdf-without-uploading"
+            className="block rounded-xl border border-line bg-surface p-4 transition-colors hover:bg-subtle"
+          >
+            <p className="text-sm font-semibold text-fg">如何不上传合并 PDF</p>
+            <p className="mt-1 text-xs text-fg-secondary">How to Merge PDF Without Uploading (Step-by-Step)</p>
+          </a>
+          <a
+            href="/blog/pdfmergenext-vs-smallpdf-vs-ilovepdf"
+            className="block rounded-xl border border-line bg-surface p-4 transition-colors hover:bg-subtle"
+          >
+            <p className="text-sm font-semibold text-fg">PDFMergeNext vs Smallpdf vs iLovePDF</p>
+            <p className="mt-1 text-xs text-fg-secondary">2026 隐私与限制全对比 / Honest 2026 Comparison</p>
+          </a>
+        </div>
+      </section>
     </article>
   );
 }

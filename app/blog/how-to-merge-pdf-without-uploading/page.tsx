@@ -105,6 +105,19 @@ export default function ArticlePage() {
           acceptedAnswer: { '@type': 'Answer', text: it.a },
         })),
       },
+      {
+        '@type': 'Article',
+        headline: 'How to Merge PDF Without Uploading (Step-by-Step, Verifiable)',
+        description:
+          'Merge PDFs without uploading to any server. Three methods compared, plus how to verify zero-upload with browser DevTools. No sign-up, no watermark, works offline.',
+        author: { '@type': 'Person', name: 'PDFMergeNext' },
+        publisher: { '@type': 'Organization', name: 'PDFMergeNext' },
+        datePublished: '2026-07-27',
+        dateModified: '2026-07-27',
+        image: `${SITE_URL}/og`,
+        url: `${SITE_URL}/blog/how-to-merge-pdf-without-uploading`,
+        mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE_URL}/blog/how-to-merge-pdf-without-uploading` },
+      },
     ],
   };
 
@@ -370,6 +383,27 @@ export default function ArticlePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+
+      {/* 相关文章 */}
+      <section className="mx-auto mt-12 max-w-content px-4 sm:px-6">
+        <h2 className="text-title font-semibold text-fg">相关阅读 / Related</h2>
+        <div className="mt-4 grid gap-4 sm:grid-cols-2">
+          <a
+            href="/blog/why-local-offline-pdf-merge"
+            className="block rounded-xl border border-line bg-surface p-4 transition-colors hover:bg-subtle"
+          >
+            <p className="text-sm font-semibold text-fg">为什么选择本地离线 PDF 合并</p>
+            <p className="mt-1 text-xs text-fg-secondary">隐私优先才是正解 / Privacy-First PDF Merge</p>
+          </a>
+          <a
+            href="/blog/pdfmergenext-vs-smallpdf-vs-ilovepdf"
+            className="block rounded-xl border border-line bg-surface p-4 transition-colors hover:bg-subtle"
+          >
+            <p className="text-sm font-semibold text-fg">PDFMergeNext vs Smallpdf vs iLovePDF</p>
+            <p className="mt-1 text-xs text-fg-secondary">2026 隐私与限制全对比 / Honest 2026 Comparison</p>
+          </a>
+        </div>
+      </section>
     </article>
   );
 }

@@ -72,6 +72,19 @@ export default function Page() {
           },
         ],
       },
+      {
+        '@type': 'Article',
+        headline: 'PDFMergeNext vs Smallpdf vs iLovePDF：2026 隐私与限制全对比 / Honest 2026 Comparison',
+        description:
+          '全面的三工具对比——隐私、免费限制、挑页合并、水印、价格，附第三方实测数据。Honest comparison across privacy, free limits, page selection, watermarks, and pricing with third-party test data.',
+        author: { '@type': 'Person', name: 'PDFMergeNext' },
+        publisher: { '@type': 'Organization', name: 'PDFMergeNext' },
+        datePublished: '2026-07-27',
+        dateModified: '2026-07-27',
+        image: 'https://pdfmergenext.shop/og',
+        url: 'https://pdfmergenext.shop/blog/pdfmergenext-vs-smallpdf-vs-ilovepdf',
+        mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://pdfmergenext.shop/blog/pdfmergenext-vs-smallpdf-vs-ilovepdf' },
+      },
     ],
   };
 
@@ -400,6 +413,27 @@ export default function Page() {
           {'立即合并 / Merge Now'}
         </a>
       </div>
+
+      {/* 相关文章 */}
+      <section className="mt-10 max-w-3xl mx-auto px-4">
+        <h2 className="text-base font-semibold text-fg">{'相关阅读 / Related'}</h2>
+        <div className="mt-4 grid gap-4 sm:grid-cols-2">
+          <a
+            href="/blog/why-local-offline-pdf-merge"
+            className="block rounded-xl border border-line bg-surface p-4 transition-colors hover:bg-subtle"
+          >
+            <p className="text-sm font-semibold text-fg">{'为什么选择本地离线 PDF 合并'}</p>
+            <p className="mt-1 text-xs text-fg-secondary">{'隐私优先才是正解 / Privacy-First PDF Merge'}</p>
+          </a>
+          <a
+            href="/blog/how-to-merge-pdf-without-uploading"
+            className="block rounded-xl border border-line bg-surface p-4 transition-colors hover:bg-subtle"
+          >
+            <p className="text-sm font-semibold text-fg">{'如何不上传合并 PDF'}</p>
+            <p className="mt-1 text-xs text-fg-secondary">{'How to Merge PDF Without Uploading (Step-by-Step)'}</p>
+          </a>
+        </div>
+      </section>
     </article>
   );
 }
