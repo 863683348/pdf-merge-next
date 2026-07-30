@@ -89,7 +89,8 @@ const commit = await api('POST', `/repos/${OWNER}/${REPO}/git/commits`, {
     '- SEO: homepage static crawlable content + trust/privacy copy\n' +
     '- Repo: README + GitHub homepage URL + topics optimization\n' +
     '- Link: README canonical link to pdfmergenext.shop (first backlink)\n' +
-    '- P2: Article JSON-LD + related-posts module on 3 blogs (internal linking)',
+    '- P2: Article JSON-LD + related-posts module on 3 blogs (internal linking)\n' +
+    '- On-page: blog2 bilingual H1 + pricing static crawlable copy',
   tree: tree.sha,
   parents: [parentSha],
 });

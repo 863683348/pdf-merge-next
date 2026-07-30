@@ -128,7 +128,7 @@ export default function ArticlePage() {
           PDF 合并 · 操作教程
         </p>
         <h1 className="mt-2 text-h1 font-bold tracking-tight text-fg">
-          如何不上传合并 PDF:可验证的完整指南
+          如何不上传合并 PDF:可验证的完整指南 / How to Merge PDF Without Uploading
         </h1>
         <p className="mt-3 text-body text-fg-secondary">
           How to merge PDF without uploading — three no-upload methods compared, plus a DevTools trick to verify it yourself.
