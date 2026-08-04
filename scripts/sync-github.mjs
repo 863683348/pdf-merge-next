@@ -78,20 +78,14 @@ console.log(`[3] tree 创建完成: ${tree.sha} (${entries.length} 项)`);
 
 const commit = await api('POST', `/repos/${OWNER}/${REPO}/git/commits`, {
   message:
-    'feat: unify brand to PDFMergeNext + technical SEO (P0/P1/P2) + 2nd blog\n\n' +
-    '- Rename user-facing brand MergeLocal to PDFMergeNext (domain-aligned); internal IDs untouched\n' +
-    '- P0: dynamic app/sitemap.ts (real lastmod/changefreq/priority/alternates) replaces static sitemap.xml\n' +
-    '- P1: www->apex 301 redirect (next.config.mjs); blog BreadcrumbList + article FAQPage JSON-LD\n' +
-    '- P2: branded app/not-found.tsx; blog article TOC/reading-time/lead/visible FAQ\n' +
-    '- Content: 2nd SEO blog "How to merge PDF without uploading" (how-to + DevTools verify + page-range)\n' +
-    '- Content: 3rd comparison blog "PDFMergeNext vs Smallpdf vs iLovePDF" (9-dimension table + third-party data)\n' +
-    '- Geo: llms.txt + llms-full.txt for AI search engines (ChatGPT/Perplexity/Claude)\n' +
-    '- SEO: homepage static crawlable content + trust/privacy copy\n' +
-    '- Repo: README + GitHub homepage URL + topics optimization\n' +
-    '- Link: README canonical link to pdfmergenext.shop (first backlink)\n' +
-    '- P2: Article JSON-LD + related-posts module on 3 blogs (internal linking)\n' +
-    '- On-page: blog2 bilingual H1 + pricing static crawlable copy\n' +
-    '- Content: 4th blog "merge-pdf-no-upload" (Chinese pillar) + AlternativeTo submission draft',
+    'chore: full resync — SEO brand (PDFMergeNext) + P0/P1/P2 + GEO + 4 blogs + AdSense + fixes\n\n' +
+    '- Brand: MergeLocal -> PDFMergeNext (user-facing only; internal IDs untouched)\n' +
+    '- SEO: dynamic sitemap, www->apex 301, branded 404, Article/FAQPage/Breadcrumb JSON-LD\n' +
+    '- GEO: llms.txt + llms-full.txt for AI search engines\n' +
+    '- Content: 4 blogs (why-local, how-to-no-upload, vs-smallpdf-ilovepdf, merge-pdf-no-upload zh pillar)\n' +
+    '- On-page: bilingual H1, pricing static copy, related-posts modules, contextual internal links\n' +
+    '- Day1 fix: merge-pdf-no-upload keyword mojibake repaired + extra contextual internal link\n' +
+    '- (includes local commits: AdSense integration, account page enhancement)',
   tree: tree.sha,
   parents: [parentSha],
 });

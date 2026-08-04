@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     'PDF合并 免上传',
     '合并PDF 无水印',
     '合并PDF 隐私',
-    '不���载合并PDF',
+    '不上传合并PDF',
     '浏览器合并PDF',
     'merge PDF without uploading',
   ],
@@ -269,6 +269,7 @@ export default function Page() {
         <li>
           <strong>验证零上传</strong>（高级）：打开 Chrome DevTools → Network 标签 → 拖入文件，
           观察是否出现任何文件上传请求。PDFMergeNext 的处理结果是<strong>零网络请求</strong>。
+          完整的分步验证教程见<a href="/blog/how-to-merge-pdf-without-uploading" className="text-primary hover:underline">如何不上传合并 PDF：可验证的完整指南</a>。
         </li>
       </ol>
 
