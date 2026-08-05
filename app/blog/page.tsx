@@ -103,16 +103,16 @@ export default function BlogPage() {
         className="mt-6 block rounded-xl border border-line bg-surface p-6 shadow-sm transition-colors duration-fast hover:bg-subtle"
       >
         <p className="text-caption font-semibold uppercase tracking-wide text-brand">
-          PDF 合并 · 技术原理
+          隐私技术 · 原理剖析
         </p>
         <h2 className="mt-1 text-title font-semibold text-fg">
-          零上传 PDF 工具是如何工作的：原理全解析
+          零上传PDF工具：工作原理全解析
         </h2>
         <p className="mt-1 text-sm font-medium text-fg-muted">
-          How Zero-Upload PDF Tools Work (pdf.js, Web Workers, Local Merge)
+          How Zero-Upload PDF Tools Work — WebAssembly & Local Processing
         </p>
         <p className="mt-2 text-sm text-fg-secondary">
-          pdf.js 解析、pdf-lib 重组、Web Worker 提速——零上传工具背后的 5 步数据流，附诚实的能力边界。The 5-step data flow behind true client-side PDF merging, with honest limits.
+          WebAssembly + pdf-lib 本地架构拆解：零网络请求如何实现、如何用 DevTools 自己验证、限制与边界。
         </p>
       </Link>
     </PageShell>

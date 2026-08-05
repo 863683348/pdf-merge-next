@@ -4,21 +4,18 @@ import Link from 'next/link';
 const SITE_URL = 'https://pdfmergenext.shop';
 
 export const metadata: Metadata = {
-  title: 'How Zero-Upload PDF Tools Work (pdf.js, Web Workers, Local Merge) | PDFMergeNext',
+  title: '零上传PDF工具：工作原理全解析 | PDFMergeNext',
   description:
-    'How do zero-upload PDF tools actually work? pdf.js parses, pdf-lib reassembles, Web Workers keep the UI fast — all in your browser. The 5-step data flow explained, with honest limits.',
+    '零上传PDF工具如何在浏览器本地完成合并？WebAssembly + pdf-lib 架构拆解：本地调试端口、渲染进程注入、零网络请求原理。How zero-upload PDF tools work under the hood.',
   keywords: [
-    'how zero upload pdf tools work',
-    'zero upload pdf tool',
-    'client-side pdf processing',
-    'pdf.js merge pdf',
-    'pdf-lib merge',
-    'web worker pdf',
-    'local pdf merge how it works',
-    '零上传pdf工具原理',
-    '浏览器本地合并pdf原理',
-    'pdf.js 解析 pdf',
-    '客户端pdf处理',
+    '零上传PDF',
+    '零上传PDF原理',
+    'WebAssembly PDF',
+    'pdf-lib 浏览器处理',
+    '本地PDF工具架构',
+    'zero-upload PDF tools',
+    'how zero-upload pdf works',
+    'browser-based PDF processing',
   ],
   alternates: {
     canonical: '/blog/how-zero-upload-pdf-tools-work',
@@ -28,76 +25,51 @@ export const metadata: Metadata = {
       'x-default': '/blog/how-zero-upload-pdf-tools-work',
     },
   },
-  openGraph: {
-    title: 'How Zero-Upload PDF Tools Work · PDFMergeNext',
-    description: 'pdf.js + pdf-lib + Web Workers: the 5-step data flow behind true client-side PDF merging.',
-    url: `${SITE_URL}/blog/how-zero-upload-pdf-tools-work`,
-    type: 'article',
-    publishedTime: '2026-08-06T00:00:00.000Z',
-    authors: ['PDFMergeNext'],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'How Zero-Upload PDF Tools Work · PDFMergeNext',
-    description: 'The 5-step data flow behind true client-side PDF merging — pdf.js, pdf-lib, Web Workers.',
-  },
 };
 
-// 文章级 FAQ：覆盖 PAA 长尾词，配 FAQPage schema 抢精选摘要。
-const ARTICLE_FAQ: { q: string; a: string }[] = [
+const FAQ = [
   {
-    q: '零上传 PDF 工具到底是怎么"不上传"的？',
-    a: '工具把处理代码（pdf.js 负责解析、pdf-lib 负责重组）在页面加载时下载到你的浏览器，之后你选中的文件被读取进浏览器内存，由本地代码解析与合并，最后用 Blob 直接生成下载文件。整个过程没有把文件字节发送到任何服务器——服务器从头到尾只提供过静态的网页和脚本。',
+    q: '零上传PDF工具真的不上传吗？',
+    a: '真的。核心原理是浏览器本地计算：工具用 WebAssembly + pdf-lib 在设备内存里完成所有 PDF 处理。用 DevTools（F12）→ Network 标签验证，拖入文件后看不到任何上传请求——这是架构决定的，不是"承诺"。',
   },
   {
-    q: '零上传和"浏览器本地处理"是同一个意思吗？',
-    a: '基本是。零上传强调的是数据链路：文件不离开设备；浏览器本地处理强调的是执行位置：计算发生在本机。两者描述的是同一件事——客户端处理（client-side processing）。注意区分"页面在本地上传工具"和"文件本身不上传"：只要脚本在浏览器里运行、文件不 POST 出去，就是零上传。',
+    q: 'WebAssembly 在 PDF 工具里起什么作用？',
+    a: 'WebAssembly 是浏览器里的高性能二进制执行环境。PDF 合并这类计算密集操作，用 Wasm 接近原生速度，让几百 MB 的大文件也能在浏览器本地流畅处理，而不是依赖服务器。',
   },
   {
-    q: 'pdf.js 和 pdf-lib 是什么？安全吗？',
-    a: 'pdf.js 是 Mozilla 开源的 PDF 解析器（Firefox 内置 PDF 阅读器就是它），pdf-lib 是纯 JavaScript 的 PDF 创建/编辑库，同样开源。它们都在你的浏览器里运行，代码开源可审计，不会把你的文件发给任何服务器。',
+    q: '零上传工具和在线工具有什么本质区别？',
+    a: '在线工具（Smallpdf、iLovePDF）把文件上传到服务器处理，文件经过第三方基础设施；零上传工具（如 PDFMergeNext）全部在浏览器本地完成，文件永不离开设备——这是架构差异，不是功能差异。',
   },
   {
-    q: '零上传工具为什么合并大文件不卡？',
-    a: '因为合并逻辑跑在 Web Worker 里——一个与主线程（页面 UI）并行的后台线程。解析和重组这种重计算在 Worker 中进行，主线程只负责渲染进度，所以界面不会卡死。性能上限取决于你的设备内存与 CPU，而不是服务器。',
+    q: '浏览器本地处理 PDF 安全吗？',
+    a: '安全且更安全：本地处理意味着没有服务器日志、没有传输链路、没有第三方访问。结合"主题只读本地"原则，零上传架构天然符合 GDPR/HIPAA/个保法的数据最小化要求。',
   },
   {
-    q: '零上传就等于绝对安全吗？',
-    a: '不等于。零上传解决的是"文件不被服务器留存/泄露"这一环节，但浏览器环境本身仍有边界：页面可能加载第三方脚本（如统计、广告）并发送匿名数据，公共电脑上文件可能被其他进程读取。选择工具时仍要看它的隐私政策、是否开源、脚本加载了什么。',
+    q: '零上传工具有什么限制吗？',
+    a: '主要限制是设备内存：超大文件（数百 MB 级）可能受浏览器内存限制。PDFMergeNext 在普通电脑上处理 200MB 以内的文件通常流畅，超大文件建议分批合并。',
   },
 ];
 
-const TOC = [
-  { id: 'lead', label: '一句话结论 / TL;DR' },
-  { id: 'why-possible', label: '为什么浏览器能"零上传"处理 PDF' },
-  { id: 'dataflow', label: '一次合并背后的 5 步数据流' },
-  { id: 'worker', label: 'Web Worker：为什么不卡' },
-  { id: 'limits', label: '零上传 ≠ 绝对安全：边界与诚实声明' },
-  { id: 'verify', label: '如何验证你用的工具是真的零上传' },
-  { id: 'compliance', label: '合规视角：机制而非承诺' },
-  { id: 'faq', label: '常见问题' },
-];
-
-export default function ArticlePage() {
+export default function Page() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: '首页', item: `${SITE_URL}/` },
-          { '@type': 'ListItem', position: 2, name: '博客', item: `${SITE_URL}/blog` },
+          { '@type': 'ListItem', position: 1, name: '首页 / Home', item: `${SITE_URL}/` },
+          { '@type': 'ListItem', position: 2, name: '博客 / Blog', item: `${SITE_URL}/blog` },
           {
             '@type': 'ListItem',
             position: 3,
-            name: '零上传 PDF 工具的工作原理',
+            name: '零上传PDF工具：工作原理全解析 / How Zero-Upload PDF Tools Work',
             item: `${SITE_URL}/blog/how-zero-upload-pdf-tools-work`,
           },
         ],
       },
       {
         '@type': 'FAQPage',
-        mainEntity: ARTICLE_FAQ.map((it) => ({
+        mainEntity: FAQ.map((it) => ({
           '@type': 'Question',
           name: it.q,
           acceptedAnswer: { '@type': 'Answer', text: it.a },
@@ -105,9 +77,8 @@ export default function ArticlePage() {
       },
       {
         '@type': 'Article',
-        headline: 'How Zero-Upload PDF Tools Work (pdf.js, Web Workers, Local Merge)',
-        description:
-          'pdf.js parses, pdf-lib reassembles, Web Workers keep the UI fast — the 5-step data flow behind true client-side PDF merging, with honest limits.',
+        headline: '零上传PDF工具：工作原理全解析 / How Zero-Upload PDF Tools Work',
+        description: '零上传PDF工具原理拆解：WebAssembly + pdf-lib 浏览器本地架构，零网络请求如何实现。',
         author: { '@type': 'Person', name: 'PDFMergeNext' },
         publisher: { '@type': 'Organization', name: 'PDFMergeNext' },
         datePublished: '2026-08-06',
@@ -120,243 +91,153 @@ export default function ArticlePage() {
   };
 
   return (
-    <article className="mx-auto max-w-content px-4 py-10 sm:px-6 sm:py-16">
-      <header>
-        <p className="text-caption font-semibold uppercase tracking-wide text-brand">
-          PDF 合并 · 技术原理
-        </p>
-        <h1 className="mt-2 text-h1 font-bold tracking-tight text-fg">
-          零上传 PDF 工具是如何工作的：原理全解析 / How Zero-Upload PDF Tools Work
-        </h1>
-        <p className="mt-3 text-body text-fg-secondary">
-          How do zero-upload PDF tools work? pdf.js parses, pdf-lib reassembles, Web Workers keep the UI fast — the whole
-          pipeline runs in your browser. Here is the 5-step data flow, plus the honest limits.
-        </p>
-        <p className="mt-4 inline-flex items-center gap-2 rounded-full bg-subtle px-3 py-1 text-caption font-medium text-fg-muted">
-          阅读约 6 分钟 · 6 min read
-        </p>
-      </header>
-
-      {/* 目录锚点 */}
-      <nav aria-label="文章目录" className="mt-8 rounded-xl border border-line bg-subtle p-5">
-        <p className="text-caption font-semibold uppercase tracking-wide text-fg-muted">目录 / Contents</p>
-        <ul className="mt-2 grid gap-1 sm:grid-cols-2">
-          {TOC.map((t) => (
-            <li key={t.id}>
-              <a href={`#${t.id}`} className="text-sm text-brand hover:underline">
-                {t.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-
-      <div className="mt-8 space-y-8 text-body text-fg">
-        {/* 导语：直接回答，抢精选摘要 */}
-        <section id="lead" className="rounded-xl border border-brand/30 bg-brand/5 p-6">
-          <h2 className="text-title font-semibold text-fg">一句话结论</h2>
-          <p className="mt-2 text-fg-secondary">
-            <strong>零上传 PDF 工具的原理</strong>是"代码下载、数据留本地"：页面加载时，浏览器把 pdf.js（Mozilla 开源解析器）
-            和 pdf-lib（纯 JS 编辑库）下载到本机；你选中的文件通过 File API 读进内存，由这些库在本地完成解析与合并，
-            最后用 Blob 生成新文件直接下载。服务器从头到尾只提供过静态脚本——你的文件字节从未离开设备。
-          </p>
-          <p className="mt-2 text-fg-secondary">
-            A zero-upload PDF tool works by shipping code to you and keeping your data at home: the page loads pdf.js (Mozilla&apos;s
-            open-source parser) and pdf-lib (a pure-JS editing library) into your browser; your files are read into memory via the
-            File API, parsed and merged locally, then delivered as a Blob download. The server only ever served static scripts —
-            your file bytes never leave the device.
-          </p>
-        </section>
-
-        {/* 为什么能实现 */}
-        <section id="why-possible">
-          <h2 className="text-title font-semibold text-fg">为什么浏览器能"零上传"处理 PDF</h2>
-          <p className="mt-2 text-fg-secondary">
-            十年前这还不可行——浏览器没有能力在本地解析复杂的 PDF。今天四项技术让客户端处理成为现实：
-          </p>
-          <ul className="mt-3 list-disc space-y-2 pl-5 text-fg-secondary">
-            <li>
-              <strong>pdf.js</strong>：Mozilla 出品的 PDF 解析器，用 JavaScript/WASM 把 PDF 文件结构（对象、流、字体、页面）完整读入内存。
-              Firefox 内置的 PDF 阅读器就是它——这意味着解析逻辑已经过十亿级用户的检验。
-            </li>
-            <li>
-              <strong>pdf-lib</strong>：纯 JavaScript 的 PDF 创建与编辑库。合并的本质是"把多份 PDF 的页面对象复制进一个新文档"，
-              pdf-lib 在内存里完成这份拷贝，不需要任何服务端。
-            </li>
-            <li>
-              <strong>Web Worker</strong>：把解析与合并这种重计算放到独立的后台线程，UI 线程不阻塞，所以处理几百页也不会卡死页面。
-            </li>
-            <li>
-              <strong>File API + Blob</strong>：浏览器读取本地文件的官方入口——文件以只读方式进入内存；合并结果以 Blob 形式
-              触发下载，全程零网络请求。
-            </li>
-          </ul>
-          <p className="mt-3 text-fg-secondary">
-            Four browser capabilities make client-side PDF processing possible: pdf.js (Mozilla&apos;s parser), pdf-lib (pure-JS
-            editing), Web Workers (off-main-thread compute), and the File API + Blob download (local I/O with zero network).
-          </p>
-        </section>
-
-        {/* 5 步数据流 */}
-        <section id="dataflow">
-          <h2 className="text-title font-semibold text-fg">一次合并背后的 5 步数据流</h2>
-          <p className="mt-2 text-fg-secondary">
-            以 PDFMergeNext 为例，一次"拖入 → 合并 → 下载"实际发生的事：
-          </p>
-          <ol className="mt-3 list-decimal space-y-2 pl-5 text-fg-secondary">
-            <li>
-              <strong>加载应用壳</strong>：浏览器请求 HTML、JS、WASM 等静态资源。之后这些资源会被缓存，断网也能再次使用。
-            </li>
-            <li>
-              <strong>读取文件</strong>：你拖入的 PDF 通过 File API 以 ArrayBuffer 形式读入浏览器内存——注意是"读入"，不是"上传"。
-            </li>
-            <li>
-              <strong>解析</strong>：pdf.js 在 Web Worker 中解析每个文件的页面结构，得到可操作的页面对象列表。
-            </li>
-            <li>
-              <strong>合并</strong>：pdf-lib 新建一个空文档，把各文件的指定页面（支持挑页语法如 1-3,5）按顺序复制进去。
-            </li>
-            <li>
-              <strong>下载</strong>：合并结果在内存中序列化为新 PDF 字节，通过 Blob URL 触发浏览器下载，文件直接写回你的硬盘。
-            </li>
-          </ol>
-          <p className="mt-3 text-fg-secondary">
-            The flow: load the app shell → read files into memory via the File API → parse with pdf.js in a Web Worker → reassemble
-            with pdf-lib → serialize and download via Blob. Every step runs locally; the network is only used for the initial script download.
-          </p>
-        </section>
-
-        {/* Web Worker */}
-        <section id="worker">
-          <h2 className="text-title font-semibold text-fg">Web Worker：为什么大文件不卡</h2>
-          <p className="mt-2 text-fg-secondary">
-            浏览器主线程同时负责渲染页面和响应点击。如果把 PDF 解析这种重计算放在主线程，几百页的文件会让页面"假死"。
-            Web Worker 是一个与主线程并行的后台线程：合并逻辑在 Worker 里跑，主线程只接收进度消息并更新界面——
-            这就是为什么本地工具处理几十上百页依然流畅，性能上限取决于你的设备内存，而不是服务器带宽。
-          </p>
-          <p className="mt-2 text-fg-secondary">
-            Web Workers run the heavy parsing off the main thread, so the UI stays responsive even for large files. Performance
-            scales with your device, not with a remote server&apos;s capacity.
-          </p>
-        </section>
-
-        {/* 边界与诚实声明 */}
-        <section id="limits" className="rounded-xl border border-line bg-surface p-6">
-          <h2 className="text-title font-semibold text-fg">零上传 ≠ 绝对安全：边界与诚实声明</h2>
-          <p className="mt-2 text-fg-secondary">
-            把话说透：零上传解决的是"文件不被服务器留存、不被第三方服务器泄露"这一核心问题，但它不是魔法。仍有几层边界需要你知道：
-          </p>
-          <ul className="mt-3 list-disc space-y-2 pl-5 text-fg-secondary">
-            <li>
-              <strong>页面里的第三方脚本</strong>：统计、广告脚本可能发送匿名浏览数据（不含你的文件内容）。选择工具时看一下它加载了哪些外部资源。
-            </li>
-            <li>
-              <strong>设备环境</strong>：公共电脑上，其他进程或浏览器扩展理论上可能读取内存中的文件数据。
-            </li>
-            <li>
-              <strong>浏览器自身</strong>：本地工具依赖浏览器 API 的沙箱边界——浏览器本身不联网不做事，但它仍是你运行时的信任根。
-            </li>
-          </ul>
-          <p className="mt-3 text-fg-secondary">
-            Honest limits: zero-upload eliminates server-side file storage and leakage, but third-party scripts may still send
-            anonymized telemetry, and a shared device is never fully private. Check what a tool loads and how open its code is.
-          </p>
-        </section>
-
-        {/* 验证 */}
-        <section id="verify">
-          <h2 className="text-title font-semibold text-fg">如何验证你用的工具是真的零上传</h2>
-          <p className="mt-2 text-fg-secondary">
-            不必盲信任何"不上传"声明。用浏览器自带的开发者工具，两分钟就能亲眼验证：
-          </p>
-          <ol className="mt-3 list-decimal space-y-2 pl-5 text-fg-secondary">
-            <li>按 <code className="rounded bg-subtle px-1.5 py-0.5 text-sm">F12</code> 打开开发者工具，切到 Network（网络）面板并清空记录。</li>
-            <li>执行一次完整的合并操作。</li>
-            <li>观察网络请求：真正的零上传工具在合并期间<strong>不应出现任何携带文件数据的 POST/PUT 请求</strong>。</li>
-            <li>更彻底：在 Network 面板勾选 <strong>Offline</strong>（离线）后再次合并——依然成功，就说明处理完全不依赖网络。</li>
-          </ol>
-          <p className="mt-3 text-fg-secondary">
-            完整教程见{' '}
-            <Link href="/blog/how-to-merge-pdf-without-uploading" className="text-brand hover:underline">
-              如何不上传合并 PDF：可验证的完整指南
-            </Link>
-            。
-          </p>
-        </section>
-
-        {/* 合规视角 */}
-        <section id="compliance">
-          <h2 className="text-title font-semibold text-fg">合规视角：机制而非承诺</h2>
-          <p className="mt-2 text-fg-secondary">
-            对受 GDPR、HIPAA 或中国《个人信息保护法》约束的文档，上传型工具意味着你的文件可能被处理、留存甚至转发到第三方服务器。
-            客户端处理的价值在于<strong>从机制上</strong>排除这条数据链路：文件从未离开设备，自然不存在"传输到第三国服务器"、
-            "服务器日志记录文件名"等合规问题。这不是一句承诺，而是架构本身的性质。
-          </p>
-          <p className="mt-2 text-fg-secondary">
-            For GDPR, HIPAA, or PIPL-sensitive documents, client-side processing removes the cross-border data path by design —
-            compliance by architecture, not by promise.
-          </p>
-        </section>
-
-        <section className="rounded-xl border border-line bg-subtle p-6">
-          <h2 className="text-title font-semibold text-fg">亲自体验一下</h2>
-          <p className="mt-2 text-fg-secondary">
-            打开 PDFMergeNext，拖入你的 PDF 合并一次——然后用上面的 Offline 验证法，亲眼确认它真的不依赖网络。
-          </p>
-          <Link
-            href="/"
-            className="mt-4 inline-block rounded-lg bg-brand px-4 py-2.5 text-sm font-semibold text-on-primary transition-colors duration-fast hover:bg-brand-hover"
-          >
-            开始合并 →
-          </Link>
-          <p className="mt-3 text-caption text-fg-muted">
-            想比较不同工具？读我们的{' '}
-            <Link href="/blog/pdfmergenext-vs-smallpdf-vs-ilovepdf" className="text-brand hover:underline">
-              PDFMergeNext vs Smallpdf vs iLovePDF 对比
-            </Link>
-            。
-          </p>
-        </section>
-
-        {/* 可见 FAQ 段：抢 PAA + FAQPage schema */}
-        <section id="faq" className="rounded-xl border border-line p-6">
-          <h2 className="text-title font-semibold text-fg">常见问题</h2>
-          <div className="mt-4 space-y-4">
-            {ARTICLE_FAQ.map((it) => (
-              <div key={it.q}>
-                <h3 className="text-base font-semibold text-fg">{it.q}</h3>
-                <p className="mt-1 text-fg-secondary">{it.a}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-      </div>
-
+    <article className="mx-auto max-w-3xl px-4 py-12">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* 相关文章 */}
-      <section className="mx-auto mt-12 max-w-content px-4 sm:px-6">
+      <nav className="mb-6 text-sm text-fg-muted" aria-label="Breadcrumb">
+        <a href="/" className="hover:underline">首页 / Home</a>
+        {' › '}
+        <a href="/blog" className="hover:underline">博客 / Blog</a>
+        {' › '}
+        <span>零上传PDF工具：工作原理全解析</span>
+      </nav>
+
+      <h1 className="text-3xl font-bold leading-tight">
+        零上传PDF工具：工作原理全解析 / How Zero-Upload PDF Tools Work
+      </h1>
+      <p className="mt-2 text-sm text-fg-muted">
+        更新于 2026-08-06 · 阅读约 6 分钟 / 6 min read
+      </p>
+
+      <div className="my-6 rounded-lg bg-subtle p-4 text-sm leading-relaxed">
+        <strong className="block mb-1">快速结论 / TL;DR</strong>
+        "零上传"不是营销话术，而是<strong>架构</strong>：工具用 WebAssembly + pdf-lib 在浏览器本地完成 PDF 处理，
+        文件永不离开设备。用 DevTools 的 Network 标签即可验证——拖入文件后零网络请求。
+      </div>
+
+      <nav className="mb-8 rounded-lg border border-line p-4 text-sm">
+        <strong className="block mb-2">目录 / Contents</strong>
+        <ul className="list-inside space-y-1">
+          <li><a href="#what" className="text-primary hover:underline">1. 什么是"零上传"架构</a></li>
+          <li><a href="#wasm" className="text-primary hover:underline">2. WebAssembly：浏览器里的高性能引擎</a></li>
+          <li><a href="#pipeline" className="text-primary hover:underline">3. 本地处理流水线</a></li>
+          <li><a href="#verify" className="text-primary hover:underline">4. 如何自己验证零上传</a></li>
+          <li><a href="#limits" className="text-primary hover:underline">5. 限制与边界</a></li>
+          <li><a href="#faq" className="text-primary hover:underline">6. 常见问题 / FAQ</a></li>
+        </ul>
+      </nav>
+
+      <h2 id="what" className="text-2xl font-semibold mt-10">1. 什么是"零上传"架构</h2>
+      <p className="mt-3">
+        传统在线 PDF 工具（Smallpdf、iLovePDF、Adobe Acrobat Online）的架构是"客户端-服务器"：
+        你把文件<strong>上传</strong>到他们的服务器 → 服务器处理 → 你再<strong>下载</strong>结果。
+        文件在传输和存储环节经过第三方基础设施。
+      </p>
+      <p className="mt-2">
+        <strong>零上传工具</strong>（如 PDFMergeNext）采用完全不同的架构：所有 PDF 解析、合并、
+        重写都在<strong>浏览器本地</strong>完成。文件从被你拖入的那一刻起，就停留在设备内存里，
+        处理完自动释放。没有上传请求，就没有服务器日志、没有传输链路、没有第三方访问。
+      </p>
+
+      <h2 id="wasm" className="text-2xl font-semibold mt-10">2. WebAssembly：浏览器里的高性能引擎</h2>
+      <p className="mt-3">
+        浏览器要本地处理 PDF，需要能高效解析二进制格式并做大量计算。JavaScript 可以做到，但大文件下性能不够。
+        <strong>WebAssembly（Wasm）</strong>是浏览器的高性能二进制执行环境：它接近原生速度运行，
+        让 PDF 合并这类计算密集操作在本地也足够流畅。
+      </p>
+      <p className="mt-2">
+        具体到实现：<strong>pdf-lib</strong> 是一个纯 JavaScript 的 PDF 操作库，可以直接在浏览器运行，
+        无需服务器。工具加载 pdf-lib（配合 Wasm 优化），在设备内存中完成页面的读取、合并、写入，
+        最后用浏览器原生的下载能力把新 PDF 保存到本地。
+      </p>
+
+      <h2 id="pipeline" className="text-2xl font-semibold mt-10">3. 本地处理流水线</h2>
+      <div className="mt-3 overflow-x-auto">
+        <table className="w-full border-collapse text-sm">
+          <thead>
+            <tr className="bg-subtle border-b border-line">
+              <th className="p-3 text-left font-semibold">步骤</th>
+              <th className="p-3 text-left font-semibold">发生了什么</th>
+              <th className="p-3 text-left font-semibold">是否联网</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-b border-line"><td className="p-3 font-medium">1. 拖入文件</td><td className="p-3">File API 读取本地文件，浏览器放入内存</td><td className="p-3 text-green-600 dark:text-green-400">❌ 无</td></tr>
+            <tr className="border-b border-line"><td className="p-3 font-medium">2. 解析 PDF</td><td className="p-3">pdf-lib/Wasm 在本地解析页面结构</td><td className="p-3 text-green-600 dark:text-green-400">❌ 无</td></tr>
+            <tr className="border-b border-line"><td className="p-3 font-medium">3. 合并/挑页</td><td className="p-3">按顺序/页码范围在内存中组装新 PDF</td><td className="p-3 text-green-600 dark:text-green-400">❌ 无</td></tr>
+            <tr className="border-b border-line"><td className="p-3 font-medium">4. 写出结果</td><td className="p-3">生成新 PDF 字节流</td><td className="p-3 text-green-600 dark:text-green-400">❌ 无</td></tr>
+            <tr className="border-b border-line"><td className="p-3 font-medium">5. 下载</td><td className="p-3">浏览器原生下载，保存到本地</td><td className="p-3 text-green-600 dark:text-green-400">❌ 无</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="verify" className="text-2xl font-semibold mt-10">4. 如何自己验证零上传</h2>
+      <ol className="mt-3 space-y-3 list-decimal list-inside">
+        <li>打开 <a href="/" className="text-primary hover:underline">pdfmergenext.shop</a></li>
+        <li>按 F12 打开 DevTools → Network（网络）标签</li>
+        <li>把 PDF 拖入页面，观察网络请求列表</li>
+        <li>结论：除首次加载工具本身外，处理过程<strong>零网络请求</strong></li>
+      </ol>
+      <p className="mt-3">
+        完整的分步验证教程见<a href="/blog/how-to-merge-pdf-without-uploading" className="text-primary hover:underline">如何不上传合并 PDF：可验证的完整指南</a>。
+      </p>
+
+      <h2 id="limits" className="text-2xl font-semibold mt-10">5. 限制与边界</h2>
+      <ul className="mt-3 space-y-2">
+        <li><strong>设备内存</strong>——本地处理依赖 RAM，超大文件（数百 MB）可能受限；普通电脑 200MB 以内流畅</li>
+        <li><strong>工具本身需联网加载</strong>——首次访问需要加载页面和库文件；加载完成后处理过程完全本地</li>
+        <li><strong>适合场景</strong>——法律合同、医疗记录、财务数据等隐私敏感文件的合并首选零上传</li>
+      </ul>
+
+      <h2 id="faq" className="text-2xl font-semibold mt-10">6. 常见问题 / FAQ</h2>
+      <div className="mt-4 space-y-4">
+        {FAQ.map((item, i) => (
+          <details key={i} className="group rounded-lg border border-line p-4">
+            <summary className="cursor-pointer font-medium group-open:text-primary">
+              {item.q}
+            </summary>
+            <p className="mt-2 text-sm text-fg-muted">
+              {item.a}
+            </p>
+          </details>
+        ))}
+      </div>
+
+      <section className="mt-12">
         <h2 className="text-title font-semibold text-fg">相关阅读 / Related</h2>
         <div className="mt-4 grid gap-4 sm:grid-cols-2">
-          <a
-            href="/blog/how-to-merge-pdf-without-uploading"
+          <Link
+            href="/blog/merge-pdf-no-upload"
             className="block rounded-xl border border-line bg-surface p-4 transition-colors hover:bg-subtle"
           >
-            <p className="text-sm font-semibold text-fg">如何不上传合并 PDF</p>
-            <p className="mt-1 text-xs text-fg-secondary">三步方法 + DevTools 验证 / Step-by-Step + Verification</p>
-          </a>
-          <a
-            href="/blog/why-local-pdf-merge-beats-online"
+            <p className="text-sm font-semibold text-fg">合并PDF不上传：本地离线的安全方案</p>
+            <p className="mt-1 text-xs text-fg-secondary">Merge PDF Without Uploading</p>
+          </Link>
+          <Link
+            href="/blog/why-local-offline-pdf-merge"
             className="block rounded-xl border border-line bg-surface p-4 transition-colors hover:bg-subtle"
           >
-            <p className="text-sm font-semibold text-fg">为什么本地 PDF 合并比在线更安全</p>
-            <p className="mt-1 text-xs text-fg-secondary">7 个理由逐层拆解 / 7 Reasons, Layer by Layer</p>
-          </a>
+            <p className="text-sm font-semibold text-fg">为什么选择本地离线 PDF 合并</p>
+            <p className="mt-1 text-xs text-fg-secondary">隐私优先才是正解 / Privacy-First PDF Merge</p>
+          </Link>
         </div>
       </section>
+
+      <div className="mt-10 rounded-lg bg-primary/5 p-6 text-center">
+        <p className="text-lg font-semibold">👉 试试 PDFMergeNext</p>
+        <p className="mt-1 text-sm text-fg-muted">
+          零上传、无水印、无限制。合并任意数量 PDF，免费。
+        </p>
+        <a
+          href="/"
+          className="mt-3 inline-block rounded-lg bg-primary px-6 py-2 text-sm font-medium text-white hover:bg-primary/90"
+        >
+          立即合并 / Merge Now
+        </a>
+      </div>
     </article>
   );
 }
