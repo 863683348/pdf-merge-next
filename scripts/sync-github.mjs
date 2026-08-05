@@ -78,13 +78,14 @@ console.log(`[3] tree 创建完成: ${tree.sha} (${entries.length} 项)`);
 
 const commit = await api('POST', `/repos/${OWNER}/${REPO}/git/commits`, {
   message:
-    'chore: full resync — SEO brand (PDFMergeNext) + P0/P1/P2 + GEO + 4 blogs + AdSense + fixes\n\n' +
+    'chore: full resync — SEO brand (PDFMergeNext) + P0/P1/P2 + GEO + 5 blogs + AdSense + fixes\n\n' +
     '- Brand: MergeLocal -> PDFMergeNext (user-facing only; internal IDs untouched)\n' +
     '- SEO: dynamic sitemap, www->apex 301, branded 404, Article/FAQPage/Breadcrumb JSON-LD\n' +
     '- GEO: llms.txt + llms-full.txt for AI search engines\n' +
-    '- Content: 4 blogs (why-local, how-to-no-upload, vs-smallpdf-ilovepdf, merge-pdf-no-upload zh pillar)\n' +
+    '- Content: 5 blogs (why-local, how-to-no-upload, vs-smallpdf-ilovepdf, merge-pdf-no-upload zh pillar, why-local-pdf-merge-beats-online)\n' +
     '- On-page: bilingual H1, pricing static copy, related-posts modules, contextual internal links\n' +
     '- Day1 fix: merge-pdf-no-upload keyword mojibake repaired + extra contextual internal link\n' +
+    '- Day2 (2026-08-05): why-local-pdf-merge-beats-online — 为什么本地PDF合并比在线更安全 / Why Local PDF Merge Beats Online; blog list + sitemap + related-posts updated\n' +
     '- (includes local commits: AdSense integration, account page enhancement)',
   tree: tree.sha,
   parents: [parentSha],

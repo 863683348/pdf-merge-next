@@ -63,6 +63,24 @@ export default function BlogPage() {
       </Link>
 
       <Link
+        href="/blog/why-local-pdf-merge-beats-online"
+        className="mt-6 block rounded-xl border border-line bg-surface p-6 shadow-sm transition-colors duration-fast hover:bg-subtle"
+      >
+        <p className="text-caption font-semibold uppercase tracking-wide text-brand">
+          PDF 合并 · 隐私优先
+        </p>
+        <h2 className="mt-1 text-title font-semibold text-fg">
+          为什么本地PDF合并比在线更安全
+        </h2>
+        <p className="mt-1 text-sm font-medium text-fg-muted">
+          Why Local PDF Merge Beats Online — 7 Reasons
+        </p>
+        <p className="mt-2 text-sm text-fg-secondary">
+          从数据链路、服务器日志到中间人攻击逐层拆解本地 vs 在线合并的安全性差异，附本地方案对比与验证方法。
+        </p>
+      </Link>
+
+      <Link
         href="/blog/merge-pdf-no-upload"
         className="mt-6 block rounded-xl border border-line bg-surface p-6 shadow-sm transition-colors duration-fast hover:bg-subtle"
       >

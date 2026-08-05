@@ -263,6 +263,13 @@ export default function ArticlePage() {
             <p className="text-sm font-semibold text-fg">PDFMergeNext vs Smallpdf vs iLovePDF</p>
             <p className="mt-1 text-xs text-fg-secondary">2026 隐私与限制全对比 / Honest 2026 Comparison</p>
           </a>
+          <a
+            href="/blog/why-local-pdf-merge-beats-online"
+            className="block rounded-xl border border-line bg-surface p-4 transition-colors hover:bg-subtle"
+          >
+            <p className="text-sm font-semibold text-fg">为什么本地PDF合并比在线更安全</p>
+            <p className="mt-1 text-xs text-fg-secondary">Why Local PDF Merge Beats Online — 7 Reasons</p>
+          </a>
         </div>
       </section>
     </article>
