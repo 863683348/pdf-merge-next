@@ -43,6 +43,12 @@ export default function PrivacyPage() {
             </p>
           </section>
           <section>
+            <h2 className="text-title font-semibold text-fg">广告（Google AdSense）</h2>
+            <p className="mt-2">
+              本网站展示由 Google AdSense（第三方广告服务商）投放的广告。Google 及其合作伙伴可能使用 Cookie（包括 DART Cookie）及类似技术，根据您对本站及其他网站的访问记录向您投放广告，并衡量广告效果。您可以通过 Google 广告设置（https://www.google.com/settings/ads）或 Your Online Choices（http://www.aboutads.info/choices）退出个性化广告。关于 Google 如何使用数据，请参阅其广告隐私政策（https://policies.google.com/technologies/ads）。
+            </p>
+          </section>
+          <section>
             <h2 className="text-title font-semibold text-fg">联系我们</h2>
             <p className="mt-2">
               如有隐私相关问题，请通过 ahmedlzany423@gmail.com 联系我们。
@@ -79,6 +85,12 @@ export default function PrivacyPage() {
               This tool integrates Google Analytics (anonymous usage statistics) and PayPal (payment processing).
               These services have their own privacy policies. We do not share your personal information with
               these services for analytics or marketing purposes.
+            </p>
+          </section>
+          <section>
+            <h2 className="text-title font-semibold text-fg">Advertising (Google AdSense)</h2>
+            <p className="mt-2">
+              This site displays advertisements served by Google AdSense, a third-party advertising vendor. Google and its partners may use cookies (including the DART cookie) and similar technologies to serve ads based on your prior visits to this site and other websites, and to measure ad performance. You can opt out of personalized advertising via Google Ads Settings (https://www.google.com/settings/ads) or Your Online Choices (http://www.aboutads.info/choices). For more information on how Google uses data, see Google's advertising privacy policy (https://policies.google.com/technologies/ads).
             </p>
           </section>
           <section>
