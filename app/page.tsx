@@ -69,6 +69,45 @@ export default function Page() {
           <a href="/terms" className="text-primary hover:underline">服务条款</a>
           。
         </p>
+
+        <h3 className="mt-5 text-base font-semibold text-fg">关于 PDF 格式，你需要知道的几件事</h3>
+        <p className="mt-2">
+          PDF（Portable Document Format）是一种跨平台、版式固定的文档格式，无论在 Windows、macOS 还是手机上打开，排版都不会错乱，因此成为合同、论文、报表等正式文件的首选。合并 PDF 并不会改变每一页原有的清晰度——它只是把多份文件按顺序"装订"成一份新文档，原图分辨率、字体、超链接都会保留。
+        </p>
+        <ul className="mt-2 list-disc space-y-1 pl-5">
+          <li><strong>合并后体积会变大吗？</strong> 通常会等于各文件之和，因为内容被完整保留。PDFMergeNext 在本地完成合并，不会额外上传，也不会压缩你的原图质量。</li>
+          <li><strong>页数很多会卡吗？</strong> 由于处理在你的浏览器内执行，性能取决于本机内存。一般几十页到上百页的文档都能流畅处理；超大文件建议分批合并。</li>
+          <li><strong>能挑页合并吗？</strong> 可以。用挑页语法（如 <code className="mx-1 rounded bg-subtle px-1.5 py-0.5 font-mono text-xs">1-3,5</code>）只抽取需要的页面，跳过无关内容。</li>
+          <li><strong>合并后能再编辑吗？</strong> 合并生成的是标准 PDF，可用任意 PDF 阅读器打开；若需二次拆分，可再次使用本工具。</li>
+        </ul>
+
+        <h3 className="mt-5 text-base font-semibold text-fg">常见问题（FAQ）</h3>
+        <dl className="mt-2 space-y-3">
+          <div>
+            <dt className="font-semibold text-fg">合并 PDF 需要把文件上传到服务器吗？</dt>
+            <dd className="mt-1 text-fg-secondary">不需要。PDFMergeNext 的全部解析与合并都在你的浏览器本地完成，文件不会离开你的设备，断网也可继续处理已加载的页面。</dd>
+          </div>
+          <div>
+            <dt className="font-semibold text-fg">合并后的文件安全吗？</dt>
+            <dd className="mt-1 text-fg-secondary">安全。由于不上传，服务器无从获取你的内容，也不存在被第三方留存或泄露的风险，符合 GDPR、HIPAA 及《个人信息保护法》对敏感文档处理的要求。</dd>
+          </div>
+          <div>
+            <dt className="font-semibold text-fg">有文件大小或数量限制吗？</dt>
+            <dd className="mt-1 text-fg-secondary">免费、无水印，不对文件大小和数量做硬性限制。处理性能取决于你的设备内存，超大文档建议分批操作。</dd>
+          </div>
+          <div>
+            <dt className="font-semibold text-fg">会给我加水印吗？</dt>
+            <dd className="mt-1 text-fg-secondary">不会。合并输出的 PDF 干净无广告、无水印，可直接用于正式提交或打印。</dd>
+          </div>
+          <div>
+            <dt className="font-semibold text-fg">支持哪些系统？</dt>
+            <dd className="mt-1 text-fg-secondary">只要是现代浏览器（Chrome、Edge、Safari、Firefox 等）即可，桌面与移动端均可用，无需安装任何插件或客户端。</dd>
+          </div>
+          <div>
+            <dt className="font-semibold text-fg">开源吗？代码可信吗？</dt>
+            <dd className="mt-1 text-fg-secondary">是开源工具。所有逻辑运行在本地，你可以放心使用；详细实现见我们的隐私政策与开源仓库。</dd>
+          </div>
+        </dl>
       </section>
 
       {/* AdSense 广告位 — 首页 SEO 文案下方 */}
