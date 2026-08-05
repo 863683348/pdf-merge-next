@@ -4,6 +4,24 @@ import dynamic from 'next/dynamic';
 import { Spinner } from '@/components/atoms/Spinner';
 import { AdSlot } from '@/components/atoms/AdSlot';
 
+const FAQ_JSON_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: '合并 PDF 需要把文件上传到服务器吗？', acceptedAnswer: { '@type': 'Answer', text: '不需要。PDFMergeNext 的全部解析与合并都在你的浏览器本地完成，文件不会离开你的设备，断网也可继续处理已加载的页面。' } },
+    { '@type': 'Question', name: '合并后的文件安全吗？', acceptedAnswer: { '@type': 'Answer', text: '安全。由于不上传，服务器无从获取你的内容，也不存在被第三方留存或泄露的风险，符合 GDPR、HIPAA 及《个人信息保护法》对敏感文档处理的要求。' } },
+    { '@type': 'Question', name: '有文件大小或数量限制吗？', acceptedAnswer: { '@type': 'Answer', text: '免费、无水印，不对文件大小和数量做硬性限制。处理性能取决于你的设备内存，超大文档建议分批操作。' } },
+    { '@type': 'Question', name: '会给我加水印吗？', acceptedAnswer: { '@type': 'Answer', text: '不会。合并输出的 PDF 干净无广告、无水印，可直接用于正式提交或打印。' } },
+    { '@type': 'Question', name: '支持哪些系统？', acceptedAnswer: { '@type': 'Answer', text: '只要是现代浏览器（Chrome、Edge、Safari、Firefox 等）即可，桌面与移动端均可用，无需安装任何插件或客户端。' } },
+    { '@type': 'Question', name: '开源吗？代码可信吗？', acceptedAnswer: { '@type': 'Answer', text: '是开源工具。所有逻辑运行在本地，你可以放心使用；详细实现见我们的隐私政策与开源仓库。' } },
+    { '@type': 'Question', name: '加密或带密码的 PDF 能合并吗？', acceptedAnswer: { '@type': 'Answer', text: '需要先去掉打开密码或用正确密码解密后才能解析。出于安全考虑，本工具不会尝试破解任何密码，请使用你自己有权处理的文件。' } },
+    { '@type': 'Question', name: '合并后能保留书签和超链接吗？', acceptedAnswer: { '@type': 'Answer', text: '可以。合并在本地进行，会尽量保留原文件的内部链接、书签与目录结构；个别由特殊软件生成的复杂 PDF 可能部分丢失，建议合并后点一下目录确认。' } },
+    { '@type': 'Question', name: '扫描的图片型 PDF 合并后会变清晰吗？', acceptedAnswer: { '@type': 'Answer', text: '不会，也不会变模糊。合并只是把页面按顺序装订，不改变任何一页的原有分辨率。若需要可搜索的文字，请先做 OCR 再合并。' } },
+    { '@type': 'Question', name: '断网后还能用吗？', acceptedAnswer: { '@type': 'Answer', text: '能。所有解析与合并都在本地执行，断网不影响已加载页面的处理；只是无法访问在线帮助或更新。' } },
+    { '@type': 'Question', name: '可以把合并结果再转回 Word 吗？', acceptedAnswer: { '@type': 'Answer', text: 'PDF 转 Word 是另一类操作，本工具专注"合并"。若需编辑，可用支持 PDF 导出的办公软件打开合并后的文件再另存为 Word；注意图片型 PDF 转出的文字仍需 OCR。' } },
+  ],
+};
+
 // 纯客户端工具：PDF 解析/合并、Web Worker、localStorage 等均在浏览器执行。
 // 关闭 SSR 以避免服务端访问 window/document/Worker 导致的报错与 hydration 不一致。
 const App = dynamic(() => import('@/App'), {
@@ -19,6 +37,10 @@ export default function Page() {
   return (
     <>
       <App />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSON_LD) }}
+      />
       <section className="mx-auto max-w-3xl px-4 pb-16 pt-10 text-sm leading-relaxed text-fg-secondary">
         <h2 className="text-base font-semibold text-fg">
           PDFMergeNext — 零上传、隐私优先的免费 PDF 在线合并工具
@@ -81,6 +103,42 @@ export default function Page() {
           <li><strong>合并后能再编辑吗？</strong> 合并生成的是标准 PDF，可用任意 PDF 阅读器打开；若需二次拆分，可再次使用本工具。</li>
         </ul>
 
+        <h3 className="mt-5 text-base font-semibold text-fg">合并前，先让文件更"规整"</h3>
+        <p className="mt-2">
+          合并本身不改变每一页的内容，但几个小习惯能让结果更省心：统一页面尺寸（A4 与 Letter 混排时，合并后可能出现大小不一的页）、确认扫描件清晰度（合并不会提升分辨率，模糊页合并后依旧模糊）、检查字体是否嵌入（极少数情况下未嵌入字体的 PDF 在别处打开会替换字体）。
+        </p>
+
+        <h3 className="mt-5 text-base font-semibold text-fg">挑页语法进阶：不只"1-3,5"</h3>
+        <ul className="mt-2 list-disc space-y-1 pl-5">
+          <li><code className="mx-1 rounded bg-subtle px-1.5 py-0.5 font-mono text-xs">1-3,5</code>：合并第 1–3 页与第 5 页。</li>
+          <li><code className="mx-1 rounded bg-subtle px-1.5 py-0.5 font-mono text-xs">-3</code>：只要前三页（从头到第三页）。</li>
+          <li><code className="mx-1 rounded bg-subtle px-1.5 py-0.5 font-mono text-xs">5-</code>：从第五页到最后一页。</li>
+          <li><code className="mx-1 rounded bg-subtle px-1.5 py-0.5 font-mono text-xs">2,4,6</code>：只抽取偶数页，适合把双面扫描拆开重组。</li>
+        </ul>
+        <p className="mt-2">
+          挑页适合"大文件只取需要的几页"——比如一份 50 页合同你只需签字页和附件，挑出来合并成 5 页，发送更轻、对方打开更快。
+        </p>
+
+        <h3 className="mt-5 text-base font-semibold text-fg">合并后，花 10 秒校验这三件事</h3>
+        <ul className="mt-2 list-disc space-y-1 pl-5">
+          <li><strong>页数对不对：</strong> 合并后的总页数应等于各文件页数之和（或你挑页的总和）。</li>
+          <li><strong>超链接和书签：</strong> PDFMergeNext 在本地合并时会尽量保留原文件的内部链接与书签，打开后点一下目录确认跳转正常。</li>
+          <li><strong>体积与清晰度：</strong> 体积应约等于原文件之和；图片型扫描件不会因合并变清晰，也不会变模糊。</li>
+        </ul>
+
+        <h3 className="mt-5 text-base font-semibold text-fg">不同场景的合并建议</h3>
+        <ul className="mt-2 list-disc space-y-1 pl-5">
+          <li><strong>合同或协议：</strong> 把签字页、附件、补充协议按约定顺序合并，挑页去掉草稿页，输出干净的一份。</li>
+          <li><strong>学术论文：</strong> 正文、参考文献、附录、致谢按学校模板排序；注意页码连续。</li>
+          <li><strong>发票或报销：</strong> 把一个月的发票扫描件合并成单文件，方便财务归档与邮件发送。</li>
+          <li><strong>证件材料：</strong> 身份证、户口本、证明等多页扫描合并，上传政务或银行时只需一个文件。</li>
+        </ul>
+
+        <h3 className="mt-5 text-base font-semibold text-fg">关于 PDF，再多说两句</h3>
+        <p className="mt-2">
+          PDF 分"文本型"和"图片型"两种：文本型由可选中的文字构成，图片型则是把纸面扫描成图（文字无法直接复制）。合并对两者都适用，但图片型 PDF 体积通常更大、且无法被搜索。若你的扫描件是图片型，可先做一次 OCR（光学字符识别）再合并，后续检索会方便很多。此外，标准 PDF 支持加密与权限设置——带打开密码的 PDF 需先解密，才能被本工具解析合并。
+        </p>
+
         <h3 className="mt-5 text-base font-semibold text-fg">常见问题（FAQ）</h3>
         <dl className="mt-2 space-y-3">
           <div>
@@ -106,6 +164,26 @@ export default function Page() {
           <div>
             <dt className="font-semibold text-fg">开源吗？代码可信吗？</dt>
             <dd className="mt-1 text-fg-secondary">是开源工具。所有逻辑运行在本地，你可以放心使用；详细实现见我们的隐私政策与开源仓库。</dd>
+          </div>
+          <div>
+            <dt className="font-semibold text-fg">加密或带密码的 PDF 能合并吗？</dt>
+            <dd className="mt-1 text-fg-secondary">需要先去掉打开密码或用正确密码解密后才能解析。出于安全考虑，本工具不会尝试破解任何密码，请使用你自己有权处理的文件。</dd>
+          </div>
+          <div>
+            <dt className="font-semibold text-fg">合并后能保留书签和超链接吗？</dt>
+            <dd className="mt-1 text-fg-secondary">可以。合并在本地进行，会尽量保留原文件的内部链接、书签与目录结构；个别由特殊软件生成的复杂 PDF 可能部分丢失，建议合并后点一下目录确认。</dd>
+          </div>
+          <div>
+            <dt className="font-semibold text-fg">扫描的图片型 PDF 合并后会变清晰吗？</dt>
+            <dd className="mt-1 text-fg-secondary">不会，也不会变模糊。合并只是把页面按顺序装订，不改变任何一页的原有分辨率。若需要可搜索的文字，请先做 OCR 再合并。</dd>
+          </div>
+          <div>
+            <dt className="font-semibold text-fg">断网后还能用吗？</dt>
+            <dd className="mt-1 text-fg-secondary">能。所有解析与合并都在本地执行，断网不影响已加载页面的处理；只是无法访问在线帮助或更新。</dd>
+          </div>
+          <div>
+            <dt className="font-semibold text-fg">可以把合并结果再转回 Word 吗？</dt>
+            <dd className="mt-1 text-fg-secondary">PDF 转 Word 是另一类操作，本工具专注"合并"。若需编辑，可用支持 PDF 导出的办公软件打开合并后的文件再另存为 Word；注意图片型 PDF 转出的文字仍需 OCR。</dd>
           </div>
         </dl>
       </section>
