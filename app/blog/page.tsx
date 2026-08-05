@@ -97,6 +97,24 @@ export default function BlogPage() {
           3 种不上传合并方案对比（浏览器/桌面/系统工具）、PDFMergeNext 完整使用步骤、隐私合规指南。
         </p>
       </Link>
+
+      <Link
+        href="/blog/how-zero-upload-pdf-tools-work"
+        className="mt-6 block rounded-xl border border-line bg-surface p-6 shadow-sm transition-colors duration-fast hover:bg-subtle"
+      >
+        <p className="text-caption font-semibold uppercase tracking-wide text-brand">
+          PDF 合并 · 技术原理
+        </p>
+        <h2 className="mt-1 text-title font-semibold text-fg">
+          零上传 PDF 工具是如何工作的：原理全解析
+        </h2>
+        <p className="mt-1 text-sm font-medium text-fg-muted">
+          How Zero-Upload PDF Tools Work (pdf.js, Web Workers, Local Merge)
+        </p>
+        <p className="mt-2 text-sm text-fg-secondary">
+          pdf.js 解析、pdf-lib 重组、Web Worker 提速——零上传工具背后的 5 步数据流，附诚实的能力边界。The 5-step data flow behind true client-side PDF merging, with honest limits.
+        </p>
+      </Link>
     </PageShell>
   );
 }
