@@ -115,6 +115,24 @@ export default function BlogPage() {
           WebAssembly + pdf-lib 本地架构拆解：零网络请求如何实现、如何用 DevTools 自己验证、限制与边界。
         </p>
       </Link>
+
+      <Link
+        href="/blog/browser-pdf-merge-privacy"
+        className="mt-6 block rounded-xl border border-line bg-surface p-6 shadow-sm transition-colors duration-fast hover:bg-subtle"
+      >
+        <p className="text-caption font-semibold uppercase tracking-wide text-brand">
+          隐私技术 · 趋势解读
+        </p>
+        <h2 className="mt-1 text-title font-semibold text-fg">
+          浏览器合并PDF：WebAssembly 时代的隐私革命
+        </h2>
+        <p className="mt-1 text-sm font-medium text-fg-muted">
+          Browser PDF Merge: A Privacy Revolution
+        </p>
+        <p className="mt-2 text-sm text-fg-secondary">
+          为什么在浏览器里合并 PDF 是一场隐私革命：隐私的重心从服务器移回你的设备，以及谁最该用这种方式。
+        </p>
+      </Link>
     </PageShell>
   );
 }

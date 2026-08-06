@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/blog/merge-pdf-no-upload', changefreq: 'weekly', priority: 0.8 },
     { path: '/blog/why-local-pdf-merge-beats-online', changefreq: 'weekly', priority: 0.8 },
     { path: '/blog/how-zero-upload-pdf-tools-work', changefreq: 'weekly', priority: 0.8 },
+    { path: '/blog/browser-pdf-merge-privacy', changefreq: 'weekly', priority: 0.8 },
     { path: '/contact', changefreq: 'yearly', priority: 0.4 },
     { path: '/privacy', changefreq: 'yearly', priority: 0.3 },
     { path: '/terms', changefreq: 'yearly', priority: 0.3 },
