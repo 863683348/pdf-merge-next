@@ -77,7 +77,7 @@ export default function Page() {
         headline: 'PDFMergeNext vs Smallpdf vs iLovePDF：2026 隐私与限制全对比 / Honest 2026 Comparison',
         description:
           '全面的三工具对比——隐私、免费限制、挑页合并、水印、价格，附第三方实测数据。Honest comparison across privacy, free limits, page selection, watermarks, and pricing with third-party test data.',
-        author: { '@type': 'Person', name: 'PDFMergeNext' },
+        author: { '@type': 'Person', name: 'PDFMergeNext', url: 'https://pdfmergenext.shop', '@id': 'https://pdfmergenext.shop/#organization' },
         publisher: { '@type': 'Organization', name: 'PDFMergeNext' },
         datePublished: '2026-07-27',
         dateModified: '2026-07-27',

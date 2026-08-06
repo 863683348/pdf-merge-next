@@ -100,7 +100,7 @@ export default function ArticlePage() {
         headline: '为什么选择本地离线 PDF 合并？隐私优先才是正解',
         description:
           '为什么客户端 PDF 合并是唯一真正隐私安全的方案。涵盖 GDPR、HIPAA、中国个保法合规分析。',
-        author: { '@type': 'Person', name: 'PDFMergeNext' },
+        author: { '@type': 'Person', name: 'PDFMergeNext', url: 'https://pdfmergenext.shop', '@id': 'https://pdfmergenext.shop/#organization' },
         publisher: { '@type': 'Organization', name: 'PDFMergeNext' },
         datePublished: '2026-07-22',
         dateModified: '2026-07-27',

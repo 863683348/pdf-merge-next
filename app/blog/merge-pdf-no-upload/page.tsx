@@ -87,7 +87,7 @@ export default function Page() {
         headline: '合并PDF不上传：安全免费的本地离线解决方案 / Merge PDF Without Uploading',
         description:
           '不上传合并PDF的3种方案对比与完整教程。支持零上传、挑页合并、无水印，符合GDPR/HIPAA/个保法合规要求。',
-        author: { '@type': 'Person', name: 'PDFMergeNext' },
+        author: { '@type': 'Person', name: 'PDFMergeNext', url: 'https://pdfmergenext.shop', '@id': 'https://pdfmergenext.shop/#organization' },
         publisher: { '@type': 'Organization', name: 'PDFMergeNext' },
         datePublished: '2026-07-30',
         dateModified: '2026-07-30',

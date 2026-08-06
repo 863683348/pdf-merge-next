@@ -110,7 +110,7 @@ export default function ArticlePage() {
         headline: 'How to Merge PDF Without Uploading (Step-by-Step, Verifiable)',
         description:
           'Merge PDFs without uploading to any server. Three methods compared, plus how to verify zero-upload with browser DevTools. No sign-up, no watermark, works offline.',
-        author: { '@type': 'Person', name: 'PDFMergeNext' },
+        author: { '@type': 'Person', name: 'PDFMergeNext', url: 'https://pdfmergenext.shop', '@id': 'https://pdfmergenext.shop/#organization' },
         publisher: { '@type': 'Organization', name: 'PDFMergeNext' },
         datePublished: '2026-07-27',
         dateModified: '2026-07-27',

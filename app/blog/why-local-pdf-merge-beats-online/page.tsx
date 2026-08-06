@@ -87,7 +87,7 @@ export default function Page() {
         headline: '为什么本地PDF合并比在线更安全：7 个核心原因 / Why Local PDF Merge Beats Online',
         description:
           '从数据链路、合规、服务器日志到中间人攻击，逐层拆解本地PDF合并 vs 在线合并的安全性差异，附本地方案对比与验证方法。',
-        author: { '@type': 'Person', name: 'PDFMergeNext' },
+        author: { '@type': 'Person', name: 'PDFMergeNext', url: 'https://pdfmergenext.shop', '@id': 'https://pdfmergenext.shop/#organization' },
         publisher: { '@type': 'Organization', name: 'PDFMergeNext' },
         datePublished: '2026-08-05',
         dateModified: '2026-08-05',

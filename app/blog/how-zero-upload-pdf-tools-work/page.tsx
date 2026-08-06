@@ -79,7 +79,7 @@ export default function Page() {
         '@type': 'Article',
         headline: '零上传PDF工具：工作原理全解析 / How Zero-Upload PDF Tools Work',
         description: '零上传PDF工具原理拆解：WebAssembly + pdf-lib 浏览器本地架构，零网络请求如何实现。',
-        author: { '@type': 'Person', name: 'PDFMergeNext' },
+        author: { '@type': 'Person', name: 'PDFMergeNext', url: 'https://pdfmergenext.shop', '@id': 'https://pdfmergenext.shop/#organization' },
         publisher: { '@type': 'Organization', name: 'PDFMergeNext' },
         datePublished: '2026-08-06',
         dateModified: '2026-08-06',
