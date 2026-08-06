@@ -402,6 +402,20 @@ export default function ArticlePage() {
             <p className="text-sm font-semibold text-fg">PDFMergeNext vs Smallpdf vs iLovePDF</p>
             <p className="mt-1 text-xs text-fg-secondary">2026 隐私与限制全对比 / Honest 2026 Comparison</p>
           </a>
+          <Link
+            href="/blog/merge-pdf-no-upload"
+            className="block rounded-xl border border-line bg-surface p-4 transition-colors hover:bg-subtle"
+          >
+            <p className="text-sm font-semibold text-fg">合并PDF不上传：安全免费的本地离线解决方案</p>
+            <p className="mt-1 text-xs text-fg-secondary">Merge PDF Without Uploading — Free &amp; Secure</p>
+          </Link>
+          <Link
+            href="/blog/how-zero-upload-pdf-tools-work"
+            className="block rounded-xl border border-line bg-surface p-4 transition-colors hover:bg-subtle"
+          >
+            <p className="text-sm font-semibold text-fg">零上传PDF工具：工作原理全解析</p>
+            <p className="mt-1 text-xs text-fg-secondary">How Zero-Upload PDF Tools Work — WebAssembly</p>
+          </Link>
         </div>
       </section>
     </article>
