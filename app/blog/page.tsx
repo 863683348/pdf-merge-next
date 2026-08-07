@@ -133,6 +133,24 @@ export default function BlogPage() {
           为什么在浏览器里合并 PDF 是一场隐私革命：隐私的重心从服务器移回你的设备，以及谁最该用这种方式。
         </p>
       </Link>
+
+      <Link
+        href="/blog/offline-pdf-merge-limits"
+        className="mt-6 block rounded-xl border border-line bg-surface p-6 shadow-sm transition-colors duration-fast hover:bg-subtle"
+      >
+        <p className="text-caption font-semibold uppercase tracking-wide text-brand">
+          隐私技术 · 边界剖析
+        </p>
+        <h2 className="mt-1 text-title font-semibold text-fg">
+          100% 离线PDF合并：理论可行性的边界
+        </h2>
+        <p className="mt-1 text-sm font-medium text-fg-muted">
+          100% Offline PDF Merge: Limits
+        </p>
+        <p className="mt-2 text-sm text-fg-secondary">
+          离线合并不是玄学：内存/性能/加密 PDF 的真实瓶颈，以及哪些场景确实做不到 100% 离线。
+        </p>
+      </Link>
     </PageShell>
   );
 }
