@@ -15,6 +15,15 @@ export interface BlogPostMeta {
 
 export const BLOG_POSTS: BlogPostMeta[] = [
   {
+    slug: "pdf-merge-no-upload-privacy-facts",
+    tag: "隐私事实 · Privacy Facts",
+    date: "2026-08-11",
+    zhTitle: "文件不上传：7 个你必须清楚的隐私事实",
+    enTitle: "7 Privacy Facts About No-Upload File",
+    zhDesc:
+      "合并 PDF 时\"文件不上传\"意味着什么？7 个隐私事实：没有上传就没有服务器日志、没有传输链路、没有第三方接触。以及哪些承诺其实说了等于没说。",
+  },
+  {
     slug: "client-side-vs-server-side-pdf-tools",
     tag: "架构对比 · Architecture",
     date: "2026-08-10",
