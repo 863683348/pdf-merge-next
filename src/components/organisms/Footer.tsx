@@ -8,7 +8,6 @@ const links = [
   { key: 'privacy', href: '/privacy' },
   { key: 'terms', href: '/terms' },
   { key: 'faq', href: '/#faq' }, // FAQ 在首页
-  { key: 'blog', href: '/blog' },
   { key: 'contact', href: '/contact' },
 ] as const;
 
