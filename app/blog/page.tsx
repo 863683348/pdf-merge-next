@@ -18,6 +18,7 @@ export default function BlogPage() {
         <p className="text-caption font-semibold uppercase tracking-wide text-brand">
           隐私技术 · 原理剖析
         </p>
+        <p className="mt-1 text-xs text-fg-tertiary">2026-08-06</p>
         <h2 className="mt-1 text-title font-semibold text-fg">
           零上传PDF工具：工作原理全解析
         </h2>
@@ -36,6 +37,7 @@ export default function BlogPage() {
         <p className="text-caption font-semibold uppercase tracking-wide text-brand">
           PDF 合并 · 隐私优先
         </p>
+        <p className="mt-1 text-xs text-fg-tertiary">2026-08-05</p>
         <h2 className="mt-1 text-title font-semibold text-fg">
           为什么本地PDF合并比在线更安全
         </h2>
@@ -54,6 +56,7 @@ export default function BlogPage() {
         <p className="text-caption font-semibold uppercase tracking-wide text-brand">
           PDF 合并 · 中文指南
         </p>
+        <p className="mt-1 text-xs text-fg-tertiary">2026-07-30</p>
         <h2 className="mt-1 text-title font-semibold text-fg">
           合并PDF不上传：安全免费的本地离线解决方案
         </h2>
@@ -72,6 +75,7 @@ export default function BlogPage() {
         <p className="text-caption font-semibold uppercase tracking-wide text-brand">
           PDF 合并 · 操作教程
         </p>
+        <p className="mt-1 text-xs text-fg-tertiary">2026-07-27</p>
         <h2 className="mt-1 text-title font-semibold text-fg">
           如何不上传合并 PDF:可验证的完整指南
         </h2>
@@ -90,6 +94,7 @@ export default function BlogPage() {
         <p className="text-caption font-semibold uppercase tracking-wide text-brand">
           PDF 工具 · 对比测评
         </p>
+        <p className="mt-1 text-xs text-fg-tertiary">2026-07-27</p>
         <h2 className="mt-1 text-title font-semibold text-fg">
           PDFMergeNext vs Smallpdf vs iLovePDF：2026 隐私与限制全对比
         </h2>
@@ -108,6 +113,7 @@ export default function BlogPage() {
         <p className="text-caption font-semibold uppercase tracking-wide text-brand">
           {t('blog.featured.label')}
         </p>
+        <p className="mt-1 text-xs text-fg-tertiary">2026-07-22</p>
         <h2 className="mt-1 text-title font-semibold text-fg">
           {t('blog.featured.title')}
         </h2>
