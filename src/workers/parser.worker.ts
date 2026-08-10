@@ -4,9 +4,16 @@ import './parser-worker-shim';
 import * as pdfjsLib from 'pdfjs-dist';
 import type { ParseRequest, ParseResult } from '../types';
 
-// 使用自托管的 pdf.js worker 文件（public/pdf.worker.min.mjs），避免拉取 CDN。
-// 由于我们在自定义 Web Worker 内运行 pdf.js 主库，配合 parser-worker-shim 提供 document/window。
-pdfjsLib.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
+// 使用自托管的 pdf.js 资源（public/ 下，由 scripts/copy-pdfjs-assets.mjs 构建时产出），
+// 避免拉取 CDN。由于我们在自定义 Web Worker 内运行 pdf.js 主库，配合 parser-worker-shim
+// 提供 document/window。
+//
+// 路径带 pdfjs 版本号，这样这些文件可以用 Cache-Control: immutable 长缓存，而不会出现
+// 「主库已升级、浏览器仍缓存旧 worker」导致的 API/Worker 版本不匹配。版本号直接取自主库
+// 运行时导出，与 copy 脚本读取的 package.json 版本天然一致。
+const PDFJS_V = pdfjsLib.version;
+
+pdfjsLib.GlobalWorkerOptions.workerSrc = `/pdf.worker.${PDFJS_V}.min.mjs`;
 
 // 在 Worker 全局作用域下，self 即 WorkerGlobalScope；
 // 用 Worker 类型获取正确的 postMessage(transfer) 签名。
@@ -21,9 +28,9 @@ ctx.onmessage = async (e: MessageEvent) => {
     const buf = await file.arrayBuffer();
     const doc = await pdfjsLib.getDocument({
       data: buf,
-      cMapUrl: '/cmap/',
+      cMapUrl: `/cmap-${PDFJS_V}/`,
       cMapPacked: true,
-      standardFontDataUrl: '/standard_fonts/',
+      standardFontDataUrl: `/standard_fonts-${PDFJS_V}/`,
     }).promise;
 
     const page = await doc.getPage(1);

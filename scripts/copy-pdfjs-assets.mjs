@@ -1,6 +1,12 @@
 // 把 pdfjs-dist 的 worker / cmap / standard_fonts 复制到 public/，做到零外部请求。
 // 运行时机：build 与 dev 之前（package.json 的 build/dev 脚本已自动调用）。
-import { existsSync, mkdirSync, readdirSync, copyFileSync, statSync } from 'node:fs';
+//
+// 产物路径带 pdfjs 版本号（pdf.worker.<v>.min.mjs、cmap-<v>/、standard_fonts-<v>/），
+// 与 src/workers/parser.worker.ts 里的 pdfjsLib.version 一一对应。带版本号后这些文件
+// 才能安全地用 Cache-Control: immutable 长缓存（见 next.config.mjs）——它们合计约
+// 3.2MB / 186 个文件，此前以 max-age=0 下发，每次访问都回源，是 Fast Origin Transfer
+// 的主要来源之一。
+import { existsSync, mkdirSync, readdirSync, copyFileSync, statSync, readFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -22,6 +28,10 @@ function resolvePdfjs() {
 
 const pdfjs = resolvePdfjs();
 if (!existsSync(publicDir)) mkdirSync(publicDir, { recursive: true });
+
+// 版本号必须与运行时 pdfjsLib.version 一致，否则 worker/cmap 会 404。
+const version = JSON.parse(readFileSync(join(pdfjs, 'package.json'), 'utf8')).version;
+if (!version) throw new Error('无法读取 pdfjs-dist 版本号');
 
 function copyDir(src, dest) {
   if (!existsSync(src)) {
@@ -53,7 +63,7 @@ function copyFile(src, dest) {
   return 1;
 }
 
-// 1) 主 worker 文件（parser.worker.ts 中 GlobalWorkerOptions.workerSrc 指向 /pdf.worker.min.mjs）
+// 1) 主 worker 文件（workerSrc = `/pdf.worker.${pdfjsLib.version}.min.mjs`）
 const workerCandidates = [
   join(pdfjs, 'build', 'pdf.worker.min.mjs'),
   join(pdfjs, 'build', 'pdf.worker.mjs'),
@@ -62,17 +72,19 @@ let copied = 0;
 let done = false;
 for (const wc of workerCandidates) {
   if (existsSync(wc)) {
-    copied += copyFile(wc, join(publicDir, 'pdf.worker.min.mjs'));
+    copied += copyFile(wc, join(publicDir, `pdf.worker.${version}.min.mjs`));
     done = true;
     break;
   }
 }
 if (!done) console.warn('[copy-pdfjs] 未找到 pdf worker 文件');
 
-// 2) cmap（CMapReaderFactory 用 cMapUrl='/cmap/'）
-copied += copyDir(join(pdfjs, 'cmaps'), join(publicDir, 'cmap'));
+// 2) cmap（cMapUrl = `/cmap-${version}/`）
+copied += copyDir(join(pdfjs, 'cmaps'), join(publicDir, `cmap-${version}`));
 
-// 3) standard_fonts（标准字体回退，standardFontDataUrl='/standard_fonts/'）
-copied += copyDir(join(pdfjs, 'standard_fonts'), join(publicDir, 'standard_fonts'));
+// 3) standard_fonts（standardFontDataUrl = `/standard_fonts-${version}/`）
+copied += copyDir(join(pdfjs, 'standard_fonts'), join(publicDir, `standard_fonts-${version}`));
 
-console.log(`[copy-pdfjs] 已复制 ${copied} 个文件到 public/（pdfjs worker + cmap + standard_fonts）`);
+console.log(
+  `[copy-pdfjs] 已复制 ${copied} 个文件到 public/（pdfjs ${version}: worker + cmap + standard_fonts）`
+);

@@ -48,6 +48,59 @@ const nextConfig = {
           },
         ],
       },
+
+      // --- 静态资源缓存 ---
+      // Vercel 对 public/ 下的文件默认下发 `public, max-age=0, must-revalidate`：
+      // 浏览器零复用、每个 edge region 反复回源，直接推高 Fast Origin Transfer。
+      // 下面这些资源路径都带 pdfjs 版本号（见 scripts/copy-pdfjs-assets.mjs），
+      // 内容与路径一一绑定，升级 pdfjs 会换新路径，因此 immutable 是安全的。
+      {
+        source: '/pdf.worker.:version([0-9.]+).min.mjs',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/cmap-:version([0-9.]+)/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/standard_fonts-:version([0-9.]+)/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      // 图标：文件名固定，用较短强缓存 + 长 SWR（换图时改文件名而非覆盖）
+      {
+        source: '/favicon.svg',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=604800, stale-while-revalidate=2592000',
+          },
+        ],
+      },
+      // 爬虫 / LLM 抓取文件：内容会随内容运营变动，1 小时强缓存 + 1 天 SWR
+      {
+        source: '/:file(robots\\.txt|llms\\.txt|llms-full\\.txt|sitemap\\.xml)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=3600, stale-while-revalidate=86400',
+          },
+        ],
+      },
     ];
   },
   async redirects() {

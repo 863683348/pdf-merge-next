@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from 'next';
-import { cookies } from 'next/headers';
 import Script from 'next/script';
 import './globals.css';
 // 字体：@fontsource 本地自托管，无外部请求
@@ -16,7 +15,6 @@ import { TopBar } from '@/components/molecules/TopBar';
 import { AnalyticsPageview } from '@/components/atoms/AnalyticsPageview';
 import { DocumentTitle } from '@/components/atoms/DocumentTitle';
 import { faqContent } from '@/lib/faq';
-import type { Lang } from '@/i18n/types';
 
 const SITE_URL = 'https://pdfmergenext.shop';
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? '';
@@ -178,25 +176,45 @@ const themeBootstrap = `
 })();
 `;
 
-export default async function RootLayout({
+// 根布局是静态预渲染的（不再读 cookie），HTML 首帧固定 lang="zh-CN"。
+// 这段脚本在首帧前按客户端偏好修正 <html lang>，与 src/i18n/core.ts 的 detectLang
+// 保持同样的优先级：localStorage -> cookie -> navigator。文本本身由 LanguageProvider
+// 在 hydration 后切换。
+const langBootstrap = `
+(function () {
+  try {
+    var l = localStorage.getItem('pdf-merge-lang');
+    if (l !== 'zh' && l !== 'en') {
+      var m = document.cookie.match(/(?:^|; )mergelocal-lang=([^;]*)/);
+      l = m && m[1];
+    }
+    if (l !== 'zh' && l !== 'en') {
+      l = /^\\s*zh/i.test(navigator.language || '') ? 'zh' : 'en';
+    }
+    document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en';
+  } catch (e) {
+    /* 保持服务端渲染的 zh-CN */
+  }
+})();
+`;
+
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const cookieStore = await cookies();
-  const serverLang = (cookieStore.get('mergelocal-lang')?.value ?? 'zh') as Lang;
-
   return (
-    <html lang={serverLang === 'zh' ? 'zh-CN' : 'en'} data-theme="light" suppressHydrationWarning>
+    <html lang="zh-CN" data-theme="light" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeBootstrap }} />
+        <script dangerouslySetInnerHTML={{ __html: langBootstrap }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body>
-        <Providers serverLang={serverLang}>
+        <Providers>
           <DocumentTitle />
           <TopBar />
           {children}
