@@ -101,6 +101,18 @@ const nextConfig = {
           },
         ],
       },
+      // FOT 修复：公开页加边缘缓存（Next.js 默认 max-age=0 每次回源验证）。
+      // 排除 /api（PayPal 接口）、/account（用户订阅页）、/ads.txt；覆盖其余全部公开页
+      //（首页、/pricing、/blog/*、/privacy、/terms、/contact 等）。
+      {
+        source: '/:path((?!api|account|ads\\.txt).*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, s-maxage=86400, stale-while-revalidate=604800',
+          },
+        ],
+      },
     ];
   },
   async redirects() {
