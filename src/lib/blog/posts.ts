@@ -113,6 +113,15 @@ export const BLOG_POSTS: BlogPostMeta[] = [
     zhDesc:
       "文件不上传服务器，合同、证件、财务报表更安全。免注册、无水印、免费。",
   },
+  {
+    slug: "how-we-evaluate-privacy-first-pdf-tools",
+    tag: "评测方法 · Evaluation",
+    date: "2026-08-12",
+    zhTitle: "隐私优先 PDF 工具评测标准：我们怎么打分",
+    enTitle: "How We Evaluate Privacy-First PDF Tools",
+    zhDesc:
+      "评测隐私优先 PDF 工具时我们看什么：数据链路、服务器日志、上传时机、删除承诺的可验证性、以及离线能力。一套可以自己复用的评测清单。",
+  },
 ];
 
 /** 按发布日期倒序（最新在前） */
