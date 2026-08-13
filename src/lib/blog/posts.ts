@@ -122,6 +122,15 @@ export const BLOG_POSTS: BlogPostMeta[] = [
     zhDesc:
       "评测隐私优先 PDF 工具时我们看什么：数据链路、服务器日志、上传时机、删除承诺的可验证性、以及离线能力。一套可以自己复用的评测清单。",
   },
+  {
+    slug: "devtools-network-tab-privacy-guide",
+    tag: "隐私验证 · Privacy Verification",
+    date: "2026-08-13",
+    zhTitle: "用 DevTools 验证 PDF 工具是否真的不上传",
+    enTitle: "DevTools Network Tab Privacy Guide",
+    zhDesc:
+      "别信宣传，自己验证：打开浏览器 DevTools 的 Net 面板，五分钟看清一个 PDF 工具到底有没有把文件传上服务器。带步骤的实操指南。",
+  },
 ];
 
 /** 按发布日期倒序（最新在前） */
