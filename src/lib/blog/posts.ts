@@ -140,6 +140,15 @@ export const BLOG_POSTS: BlogPostMeta[] = [
     zhDesc:
       "个人隐私 PDF 工具和企业级 SaaS 差在哪？从文件到底在谁手里、本地隐私保什么、到自托管中间路线，一篇讲清两者在隐私维度上的真实取舍。",
   },
+  {
+    slug: "pdf-data-export-impact",
+    tag: "隐私事实 · Privacy Facts",
+    date: "2026-08-15",
+    zhTitle: "PDF 工具的数据出境影响",
+    enTitle: "Data Export Impact of PDF Tools",
+    zhDesc:
+      "把 PDF 传上网之前，先想想数据出境这四个字。PDF 里藏着哪些敏感信息、在线工具的数据流向、GDPR 的约束，以及怎么判断一个工具是否真的本地处理。",
+  },
 ];
 
 /** 按发布日期倒序（最新在前） */
