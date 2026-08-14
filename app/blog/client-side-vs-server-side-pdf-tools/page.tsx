@@ -25,6 +25,23 @@ export const metadata: Metadata = {
       'x-default': '/blog/client-side-vs-server-side-pdf-tools',
     },
   },
+  openGraph: {
+    title: '客户端 PDF 工具 vs 服务器端：架构对比 · PDFMergeNext',
+    description:
+      '同样叫合并 PDF，架构可能完全不同。客户端工具在浏览器本地处理、文件不出设备；服务器端工具把文件上传云端。隐私、速度、离线能力的差异全讲透。Client-side vs server-side PDF tools, honestly compared.',
+    type: 'article',
+    url: `${SITE_URL}/blog/client-side-vs-server-side-pdf-tools`,
+    siteName: 'PDFMergeNext',
+    publishedTime: '2026-08-10T00:00:00.000Z',
+    images: [{ url: `${SITE_URL}/og`, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '客户端 PDF 工具 vs 服务器端：架构对比 · PDFMergeNext',
+    description:
+      '同样叫合并 PDF，架构可能完全不同。客户端工具在浏览器本地处理、文件不出设备；服务器端工具把文件上传云端。隐私、速度、离线能力的差异全讲透。Client-side vs server-side PDF tools, honestly compared.',
+    images: [`${SITE_URL}/og`],
+  },
 };
 
 const FAQ = [

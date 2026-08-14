@@ -24,6 +24,23 @@ export const metadata: Metadata = {
       'x-default': '/blog/devtools-network-tab-privacy-guide',
     },
   },
+  openGraph: {
+    title: '用 DevTools 验证 PDF 工具是否真的不上传 · PDFMergeNext',
+    description:
+      '别信宣传，自己验证：打开浏览器 DevTools 的 Net 面板，五分钟看清一个 PDF 工具到底有没有把文件传上服务器。带步骤的实操指南。DevTools Network Tab Privacy Guide.',
+    type: 'article',
+    url: `${SITE_URL}/blog/devtools-network-tab-privacy-guide`,
+    siteName: 'PDFMergeNext',
+    publishedTime: '2026-08-13T00:00:00.000Z',
+    images: [{ url: `${SITE_URL}/og`, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '用 DevTools 验证 PDF 工具是否真的不上传 · PDFMergeNext',
+    description:
+      '别信宣传，自己验证：打开浏览器 DevTools 的 Net 面板，五分钟看清一个 PDF 工具到底有没有把文件传上服务器。带步骤的实操指南。DevTools Network Tab Privacy Guide.',
+    images: [`${SITE_URL}/og`],
+  },
 };
 
 const FAQ = [

@@ -25,6 +25,23 @@ export const metadata: Metadata = {
       'x-default': '/blog/personal-pdf-privacy-vs-enterprise-saas',
     },
   },
+  openGraph: {
+    title: 'Personal PDF Privacy vs Enterprise SaaS · PDFMergeNext',
+    description:
+      'Personal PDF privacy vs enterprise SaaS: who actually holds your file? Local vs server-side, self-hosted middle ground, and a privacy scorecard across the dimensions that matter. 个人隐私 PDF 工具和企业级 SaaS 在隐私维度上的真实取舍。',
+    type: 'article',
+    url: `${SITE_URL}/blog/personal-pdf-privacy-vs-enterprise-saas`,
+    siteName: 'PDFMergeNext',
+    publishedTime: '2026-08-14T00:00:00.000Z',
+    images: [{ url: `${SITE_URL}/og`, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Personal PDF Privacy vs Enterprise SaaS · PDFMergeNext',
+    description:
+      'Personal PDF privacy vs enterprise SaaS: who actually holds your file? Local vs server-side, self-hosted middle ground, and a privacy scorecard across the dimensions that matter. 个人隐私 PDF 工具和企业级 SaaS 在隐私维度上的真实取舍。',
+    images: [`${SITE_URL}/og`],
+  },
 };
 
 const FAQ_EN = [

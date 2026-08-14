@@ -25,6 +25,23 @@ export const metadata: Metadata = {
       'x-default': '/blog/how-we-evaluate-privacy-first-pdf-tools',
     },
   },
+  openGraph: {
+    title: '隐私优先 PDF 工具评测标准：我们怎么打分 · PDFMergeNext',
+    description:
+      '评测隐私优先 PDF 工具时我们看什么：数据链路、服务器日志、上传时机、删除承诺的可验证性、离线能力。一套可以自己复用的评测清单。How we evaluate privacy-first PDF tools.',
+    type: 'article',
+    url: `${SITE_URL}/blog/how-we-evaluate-privacy-first-pdf-tools`,
+    siteName: 'PDFMergeNext',
+    publishedTime: '2026-08-12T00:00:00.000Z',
+    images: [{ url: `${SITE_URL}/og`, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '隐私优先 PDF 工具评测标准：我们怎么打分 · PDFMergeNext',
+    description:
+      '评测隐私优先 PDF 工具时我们看什么：数据链路、服务器日志、上传时机、删除承诺的可验证性、离线能力。一套可以自己复用的评测清单。How we evaluate privacy-first PDF tools.',
+    images: [`${SITE_URL}/og`],
+  },
 };
 
 const FAQ = [

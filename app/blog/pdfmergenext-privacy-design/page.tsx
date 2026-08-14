@@ -25,6 +25,23 @@ export const metadata: Metadata = {
       'x-default': '/blog/pdfmergenext-privacy-design',
     },
   },
+  openGraph: {
+    title: 'PDFMergeNext 隐私设计白皮书 · PDFMergeNext',
+    description:
+      'PDFMergeNext 的隐私设计是怎么落地的：文件为什么不上传、本地处理的技术架构、日志策略与安全边界。Privacy design deep dive, honestly documented.',
+    type: 'article',
+    url: `${SITE_URL}/blog/pdfmergenext-privacy-design`,
+    siteName: 'PDFMergeNext',
+    publishedTime: '2026-08-09T00:00:00.000Z',
+    images: [{ url: `${SITE_URL}/og`, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'PDFMergeNext 隐私设计白皮书 · PDFMergeNext',
+    description:
+      'PDFMergeNext 的隐私设计是怎么落地的：文件为什么不上传、本地处理的技术架构、日志策略与安全边界。Privacy design deep dive, honestly documented.',
+    images: [`${SITE_URL}/og`],
+  },
 };
 
 const FAQ = [

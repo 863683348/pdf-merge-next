@@ -27,6 +27,23 @@ export const metadata: Metadata = {
       'x-default': '/blog/merge-pdf-no-upload',
     },
   },
+  openGraph: {
+    title: '合并PDF不上传：安全免费的本地离线解决方案 · PDFMergeNext',
+    description:
+      '合并不上传的 3 种方案对比（浏览器零上传 / 桌面软件 / 在线服务），附隐私合规分析与 PDFMergeNext 完整使用教程。Merge PDF without uploading — 3 solutions compared.',
+    type: 'article',
+    url: `${SITE_URL}/blog/merge-pdf-no-upload`,
+    siteName: 'PDFMergeNext',
+    publishedTime: '2026-07-30T00:00:00.000Z',
+    images: [{ url: `${SITE_URL}/og`, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '合并PDF不上传：安全免费的本地离线解决方案 · PDFMergeNext',
+    description:
+      '合并不上传的 3 种方案对比（浏览器零上传 / 桌面软件 / 在线服务），附隐私合规分析与 PDFMergeNext 完整使用教程。Merge PDF without uploading — 3 solutions compared.',
+    images: [`${SITE_URL}/og`],
+  },
 };
 
 // FAQ 数据

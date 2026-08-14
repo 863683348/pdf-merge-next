@@ -131,6 +131,15 @@ export const BLOG_POSTS: BlogPostMeta[] = [
     zhDesc:
       "别信宣传，自己验证：打开浏览器 DevTools 的 Net 面板，五分钟看清一个 PDF 工具到底有没有把文件传上服务器。带步骤的实操指南。",
   },
+  {
+    slug: "personal-pdf-privacy-vs-enterprise-saas",
+    tag: "个人隐私 · Privacy",
+    date: "2026-08-14",
+    zhTitle: "个人隐私 PDF 工具 vs 企业 SaaS",
+    enTitle: "Personal PDF Privacy vs Enterprise SaaS",
+    zhDesc:
+      "个人隐私 PDF 工具和企业级 SaaS 差在哪？从文件到底在谁手里、本地隐私保什么、到自托管中间路线，一篇讲清两者在隐私维度上的真实取舍。",
+  },
 ];
 
 /** 按发布日期倒序（最新在前） */

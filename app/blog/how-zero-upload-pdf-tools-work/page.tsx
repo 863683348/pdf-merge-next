@@ -25,6 +25,23 @@ export const metadata: Metadata = {
       'x-default': '/blog/how-zero-upload-pdf-tools-work',
     },
   },
+  openGraph: {
+    title: '零上传PDF工具：工作原理全解析 · PDFMergeNext',
+    description:
+      '零上传PDF工具如何在浏览器本地完成合并？WebAssembly + pdf-lib 架构拆解：本地调试端口、渲染进程注入、零网络请求原理。How zero-upload PDF tools work under the hood.',
+    type: 'article',
+    url: `${SITE_URL}/blog/how-zero-upload-pdf-tools-work`,
+    siteName: 'PDFMergeNext',
+    publishedTime: '2026-08-06T00:00:00.000Z',
+    images: [{ url: `${SITE_URL}/og`, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '零上传PDF工具：工作原理全解析 · PDFMergeNext',
+    description:
+      '零上传PDF工具如何在浏览器本地完成合并？WebAssembly + pdf-lib 架构拆解：本地调试端口、渲染进程注入、零网络请求原理。How zero-upload PDF tools work under the hood.',
+    images: [`${SITE_URL}/og`],
+  },
 };
 
 const FAQ = [

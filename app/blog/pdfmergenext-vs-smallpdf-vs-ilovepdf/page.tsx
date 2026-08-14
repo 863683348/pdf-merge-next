@@ -1,3 +1,48 @@
+import type { Metadata } from 'next';
+
+const SITE_URL = 'https://pdfmergenext.shop';
+
+export const metadata: Metadata = {
+  title: 'PDFMergeNext vs Smallpdf vs iLovePDF：2026 隐私与限制全对比 | PDFMergeNext',
+  description:
+    '全面的三工具对比——隐私、免费限制、挑页合并、水印、价格，附第三方实测数据。Honest comparison across privacy, free limits, page selection, watermarks, and pricing with third-party test data.',
+  keywords: [
+    'PDFMergeNext',
+    'Smallpdf 对比',
+    'iLovePDF 对比',
+    'PDF 合并 工具 对比',
+    'pdf merge comparison',
+    'PDFMergeNext vs Smallpdf',
+    'PDFMergeNext vs iLovePDF',
+    'privacy pdf tools comparison',
+  ],
+  alternates: {
+    canonical: '/blog/pdfmergenext-vs-smallpdf-vs-ilovepdf',
+    languages: {
+      'zh-CN': '/blog/pdfmergenext-vs-smallpdf-vs-ilovepdf',
+      'en-US': '/blog/pdfmergenext-vs-smallpdf-vs-ilovepdf',
+      'x-default': '/blog/pdfmergenext-vs-smallpdf-vs-ilovepdf',
+    },
+  },
+  openGraph: {
+    title: 'PDFMergeNext vs Smallpdf vs iLovePDF：2026 隐私与限制全对比 · PDFMergeNext',
+    description:
+      '全面的三工具对比——隐私、免费限制、挑页合并、水印、价格，附第三方实测数据。Honest comparison across privacy, free limits, page selection, watermarks, and pricing with third-party test data.',
+    type: 'article',
+    url: `${SITE_URL}/blog/pdfmergenext-vs-smallpdf-vs-ilovepdf`,
+    siteName: 'PDFMergeNext',
+    publishedTime: '2026-07-27T00:00:00.000Z',
+    images: [{ url: `${SITE_URL}/og`, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'PDFMergeNext vs Smallpdf vs iLovePDF：2026 隐私与限制全对比 · PDFMergeNext',
+    description:
+      '全面的三工具对比——隐私、免费限制、挑页合并、水印、价格，附第三方实测数据。Honest comparison across privacy, free limits, page selection, watermarks, and pricing with third-party test data.',
+    images: [`${SITE_URL}/og`],
+  },
+};
+
 export default function Page() {
   const isZh = true;
 
