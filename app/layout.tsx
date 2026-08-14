@@ -25,11 +25,11 @@ const ADSENSE_CLIENT = process.env.NEXT_PUBLIC_ADSENSE_CLIENT ?? '';
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'PDF 合并 · 本地离线 · 文件不上传 | PDFMergeNext',
-    template: '%s · PDFMergeNext',
+    default: 'Merge PDF Online Free - No Upload, No Sign-Up | PDFMergeNext',
+    template: '%s | PDFMergeNext',
   },
   description:
-    '隐私优先的 PDF 合并工具：纯浏览器端、文件不上传、免注册、免安装、无水印，支持手机与中英双语。适合合同、财务报表、证件等敏感文档。 / A privacy-first, client-side PDF merger. Files never leave your device. No sign-up, no watermark, mobile-ready. 中文 / English.',
+    'Free online PDF merger: merge PDF files locally in your browser with no upload, no sign-up, no watermark. Private, fast, mobile-ready. 中文 / English.',
   keywords: [
     'PDF 合并',
     '合并 PDF',
@@ -74,11 +74,11 @@ export const metadata: Metadata = {
     type: 'website',
     url: SITE_URL,
     siteName: 'PDFMergeNext',
-    title: 'PDF 合并 · 本地离线 · 文件不上传 | PDFMergeNext',
+    title: 'Merge PDF Online Free - No Upload | PDFMergeNext',
     description:
-      '纯浏览器端、文件不上传、免注册、无水印的隐私优先 PDF 合并工具。支持手机与中英双语。',
-    locale: 'zh_CN',
-    alternateLocale: ['en_US'],
+      'Free online PDF merger. Files never leave your device. No sign-up, no watermark, mobile-ready.',
+    locale: 'en_US',
+    alternateLocale: ['zh_CN'],
     images: [
       {
         url: '/og',
@@ -90,9 +90,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'PDF 合并 · 本地离线 · 文件不上传 | PDFMergeNext',
+    title: 'Merge PDF Online Free - No Upload | PDFMergeNext',
     description:
-      '纯浏览器端、文件不上传、免注册、无水印的隐私优先 PDF 合并工具。',
+      'Free online PDF merger. Files never leave your device. No sign-up, no watermark.',
     images: ['/og'],
   },
   robots: {

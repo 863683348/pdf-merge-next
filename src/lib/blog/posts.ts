@@ -15,6 +15,15 @@ export interface BlogPostMeta {
 
 export const BLOG_POSTS: BlogPostMeta[] = [
   {
+    slug: "pdf-merge-no-upload-privacy-facts",
+    tag: "隐私事实 · Privacy Facts",
+    date: "2026-08-11",
+    zhTitle: "文件不上传：7 个你必须清楚的隐私事实",
+    enTitle: "7 Privacy Facts About No-Upload File",
+    zhDesc:
+      "合并 PDF 时\"文件不上传\"意味着什么？7 个隐私事实：没有上传就没有服务器日志、没有传输链路、没有第三方接触。以及哪些承诺其实说了等于没说。",
+  },
+  {
     slug: "client-side-vs-server-side-pdf-tools",
     tag: "架构对比 · Architecture",
     date: "2026-08-10",
@@ -103,6 +112,24 @@ export const BLOG_POSTS: BlogPostMeta[] = [
     enTitle: "Why Local, Offline PDF Merging Wins on Privacy",
     zhDesc:
       "文件不上传服务器，合同、证件、财务报表更安全。免注册、无水印、免费。",
+  },
+  {
+    slug: "how-we-evaluate-privacy-first-pdf-tools",
+    tag: "评测方法 · Evaluation",
+    date: "2026-08-12",
+    zhTitle: "隐私优先 PDF 工具评测标准：我们怎么打分",
+    enTitle: "How We Evaluate Privacy-First PDF Tools",
+    zhDesc:
+      "评测隐私优先 PDF 工具时我们看什么：数据链路、服务器日志、上传时机、删除承诺的可验证性、以及离线能力。一套可以自己复用的评测清单。",
+  },
+  {
+    slug: "devtools-network-tab-privacy-guide",
+    tag: "隐私验证 · Privacy Verification",
+    date: "2026-08-13",
+    zhTitle: "用 DevTools 验证 PDF 工具是否真的不上传",
+    enTitle: "DevTools Network Tab Privacy Guide",
+    zhDesc:
+      "别信宣传，自己验证：打开浏览器 DevTools 的 Net 面板，五分钟看清一个 PDF 工具到底有没有把文件传上服务器。带步骤的实操指南。",
   },
 ];
 
