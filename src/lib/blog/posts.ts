@@ -149,6 +149,15 @@ export const BLOG_POSTS: BlogPostMeta[] = [
     zhDesc:
       "把 PDF 传上网之前，先想想数据出境这四个字。PDF 里藏着哪些敏感信息、在线工具的数据流向、GDPR 的约束，以及怎么判断一个工具是否真的本地处理。",
   },
+  {
+    slug: "privacy-first-pdf-workflow",
+    tag: "隐私工作流 · Workflow",
+    date: "2026-08-16",
+    zhTitle: "隐私友好的 PDF 工作流设计",
+    enTitle: "Privacy-First PDF Workflow Design",
+    zhDesc:
+      "一套隐私友好的 PDF 工作流只有一条原则：文件不出本机。从合并、压缩到签署，每一步都用本地处理，你就不需要信任任何服务器的日志或保留政策。",
+  },
 ];
 
 /** 按发布日期倒序（最新在前） */
