@@ -158,6 +158,16 @@ export const BLOG_POSTS: BlogPostMeta[] = [
     zhDesc:
       "一套隐私友好的 PDF 工作流只有一条原则：文件不出本机。从合并、压缩到签署，每一步都用本地处理，你就不需要信任任何服务器的日志或保留政策。",
   },
+
+  {
+    slug: "24-privacy-pdf-tool-alternatives",
+    tag: "工具清单 · Alternatives",
+    date: "2026-08-17",
+    zhTitle: "24 个隐私 PDF 工具替代品推荐",
+    enTitle: "24 Privacy PDF Tool Alternatives",
+    zhDesc:
+      "不想把 PDF 上传到云，又想干完合并、压缩、拆分这些活？这份清单列了 24 个本地优先的隐私 PDF 工具替代品：免费选项、开源选项、离线选项，以及它们各自适合谁。",
+  },
 ];
 
 /** 按发布日期倒序（最新在前） */
