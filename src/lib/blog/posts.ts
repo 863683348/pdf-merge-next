@@ -168,6 +168,15 @@ export const BLOG_POSTS: BlogPostMeta[] = [
     zhDesc:
       "不想把 PDF 上传到云，又想干完合并、压缩、拆分这些活？这份清单列了 24 个本地优先的隐私 PDF 工具替代品：免费选项、开源选项、离线选项，以及它们各自适合谁。",
   },
+  {
+    slug: "how-to-merge-pdf-step-by-step",
+    tag: "PDF 合并 · 操作教程",
+    date: "2026-08-18",
+    zhTitle: "怎么合并PDF：完整步骤图解",
+    enTitle: "How to Merge PDF: Step-by-Step",
+    zhDesc:
+      "怎么合并PDF？一份完整步骤图解：用浏览器本地工具(PDFMergeNext)合并，文件不上传、可断网、免注册无水印。含方法对比、挑页合并与手机端操作。",
+  },
 ];
 
 /** 按发布日期倒序（最新在前） */
