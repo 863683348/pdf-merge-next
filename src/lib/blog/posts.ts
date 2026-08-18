@@ -177,6 +177,15 @@ export const BLOG_POSTS: BlogPostMeta[] = [
     zhDesc:
       "怎么合并PDF？一份完整步骤图解：用浏览器本地工具(PDFMergeNext)合并，文件不上传、可断网、免注册无水印。含方法对比、挑页合并与手机端操作。",
   },
+  {
+    slug: "merge-pdf-on-mobile",
+    tag: "PDF 合并 · 移动端",
+    date: "2026-08-19",
+    zhTitle: "手机合并PDF：iOS/Android 完整教程",
+    enTitle: "Merge PDF on Mobile: iOS/Android",
+    zhDesc:
+      "手机上怎么合并PDF？iOS（Safari）和 Android（Chrome）都能用浏览器本地工具完成——文件不上传、不装 App、不挑网络。含分步教程、方案对比与手机端限制。",
+  },
 ];
 
 /** 按发布日期倒序（最新在前） */
