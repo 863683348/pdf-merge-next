@@ -168,9 +168,40 @@ export const BLOG_POSTS: BlogPostMeta[] = [
     zhDesc:
       "不想把 PDF 上传到云，又想干完合并、压缩、拆分这些活？这份清单列了 24 个本地优先的隐私 PDF 工具替代品：免费选项、开源选项、离线选项，以及它们各自适合谁。",
   },
+  {
+    slug: "how-to-merge-pdf-step-by-step",
+    tag: "PDF 合并 · 操作教程",
+    date: "2026-08-18",
+    zhTitle: "怎么合并PDF：完整步骤图解",
+    enTitle: "How to Merge PDF: Step-by-Step",
+    zhDesc:
+      "怎么合并PDF？一份完整步骤图解：用浏览器本地工具(PDFMergeNext)合并，文件不上传、可断网、免注册无水印。含方法对比、挑页合并与手机端操作。",
+  },
+  {
+    slug: "merge-pdf-on-mobile",
+    tag: "PDF 合并 · 移动端",
+    date: "2026-08-19",
+    zhTitle: "手机合并PDF：iOS/Android 完整教程",
+    enTitle: "Merge PDF on Mobile: iOS/Android",
+    zhDesc:
+      "手机上怎么合并PDF？iOS（Safari）和 Android（Chrome）都能用浏览器本地工具完成——文件不上传、不装 App、不挑网络。含分步教程、方案对比与手机端限制。",
+  },
 ];
 
 /** 按发布日期倒序（最新在前） */
 export function getBlogPosts(): BlogPostMeta[] {
   return [...BLOG_POSTS].sort((a, b) => b.date.localeCompare(a.date));
 }
+  ,
+  {
+    slug: "5-pdf-merge-methods-compared",
+    tag: "PDF 合并 · 对比",
+    date: "2026-08-20",
+    zhTitle: "PDF 合并的 5 种方法对比",
+    enTitle: "5 PDF Merge Methods Compared",
+    zhDesc:
+      "PDF 合并有 5 种常见方法：在线工具、桌面软件、命令行、浏览器插件、编程语言库。本文对比它们在隐私、成本、功能和易用性上的差异，帮你选对工具。",
+    enDesc:
+      "There are 5 common ways to merge PDFs: online tools, desktop software, command line, browser extensions, and programming libraries. This post compares them on privacy, cost, features, and ease of use to help you choose the right tool.",
+  },
+];
