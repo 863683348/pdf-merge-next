@@ -189,10 +189,15 @@ export const BLOG_POSTS: BlogPostMeta[] = [
 ];
 
 /** 按发布日期倒序（最新在前） */
-export function getBlogPosts(): BlogPostMeta[] {
-  return [...BLOG_POSTS].sort((a, b) => b.date.localeCompare(a.date));
-}
-  ,
+  {
+    slug: "merge-pdf-on-mobile",
+    tag: "PDF 合并 · 移动端",
+    date: "2026-08-19",
+    zhTitle: "手机合并PDF：iOS/Android 完整教程",
+    enTitle: "Merge PDF on Mobile: iOS/Android",
+    zhDesc:
+      "手机上怎么合并PDF？iOS（Safari）和 Android（Chrome）都能用浏览器本地工具完成——文件不上传、不装 App、不挑网络。含分步教程、方案对比与手机端限制。",
+  },
   {
     slug: "5-pdf-merge-methods-compared",
     tag: "PDF 合并 · 对比",
@@ -204,4 +209,20 @@ export function getBlogPosts(): BlogPostMeta[] {
     enDesc:
       "There are 5 common ways to merge PDFs: online tools, desktop software, command line, browser extensions, and programming libraries. This post compares them on privacy, cost, features, and ease of use to help you choose the right tool.",
   },
+  {
+    slug: "3-steps-merge-multiple-pdfs",
+    tag: "PDF 合并 · 教程",
+    date: "2026-08-21",
+    zhTitle: "三步合并多个 PDF：最简单的方法",
+    enTitle: "3 Steps to Merge Multiple PDFs (Easiest Method)",
+    zhDesc:
+      "合并多个 PDF 文件其实很简单。本文教你三步完成：选择工具、上传文件、点击合并。含隐私提醒和常见错误避免方法。",
+    enDesc:
+      "Merging multiple PDF files is simpler than you think. This post teaches you the three steps: choose a tool, upload files, and click merge. Includes privacy tips and common mistakes to avoid.",
+  },
 ];
+
+/** 按发布日期倒序（最新在前） */
+export function getBlogPosts(): BlogPostMeta[] {
+  return [...BLOG_POSTS].sort((a, b) => b.date.localeCompare(a.date));
+}
