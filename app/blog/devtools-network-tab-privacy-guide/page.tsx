@@ -245,7 +245,11 @@ export default function Page() {
       </div>
       <p className="mt-3 text-sm leading-relaxed">
         拿这份清单去测你常用的任何工具。大多数"隐私优先"的宣传，在第一关
-        Network 面板就过不去。
+        Network 面板就过不去。测完之后，用
+        <Link href="/blog/privacy-first-pdf-workflow" className="text-primary hover:underline">
+          隐私友好的 PDF 工作流设计
+        </Link>
+        把本地处理落实成整套流程。
       </p>
 
       <div className="mt-10 rounded-lg bg-subtle p-4 text-sm leading-relaxed">

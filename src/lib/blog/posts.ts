@@ -11,6 +11,7 @@ export interface BlogPostMeta {
   zhTitle: string;
   enTitle: string;
   zhDesc: string;
+  enDesc?: string; // 脚本可选输出，列表页暂未使用
 }
 
 export const BLOG_POSTS: BlogPostMeta[] = [
@@ -154,7 +155,7 @@ export const BLOG_POSTS: BlogPostMeta[] = [
     tag: "隐私工作流 · Workflow",
     date: "2026-08-16",
     zhTitle: "隐私友好的 PDF 工作流设计",
-    enTitle: "Privacy-First PDF Workflow Design",
+    enTitle: "Privacy-First PDF Workflow: 4 Stages, Zero Upload",
     zhDesc:
       "一套隐私友好的 PDF 工作流只有一条原则：文件不出本机。从合并、压缩到签署，每一步都用本地处理，你就不需要信任任何服务器的日志或保留政策。",
   },
@@ -177,18 +178,6 @@ export const BLOG_POSTS: BlogPostMeta[] = [
     zhDesc:
       "怎么合并PDF？一份完整步骤图解：用浏览器本地工具(PDFMergeNext)合并，文件不上传、可断网、免注册无水印。含方法对比、挑页合并与手机端操作。",
   },
-  {
-    slug: "merge-pdf-on-mobile",
-    tag: "PDF 合并 · 移动端",
-    date: "2026-08-19",
-    zhTitle: "手机合并PDF：iOS/Android 完整教程",
-    enTitle: "Merge PDF on Mobile: iOS/Android",
-    zhDesc:
-      "手机上怎么合并PDF？iOS（Safari）和 Android（Chrome）都能用浏览器本地工具完成——文件不上传、不装 App、不挑网络。含分步教程、方案对比与手机端限制。",
-  },
-];
-
-/** 按发布日期倒序（最新在前） */
   {
     slug: "merge-pdf-on-mobile",
     tag: "PDF 合并 · 移动端",

@@ -237,6 +237,7 @@ export default function Page() {
       <div className="mt-8 rounded-lg bg-subtle p-4 text-sm leading-relaxed">
         <strong className="block mb-1">相关阅读 / Related</strong>
         <ul className="list-inside space-y-1">
+          <li><Link href="/blog/privacy-first-pdf-workflow" className="text-primary hover:underline">隐私友好的 PDF 工作流：4 个环节全程本地处理</Link></li>
           <li><Link href="/blog/offline-pdf-merge-limits" className="text-primary hover:underline">100% 离线 PDF 合并：理论可行性的边界</Link></li>
           <li><Link href="/blog/why-local-pdf-merge-beats-online" className="text-primary hover:underline">为什么本地 PDF 合并比在线更安全</Link></li>
           <li><Link href="/blog/how-zero-upload-pdf-tools-work" className="text-primary hover:underline">零上传 PDF 工具：工作原理全解析</Link></li>

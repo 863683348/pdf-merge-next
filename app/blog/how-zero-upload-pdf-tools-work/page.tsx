@@ -227,6 +227,13 @@ export default function Page() {
         <h2 className="text-title font-semibold text-fg">相关阅读 / Related</h2>
         <div className="mt-4 grid gap-4 sm:grid-cols-2">
           <Link
+            href="/blog/privacy-first-pdf-workflow"
+            className="block rounded-xl border border-line bg-surface p-4 transition-colors hover:bg-subtle"
+          >
+            <p className="text-sm font-semibold text-fg">隐私友好的 PDF 工作流设计</p>
+            <p className="mt-1 text-xs text-fg-secondary">Privacy-First PDF Workflow: 4 Stages, Zero Upload</p>
+          </Link>
+          <Link
             href="/blog/merge-pdf-no-upload"
             className="block rounded-xl border border-line bg-surface p-4 transition-colors hover:bg-subtle"
           >

@@ -4,9 +4,9 @@ import Link from 'next/link';
 const SITE_URL = 'https://pdfmergenext.shop';
 
 export const metadata: Metadata = {
-  title: 'Privacy-First PDF Workflow Design | PDFMergeNext',
+  title: 'Privacy-First PDF Workflow: 4 Stages, Zero Upload (2026)',
   description:
-    'How to design a privacy-first PDF workflow: local processing at every stage, no-upload tools, and the audit questions that separate real local tools from marketing. 一套隐私友好的 PDF 工作流，从合并到签署，文件不出本机。',
+    'Design a privacy-first PDF workflow: merge, compress, split & sign locally with zero upload. No sign-up, no watermark. Try PDFMergeNext free.',
   keywords: [
     'privacy-first pdf workflow',
     '隐私友好 PDF',
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Privacy-First PDF Workflow Design · PDFMergeNext',
+    title: 'Privacy-First PDF Workflow: 4 Stages, Zero Upload (2026)',
     description:
-      'How to design a privacy-first PDF workflow: local processing at every stage, no-upload tools, and the audit questions that separate real local tools from marketing. 一套隐私友好的 PDF 工作流，从合并到签署，文件不出本机。',
+      'Design a privacy-first PDF workflow: merge, compress, split & sign locally with zero upload. No sign-up, no watermark. Try PDFMergeNext free.',
     type: 'article',
     url: `${SITE_URL}/blog/privacy-first-pdf-workflow`,
     siteName: 'PDFMergeNext',
@@ -39,9 +39,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Privacy-First PDF Workflow Design · PDFMergeNext',
+    title: 'Privacy-First PDF Workflow: 4 Stages, Zero Upload (2026)',
     description:
-      'How to design a privacy-first PDF workflow: local processing at every stage, no-upload tools, and the audit questions that separate real local tools from marketing. 一套隐私友好的 PDF 工作流，从合并到签署，文件不出本机。',
+      'Design a privacy-first PDF workflow: merge, compress, split & sign locally with zero upload. No sign-up, no watermark. Try PDFMergeNext free.',
     images: [`${SITE_URL}/og`],
   },
 };
@@ -159,6 +159,11 @@ export default function Page() {
         隐私友好的 PDF 工作流只有一条原则：文件不出本机。合并、压缩、拆分、签署，每一步都用本地处理的工具，你就不需要信任任何服务器的日志、保留政策或"已加密存储"的承诺。Design your PDF workflow around one rule: the file never leaves your device. When every step runs locally, there is no server log, no retention policy, no promise to trust.
       </div>
 
+      <div className="my-6 rounded-lg border border-primary/30 bg-primary/5 p-4 text-sm">
+        <strong className="block mb-1 text-primary">开始实践 / Start here →</strong>
+        用本地合并工具开始你的隐私工作流：<Link href="/" className="font-semibold text-primary underline">Merge PDFs free in your browser</Link> — 文件不上传、免注册、无水印。No upload, no sign-up, no watermark.
+      </div>
+
       <nav className="mb-8 rounded-lg border border-line p-4 text-sm">
         <strong className="block mb-2">目录 / Contents</strong>
         <ul className="list-inside space-y-1">
@@ -172,7 +177,7 @@ export default function Page() {
 
       <h2 id="why" className="text-2xl font-semibold mt-10">1. Why Design a Workflow at All</h2>
       <p className="mt-3">
-        Most people treat PDF handling as a series of one-off decisions: merge this contract somewhere, compress that scan somewhere else. A privacy-first PDF workflow replaces that with a single rule: every operation runs on your device, no upload. Once the rule is in place, you stop making a privacy judgment call for every file, because the answer is always the same.
+        Most people treat PDF handling as a series of one-off decisions: merge this contract somewhere, compress that scan somewhere else. A privacy-first PDF workflow replaces that with a single rule: every operation runs on your device, no upload. Once the rule is in place, you stop making a privacy judgment call for every file, because the answer is always the same. If you are wondering whether browser-based tools really can be local, our <Link href="/blog/client-side-vs-server-side-pdf-tools" className="text-primary hover:underline">client-side vs server-side PDF tools</Link> breakdown explains the architecture difference.
       </p>
       <p className="mt-2">
         The cost of not designing it showed up last month. A freelancer friend merged a client&apos;s bid documents on a random website, then realized the same site also handles his tax scans. He had never connected the two facts. That is the failure mode: not one bad decision, but a chain of unexamined defaults.
@@ -197,12 +202,12 @@ export default function Page() {
         Plenty of tools claim local processing. Three questions sort the real ones from the marketing:
       </p>
       <ul className="mt-3 list-inside space-y-1">
-        <li><strong>Does it work offline?</strong> Cut your network. A genuinely local tool keeps working; an uploader stalls or errors.</li>
+        <li><strong>Does it work offline?</strong> Cut your network. A genuinely local tool keeps working; an uploader stalls or errors. We cover exactly how zero-upload tools work under the hood in <Link href="/blog/how-zero-upload-pdf-tools-work" className="text-primary hover:underline">how zero-upload PDF tools work</Link>.</li>
         <li><strong>Where does the code run?</strong> Look for WebAssembly or a desktop client. Browser extensions that talk to a remote API are not local.</li>
         <li><strong>What does the privacy policy say about retention?</strong> "Files deleted after 1 hour" means they were stored. "Never leaves your device" means it did not.</li>
       </ul>
       <p className="mt-2">
-        One more practical test: watch the network tab while you drop a file in. If a request to a remote server fires, the tool is not local, whatever its landing page says.
+        One more practical test: watch the network tab while you drop a file in. If a request to a remote server fires, the tool is not local, whatever its landing page says. Our <Link href="/blog/devtools-network-tab-privacy-guide" className="text-primary hover:underline">DevTools network tab privacy guide</Link> walks through this check step by step.
       </p>
 
       <h2 id="default" className="text-2xl font-semibold mt-10">4. Make Upload the Exception, Not the Default</h2>
