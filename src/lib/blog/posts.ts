@@ -209,6 +209,17 @@ export const BLOG_POSTS: BlogPostMeta[] = [
     enDesc:
       "Merging multiple PDF files is simpler than you think. This post teaches you the three steps: choose a tool, upload files, and click merge. Includes privacy tips and common mistakes to avoid.",
   },
+  {
+    slug: "drag-sort-pdf-pro-tips",
+    tag: "PDF 合并 · 进阶",
+    date: "2026-08-22",
+    zhTitle: "拖拽排序 PDF：进阶技巧",
+    enTitle: "Drag-Sort PDF: Pro Tips",
+    zhDesc:
+      "掌握拖拽排序的进阶技巧：批量调整、快捷键、常见错误避免，让 PDF 合并效率翻倍。",
+    enDesc:
+      "Master drag-sort PDF pro tips: batch reordering, keyboard shortcuts, and common mistakes to avoid. Double your PDF merge efficiency.",
+  },
 ];
 
 /** 按发布日期倒序（最新在前） */
