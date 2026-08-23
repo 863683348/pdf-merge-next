@@ -1,13 +1,3 @@
-
-  {
-    slug: "pdf-page-selection-1-3-5-syntax",
-    tag: "PDF 合并 · 进阶",
-    date: "2026-08-23",
-    zhTitle: "PDF 挑页合并：1-3,5 语法详解",
-    enTitle: "PDF Page Selection: 1-3,5 Syntax",
-    zhDesc: "学会用 1-3,5 语法挑页合并 PDF，只保留你需要的页面。",
-    enDesc: "Master the 1-3,5 page selection syntax to merge only the pages you need.",
-  },
 /**
  * 博客文章元数据（列表页数据驱动，2026-08-10 由手工卡片改造而来）
  *
@@ -25,6 +15,15 @@ export interface BlogPostMeta {
 }
 
 export const BLOG_POSTS: BlogPostMeta[] = [
+  {
+    slug: "pdf-page-selection-1-3-5-syntax",
+    tag: "PDF 合并 · 进阶",
+    date: "2026-08-23",
+    zhTitle: "PDF 挑页合并：1-3,5 语法详解",
+    enTitle: "PDF Page Selection: 1-3,5 Syntax",
+    zhDesc: "学会用 1-3,5 语法挑页合并 PDF，只保留你需要的页面。",
+    enDesc: "Master the 1-3,5 page selection syntax to merge only the pages you need.",
+  },
   {
     slug: "pdf-merge-no-upload-privacy-facts",
     tag: "隐私事实 · Privacy Facts",
