@@ -229,6 +229,15 @@ export const BLOG_POSTS: BlogPostMeta[] = [
     enDesc:
       "Master drag-sort PDF pro tips: batch reordering, keyboard shortcuts, and common mistakes to avoid. Double your PDF merge efficiency.",
   },
+  {
+    slug: "merge-pdf-mac-3-methods",
+    tag: "Mac 技巧 · Mac Tips",
+    date: "2026-08-25",
+    zhTitle: "Mac 合并 PDF：3 种方法详解",
+    enTitle: "Merge PDF on Mac: 3 Methods Explained",
+    zhDesc: "在 Mac 上合并 PDF 比以往更容易。从内置工具到在线方案，3 种方法一次讲清。",
+    enDesc: "Merging PDFs on a Mac is easier than ever. Here are the three best methods, from built-in tools to online solutions.",
+  },
 ];
 
 /** 按发布日期倒序（最新在前） */
