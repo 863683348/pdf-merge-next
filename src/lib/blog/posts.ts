@@ -113,6 +113,15 @@ export const BLOG_POSTS: BlogPostMeta[] = [
     zhDesc:
       "文件不上传服务器，合同、证件、财务报表更安全。免注册、无水印、免费。",
   },
+  {
+    slug: "merge-pdf-windows-free-tools",
+    tag: "Windows 指南 · Windows Guide",
+    date: "2026-08-26",
+    zhTitle: "Windows 上免费合并 PDF：5 种本地离线方案",
+    enTitle: "5 Free Local PDF Merge Methods on Windows (No Upload)",
+    zhDesc:
+      "Windows 10/11 上如何免费合并 PDF？5 种本地方案对比：浏览器本地工具、PDFMergeNext、桌面软件、系统自带功能、命令行。全部不上传、免费、无水印。",
+  },
 ];
 
 /** 按发布日期倒序（最新在前） */
