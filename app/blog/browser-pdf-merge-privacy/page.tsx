@@ -25,6 +25,23 @@ export const metadata: Metadata = {
       'x-default': '/blog/browser-pdf-merge-privacy',
     },
   },
+  openGraph: {
+    title: '浏览器合并PDF：WebAssembly 时代的隐私革命 · PDFMergeNext',
+    description:
+      '浏览器合并PDF 为什么是隐私革命：文件不离开设备、没有服务器日志、没有传输链路。WebAssembly + pdf-lib 让本地合并足够流畅。Browser PDF merge as a privacy revolution.',
+    type: 'article',
+    url: `${SITE_URL}/blog/browser-pdf-merge-privacy`,
+    siteName: 'PDFMergeNext',
+    publishedTime: '2026-08-07T00:00:00.000Z',
+    images: [{ url: `${SITE_URL}/og`, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '浏览器合并PDF：WebAssembly 时代的隐私革命 · PDFMergeNext',
+    description:
+      '浏览器合并PDF 为什么是隐私革命：文件不离开设备、没有服务器日志、没有传输链路。WebAssembly + pdf-lib 让本地合并足够流畅。Browser PDF merge as a privacy revolution.',
+    images: [`${SITE_URL}/og`],
+  },
 };
 
 const FAQ = [

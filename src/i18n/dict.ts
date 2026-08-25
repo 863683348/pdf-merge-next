@@ -188,6 +188,10 @@ export const dict: DictMap = {
     'pricing.loadingPaypal': '正在加载 PayPal…',
     'pricing.sandboxNote': '测试环境（Sandbox）：不会产生真实扣款',
     'pricing.planConfig': '订阅计划配置中，暂未开放',
+    'pricing.noteTitle': 'PDFMergeNext 定价说明 / Pricing',
+    'pricing.note1': 'PDFMergeNext 目前提供完全免费的 PDF 合并服务：无水印、无每日操作次数限制、无文件大小限制。免费版即可满足绝大多数日常 PDF 合并需求——合并任意数量的文件、拖拽排序、挑页合并（1-3,5 语法）全部免费。',
+    'pricing.note2': '未来 Pro 订阅计划（即将推出）将为有更高需求的用户提供额外功能：超大文件支持（单文件 >200MB）、批量转换、优先技术支持等。Pro 定价为 $7/月（月付）或 $49/年（年付，相当于约 $4/月）。',
+    'pricing.note3': '所有处理均在浏览器客户端完成，文件永不离开你的设备。无需信用卡即可开始使用。',
 
     // ---- 隐私政策 ----
     'privacy.title': '隐私政策',
@@ -466,6 +470,10 @@ export const dict: DictMap = {
     'pricing.loadingPaypal': 'Loading PayPal…',
     'pricing.sandboxNote': 'Test mode (Sandbox): no real charges',
     'pricing.planConfig': 'Subscription plan is being configured and not available yet',
+    'pricing.noteTitle': 'PDFMergeNext Pricing & Plans',
+    'pricing.note1': 'PDFMergeNext is completely free to use: no watermark, no daily usage limits, and no file size limits. The free version covers most everyday PDF merging needs — merging any number of files, drag-to-reorder, and page selection (1-3,5 syntax) are all free.',
+    'pricing.note2': 'A future Pro subscription plan (coming soon) will add extra features for users with higher demands: support for very large files (single file >200MB), batch conversion, priority support, and more. Pro pricing is $7/month (monthly) or $49/year (yearly, roughly $4/month).',
+    'pricing.note3': 'All processing happens in your browser — files never leave your device. No credit card required to get started.',
 
     // ---- Privacy ----
     'privacy.title': 'Privacy Policy',

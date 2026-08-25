@@ -25,6 +25,23 @@ export const metadata: Metadata = {
       'x-default': '/blog/how-zero-upload-pdf-tools-work',
     },
   },
+  openGraph: {
+    title: '零上传PDF工具：工作原理全解析 · PDFMergeNext',
+    description:
+      '零上传PDF工具如何在浏览器本地完成合并？WebAssembly + pdf-lib 架构拆解：本地调试端口、渲染进程注入、零网络请求原理。How zero-upload PDF tools work under the hood.',
+    type: 'article',
+    url: `${SITE_URL}/blog/how-zero-upload-pdf-tools-work`,
+    siteName: 'PDFMergeNext',
+    publishedTime: '2026-08-06T00:00:00.000Z',
+    images: [{ url: `${SITE_URL}/og`, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '零上传PDF工具：工作原理全解析 · PDFMergeNext',
+    description:
+      '零上传PDF工具如何在浏览器本地完成合并？WebAssembly + pdf-lib 架构拆解：本地调试端口、渲染进程注入、零网络请求原理。How zero-upload PDF tools work under the hood.',
+    images: [`${SITE_URL}/og`],
+  },
 };
 
 const FAQ = [
@@ -209,6 +226,13 @@ export default function Page() {
       <section className="mt-12">
         <h2 className="text-title font-semibold text-fg">相关阅读 / Related</h2>
         <div className="mt-4 grid gap-4 sm:grid-cols-2">
+          <Link
+            href="/blog/privacy-first-pdf-workflow"
+            className="block rounded-xl border border-line bg-surface p-4 transition-colors hover:bg-subtle"
+          >
+            <p className="text-sm font-semibold text-fg">隐私友好的 PDF 工作流设计</p>
+            <p className="mt-1 text-xs text-fg-secondary">Privacy-First PDF Workflow: 4 Stages, Zero Upload</p>
+          </Link>
           <Link
             href="/blog/merge-pdf-no-upload"
             className="block rounded-xl border border-line bg-surface p-4 transition-colors hover:bg-subtle"

@@ -27,6 +27,23 @@ export const metadata: Metadata = {
       'x-default': '/blog/why-local-pdf-merge-beats-online',
     },
   },
+  openGraph: {
+    title: '为什么本地PDF合并比在线更安全：7 个核心原因 · PDFMergeNext',
+    description:
+      '本地PDF合并 vs 在线合并：从数据链路、合规、服务器日志到中间人攻击逐层拆解，为什么 on-device PDF tools 才是敏感文件的安全选择。Why local PDF merge beats online.',
+    type: 'article',
+    url: `${SITE_URL}/blog/why-local-pdf-merge-beats-online`,
+    siteName: 'PDFMergeNext',
+    publishedTime: '2026-08-05T00:00:00.000Z',
+    images: [{ url: `${SITE_URL}/og`, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '为什么本地PDF合并比在线更安全：7 个核心原因 · PDFMergeNext',
+    description:
+      '本地PDF合并 vs 在线合并：从数据链路、合规、服务器日志到中间人攻击逐层拆解，为什么 on-device PDF tools 才是敏感文件的安全选择。Why local PDF merge beats online.',
+    images: [`${SITE_URL}/og`],
+  },
 };
 
 // FAQ 数据

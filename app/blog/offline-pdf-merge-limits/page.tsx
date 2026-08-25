@@ -25,6 +25,23 @@ export const metadata: Metadata = {
       'x-default': '/blog/offline-pdf-merge-limits',
     },
   },
+  openGraph: {
+    title: '100% 离线PDF合并：理论可行性的边界 · PDFMergeNext',
+    description:
+      '离线PDF合并到底能走多远？浏览器本地处理的理论边界、实际瓶颈（内存/性能/加密 PDF/扫描件），以及哪些场景确实做不到 100% 离线。Offline PDF merge, honestly examined.',
+    type: 'article',
+    url: `${SITE_URL}/blog/offline-pdf-merge-limits`,
+    siteName: 'PDFMergeNext',
+    publishedTime: '2026-08-08T00:00:00.000Z',
+    images: [{ url: `${SITE_URL}/og`, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '100% 离线PDF合并：理论可行性的边界 · PDFMergeNext',
+    description:
+      '离线PDF合并到底能走多远？浏览器本地处理的理论边界、实际瓶颈（内存/性能/加密 PDF/扫描件），以及哪些场景确实做不到 100% 离线。Offline PDF merge, honestly examined.',
+    images: [`${SITE_URL}/og`],
+  },
 };
 
 const FAQ = [
