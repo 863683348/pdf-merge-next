@@ -16,6 +16,16 @@ export interface BlogPostMeta {
 }
 
 export const BLOG_POSTS: BlogPostMeta[] = [
+
+  {
+    slug: "large-pdf-merge-browser-memory",
+    tag: "技术深潜 · Memory Strategies",
+    date: "2026-08-29",
+    zhTitle: "大文件 PDF 合并：浏览器内存策略",
+    enTitle: "Large PDF Merge: Browser Memory Strategies",
+    zhDesc: "合并大 PDF 文件时浏览器内存不足怎么办？分块处理、Web Worker、Streams API 让本地工具也能处理 GB 级文件。",
+    enDesc: "Merging huge PDFs in the browser without running out of memory. Chunked processing, Web Workers, and Streams API for GB-scale local merging.",
+  },
   {
     slug: "pdf-page-selection-1-3-5-syntax",
     tag: "PDF 合并 · 进阶",
