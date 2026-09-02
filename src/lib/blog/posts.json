@@ -231,5 +231,32 @@
     "enTitle": "Merge PDF on Android: Chrome Browser Method",
     "zhDesc": "无需安装应用，在 Android Chrome 中合并 PDF。本文展示在线工具、Google Drive 与本地方案，文件可完全不出设备。",
     "enDesc": "Merge PDFs on Android without installing an app. This guide covers online tools, Google Drive, and fully local browser-based methods."
+  },
+  {
+    "slug": "pdf-batch-merge-100-files",
+    "tag": "批量处理 · Batch Processing",
+    "date": "2026-08-30",
+    "zhTitle": "PDF 批量合并：100+ 文件最佳实践",
+    "enTitle": "PDF Batch Merge: 100+ Files Best Practices",
+    "zhDesc": "合并 100+ PDF 文件不再困难。本文介绍批量处理的最佳实践和工具选择。",
+    "enDesc": "Merging 100+ PDF files can be daunting. Learn best practices and tool choices for large-scale batch processing."
+  },
+  {
+    "slug": "pdf-naming-conventions-merge",
+    "tag": "最佳实践 · Best Practices",
+    "date": "2026-08-31",
+    "zhTitle": "PDF 文件命名规范：合并后如何命名",
+    "enTitle": "",
+    "zhDesc": "合并 PDF 后如何正确命名文件？本文介绍命名规范、方案和最佳实践。",
+    "enDesc": "How to properly name merged PDF files? This article covers naming conventions, schemes, and best practices."
+  },
+  {
+    "slug": "ilovepdf-alternatives-no-upload",
+    "tag": "最佳实践 · Best Practices",
+    "date": "2026-09-02",
+    "zhTitle": "iLovePDF 替代方案：5 个零上传的本地工具",
+    "enTitle": "iLovePDF Alternatives: 5 No-Upload Tools",
+    "zhDesc": "5 个优秀的 iLovePDF 替代方案，完全在浏览器中处理你的文件——无需上传、无需服务器处理、最大隐私。",
+    "enDesc": "5 excellent iLovePDF alternatives that process your files entirely in your browser — no uploads, no server processing, maximum privacy."
   }
 ]
