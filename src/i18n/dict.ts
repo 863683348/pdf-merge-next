@@ -142,6 +142,11 @@ export const dict: DictMap = {
     'footer.blog': '博客',
     'footer.contact': '联系我们',
     'footer.pricing': '定价',
+    'footer.merge': '合并',
+    'footer.split': '拆分',
+    'footer.compress': '压缩',
+    'footer.rotate': '旋转',
+    'footer.image': '转图片',
     'footer.copyright': '© {year} PDFMergeNext。文件本地处理，不上传服务器。',
 
     // ---- 定价页 ----
@@ -424,6 +429,11 @@ export const dict: DictMap = {
     'footer.blog': 'Blog',
     'footer.contact': 'Contact',
     'footer.pricing': 'Pricing',
+    'footer.merge': 'Merge',
+    'footer.split': 'Split',
+    'footer.compress': 'Compress',
+    'footer.rotate': 'Rotate',
+    'footer.image': 'To Image',
     'footer.copyright': '© {year} PDFMergeNext. Files processed locally, never uploaded.',
 
     // ---- Pricing ----

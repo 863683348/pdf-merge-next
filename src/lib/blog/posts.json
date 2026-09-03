@@ -246,7 +246,7 @@
     "tag": "最佳实践 · Best Practices",
     "date": "2026-08-31",
     "zhTitle": "PDF 文件命名规范：合并后如何命名",
-    "enTitle": "",
+    "enTitle": "PDF Naming Conventions for Merged Files",
     "zhDesc": "合并 PDF 后如何正确命名文件？本文介绍命名规范、方案和最佳实践。",
     "enDesc": "How to properly name merged PDF files? This article covers naming conventions, schemes, and best practices."
   },
@@ -258,5 +258,14 @@
     "enTitle": "iLovePDF Alternatives: 5 No-Upload Tools",
     "zhDesc": "5 个优秀的 iLovePDF 替代方案，完全在浏览器中处理你的文件——无需上传、无需服务器处理、最大隐私。",
     "enDesc": "5 excellent iLovePDF alternatives that process your files entirely in your browser — no uploads, no server processing, maximum privacy."
+  },
+  {
+    "slug": "compress-pdf-local-no-upload",
+    "tag": "PDF 压缩 · 本地教程",
+    "date": "2026-09-02",
+    "zhTitle": "压缩 PDF 不上传：浏览器本地瘦身指南",
+    "enTitle": "Compress PDF Without Uploading — Local Shrink Guide",
+    "zhDesc": "邮件附件太大？在浏览器里本地压缩 PDF，文件不上传、免注册、无水印。附挑页瘦身、合并前先压的小技巧。",
+    "enDesc": "Email attachment too big? Compress PDFs locally in your browser — no upload, no sign-up, no watermark. Plus tips: shrink before merging, trim pages first."
   }
 ]

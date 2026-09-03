@@ -84,6 +84,8 @@ export default function Page() {
           支持中英双语界面。桌面端和移动端均可用，无需安装任何应用。也欢迎阅读我们的博客：
           <a href="/blog" className="ml-1 text-primary hover:underline">合并 PDF 不上传的完整指南</a>
           、
+          <a href="/blog/privacy-first-pdf-workflow" className="text-primary hover:underline">隐私友好的 PDF 工作流设计</a>
+          、
           <a href="/blog/pdfmergenext-vs-smallpdf-vs-ilovepdf" className="text-primary hover:underline">PDFMergeNext vs Smallpdf vs iLovePDF 对比</a>
           ，或查看
           <a href="/privacy" className="text-primary hover:underline">隐私政策</a>
@@ -91,6 +93,17 @@ export default function Page() {
           <a href="/terms" className="text-primary hover:underline">服务条款</a>
           。
         </p>
+
+        <h3 className="mt-5 text-base font-semibold text-fg">不止合并：本地 PDF 工具箱</h3>
+        <p className="mt-2">
+          除了合并，我们还提供同样「零上传」的本地工具，覆盖你日常处理 PDF 的完整链路：
+        </p>
+        <ul className="mt-2 list-disc space-y-1 pl-5">
+          <li><a href="/split-pdf" className="text-primary hover:underline">拆分 PDF</a>：用 1-3,5 语法提取指定页面，文件不出本机。</li>
+          <li><a href="/compress-pdf" className="text-primary hover:underline">压缩 PDF</a>：在浏览器内重新序列化减小体积，无需上传到服务器。</li>
+          <li><a href="/rotate-pdf" className="text-primary hover:underline">旋转 PDF</a>：把扫描件或导出的页面统一转正 90°/180°/270°。</li>
+          <li><a href="/pdf-to-image" className="text-primary hover:underline">PDF 转图片</a>：把每一页渲染成 PNG/JPEG，方便插入文档或分享。</li>
+        </ul>
 
         <h3 className="mt-5 text-base font-semibold text-fg">关于 PDF 格式，你需要知道的几件事</h3>
         <p className="mt-2">

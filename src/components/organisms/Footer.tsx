@@ -4,6 +4,12 @@ import Link from 'next/link';
 import { useT } from '../../i18n/provider';
 
 const links = [
+  { key: 'blog', href: '/blog' },
+  { key: 'merge', href: '/' },
+  { key: 'split', href: '/split-pdf' },
+  { key: 'compress', href: '/compress-pdf' },
+  { key: 'rotate', href: '/rotate-pdf' },
+  { key: 'image', href: '/pdf-to-image' },
   { key: 'pricing', href: '/pricing' },
   { key: 'privacy', href: '/privacy' },
   { key: 'terms', href: '/terms' },

@@ -1,17 +1,58 @@
 'use client';
 
+import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import { PageShell } from '@/components/atoms/PageShell';
 import { useT } from '@/i18n/provider';
 import { getBlogPosts } from '@/lib/blog/posts';
 
+// P1-1：按粗分类（tag 中「·」前的主类）做客户端筛选，
+// 让 25+ 篇博客按主题聚类、长尾更清晰，也避免单页信息过载。
+function categoryOf(tag: string): string {
+  return tag.split(' · ')[0] || tag;
+}
+
 export default function BlogPage() {
   const t = useT();
-  const posts = getBlogPosts();
+  const all = getBlogPosts();
+  const cats = useMemo(() => {
+    const set = new Set(all.map((p) => categoryOf(p.tag)));
+    return Array.from(set);
+  }, [all]);
+  const [active, setActive] = useState<string | null>(null);
+  const posts = active ? all.filter((p) => categoryOf(p.tag) === active) : all;
 
   return (
     <PageShell titleKey="blog.title">
       <p className="mt-2 text-body text-fg-secondary">{t('blog.desc')}</p>
+
+      <div className="mt-4 flex flex-wrap gap-2">
+        <button
+          type="button"
+          onClick={() => setActive(null)}
+          className={`rounded-full border px-3 py-1 text-xs transition-colors duration-fast ${
+            active === null
+              ? 'border-brand bg-brand-subtle text-brand'
+              : 'border-line text-fg-secondary hover:border-brand'
+          }`}
+        >
+          全部 / All
+        </button>
+        {cats.map((c) => (
+          <button
+            key={c}
+            type="button"
+            onClick={() => setActive(c)}
+            className={`rounded-full border px-3 py-1 text-xs transition-colors duration-fast ${
+              active === c
+                ? 'border-brand bg-brand-subtle text-brand'
+                : 'border-line text-fg-secondary hover:border-brand'
+            }`}
+          >
+            {c}
+          </button>
+        ))}
+      </div>
 
       {posts.map((p) => (
         <Link
