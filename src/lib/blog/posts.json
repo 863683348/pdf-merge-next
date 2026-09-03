@@ -268,4 +268,14 @@
     "zhDesc": "邮件附件太大？在浏览器里本地压缩 PDF，文件不上传、免注册、无水印。附挑页瘦身、合并前先压的小技巧。",
     "enDesc": "Email attachment too big? Compress PDFs locally in your browser — no upload, no sign-up, no watermark. Plus tips: shrink before merging, trim pages first."
   }
+  ,
+  {
+    "slug": "adobe-acrobat-alternatives-free",
+    "tag": "工具清单 · Acrobat Alternatives",
+    "date": "2026-09-03",
+    "zhTitle": "Adobe Acrobat 替代：免费离线的 5 个选择",
+    "enTitle": "5 Free Adobe Acrobat Alternatives That Work Offline",
+    "zhDesc": "不想为 PDF 订阅 Adobe？这 5 个免费、可离线的替代品在本地处理文件——不上传、数据不出本机。每个都写明真实短板，并告诉你什么情况下还是得用 Acrobat。",
+    "enDesc": "Don't want to subscribe to Adobe for PDFs? These 5 free, offline-capable alternatives process files locally — no upload, no data leaving your machine. Each lists its real drawbacks, plus when Acrobat is still the right call."
+  }
 ]
