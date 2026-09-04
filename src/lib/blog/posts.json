@@ -278,4 +278,14 @@
     "zhDesc": "不想为 PDF 订阅 Adobe？这 5 个免费、可离线的替代品在本地处理文件——不上传、数据不出本机。每个都写明真实短板，并告诉你什么情况下还是得用 Acrobat。",
     "enDesc": "Don't want to subscribe to Adobe for PDFs? These 5 free, offline-capable alternatives process files locally — no upload, no data leaving your machine. Each lists its real drawbacks, plus when Acrobat is still the right call."
   }
+  ,
+  {
+    "slug": "pdf24-vs-pdfmergenext",
+    "tag": "工具对比 · Versus",
+    "date": "2026-09-04",
+    "zhTitle": "PDF24 vs PDFMergeNext：功能对比",
+    "enTitle": "PDF24 vs PDFMergeNext: Feature Comparison",
+    "zhDesc": "同是免费、本地处理文件的 PDF 工具，PDF24 与 PDFMergeNext 到底差在哪？合并、压缩、隐私、上手成本逐项对比，帮你选对那一个。",
+    "enDesc": "Both free and local-first, but PDF24 and PDFMergeNext differ where it counts. A feature-by-feature comparison of merging, compression, privacy, and ease of use."
+  }
 ]
