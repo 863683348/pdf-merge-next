@@ -288,4 +288,14 @@
     "zhDesc": "同是免费、本地处理文件的 PDF 工具，PDF24 与 PDFMergeNext 到底差在哪？合并、压缩、隐私、上手成本逐项对比，帮你选对那一个。",
     "enDesc": "Both free and local-first, but PDF24 and PDFMergeNext differ where it counts. A feature-by-feature comparison of merging, compression, privacy, and ease of use."
   }
+  ,
+  {
+    "slug": "online-pdf-merge-tools-compared",
+    "tag": "对比评测 · Online Tools Roundup",
+    "date": "2026-09-06",
+    "zhTitle": "在线 PDF 合并工具横评：2026 年谁更值得用",
+    "enTitle": "Online PDF Merge Tools Compared: Which Is Worth It in 2026",
+    "zhDesc": "2026 年主流在线 PDF 合并工具横评：Smallpdf、iLovePDF、PDF24、PDFMergeNext 与 Adobe 在线版，在上传隐私、文件限制、价格上逐项对比。",
+    "enDesc": "A 2026 head-to-head of online PDF merge tools — Smallpdf, iLovePDF, PDF24, PDFMergeNext and Adobe online — compared on upload privacy, file limits, and price."
+  }
 ]
