@@ -267,8 +267,7 @@
     "enTitle": "Compress PDF Without Uploading — Local Shrink Guide",
     "zhDesc": "邮件附件太大？在浏览器里本地压缩 PDF，文件不上传、免注册、无水印。附挑页瘦身、合并前先压的小技巧。",
     "enDesc": "Email attachment too big? Compress PDFs locally in your browser — no upload, no sign-up, no watermark. Plus tips: shrink before merging, trim pages first."
-  }
-  ,
+  },
   {
     "slug": "adobe-acrobat-alternatives-free",
     "tag": "工具清单 · Acrobat Alternatives",
@@ -277,8 +276,7 @@
     "enTitle": "5 Free Adobe Acrobat Alternatives That Work Offline",
     "zhDesc": "不想为 PDF 订阅 Adobe？这 5 个免费、可离线的替代品在本地处理文件——不上传、数据不出本机。每个都写明真实短板，并告诉你什么情况下还是得用 Acrobat。",
     "enDesc": "Don't want to subscribe to Adobe for PDFs? These 5 free, offline-capable alternatives process files locally — no upload, no data leaving your machine. Each lists its real drawbacks, plus when Acrobat is still the right call."
-  }
-  ,
+  },
   {
     "slug": "pdf24-vs-pdfmergenext",
     "tag": "工具对比 · Versus",
@@ -287,8 +285,7 @@
     "enTitle": "PDF24 vs PDFMergeNext: Feature Comparison",
     "zhDesc": "同是免费、本地处理文件的 PDF 工具，PDF24 与 PDFMergeNext 到底差在哪？合并、压缩、隐私、上手成本逐项对比，帮你选对那一个。",
     "enDesc": "Both free and local-first, but PDF24 and PDFMergeNext differ where it counts. A feature-by-feature comparison of merging, compression, privacy, and ease of use."
-  }
-  ,
+  },
   {
     "slug": "online-pdf-merge-tools-compared",
     "tag": "对比评测 · Online Tools Roundup",
@@ -297,8 +294,7 @@
     "enTitle": "Online PDF Merge Tools Compared: Which Is Worth It in 2026",
     "zhDesc": "2026 年主流在线 PDF 合并工具横评：Smallpdf、iLovePDF、PDF24、PDFMergeNext 与 Adobe 在线版，在上传隐私、文件限制、价格上逐项对比。",
     "enDesc": "A 2026 head-to-head of online PDF merge tools — Smallpdf, iLovePDF, PDF24, PDFMergeNext and Adobe online — compared on upload privacy, file limits, and price."
-  }
-,
+  },
   {
     "slug": "best-desktop-pdf-tools-2026",
     "tag": "工具清单 · Desktop Tools",
@@ -307,5 +303,14 @@
     "enTitle": "Best Desktop PDF Tools of 2026",
     "zhDesc": "不想依赖在线服务？这 8 款桌面 PDF 工具在本地处理文件——隐私优先、离线可用、功能强大。每款都写明真实短板。",
     "enDesc": "Skip the online tools. These 8 desktop PDF applications process files locally — privacy-first, offline-capable, and powerful. Each lists its real drawbacks."
+  },
+  {
+    "slug": "ilovepdf-user-migration-guide",
+    "tag": "迁移指南 · Migration Guide",
+    "date": "2026-09-11",
+    "zhTitle": "iLovePDF 用户迁移指南：把 PDF 处理搬回本地",
+    "enTitle": "iLovePDF User Migration Guide: Moving PDF Work Back to Your Machine",
+    "zhDesc": "习惯用 iLovePDF 却在意文件隐私？这份迁移指南讲清哪些任务可以直接搬到本地、哪些还需要在线服务，以及迁移时最容易忽略的一步。",
+    "enDesc": "Used to iLovePDF but worried about file privacy? This migration guide covers which tasks move cleanly to a local tool, which still need an online service, and the one step people always skip."
   }
 ]
