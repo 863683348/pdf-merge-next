@@ -321,5 +321,23 @@
     "enTitle": "PDFsam Basic vs PDFMergeNext",
     "zhDesc": "PDFsam Basic 要装桌面软件，PDFMergeNext 在浏览器里跑。离线能力、合并体验、隐私、上手成本逐项对比，帮你想清楚 pdfsam basic alternative 到底该选谁。",
     "enDesc": "One needs a desktop install, the other runs in a browser tab. Offline behavior, merge experience, privacy and setup cost compared for anyone weighing a pdfsam basic alternative."
+  },
+  {
+    "slug": "pdf-merge-paid-vs-free",
+    "tag": "工具对比 · Versus",
+    "date": "2026-09-09",
+    "zhTitle": "PDF 合并工具：付费 vs 免费对比",
+    "enTitle": "PDF Merge Tools: Paid vs Free Comparison",
+    "zhDesc": "免费 PDF 工具够用吗，还是该上付费？从文件大小、水印、隐私、批量处理四个维度逐项对比，帮你想清楚免费与付费合并工具的差别。",
+    "enDesc": "Is a free PDF merger enough, or should you pay? File limits, watermarks, privacy and batch processing compared so you can pick the right path."
+  },
+  {
+    "slug": "smallpdf-alternatives-privacy-first",
+    "tag": "隐私优先 · Privacy-First",
+    "date": "2026-09-10",
+    "zhTitle": "Smallpdf 替代方案：隐私优先的 PDF 工具",
+    "enTitle": "Smallpdf Alternatives: Privacy-First PDF Tools",
+    "zhDesc": "Smallpdf 会把文件上传到服务器。如果你在意隐私，这里列出五款本地优先的替代品，附对比表。",
+    "enDesc": "Smallpdf uploads your files to its servers. If privacy matters, here are five local-first alternatives, with a comparison table."
   }
 ]
