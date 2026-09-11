@@ -312,5 +312,14 @@
     "enTitle": "iLovePDF User Migration Guide: Moving PDF Work Back to Your Machine",
     "zhDesc": "习惯用 iLovePDF 却在意文件隐私？这份迁移指南讲清哪些任务可以直接搬到本地、哪些还需要在线服务，以及迁移时最容易忽略的一步。",
     "enDesc": "Used to iLovePDF but worried about file privacy? This migration guide covers which tasks move cleanly to a local tool, which still need an online service, and the one step people always skip."
+  },
+  {
+    "slug": "pdfsam-vs-pdfmergenext",
+    "tag": "工具对比 · Versus",
+    "date": "2026-09-12",
+    "zhTitle": "PDFsam Basic vs PDFMergeNext：哪款更适合你",
+    "enTitle": "PDFsam Basic vs PDFMergeNext",
+    "zhDesc": "PDFsam Basic 要装桌面软件，PDFMergeNext 在浏览器里跑。离线能力、合并体验、隐私、上手成本逐项对比，帮你想清楚 pdfsam basic alternative 到底该选谁。",
+    "enDesc": "One needs a desktop install, the other runs in a browser tab. Offline behavior, merge experience, privacy and setup cost compared for anyone weighing a pdfsam basic alternative."
   }
 ]
