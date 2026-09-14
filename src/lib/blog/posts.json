@@ -339,5 +339,14 @@
     "enTitle": "Smallpdf Alternatives: Privacy-First PDF Tools",
     "zhDesc": "Smallpdf 会把文件上传到服务器。如果你在意隐私，这里列出五款本地优先的替代品，附对比表。",
     "enDesc": "Smallpdf uploads your files to its servers. If privacy matters, here are five local-first alternatives, with a comparison table."
+  },
+  {
+    "slug": "top-10-privacy-pdf-tools-2026",
+    "tag": "隐私优先 · Privacy-First",
+    "date": "2026-09-14",
+    "zhTitle": "Top 10 隐私优先的 PDF 工具（2026）",
+    "enTitle": "Top 10 Privacy-First PDF Tools (2026)",
+    "zhDesc": "从本地处理到自建服务器，逐一拆解 10 款把隐私放在首位的 PDF 工具，并说明每一款在什么情况下才值得用。",
+    "enDesc": "Ten PDF tools that put privacy first, from in-browser processing to self-hosted options, with a note on when each one is actually worth using."
   }
 ]
