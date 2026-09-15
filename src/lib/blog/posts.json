@@ -18,6 +18,15 @@
     "enDesc": "Ten PDF tools that put privacy first, from in-browser processing to self-hosted options, with a note on when each one is actually worth using."
   },
   {
+    "slug": "pdfmerge-next-privacy-design-deep-dive",
+    "tag": "产品设计 · Privacy Design",
+    "date": "2026-09-13",
+    "zhTitle": "PDFMergeNext 隐私设计白皮书",
+    "enTitle": "PDFMergeNext Privacy Design Deep Dive",
+    "zhDesc": "把文件留在浏览器里不等于自动安全。这篇拆解 PDFMergeNext 的实际数据处理路径：文件去哪、内存里发生什么、哪些环节仍然是风险点。",
+    "enDesc": "Keeping files in the browser is not automatically safe. This is a walkthrough of how PDFMergeNext actually handles your file: where it goes, what happens in memory, and which parts remain a risk."
+  },
+  {
     "slug": "pdfsam-vs-pdfmergenext",
     "tag": "工具对比 · Versus",
     "date": "2026-09-12",
