@@ -11,7 +11,7 @@ const BODY_ZH = "把文件留在浏览器里处理，是隐私优先工具最常
 export const metadata: Metadata = {
   title: TITLE + ' | PDFMergeNext',
   description: DESC,
-  keywords: ['legal pdf merge', '法律合同合并', 'lawyer pdf tools', 'contract pdf merge', 'pdf merge no upload', 'PDFMergeNext'],
+  keywords: ['PDFMergeNext privacy', 'privacy-first PDF tool', 'client-side PDF merge', 'browser PDF privacy', 'local PDF processing', 'PDFMergeNext'],
   alternates: {
     canonical: '/blog/' + SLUG,
     languages: {
