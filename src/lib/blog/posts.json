@@ -1,5 +1,131 @@
 [
   {
+    "slug": "legal-contract-pdf-merge-guide",
+    "tag": "法律实务 · Legal",
+    "date": "2026-09-15",
+    "zhTitle": "法律合同合并：律师的 PDF 工具指南",
+    "enTitle": "Legal Contract Merge: A Guide for Lawyers",
+    "zhDesc": "合同、附件、签署页要合成一份时，律师真正该关心的不是速度，而是可追溯性、页码连续和文件不外流。这篇讲清具体做法。",
+    "enDesc": "When contracts, exhibits and signature pages have to become one file, speed is not the constraint. Traceability, page continuity and keeping the file local are."
+  },
+  {
+    "slug": "top-10-privacy-pdf-tools-2026",
+    "tag": "隐私优先 · Privacy-First",
+    "date": "2026-09-14",
+    "zhTitle": "Top 10 隐私优先的 PDF 工具（2026）",
+    "enTitle": "Top 10 Privacy-First PDF Tools (2026)",
+    "zhDesc": "从本地处理到自建服务器，逐一拆解 10 款把隐私放在首位的 PDF 工具，并说明每一款在什么情况下才值得用。",
+    "enDesc": "Ten PDF tools that put privacy first, from in-browser processing to self-hosted options, with a note on when each one is actually worth using."
+  },
+  {
+    "slug": "pdfsam-vs-pdfmergenext",
+    "tag": "工具对比 · Versus",
+    "date": "2026-09-12",
+    "zhTitle": "PDFsam Basic vs PDFMergeNext：哪款更适合你",
+    "enTitle": "PDFsam Basic vs PDFMergeNext",
+    "zhDesc": "PDFsam Basic 要装桌面软件，PDFMergeNext 在浏览器里跑。离线能力、合并体验、隐私、上手成本逐项对比，帮你想清楚 pdfsam basic alternative 到底该选谁。",
+    "enDesc": "One needs a desktop install, the other runs in a browser tab. Offline behavior, merge experience, privacy and setup cost compared for anyone weighing a pdfsam basic alternative."
+  },
+  {
+    "slug": "ilovepdf-user-migration-guide",
+    "tag": "迁移指南 · Migration Guide",
+    "date": "2026-09-11",
+    "zhTitle": "iLovePDF 用户迁移指南：把 PDF 处理搬回本地",
+    "enTitle": "iLovePDF User Migration Guide: Moving PDF Work Back to Your Machine",
+    "zhDesc": "习惯用 iLovePDF 却在意文件隐私？这份迁移指南讲清哪些任务可以直接搬到本地、哪些还需要在线服务，以及迁移时最容易忽略的一步。",
+    "enDesc": "Used to iLovePDF but worried about file privacy? This migration guide covers which tasks move cleanly to a local tool, which still need an online service, and the one step people always skip."
+  },
+  {
+    "slug": "smallpdf-alternatives-privacy-first",
+    "tag": "隐私优先 · Privacy-First",
+    "date": "2026-09-10",
+    "zhTitle": "Smallpdf 替代方案：隐私优先的 PDF 工具",
+    "enTitle": "Smallpdf Alternatives: Privacy-First PDF Tools",
+    "zhDesc": "Smallpdf 会把文件上传到服务器。如果你在意隐私，这里列出五款本地优先的替代品，附对比表。",
+    "enDesc": "Smallpdf uploads your files to its servers. If privacy matters, here are five local-first alternatives, with a comparison table."
+  },
+  {
+    "slug": "pdf-merge-paid-vs-free",
+    "tag": "工具对比 · Versus",
+    "date": "2026-09-09",
+    "zhTitle": "PDF 合并工具：付费 vs 免费对比",
+    "enTitle": "PDF Merge Tools: Paid vs Free Comparison",
+    "zhDesc": "免费 PDF 工具够用吗，还是该上付费？从文件大小、水印、隐私、批量处理四个维度逐项对比，帮你想清楚免费与付费合并工具的差别。",
+    "enDesc": "Is a free PDF merger enough, or should you pay? File limits, watermarks, privacy and batch processing compared so you can pick the right path."
+  },
+  {
+    "slug": "best-desktop-pdf-tools-2026",
+    "tag": "工具清单 · Desktop Tools",
+    "date": "2026-09-08",
+    "zhTitle": "2026 年最佳桌面 PDF 工具推荐",
+    "enTitle": "Best Desktop PDF Tools of 2026",
+    "zhDesc": "不想依赖在线服务？这 8 款桌面 PDF 工具在本地处理文件——隐私优先、离线可用、功能强大。每款都写明真实短板。",
+    "enDesc": "Skip the online tools. These 8 desktop PDF applications process files locally — privacy-first, offline-capable, and powerful. Each lists its real drawbacks."
+  },
+  {
+    "slug": "online-pdf-merge-tools-compared",
+    "tag": "对比评测 · Online Tools Roundup",
+    "date": "2026-09-06",
+    "zhTitle": "在线 PDF 合并工具横评：2026 年谁更值得用",
+    "enTitle": "Online PDF Merge Tools Compared: Which Is Worth It in 2026",
+    "zhDesc": "2026 年主流在线 PDF 合并工具横评：Smallpdf、iLovePDF、PDF24、PDFMergeNext 与 Adobe 在线版，在上传隐私、文件限制、价格上逐项对比。",
+    "enDesc": "A 2026 head-to-head of online PDF merge tools — Smallpdf, iLovePDF, PDF24, PDFMergeNext and Adobe online — compared on upload privacy, file limits, and price."
+  },
+  {
+    "slug": "pdf24-vs-pdfmergenext",
+    "tag": "工具对比 · Versus",
+    "date": "2026-09-04",
+    "zhTitle": "PDF24 vs PDFMergeNext：功能对比",
+    "enTitle": "PDF24 vs PDFMergeNext: Feature Comparison",
+    "zhDesc": "同是免费、本地处理文件的 PDF 工具，PDF24 与 PDFMergeNext 到底差在哪？合并、压缩、隐私、上手成本逐项对比，帮你选对那一个。",
+    "enDesc": "Both free and local-first, but PDF24 and PDFMergeNext differ where it counts. A feature-by-feature comparison of merging, compression, privacy, and ease of use."
+  },
+  {
+    "slug": "adobe-acrobat-alternatives-free",
+    "tag": "工具清单 · Acrobat Alternatives",
+    "date": "2026-09-03",
+    "zhTitle": "Adobe Acrobat 替代：免费离线的 5 个选择",
+    "enTitle": "5 Free Adobe Acrobat Alternatives That Work Offline",
+    "zhDesc": "不想为 PDF 订阅 Adobe？这 5 个免费、可离线的替代品在本地处理文件——不上传、数据不出本机。每个都写明真实短板，并告诉你什么情况下还是得用 Acrobat。",
+    "enDesc": "Don't want to subscribe to Adobe for PDFs? These 5 free, offline-capable alternatives process files locally — no upload, no data leaving your machine. Each lists its real drawbacks, plus when Acrobat is still the right call."
+  },
+  {
+    "slug": "ilovepdf-alternatives-no-upload",
+    "tag": "最佳实践 · Best Practices",
+    "date": "2026-09-02",
+    "zhTitle": "iLovePDF 替代方案：5 个零上传的本地工具",
+    "enTitle": "iLovePDF Alternatives: 5 No-Upload Tools",
+    "zhDesc": "5 个优秀的 iLovePDF 替代方案，完全在浏览器中处理你的文件——无需上传、无需服务器处理、最大隐私。",
+    "enDesc": "5 excellent iLovePDF alternatives that process your files entirely in your browser — no uploads, no server processing, maximum privacy."
+  },
+  {
+    "slug": "compress-pdf-local-no-upload",
+    "tag": "PDF 压缩 · 本地教程",
+    "date": "2026-09-02",
+    "zhTitle": "压缩 PDF 不上传：浏览器本地瘦身指南",
+    "enTitle": "Compress PDF Without Uploading — Local Shrink Guide",
+    "zhDesc": "邮件附件太大？在浏览器里本地压缩 PDF，文件不上传、免注册、无水印。附挑页瘦身、合并前先压的小技巧。",
+    "enDesc": "Email attachment too big? Compress PDFs locally in your browser — no upload, no sign-up, no watermark. Plus tips: shrink before merging, trim pages first."
+  },
+  {
+    "slug": "pdf-naming-conventions-merge",
+    "tag": "最佳实践 · Best Practices",
+    "date": "2026-08-31",
+    "zhTitle": "PDF 文件命名规范：合并后如何命名",
+    "enTitle": "PDF Naming Conventions for Merged Files",
+    "zhDesc": "合并 PDF 后如何正确命名文件？本文介绍命名规范、方案和最佳实践。",
+    "enDesc": "How to properly name merged PDF files? This article covers naming conventions, schemes, and best practices."
+  },
+  {
+    "slug": "pdf-batch-merge-100-files",
+    "tag": "批量处理 · Batch Processing",
+    "date": "2026-08-30",
+    "zhTitle": "PDF 批量合并：100+ 文件最佳实践",
+    "enTitle": "PDF Batch Merge: 100+ Files Best Practices",
+    "zhDesc": "合并 100+ PDF 文件不再困难。本文介绍批量处理的最佳实践和工具选择。",
+    "enDesc": "Merging 100+ PDF files can be daunting. Learn best practices and tool choices for large-scale batch processing."
+  },
+  {
     "slug": "large-pdf-merge-browser-memory",
     "tag": "技术深潜 · Memory Strategies",
     "date": "2026-08-29",
@@ -9,6 +135,42 @@
     "enDesc": "Merging huge PDFs in the browser without running out of memory. Chunked processing, Web Workers, and Streams API for GB-scale local merging."
   },
   {
+    "slug": "android-merge-pdf-chrome",
+    "tag": "Android 技巧 · Chrome Tips",
+    "date": "2026-08-28",
+    "zhTitle": "Android 合并 PDF：Chrome 浏览器方式",
+    "enTitle": "Merge PDF on Android: Chrome Browser Method",
+    "zhDesc": "无需安装应用，在 Android Chrome 中合并 PDF。本文展示在线工具、Google Drive 与本地方案，文件可完全不出设备。",
+    "enDesc": "Merge PDFs on Android without installing an app. This guide covers online tools, Google Drive, and fully local browser-based methods."
+  },
+  {
+    "slug": "merge-pdf-iphone-safari",
+    "tag": "iPhone 技巧 · iOS Tips",
+    "date": "2026-08-27",
+    "zhTitle": "iPhone 合并 PDF：Safari 完整教程",
+    "enTitle": "Merge PDF on iPhone: Safari Guide",
+    "zhDesc": "无需安装应用，直接在 iPhone Safari 中合并 PDF。本教程展示文件应用方法和分享表单技巧。",
+    "enDesc": "Merge PDFs directly in Safari on iPhone without installing any apps. This guide shows the built-in Files app method and share sheet tricks."
+  },
+  {
+    "slug": "merge-pdf-windows-free-tools",
+    "tag": "Windows 技巧 · Windows Tips",
+    "date": "2026-08-26",
+    "zhTitle": "Windows 合并 PDF：免费工具指南",
+    "enTitle": "Merge PDF on Windows: Free Tools",
+    "zhDesc": "在 Windows 上合并 PDF 不需要付费软件。几个免费选项各有优势，以下是实用比较。",
+    "enDesc": "Merging PDFs on Windows does not require paid software. Several free options exist, each with different strengths."
+  },
+  {
+    "slug": "merge-pdf-mac-3-methods",
+    "tag": "Mac 技巧 · Mac Tips",
+    "date": "2026-08-25",
+    "zhTitle": "Mac 合并 PDF：3 种方法详解",
+    "enTitle": "Merge PDF on Mac: 3 Methods Explained",
+    "zhDesc": "在 Mac 上合并 PDF 比以往更容易。从内置工具到在线方案，3 种方法一次讲清。",
+    "enDesc": "Merging PDFs on a Mac is easier than ever. Here are the three best methods, from built-in tools to online solutions."
+  },
+  {
     "slug": "pdf-page-selection-1-3-5-syntax",
     "tag": "PDF 合并 · 进阶",
     "date": "2026-08-23",
@@ -16,6 +178,97 @@
     "enTitle": "PDF Page Selection: 1-3,5 Syntax",
     "zhDesc": "学会用 1-3,5 语法挑页合并 PDF，只保留你需要的页面。",
     "enDesc": "Master the 1-3,5 page selection syntax to merge only the pages you need."
+  },
+  {
+    "slug": "drag-sort-pdf-pro-tips",
+    "tag": "PDF 合并 · 进阶",
+    "date": "2026-08-22",
+    "zhTitle": "拖拽排序 PDF：进阶技巧",
+    "enTitle": "Drag-Sort PDF: Pro Tips",
+    "zhDesc": "掌握拖拽排序的进阶技巧：批量调整、快捷键、常见错误避免，让 PDF 合并效率翻倍。",
+    "enDesc": "Master drag-sort PDF pro tips: batch reordering, keyboard shortcuts, and common mistakes to avoid. Double your PDF merge efficiency."
+  },
+  {
+    "slug": "3-steps-merge-multiple-pdfs",
+    "tag": "PDF 合并 · 教程",
+    "date": "2026-08-21",
+    "zhTitle": "三步合并多个 PDF：最简单的方法",
+    "enTitle": "3 Steps to Merge Multiple PDFs (Easiest Method)",
+    "zhDesc": "合并多个 PDF 文件其实很简单。本文教你三步完成：选择工具、上传文件、点击合并。含隐私提醒和常见错误避免方法。",
+    "enDesc": "Merging multiple PDF files is simpler than you think. This post teaches you the three steps: choose a tool, upload files, and click merge. Includes privacy tips and common mistakes to avoid."
+  },
+  {
+    "slug": "5-pdf-merge-methods-compared",
+    "tag": "PDF 合并 · 对比",
+    "date": "2026-08-20",
+    "zhTitle": "PDF 合并的 5 种方法对比",
+    "enTitle": "5 PDF Merge Methods Compared",
+    "zhDesc": "PDF 合并有 5 种常见方法：在线工具、桌面软件、命令行、浏览器插件、编程语言库。本文对比它们在隐私、成本、功能和易用性上的差异，帮你选对工具。",
+    "enDesc": "There are 5 common ways to merge PDFs: online tools, desktop software, command line, browser extensions, and programming libraries. This post compares them on privacy, cost, features, and ease of use to help you choose the right tool."
+  },
+  {
+    "slug": "merge-pdf-on-mobile",
+    "tag": "PDF 合并 · 移动端",
+    "date": "2026-08-19",
+    "zhTitle": "手机合并PDF：iOS/Android 完整教程",
+    "enTitle": "Merge PDF on Mobile: iOS/Android",
+    "zhDesc": "手机上怎么合并PDF？iOS（Safari）和 Android（Chrome）都能用浏览器本地工具完成——文件不上传、不装 App、不挑网络。含分步教程、方案对比与手机端限制。"
+  },
+  {
+    "slug": "how-to-merge-pdf-step-by-step",
+    "tag": "PDF 合并 · 操作教程",
+    "date": "2026-08-18",
+    "zhTitle": "怎么合并PDF：完整步骤图解",
+    "enTitle": "How to Merge PDF: Step-by-Step",
+    "zhDesc": "怎么合并PDF？一份完整步骤图解：用浏览器本地工具(PDFMergeNext)合并，文件不上传、可断网、免注册无水印。含方法对比、挑页合并与手机端操作。"
+  },
+  {
+    "slug": "24-privacy-pdf-tool-alternatives",
+    "tag": "工具清单 · Alternatives",
+    "date": "2026-08-17",
+    "zhTitle": "24 个隐私 PDF 工具替代品推荐",
+    "enTitle": "24 Privacy PDF Tool Alternatives",
+    "zhDesc": "不想把 PDF 上传到云，又想干完合并、压缩、拆分这些活？这份清单列了 24 个本地优先的隐私 PDF 工具替代品：免费选项、开源选项、离线选项，以及它们各自适合谁。"
+  },
+  {
+    "slug": "privacy-first-pdf-workflow",
+    "tag": "隐私工作流 · Workflow",
+    "date": "2026-08-16",
+    "zhTitle": "隐私友好的 PDF 工作流设计",
+    "enTitle": "Privacy-First PDF Workflow: 4 Stages, Zero Upload",
+    "zhDesc": "一套隐私友好的 PDF 工作流只有一条原则：文件不出本机。从合并、压缩到签署，每一步都用本地处理，你就不需要信任任何服务器的日志或保留政策。"
+  },
+  {
+    "slug": "pdf-data-export-impact",
+    "tag": "隐私事实 · Privacy Facts",
+    "date": "2026-08-15",
+    "zhTitle": "PDF 工具的数据出境影响",
+    "enTitle": "Data Export Impact of PDF Tools",
+    "zhDesc": "把 PDF 传上网之前，先想想数据出境这四个字。PDF 里藏着哪些敏感信息、在线工具的数据流向、GDPR 的约束，以及怎么判断一个工具是否真的本地处理。"
+  },
+  {
+    "slug": "personal-pdf-privacy-vs-enterprise-saas",
+    "tag": "个人隐私 · Privacy",
+    "date": "2026-08-14",
+    "zhTitle": "个人隐私 PDF 工具 vs 企业 SaaS",
+    "enTitle": "Personal PDF Privacy vs Enterprise SaaS",
+    "zhDesc": "个人隐私 PDF 工具和企业级 SaaS 差在哪？从文件到底在谁手里、本地隐私保什么、到自托管中间路线，一篇讲清两者在隐私维度上的真实取舍。"
+  },
+  {
+    "slug": "devtools-network-tab-privacy-guide",
+    "tag": "隐私验证 · Privacy Verification",
+    "date": "2026-08-13",
+    "zhTitle": "用 DevTools 验证 PDF 工具是否真的不上传",
+    "enTitle": "DevTools Network Tab Privacy Guide",
+    "zhDesc": "别信宣传，自己验证：打开浏览器 DevTools 的 Net 面板，五分钟看清一个 PDF 工具到底有没有把文件传上服务器。带步骤的实操指南。"
+  },
+  {
+    "slug": "how-we-evaluate-privacy-first-pdf-tools",
+    "tag": "评测方法 · Evaluation",
+    "date": "2026-08-12",
+    "zhTitle": "隐私优先 PDF 工具评测标准：我们怎么打分",
+    "enTitle": "How We Evaluate Privacy-First PDF Tools",
+    "zhDesc": "评测隐私优先 PDF 工具时我们看什么：数据链路、服务器日志、上传时机、删除承诺的可验证性、以及离线能力。一套可以自己复用的评测清单。"
   },
   {
     "slug": "pdf-merge-no-upload-privacy-facts",
@@ -104,249 +357,5 @@
     "zhTitle": "为什么本地离线 PDF 合并才是隐私正解",
     "enTitle": "Why Local, Offline PDF Merging Wins on Privacy",
     "zhDesc": "文件不上传服务器，合同、证件、财务报表更安全。免注册、无水印、免费。"
-  },
-  {
-    "slug": "how-we-evaluate-privacy-first-pdf-tools",
-    "tag": "评测方法 · Evaluation",
-    "date": "2026-08-12",
-    "zhTitle": "隐私优先 PDF 工具评测标准：我们怎么打分",
-    "enTitle": "How We Evaluate Privacy-First PDF Tools",
-    "zhDesc": "评测隐私优先 PDF 工具时我们看什么：数据链路、服务器日志、上传时机、删除承诺的可验证性、以及离线能力。一套可以自己复用的评测清单。"
-  },
-  {
-    "slug": "devtools-network-tab-privacy-guide",
-    "tag": "隐私验证 · Privacy Verification",
-    "date": "2026-08-13",
-    "zhTitle": "用 DevTools 验证 PDF 工具是否真的不上传",
-    "enTitle": "DevTools Network Tab Privacy Guide",
-    "zhDesc": "别信宣传，自己验证：打开浏览器 DevTools 的 Net 面板，五分钟看清一个 PDF 工具到底有没有把文件传上服务器。带步骤的实操指南。"
-  },
-  {
-    "slug": "personal-pdf-privacy-vs-enterprise-saas",
-    "tag": "个人隐私 · Privacy",
-    "date": "2026-08-14",
-    "zhTitle": "个人隐私 PDF 工具 vs 企业 SaaS",
-    "enTitle": "Personal PDF Privacy vs Enterprise SaaS",
-    "zhDesc": "个人隐私 PDF 工具和企业级 SaaS 差在哪？从文件到底在谁手里、本地隐私保什么、到自托管中间路线，一篇讲清两者在隐私维度上的真实取舍。"
-  },
-  {
-    "slug": "pdf-data-export-impact",
-    "tag": "隐私事实 · Privacy Facts",
-    "date": "2026-08-15",
-    "zhTitle": "PDF 工具的数据出境影响",
-    "enTitle": "Data Export Impact of PDF Tools",
-    "zhDesc": "把 PDF 传上网之前，先想想数据出境这四个字。PDF 里藏着哪些敏感信息、在线工具的数据流向、GDPR 的约束，以及怎么判断一个工具是否真的本地处理。"
-  },
-  {
-    "slug": "privacy-first-pdf-workflow",
-    "tag": "隐私工作流 · Workflow",
-    "date": "2026-08-16",
-    "zhTitle": "隐私友好的 PDF 工作流设计",
-    "enTitle": "Privacy-First PDF Workflow: 4 Stages, Zero Upload",
-    "zhDesc": "一套隐私友好的 PDF 工作流只有一条原则：文件不出本机。从合并、压缩到签署，每一步都用本地处理，你就不需要信任任何服务器的日志或保留政策。"
-  },
-  {
-    "slug": "24-privacy-pdf-tool-alternatives",
-    "tag": "工具清单 · Alternatives",
-    "date": "2026-08-17",
-    "zhTitle": "24 个隐私 PDF 工具替代品推荐",
-    "enTitle": "24 Privacy PDF Tool Alternatives",
-    "zhDesc": "不想把 PDF 上传到云，又想干完合并、压缩、拆分这些活？这份清单列了 24 个本地优先的隐私 PDF 工具替代品：免费选项、开源选项、离线选项，以及它们各自适合谁。"
-  },
-  {
-    "slug": "how-to-merge-pdf-step-by-step",
-    "tag": "PDF 合并 · 操作教程",
-    "date": "2026-08-18",
-    "zhTitle": "怎么合并PDF：完整步骤图解",
-    "enTitle": "How to Merge PDF: Step-by-Step",
-    "zhDesc": "怎么合并PDF？一份完整步骤图解：用浏览器本地工具(PDFMergeNext)合并，文件不上传、可断网、免注册无水印。含方法对比、挑页合并与手机端操作。"
-  },
-  {
-    "slug": "merge-pdf-on-mobile",
-    "tag": "PDF 合并 · 移动端",
-    "date": "2026-08-19",
-    "zhTitle": "手机合并PDF：iOS/Android 完整教程",
-    "enTitle": "Merge PDF on Mobile: iOS/Android",
-    "zhDesc": "手机上怎么合并PDF？iOS（Safari）和 Android（Chrome）都能用浏览器本地工具完成——文件不上传、不装 App、不挑网络。含分步教程、方案对比与手机端限制。"
-  },
-  {
-    "slug": "5-pdf-merge-methods-compared",
-    "tag": "PDF 合并 · 对比",
-    "date": "2026-08-20",
-    "zhTitle": "PDF 合并的 5 种方法对比",
-    "enTitle": "5 PDF Merge Methods Compared",
-    "zhDesc": "PDF 合并有 5 种常见方法：在线工具、桌面软件、命令行、浏览器插件、编程语言库。本文对比它们在隐私、成本、功能和易用性上的差异，帮你选对工具。",
-    "enDesc": "There are 5 common ways to merge PDFs: online tools, desktop software, command line, browser extensions, and programming libraries. This post compares them on privacy, cost, features, and ease of use to help you choose the right tool."
-  },
-  {
-    "slug": "3-steps-merge-multiple-pdfs",
-    "tag": "PDF 合并 · 教程",
-    "date": "2026-08-21",
-    "zhTitle": "三步合并多个 PDF：最简单的方法",
-    "enTitle": "3 Steps to Merge Multiple PDFs (Easiest Method)",
-    "zhDesc": "合并多个 PDF 文件其实很简单。本文教你三步完成：选择工具、上传文件、点击合并。含隐私提醒和常见错误避免方法。",
-    "enDesc": "Merging multiple PDF files is simpler than you think. This post teaches you the three steps: choose a tool, upload files, and click merge. Includes privacy tips and common mistakes to avoid."
-  },
-  {
-    "slug": "drag-sort-pdf-pro-tips",
-    "tag": "PDF 合并 · 进阶",
-    "date": "2026-08-22",
-    "zhTitle": "拖拽排序 PDF：进阶技巧",
-    "enTitle": "Drag-Sort PDF: Pro Tips",
-    "zhDesc": "掌握拖拽排序的进阶技巧：批量调整、快捷键、常见错误避免，让 PDF 合并效率翻倍。",
-    "enDesc": "Master drag-sort PDF pro tips: batch reordering, keyboard shortcuts, and common mistakes to avoid. Double your PDF merge efficiency."
-  },
-  {
-    "slug": "merge-pdf-mac-3-methods",
-    "tag": "Mac 技巧 · Mac Tips",
-    "date": "2026-08-25",
-    "zhTitle": "Mac 合并 PDF：3 种方法详解",
-    "enTitle": "Merge PDF on Mac: 3 Methods Explained",
-    "zhDesc": "在 Mac 上合并 PDF 比以往更容易。从内置工具到在线方案，3 种方法一次讲清。",
-    "enDesc": "Merging PDFs on a Mac is easier than ever. Here are the three best methods, from built-in tools to online solutions."
-  },
-  {
-    "slug": "merge-pdf-windows-free-tools",
-    "tag": "Windows 技巧 · Windows Tips",
-    "date": "2026-08-26",
-    "zhTitle": "Windows 合并 PDF：免费工具指南",
-    "enTitle": "Merge PDF on Windows: Free Tools",
-    "zhDesc": "在 Windows 上合并 PDF 不需要付费软件。几个免费选项各有优势，以下是实用比较。",
-    "enDesc": "Merging PDFs on Windows does not require paid software. Several free options exist, each with different strengths."
-  },
-  {
-    "slug": "merge-pdf-iphone-safari",
-    "tag": "iPhone 技巧 · iOS Tips",
-    "date": "2026-08-27",
-    "zhTitle": "iPhone 合并 PDF：Safari 完整教程",
-    "enTitle": "Merge PDF on iPhone: Safari Guide",
-    "zhDesc": "无需安装应用，直接在 iPhone Safari 中合并 PDF。本教程展示文件应用方法和分享表单技巧。",
-    "enDesc": "Merge PDFs directly in Safari on iPhone without installing any apps. This guide shows the built-in Files app method and share sheet tricks."
-  },
-  {
-    "slug": "android-merge-pdf-chrome",
-    "tag": "Android 技巧 · Chrome Tips",
-    "date": "2026-08-28",
-    "zhTitle": "Android 合并 PDF：Chrome 浏览器方式",
-    "enTitle": "Merge PDF on Android: Chrome Browser Method",
-    "zhDesc": "无需安装应用，在 Android Chrome 中合并 PDF。本文展示在线工具、Google Drive 与本地方案，文件可完全不出设备。",
-    "enDesc": "Merge PDFs on Android without installing an app. This guide covers online tools, Google Drive, and fully local browser-based methods."
-  },
-  {
-    "slug": "pdf-batch-merge-100-files",
-    "tag": "批量处理 · Batch Processing",
-    "date": "2026-08-30",
-    "zhTitle": "PDF 批量合并：100+ 文件最佳实践",
-    "enTitle": "PDF Batch Merge: 100+ Files Best Practices",
-    "zhDesc": "合并 100+ PDF 文件不再困难。本文介绍批量处理的最佳实践和工具选择。",
-    "enDesc": "Merging 100+ PDF files can be daunting. Learn best practices and tool choices for large-scale batch processing."
-  },
-  {
-    "slug": "pdf-naming-conventions-merge",
-    "tag": "最佳实践 · Best Practices",
-    "date": "2026-08-31",
-    "zhTitle": "PDF 文件命名规范：合并后如何命名",
-    "enTitle": "PDF Naming Conventions for Merged Files",
-    "zhDesc": "合并 PDF 后如何正确命名文件？本文介绍命名规范、方案和最佳实践。",
-    "enDesc": "How to properly name merged PDF files? This article covers naming conventions, schemes, and best practices."
-  },
-  {
-    "slug": "ilovepdf-alternatives-no-upload",
-    "tag": "最佳实践 · Best Practices",
-    "date": "2026-09-02",
-    "zhTitle": "iLovePDF 替代方案：5 个零上传的本地工具",
-    "enTitle": "iLovePDF Alternatives: 5 No-Upload Tools",
-    "zhDesc": "5 个优秀的 iLovePDF 替代方案，完全在浏览器中处理你的文件——无需上传、无需服务器处理、最大隐私。",
-    "enDesc": "5 excellent iLovePDF alternatives that process your files entirely in your browser — no uploads, no server processing, maximum privacy."
-  },
-  {
-    "slug": "compress-pdf-local-no-upload",
-    "tag": "PDF 压缩 · 本地教程",
-    "date": "2026-09-02",
-    "zhTitle": "压缩 PDF 不上传：浏览器本地瘦身指南",
-    "enTitle": "Compress PDF Without Uploading — Local Shrink Guide",
-    "zhDesc": "邮件附件太大？在浏览器里本地压缩 PDF，文件不上传、免注册、无水印。附挑页瘦身、合并前先压的小技巧。",
-    "enDesc": "Email attachment too big? Compress PDFs locally in your browser — no upload, no sign-up, no watermark. Plus tips: shrink before merging, trim pages first."
-  },
-  {
-    "slug": "adobe-acrobat-alternatives-free",
-    "tag": "工具清单 · Acrobat Alternatives",
-    "date": "2026-09-03",
-    "zhTitle": "Adobe Acrobat 替代：免费离线的 5 个选择",
-    "enTitle": "5 Free Adobe Acrobat Alternatives That Work Offline",
-    "zhDesc": "不想为 PDF 订阅 Adobe？这 5 个免费、可离线的替代品在本地处理文件——不上传、数据不出本机。每个都写明真实短板，并告诉你什么情况下还是得用 Acrobat。",
-    "enDesc": "Don't want to subscribe to Adobe for PDFs? These 5 free, offline-capable alternatives process files locally — no upload, no data leaving your machine. Each lists its real drawbacks, plus when Acrobat is still the right call."
-  },
-  {
-    "slug": "pdf24-vs-pdfmergenext",
-    "tag": "工具对比 · Versus",
-    "date": "2026-09-04",
-    "zhTitle": "PDF24 vs PDFMergeNext：功能对比",
-    "enTitle": "PDF24 vs PDFMergeNext: Feature Comparison",
-    "zhDesc": "同是免费、本地处理文件的 PDF 工具，PDF24 与 PDFMergeNext 到底差在哪？合并、压缩、隐私、上手成本逐项对比，帮你选对那一个。",
-    "enDesc": "Both free and local-first, but PDF24 and PDFMergeNext differ where it counts. A feature-by-feature comparison of merging, compression, privacy, and ease of use."
-  },
-  {
-    "slug": "online-pdf-merge-tools-compared",
-    "tag": "对比评测 · Online Tools Roundup",
-    "date": "2026-09-06",
-    "zhTitle": "在线 PDF 合并工具横评：2026 年谁更值得用",
-    "enTitle": "Online PDF Merge Tools Compared: Which Is Worth It in 2026",
-    "zhDesc": "2026 年主流在线 PDF 合并工具横评：Smallpdf、iLovePDF、PDF24、PDFMergeNext 与 Adobe 在线版，在上传隐私、文件限制、价格上逐项对比。",
-    "enDesc": "A 2026 head-to-head of online PDF merge tools — Smallpdf, iLovePDF, PDF24, PDFMergeNext and Adobe online — compared on upload privacy, file limits, and price."
-  },
-  {
-    "slug": "best-desktop-pdf-tools-2026",
-    "tag": "工具清单 · Desktop Tools",
-    "date": "2026-09-08",
-    "zhTitle": "2026 年最佳桌面 PDF 工具推荐",
-    "enTitle": "Best Desktop PDF Tools of 2026",
-    "zhDesc": "不想依赖在线服务？这 8 款桌面 PDF 工具在本地处理文件——隐私优先、离线可用、功能强大。每款都写明真实短板。",
-    "enDesc": "Skip the online tools. These 8 desktop PDF applications process files locally — privacy-first, offline-capable, and powerful. Each lists its real drawbacks."
-  },
-  {
-    "slug": "ilovepdf-user-migration-guide",
-    "tag": "迁移指南 · Migration Guide",
-    "date": "2026-09-11",
-    "zhTitle": "iLovePDF 用户迁移指南：把 PDF 处理搬回本地",
-    "enTitle": "iLovePDF User Migration Guide: Moving PDF Work Back to Your Machine",
-    "zhDesc": "习惯用 iLovePDF 却在意文件隐私？这份迁移指南讲清哪些任务可以直接搬到本地、哪些还需要在线服务，以及迁移时最容易忽略的一步。",
-    "enDesc": "Used to iLovePDF but worried about file privacy? This migration guide covers which tasks move cleanly to a local tool, which still need an online service, and the one step people always skip."
-  },
-  {
-    "slug": "pdfsam-vs-pdfmergenext",
-    "tag": "工具对比 · Versus",
-    "date": "2026-09-12",
-    "zhTitle": "PDFsam Basic vs PDFMergeNext：哪款更适合你",
-    "enTitle": "PDFsam Basic vs PDFMergeNext",
-    "zhDesc": "PDFsam Basic 要装桌面软件，PDFMergeNext 在浏览器里跑。离线能力、合并体验、隐私、上手成本逐项对比，帮你想清楚 pdfsam basic alternative 到底该选谁。",
-    "enDesc": "One needs a desktop install, the other runs in a browser tab. Offline behavior, merge experience, privacy and setup cost compared for anyone weighing a pdfsam basic alternative."
-  },
-  {
-    "slug": "pdf-merge-paid-vs-free",
-    "tag": "工具对比 · Versus",
-    "date": "2026-09-09",
-    "zhTitle": "PDF 合并工具：付费 vs 免费对比",
-    "enTitle": "PDF Merge Tools: Paid vs Free Comparison",
-    "zhDesc": "免费 PDF 工具够用吗，还是该上付费？从文件大小、水印、隐私、批量处理四个维度逐项对比，帮你想清楚免费与付费合并工具的差别。",
-    "enDesc": "Is a free PDF merger enough, or should you pay? File limits, watermarks, privacy and batch processing compared so you can pick the right path."
-  },
-  {
-    "slug": "smallpdf-alternatives-privacy-first",
-    "tag": "隐私优先 · Privacy-First",
-    "date": "2026-09-10",
-    "zhTitle": "Smallpdf 替代方案：隐私优先的 PDF 工具",
-    "enTitle": "Smallpdf Alternatives: Privacy-First PDF Tools",
-    "zhDesc": "Smallpdf 会把文件上传到服务器。如果你在意隐私，这里列出五款本地优先的替代品，附对比表。",
-    "enDesc": "Smallpdf uploads your files to its servers. If privacy matters, here are five local-first alternatives, with a comparison table."
-  },
-  {
-    "slug": "top-10-privacy-pdf-tools-2026",
-    "tag": "隐私优先 · Privacy-First",
-    "date": "2026-09-14",
-    "zhTitle": "Top 10 隐私优先的 PDF 工具（2026）",
-    "enTitle": "Top 10 Privacy-First PDF Tools (2026)",
-    "zhDesc": "从本地处理到自建服务器，逐一拆解 10 款把隐私放在首位的 PDF 工具，并说明每一款在什么情况下才值得用。",
-    "enDesc": "Ten PDF tools that put privacy first, from in-browser processing to self-hosted options, with a note on when each one is actually worth using."
   }
 ]
