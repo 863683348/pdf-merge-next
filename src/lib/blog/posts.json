@@ -366,5 +366,14 @@
     "zhTitle": "为什么本地离线 PDF 合并才是隐私正解",
     "enTitle": "Why Local, Offline PDF Merging Wins on Privacy",
     "zhDesc": "文件不上传服务器，合同、证件、财务报表更安全。免注册、无水印、免费。"
+  },
+  {
+    "slug": "hr-document-merge-workflow",
+    "tag": "职场效率 · Workflow",
+    "date": "2026-09-17",
+    "zhTitle": "HR 文档合并：员工手册打包全流程",
+    "enTitle": "HR Document Merge: Packaging an Employee Handbook",
+    "zhDesc": "员工手册不是一篇文章，而是一堆文件的合集：政策、福利、行为准则、安全规范。这篇讲怎么把它们合并成一份专业、可检索、更新有据的 PDF。",
+    "enDesc": "An employee handbook is not one document but a stack: policies, benefits, conduct, safety rules. Here is how to merge them into a single professional PDF that is searchable and easy to update."
   }
 ]
