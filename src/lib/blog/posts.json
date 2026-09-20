@@ -375,5 +375,14 @@
     "enTitle": "HR Document Merge: Packaging an Employee Handbook",
     "zhDesc": "员工手册不是一篇文章，而是一堆文件的合集：政策、福利、行为准则、安全规范。这篇讲怎么把它们合并成一份专业、可检索、更新有据的 PDF。",
     "enDesc": "An employee handbook is not one document but a stack: policies, benefits, conduct, safety rules. Here is how to merge them into a single professional PDF that is searchable and easy to update."
+  },
+  {
+    "slug": "academic-paper-merge-research-material-organization",
+    "tag": "学术研究 · Academic",
+    "date": "2026-09-21",
+    "zhTitle": "学术论文合并：研究材料打包指南",
+    "enTitle": "Academic Paper Merge: Organizing Research Materials",
+    "zhDesc": "写论文要整合几十篇文献、笔记和附录时，真正费时的不是合并本身，而是合并之后还能不能找到出处。这篇讲一套可复用的打包方法。",
+    "enDesc": "When a paper pulls together dozens of sources, notes and appendices, merging is the easy part. Keeping every claim traceable afterwards is the hard part. Here is a repeatable way to package research material."
   }
 ]
