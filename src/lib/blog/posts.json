@@ -384,5 +384,27 @@
     "enTitle": "Academic Paper Merge: Organizing Research Materials",
     "zhDesc": "写论文要整合几十篇文献、笔记和附录时，真正费时的不是合并本身，而是合并之后还能不能找到出处。这篇讲一套可复用的打包方法。",
     "enDesc": "When a paper pulls together dozens of sources, notes and appendices, merging is the easy part. Keeping every claim traceable afterwards is the hard part. Here is a repeatable way to package research material."
+  },
+  {
+    "slug": "pdf-merge-best-practices-file-organization",
+    "tag": "最佳实践 · Best Practices",
+    "date": "2026-09-23",
+    "zhTitle": "PDF 合并最佳实践：文件组织策略",
+    "enTitle": "PDF Merge Best Practices: File Organization Strategies",
+    "zhDesc": "合并 PDF 之前先想清楚文件怎么组织，合并之后才找得到东西。这篇讲一套可复用的命名、分组与归档方法。",
+    "enDesc": "Merging is the easy part. Finding things afterwards is what file organization decides. A repeatable approach to naming, grouping and archiving before you merge.",
+    "keywords": [
+      "pdf merge best practices",
+      "file organization pdf"
+    ]
+  },
+  {
+    "slug": "large-pdf-merge-500mb",
+    "tag": "大文件处理 · Large Files",
+    "date": "2026-10-02",
+    "zhTitle": "大文件 PDF 合并：500MB+ 策略",
+    "enTitle": "Large PDF Merge: 500MB+ Strategies",
+    "zhDesc": "500MB 以上的 PDF 合并失败，多数是内存撑不住而不是工具不行。这篇给出处理顺序：判断瓶颈、先压缩后分批、以及一份能反复用的失败排查清单。",
+    "enDesc": "Large PDF merge failures above 500MB are usually memory limits, not tool limits. Here is the order that works: find the bottleneck, compress before splitting, then run a repeatable failure checklist."
   }
 ]
