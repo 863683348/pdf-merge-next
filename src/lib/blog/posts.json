@@ -406,5 +406,14 @@
     "enTitle": "Large PDF Merge: 500MB+ Strategies",
     "zhDesc": "500MB 以上的 PDF 合并失败，多数是内存撑不住而不是工具不行。这篇给出处理顺序：判断瓶颈、先压缩后分批、以及一份能反复用的失败排查清单。",
     "enDesc": "Large PDF merge failures above 500MB are usually memory limits, not tool limits. Here is the order that works: find the bottleneck, compress before splitting, then run a repeatable failure checklist."
+  },
+  {
+      "slug": "pdf-memory-optimization-browser-merge",
+      "tag": "内存优化 · Memory Optimization",
+      "date": "2026-10-03",
+      "zhTitle": "PDF 内存优化：浏览器合并的 7 个实操技巧",
+      "enTitle": "PDF Memory Optimization: 7 Practical Browser Merge Techniques",
+      "zhDesc": "合并到一半标签页白屏，多半是内存峰值超限。这篇给出 7 个能立刻做的调整：压缩、分批、排序、清理环境，加上一份内存自查表。",
+      "enDesc": "A blank tab halfway through a merge is almost always a memory peak, not a tool bug. Seven changes you can make today: compress, batch, reorder, clear the environment, plus a symptom-to-fix table."
   }
 ]
