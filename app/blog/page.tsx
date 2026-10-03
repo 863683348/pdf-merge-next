@@ -54,7 +54,28 @@ export default function BlogPage() {
         ))}
       </div>
 
-      {posts.map((p) => (
+      {(!active || active === '加密文件') && (
+        <Link
+          href="/blog/encrypted-pdf-can-you-merge"
+          className="mt-6 block rounded-xl border border-line bg-surface p-6 shadow-sm transition-colors duration-fast hover:bg-subtle"
+        >
+          <p className="text-caption font-semibold uppercase tracking-wide text-brand">
+            加密文件 · Encrypted PDFs
+          </p>
+          <p className="mt-1 text-xs text-fg-tertiary">2026-10-04</p>
+          <h2 className="mt-1 text-title font-semibold text-fg">
+            PDF 加密文件能合并吗？密码、权限与签名处理指南
+          </h2>
+          <p className="mt-1 text-sm font-medium text-fg-muted">
+            Can You Merge Encrypted PDFs? Passwords, Permissions, and Signatures
+          </p>
+          <p className="mt-2 text-sm text-fg-secondary">
+            有密码的 PDF 不一定能直接合并：打开密码、权限限制、证书加密和数字签名要分别处理。这篇给出不绕过访问控制的本地操作流程。
+          </p>
+        </Link>
+      )}
+
+      {posts.filter((p) => p.slug !== 'encrypted-pdf-can-you-merge').map((p) => (
         <Link
           key={p.slug}
           href={`/blog/${p.slug}`}

@@ -408,12 +408,21 @@
     "enDesc": "Large PDF merge failures above 500MB are usually memory limits, not tool limits. Here is the order that works: find the bottleneck, compress before splitting, then run a repeatable failure checklist."
   },
   {
-      "slug": "pdf-memory-optimization-browser-merge",
-      "tag": "内存优化 · Memory Optimization",
-      "date": "2026-10-03",
-      "zhTitle": "PDF 内存优化：浏览器合并的 7 个实操技巧",
-      "enTitle": "PDF Memory Optimization: 7 Practical Browser Merge Techniques",
-      "zhDesc": "合并到一半标签页白屏，多半是内存峰值超限。这篇给出 7 个能立刻做的调整：压缩、分批、排序、清理环境，加上一份内存自查表。",
-      "enDesc": "A blank tab halfway through a merge is almost always a memory peak, not a tool bug. Seven changes you can make today: compress, batch, reorder, clear the environment, plus a symptom-to-fix table."
+    "slug": "pdf-memory-optimization-browser-merge",
+    "tag": "内存优化 · Memory Optimization",
+    "date": "2026-10-03",
+    "zhTitle": "PDF 内存优化：浏览器合并的 7 个实操技巧",
+    "enTitle": "PDF Memory Optimization: 7 Practical Browser Merge Techniques",
+    "zhDesc": "合并到一半标签页白屏，多半是内存峰值超限。这篇给出 7 个能立刻做的调整：压缩、分批、排序、清理环境，加上一份内存自查表。",
+    "enDesc": "A blank tab halfway through a merge is almost always a memory peak, not a tool bug. Seven changes you can make today: compress, batch, reorder, clear the environment, plus a symptom-to-fix table."
+  },
+  {
+    "slug": "encrypted-pdf-can-you-merge",
+    "tag": "加密文件 · Encrypted PDFs",
+    "date": "2026-10-04",
+    "zhTitle": "PDF 加密文件能合并吗？密码、权限与签名处理指南",
+    "enTitle": "Can You Merge Encrypted PDFs? Passwords, Permissions, and Signatures",
+    "zhDesc": "有密码的 PDF 不一定能直接合并：打开密码、权限限制、证书加密和数字签名要分别处理。这篇给出不绕过访问控制的本地操作流程。",
+    "enDesc": "Password-protected PDFs need different handling for open passwords, permission controls, certificate encryption, and digital signatures. Here is a lawful local workflow."
   }
 ]
