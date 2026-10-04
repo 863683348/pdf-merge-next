@@ -424,5 +424,14 @@
     "enTitle": "Can You Merge Encrypted PDFs? Passwords, Permissions, and Signatures",
     "zhDesc": "有密码的 PDF 不一定能直接合并：打开密码、权限限制、证书加密和数字签名要分别处理。这篇给出不绕过访问控制的本地操作流程。",
     "enDesc": "Password-protected PDFs need different handling for open passwords, permission controls, certificate encryption, and digital signatures. Here is a lawful local workflow."
+  },
+  {
+    "slug": "pdf-form-merge-keep-fields",
+    "tag": "表单处理 · PDF Forms",
+    "date": "2026-10-05",
+    "zhTitle": "PDF 表单合并：怎样保住可填写字段",
+    "enTitle": "PDF Form Merge: How to Keep Fillable Fields",
+    "zhDesc": "合并带表单的 PDF 后字段变灰、填不了、提交报错，多半是字段重名或页面对象被重建。这篇讲清哪些做法能保住字段、哪些一定丢，并给出可复用的本地流程。",
+    "enDesc": "Merging fillable PDFs often leaves fields grey, unclickable, or broken on submit. Field name collisions and rebuilt page objects are usually why. Here is what preserves fields and what never does."
   }
 ]

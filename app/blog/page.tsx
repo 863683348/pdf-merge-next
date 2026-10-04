@@ -54,6 +54,26 @@ export default function BlogPage() {
         ))}
       </div>
 
+      {(!active || active === '表单处理') && (
+        <Link
+          href="/blog/pdf-form-merge-keep-fields"
+          className="mt-6 block rounded-xl border border-line bg-surface p-6 shadow-sm transition-colors duration-fast hover:bg-subtle"
+        >
+          <p className="text-caption font-semibold uppercase tracking-wide text-brand">
+            表单处理 · PDF Forms
+          </p>
+          <p className="mt-1 text-xs text-fg-tertiary">2026-10-05</p>
+          <h2 className="mt-1 text-title font-semibold text-fg">
+            PDF 表单合并：怎样保住可填写字段
+          </h2>
+          <p className="mt-1 text-sm font-medium text-fg-muted">
+            PDF Form Merge: How to Keep Fillable Fields
+          </p>
+          <p className="mt-2 text-sm text-fg-secondary">
+            合并带表单的 PDF 后字段变灰、填不了、提交报错，多半是字段重名或页面对象被重建。这篇讲清哪些做法能保住字段、哪些一定丢，并给出可复用的本地流程。
+          </p>
+        </Link>
+      )}
       {(!active || active === '加密文件') && (
         <Link
           href="/blog/encrypted-pdf-can-you-merge"
@@ -75,7 +95,7 @@ export default function BlogPage() {
         </Link>
       )}
 
-      {posts.filter((p) => p.slug !== 'encrypted-pdf-can-you-merge').map((p) => (
+      {posts.filter((p) => p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields').map((p) => (
         <Link
           key={p.slug}
           href={`/blog/${p.slug}`}
