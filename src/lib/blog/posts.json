@@ -433,5 +433,14 @@
     "enTitle": "PDF Form Merge: How to Keep Fillable Fields",
     "zhDesc": "合并带表单的 PDF 后字段变灰、填不了、提交报错，多半是字段重名或页面对象被重建。这篇讲清哪些做法能保住字段、哪些一定丢，并给出可复用的本地流程。",
     "enDesc": "Merging fillable PDFs often leaves fields grey, unclickable, or broken on submit. Field name collisions and rebuilt page objects are usually why. Here is what preserves fields and what never does."
+  },
+  {
+    "slug": "pdf-bookmark-merge-keep-outline",
+    "tag": "书签导航 · Bookmarks",
+    "date": "2026-10-06",
+    "zhTitle": "PDF 书签合并：怎样保住导航结构",
+    "enTitle": "PDF Bookmark Merge: How to Keep the Navigation Outline",
+    "zhDesc": "合并带书签的 PDF，常见结果是目录层级塌成一堆同名条目、页码全部错位。这篇讲清 PDF 书签合并为什么会丢导航，哪些做法能保住层级，并给出可复用的本地流程。",
+    "enDesc": "Merging PDFs with bookmarks often collapses the outline into flat duplicate entries pointing at the wrong pages. Here is why the navigation breaks, which merge paths preserve the tree, and a local workflow you can repeat."
   }
 ]

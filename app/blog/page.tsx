@@ -54,6 +54,26 @@ export default function BlogPage() {
         ))}
       </div>
 
+      {(!active || active === '书签导航') && (
+        <Link
+          href="/blog/pdf-bookmark-merge-keep-outline"
+          className="mt-6 block rounded-xl border border-line bg-surface p-6 shadow-sm transition-colors duration-fast hover:bg-subtle"
+        >
+          <p className="text-caption font-semibold uppercase tracking-wide text-brand">
+            书签导航 · Bookmarks
+          </p>
+          <p className="mt-1 text-xs text-fg-tertiary">2026-10-06</p>
+          <h2 className="mt-1 text-title font-semibold text-fg">
+            PDF 书签合并：怎样保住导航结构
+          </h2>
+          <p className="mt-1 text-sm font-medium text-fg-muted">
+            PDF Bookmark Merge: How to Keep the Navigation Outline
+          </p>
+          <p className="mt-2 text-sm text-fg-secondary">
+            合并带书签的 PDF，常见结果是目录层级塌成一堆同名条目、页码全部错位。这篇讲清 PDF 书签合并为什么会丢导航，哪些做法能保住层级，并给出可复用的本地流程。
+          </p>
+        </Link>
+      )}
       {(!active || active === '表单处理') && (
         <Link
           href="/blog/pdf-form-merge-keep-fields"
@@ -95,7 +115,7 @@ export default function BlogPage() {
         </Link>
       )}
 
-      {posts.filter((p) => p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields').map((p) => (
+      {posts.filter((p) => p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields' && p.slug !== 'pdf-bookmark-merge-keep-outline').map((p) => (
         <Link
           key={p.slug}
           href={`/blog/${p.slug}`}
