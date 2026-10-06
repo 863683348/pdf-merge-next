@@ -54,6 +54,26 @@ export default function BlogPage() {
         ))}
       </div>
 
+      {(!active || active === '压缩质量') && (
+        <Link
+          href="/blog/compressed-pdf-merge-quality-loss"
+          className="mt-6 block rounded-xl border border-line bg-surface p-6 shadow-sm transition-colors duration-fast hover:bg-subtle"
+        >
+          <p className="text-caption font-semibold uppercase tracking-wide text-brand">
+            压缩质量 · Compression Quality
+          </p>
+          <p className="mt-1 text-xs text-fg-tertiary">2026-10-07</p>
+          <h2 className="mt-1 text-title font-semibold text-fg">
+            PDF 压缩后合并：质量损失有多大
+          </h2>
+          <p className="mt-1 text-sm font-medium text-fg-muted">
+            Compressed PDF Merge: How Much Quality Do You Lose
+          </p>
+          <p className="mt-2 text-sm text-fg-secondary">
+            压缩过的 PDF 可以直接合并，合并这一步不再掉画质，真正糊掉画面的是同一张图被压了两次。这篇讲清先压缩还是先合并，以及一次成型的本地流程。
+          </p>
+        </Link>
+      )}
       {(!active || active === '书签导航') && (
         <Link
           href="/blog/pdf-bookmark-merge-keep-outline"
@@ -115,7 +135,7 @@ export default function BlogPage() {
         </Link>
       )}
 
-      {posts.filter((p) => p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields' && p.slug !== 'pdf-bookmark-merge-keep-outline').map((p) => (
+      {posts.filter((p) => p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields' && p.slug !== 'pdf-bookmark-merge-keep-outline' && p.slug !== 'compressed-pdf-merge-quality-loss').map((p) => (
         <Link
           key={p.slug}
           href={`/blog/${p.slug}`}

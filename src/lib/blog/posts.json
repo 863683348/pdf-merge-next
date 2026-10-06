@@ -443,4 +443,26 @@
     "zhDesc": "合并带书签的 PDF，常见结果是目录层级塌成一堆同名条目、页码全部错位。这篇讲清 PDF 书签合并为什么会丢导航，哪些做法能保住层级，并给出可复用的本地流程。",
     "enDesc": "Merging PDFs with bookmarks often collapses the outline into flat duplicate entries pointing at the wrong pages. Here is why the navigation breaks, which merge paths preserve the tree, and a local workflow you can repeat."
   }
+,
+{
+    "slug": "compressed-pdf-merge-quality-loss",
+    "tag": "压缩质量 · Compression Quality",
+    "date": "2026-10-07",
+    "zhTitle": "PDF 压缩后合并：质量损失有多大",
+    "enTitle": "Compressed PDF Merge: How Much Quality Do You Lose",
+    "zhDesc": "压缩过的 PDF 可以直接合并，合并这一步不再掉画质，真正糊掉画面的是同一张图被压了两次。这篇讲清先压缩还是先合并，以及一次成型的本地流程。",
+    "enDesc": "Merging compressed PDFs does not cost image quality on its own. What blurs them is a second lossy pass. This covers the right order and a workflow that compresses once.",
+    "keywords": [
+      "compressed pdf merge",
+      "merge pdf after compression",
+      "pdf quality loss after merge",
+      "compress pdf before or after merging",
+      "pdf merge without losing quality",
+      "pdf 压缩后合并",
+      "pdf 压缩后再合并会糊吗",
+      "先压缩还是先合并 pdf",
+      "pdf 合并质量损失",
+      "PDFMergeNext 压缩合并"
+    ]
+  }
 ]
