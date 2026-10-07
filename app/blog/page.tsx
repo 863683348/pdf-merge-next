@@ -54,6 +54,26 @@ export default function BlogPage() {
         ))}
       </div>
 
+      {(!active || active === '质量对比') && (
+        <Link
+          href="/blog/pdf-merge-quality-before-after-test"
+          className="mt-6 block rounded-xl border border-line bg-surface p-6 shadow-sm transition-colors duration-fast hover:bg-subtle"
+        >
+          <p className="text-caption font-semibold uppercase tracking-wide text-brand">
+            质量对比 · Quality Comparison
+          </p>
+          <p className="mt-1 text-xs text-fg-tertiary">2026-10-08</p>
+          <h2 className="mt-1 text-title font-semibold text-fg">
+            PDF 合并前后：质量对比测试怎么做
+          </h2>
+          <p className="mt-1 text-sm font-medium text-fg-muted">
+            PDF Quality Before and After Merge: How to Test It
+          </p>
+          <p className="mt-2 text-sm text-fg-secondary">
+            PDF 质量对比要先固定住变量：同一份源文件、同一页、同一缩放比例。这篇讲清对比测试怎么搭、该看哪六个指标，以及三种会把结论带偏的测法。
+          </p>
+        </Link>
+      )}
       {(!active || active === '压缩质量') && (
         <Link
           href="/blog/compressed-pdf-merge-quality-loss"
@@ -135,7 +155,7 @@ export default function BlogPage() {
         </Link>
       )}
 
-      {posts.filter((p) => p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields' && p.slug !== 'pdf-bookmark-merge-keep-outline' && p.slug !== 'compressed-pdf-merge-quality-loss').map((p) => (
+      {posts.filter((p) => p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields' && p.slug !== 'pdf-bookmark-merge-keep-outline' && p.slug !== 'compressed-pdf-merge-quality-loss' && p.slug !== 'pdf-merge-quality-before-after-test').map((p) => (
         <Link
           key={p.slug}
           href={`/blog/${p.slug}`}

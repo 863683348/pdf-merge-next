@@ -464,5 +464,26 @@
       "pdf 合并质量损失",
       "PDFMergeNext 压缩合并"
     ]
+  },
+  {
+    "slug": "pdf-merge-quality-before-after-test",
+    "tag": "质量对比 · Quality Comparison",
+    "date": "2026-10-08",
+    "zhTitle": "PDF 合并前后：质量对比测试怎么做",
+    "enTitle": "PDF Quality Before and After Merge: How to Test It",
+    "zhDesc": "PDF 质量对比要做得有意义，得先固定住变量：同一份源文件、同一页、同一缩放比例。这篇讲清对比测试怎么搭、该看哪六个指标，以及三种会把结论带偏的测法。",
+    "enDesc": "A PDF quality comparison only means something when the variables are pinned down: same source, same page, same zoom. Here is the setup, six numbers to check, and three ways the test goes wrong.",
+    "keywords": [
+      "pdf merge quality test",
+      "pdf quality before after merge",
+      "merge pdf without losing quality",
+      "before after pdf merge comparison",
+      "pdf merge resolution comparison",
+      "PDF 质量对比",
+      "pdf 合并画质测试",
+      "合并前后画质对比",
+      "pdf 合并分辨率对比",
+      "PDFMergeNext 画质对比"
+    ]
   }
 ]
