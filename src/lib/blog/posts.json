@@ -1,5 +1,26 @@
 [
   {
+    "slug": "pdf-metadata-preservation-merge",
+    "tag": "元数据 · Metadata",
+    "date": "2026-10-09",
+    "zhTitle": "PDF 元数据保留：合并时该注意什么",
+    "enTitle": "PDF Metadata Preservation: What Survives a Merge",
+    "zhDesc": "合并 PDF 时元数据不会自动跟着走：文档信息字典一个文件只有一份，合并后标题、作者、关键词只能留下其中一套值。这篇讲清元数据有哪几层、哪些会留下、哪些会被覆盖，以及合并前后怎么回填。",
+    "enDesc": "A merge does not carry PDF metadata across by itself. The document information dictionary exists once per file, so after two files become one only one set of title, author and keywords can stay. Here is where metadata lives, what survives, what gets overwritten, and how to write the fields back.",
+    "keywords": [
+      "pdf metadata preservation",
+      "merge pdf keep metadata",
+      "pdf metadata lost after merge",
+      "preserve pdf title author metadata",
+      "pdf metadata merge tool",
+      "PDF 元数据保留",
+      "合并PDF保留元数据",
+      "pdf 合并后元数据丢失",
+      "PDF 元数据被覆盖",
+      "PDFMergeNext 元数据"
+    ]
+  },
+  {
     "slug": "legal-contract-pdf-merge-guide",
     "tag": "法律实务 · Legal",
     "date": "2026-09-15",

@@ -54,6 +54,26 @@ export default function BlogPage() {
         ))}
       </div>
 
+      {(!active || active === '元数据') && (
+        <Link
+          href="/blog/pdf-metadata-preservation-merge"
+          className="mt-6 block rounded-xl border border-line bg-surface p-6 shadow-sm transition-colors duration-fast hover:bg-subtle"
+        >
+          <p className="text-caption font-semibold uppercase tracking-wide text-brand">
+            元数据 · Metadata
+          </p>
+          <p className="mt-1 text-xs text-fg-tertiary">2026-10-09</p>
+          <h2 className="mt-1 text-title font-semibold text-fg">
+            PDF 元数据保留：合并时该注意什么
+          </h2>
+          <p className="mt-1 text-sm font-medium text-fg-muted">
+            PDF Metadata Preservation: What Survives a Merge
+          </p>
+          <p className="mt-2 text-sm text-fg-secondary">
+            合并 PDF 时元数据不会自动跟着走：文档信息字典一个文件只有一份，合并后标题、作者、关键词只能留下其中一套值。这篇讲清哪些会留下、哪些会被覆盖，以及合并前后怎么回填。
+          </p>
+        </Link>
+      )}
       {(!active || active === '质量对比') && (
         <Link
           href="/blog/pdf-merge-quality-before-after-test"
@@ -155,7 +175,7 @@ export default function BlogPage() {
         </Link>
       )}
 
-      {posts.filter((p) => p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields' && p.slug !== 'pdf-bookmark-merge-keep-outline' && p.slug !== 'compressed-pdf-merge-quality-loss' && p.slug !== 'pdf-merge-quality-before-after-test').map((p) => (
+      {posts.filter((p) => p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields' && p.slug !== 'pdf-bookmark-merge-keep-outline' && p.slug !== 'compressed-pdf-merge-quality-loss' && p.slug !== 'pdf-merge-quality-before-after-test' && p.slug !== 'pdf-metadata-preservation-merge').map((p) => (
         <Link
           key={p.slug}
           href={`/blog/${p.slug}`}
