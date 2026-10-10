@@ -54,6 +54,26 @@ export default function BlogPage() {
         ))}
       </div>
 
+      {(!active || active === '操作选择') && (
+        <Link
+          href="/blog/pdf-merge-vs-split-when-to-use"
+          className="mt-6 block rounded-xl border border-line bg-surface p-6 shadow-sm transition-colors duration-fast hover:bg-subtle"
+        >
+          <p className="text-caption font-semibold uppercase tracking-wide text-brand">
+            操作选择 · Merge or Split
+          </p>
+          <p className="mt-1 text-xs text-fg-tertiary">2026-10-11</p>
+          <h2 className="mt-1 text-title font-semibold text-fg">
+            PDF 合并 vs PDF 拆分：什么情况该用哪个
+          </h2>
+          <p className="mt-1 text-sm font-medium text-fg-muted">
+            PDF Merge vs Split: When to Use Each One
+          </p>
+          <p className="mt-2 text-sm text-fg-secondary">
+            合并改的是文件数量，拆分改的是页码边界。先看交付终点是一份还是几份，第一步就该选谁就清楚了。
+          </p>
+        </Link>
+      )}
       {(!active || active === '元数据') && (
         <Link
           href="/blog/pdf-metadata-preservation-merge"
@@ -175,7 +195,7 @@ export default function BlogPage() {
         </Link>
       )}
 
-      {posts.filter((p) => p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields' && p.slug !== 'pdf-bookmark-merge-keep-outline' && p.slug !== 'compressed-pdf-merge-quality-loss' && p.slug !== 'pdf-merge-quality-before-after-test' && p.slug !== 'pdf-metadata-preservation-merge').map((p) => (
+      {posts.filter((p) => p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields' && p.slug !== 'pdf-bookmark-merge-keep-outline' && p.slug !== 'compressed-pdf-merge-quality-loss' && p.slug !== 'pdf-merge-quality-before-after-test' && p.slug !== 'pdf-metadata-preservation-merge' && p.slug !== 'pdf-merge-vs-split-when-to-use').map((p) => (
         <Link
           key={p.slug}
           href={`/blog/${p.slug}`}

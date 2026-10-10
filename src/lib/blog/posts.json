@@ -506,5 +506,26 @@
       "pdf 合并分辨率对比",
       "PDFMergeNext 画质对比"
     ]
+  },
+  {
+    "slug": "pdf-merge-vs-split-when-to-use",
+    "tag": "操作选择 · Merge or Split",
+    "date": "2026-10-11",
+    "zhTitle": "PDF 合并 vs PDF 拆分：什么情况该用哪个",
+    "enTitle": "PDF Merge vs Split: When to Use Each One",
+    "zhDesc": "PDF 合并拆分先看改的是文件数量还是页码范围：合并适合交付一份正本、连续页码、归档，拆分适合上传上限、分人发放、只要其中几页。这篇讲清判断依据、先后顺序，以及四种容易踩的坑。",
+    "enDesc": "Is this a counting problem or a page-range problem? Merge when one file has to be delivered with continuous numbering, split when a size cap or separate recipients get in the way. Here is how to decide, the order to work in, and four mistakes people keep making.",
+    "keywords": [
+      "pdf merge vs split",
+      "when to merge pdf vs split",
+      "combine vs separate pdf files",
+      "split large pdf into smaller files",
+      "merge multiple pdf into one file",
+      "PDF 合并拆分",
+      "pdf 先合并还是先拆分",
+      "pdf 拆分成多个文件",
+      "pdf 合并成一个",
+      "PDFMergeNext 合并拆分"
+    ]
   }
 ]
