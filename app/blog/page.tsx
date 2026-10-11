@@ -74,6 +74,26 @@ export default function BlogPage() {
           </p>
         </Link>
       )}
+      {(!active || active === '操作选择') && (
+        <Link
+          href="/blog/pdf-merge-vs-convert-scenarios"
+          className="mt-6 block rounded-xl border border-line bg-surface p-6 shadow-sm transition-colors duration-fast hover:bg-subtle"
+        >
+          <p className="text-caption font-semibold uppercase tracking-wide text-brand">
+            操作选择 · Merge or Convert
+          </p>
+          <p className="mt-1 text-xs text-fg-tertiary">2026-10-12</p>
+          <h2 className="mt-1 text-title font-semibold text-fg">
+            PDF 合并 vs PDF 转换：六种场景该怎么选
+          </h2>
+          <p className="mt-1 text-sm font-medium text-fg-muted">
+            PDF Merge vs Convert: How to Pick in Six Scenarios
+          </p>
+          <p className="mt-2 text-sm text-fg-secondary">
+            合并不动文件格式，转换要重建版式。先看交付终点是"一份 PDF"还是"另一种格式"，再决定先合并定版还是直接转。
+          </p>
+        </Link>
+      )}
       {(!active || active === '元数据') && (
         <Link
           href="/blog/pdf-metadata-preservation-merge"
@@ -195,7 +215,7 @@ export default function BlogPage() {
         </Link>
       )}
 
-      {posts.filter((p) => p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields' && p.slug !== 'pdf-bookmark-merge-keep-outline' && p.slug !== 'compressed-pdf-merge-quality-loss' && p.slug !== 'pdf-merge-quality-before-after-test' && p.slug !== 'pdf-metadata-preservation-merge' && p.slug !== 'pdf-merge-vs-split-when-to-use').map((p) => (
+      {posts.filter((p) => p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields' && p.slug !== 'pdf-bookmark-merge-keep-outline' && p.slug !== 'compressed-pdf-merge-quality-loss' && p.slug !== 'pdf-merge-quality-before-after-test' && p.slug !== 'pdf-metadata-preservation-merge' && p.slug !== 'pdf-merge-vs-split-when-to-use' && p.slug !== 'pdf-merge-vs-convert-scenarios').map((p) => (
         <Link
           key={p.slug}
           href={`/blog/${p.slug}`}
