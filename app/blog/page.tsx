@@ -54,6 +54,26 @@ export default function BlogPage() {
         ))}
       </div>
 
+      {(!active || active === '合规清单') && (
+        <Link
+          href="/blog/gdpr-compliant-pdf-tools"
+          className="mt-6 block rounded-xl border border-line bg-surface p-6 shadow-sm transition-colors duration-fast hover:bg-subtle"
+        >
+          <p className="text-caption font-semibold uppercase tracking-wide text-brand">
+            合规清单 · GDPR Compliance
+          </p>
+          <p className="mt-1 text-xs text-fg-tertiary">2026-10-13</p>
+          <h2 className="mt-1 text-title font-semibold text-fg">
+            GDPR 合规 PDF 工具：选型前能逐条打勾的检查清单
+          </h2>
+          <p className="mt-1 text-sm font-medium text-fg-muted">
+            GDPR Compliant PDF Tools: A Checklist Before You Choose
+          </p>
+          <p className="mt-2 text-sm text-fg-secondary">
+            "符合 GDPR"在供应商页面上是句口号。这篇把它拆成文件上传与否、角色定位、DPA、存储地、日志留存七项能当场验证的检查，以及交给法务的那一页纸。
+          </p>
+        </Link>
+      )}
       {(!active || active === '操作选择') && (
         <Link
           href="/blog/pdf-merge-vs-convert-scenarios"
@@ -215,7 +235,7 @@ export default function BlogPage() {
         </Link>
       )}
 
-      {posts.filter((p) => p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields' && p.slug !== 'pdf-bookmark-merge-keep-outline' && p.slug !== 'compressed-pdf-merge-quality-loss' && p.slug !== 'pdf-merge-quality-before-after-test' && p.slug !== 'pdf-metadata-preservation-merge' && p.slug !== 'pdf-merge-vs-split-when-to-use' && p.slug !== 'pdf-merge-vs-convert-scenarios').map((p) => (
+      {posts.filter((p) => p.slug !== 'gdpr-compliant-pdf-tools' && p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields' && p.slug !== 'pdf-bookmark-merge-keep-outline' && p.slug !== 'compressed-pdf-merge-quality-loss' && p.slug !== 'pdf-merge-quality-before-after-test' && p.slug !== 'pdf-metadata-preservation-merge' && p.slug !== 'pdf-merge-vs-split-when-to-use' && p.slug !== 'pdf-merge-vs-convert-scenarios').map((p) => (
         <Link
           key={p.slug}
           href={`/blog/${p.slug}`}

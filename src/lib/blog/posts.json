@@ -547,5 +547,26 @@
       "pdf 合并和转换的区别",
       "PDFMergeNext 合并转换"
     ]
+  },
+  {
+    "slug": "gdpr-compliant-pdf-tools",
+    "tag": "合规清单 · GDPR Compliance",
+    "date": "2026-10-13",
+    "zhTitle": "GDPR 合规 PDF 工具：选型前能逐条打勾的检查清单",
+    "enTitle": "GDPR Compliant PDF Tools: A Checklist Before You Choose",
+    "zhDesc": "选 PDF 合并工具时，\"符不符合 GDPR\"可以拆成十几个能当场验证的点：文件是否真的不上传、对方算控制者还是处理者、有没有数据处理协议 DPA、服务器日志留多久。这篇给出一份可以打印下来打勾的检查清单。",
+    "enDesc": "Whether a PDF merge tool is GDPR compliant comes down to a dozen checkable facts: does the file leave the device, processor or controller, is there a DPA to sign, how long logs are kept. Here is a checklist you can print and tick off.",
+    "keywords": [
+      "gdpr compliant pdf tools",
+      "gdpr compliant pdf merger",
+      "pdf tool data processing agreement",
+      "gdpr pdf checklist",
+      "no upload pdf tool gdpr",
+      "GDPR 合规 PDF 工具",
+      "GDPR PDF 合并工具",
+      "PDF工具数据处理协议 DPA",
+      "GDPR PDF 合规检查清单",
+      "PDFMergeNext GDPR"
+    ]
   }
 ]
