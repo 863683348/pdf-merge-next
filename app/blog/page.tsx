@@ -56,6 +56,26 @@ export default function BlogPage() {
 
       {(!active || active === '合规清单') && (
         <Link
+          href="/blog/hipaa-compliant-pdf-merge"
+          className="mt-6 block rounded-xl border border-line bg-surface p-6 shadow-sm transition-colors duration-fast hover:bg-subtle"
+        >
+          <p className="text-caption font-semibold uppercase tracking-wide text-brand">
+            合规清单 · HIPAA Compliance
+          </p>
+          <p className="mt-1 text-xs text-fg-tertiary">2026-10-14</p>
+          <h2 className="mt-1 text-title font-semibold text-fg">
+            HIPAA 合规 PDF 合并：医疗文件要过的六道关口
+          </h2>
+          <p className="mt-1 text-sm font-medium text-fg-muted">
+            HIPAA Compliant PDF Merge: Six Gates for Medical Documents
+          </p>
+          <p className="mt-2 text-sm text-fg-secondary">
+            病历、检验报告、理赔附件要合成一份 PDF 时，HIPAA 看的是六件能写成书面答案的事：有没有 BAA、PHI 是否离机、去标识化做到哪一步、访问有没有留痕、副本什么时候删、以及工具方算不算商业伙伴。这篇给出可当场核对的清单和一套当天能跑的本地流程。
+          </p>
+        </Link>
+      )}
+      {(!active || active === '合规清单') && (
+        <Link
           href="/blog/gdpr-compliant-pdf-tools"
           className="mt-6 block rounded-xl border border-line bg-surface p-6 shadow-sm transition-colors duration-fast hover:bg-subtle"
         >
@@ -235,7 +255,7 @@ export default function BlogPage() {
         </Link>
       )}
 
-      {posts.filter((p) => p.slug !== 'gdpr-compliant-pdf-tools' && p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields' && p.slug !== 'pdf-bookmark-merge-keep-outline' && p.slug !== 'compressed-pdf-merge-quality-loss' && p.slug !== 'pdf-merge-quality-before-after-test' && p.slug !== 'pdf-metadata-preservation-merge' && p.slug !== 'pdf-merge-vs-split-when-to-use' && p.slug !== 'pdf-merge-vs-convert-scenarios').map((p) => (
+      {posts.filter((p) => p.slug !== 'hipaa-compliant-pdf-merge' && p.slug !== 'gdpr-compliant-pdf-tools' && p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields' && p.slug !== 'pdf-bookmark-merge-keep-outline' && p.slug !== 'compressed-pdf-merge-quality-loss' && p.slug !== 'pdf-merge-quality-before-after-test' && p.slug !== 'pdf-metadata-preservation-merge' && p.slug !== 'pdf-merge-vs-split-when-to-use' && p.slug !== 'pdf-merge-vs-convert-scenarios').map((p) => (
         <Link
           key={p.slug}
           href={`/blog/${p.slug}`}
