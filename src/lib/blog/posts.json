@@ -589,5 +589,26 @@
       "医疗文件 PDF 工具",
       "PDFMergeNext HIPAA"
     ]
+  },
+  {
+    "slug": "china-pipl-pdf-tools-requirements",
+    "tag": "合规清单 · PIPL Compliance",
+    "date": "2026-10-15",
+    "zhTitle": "个保法下的 PDF 工具要求：八个能当场核对的点",
+    "enTitle": "China PIPL PDF Tools: Eight Requirements to Check",
+    "zhDesc": "按《个人信息保护法》挑 PDF 工具，判断依据能拆成八个当场可核对的事实：文件里有没有个人信息、有没有敏感个人信息、处理目的是否写明、需不需要单独同意、有没有委托处理协议、能不能转委托、有没有数据出境、保存多久和怎么证明删除。这篇给出清单和一套当天能跑的本地流程。",
+    "enDesc": "Choosing a PDF tool against PIPL comes down to eight checkable facts: is there personal information in the file, is any of it sensitive, is the purpose stated, is separate consent required, is there an entrustment agreement, can the processor sub-contract, does data cross the border, how long is it kept and how is deletion proven.",
+    "keywords": [
+      "china pipl pdf tools",
+      "pipl compliant pdf merger",
+      "personal information protection law pdf",
+      "pipl separate consent pdf",
+      "pipl cross border pdf transfer",
+      "个保法 PDF 工具",
+      "个人信息保护法 PDF 合并",
+      "PDF 数据出境合规",
+      "敏感个人信息 PDF 处理",
+      "PDFMergeNext 个保法"
+    ]
   }
 ]

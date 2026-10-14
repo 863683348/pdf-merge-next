@@ -56,6 +56,26 @@ export default function BlogPage() {
 
       {(!active || active === '合规清单') && (
         <Link
+          href="/blog/china-pipl-pdf-tools-requirements"
+          className="mt-6 block rounded-xl border border-line bg-surface p-6 shadow-sm transition-colors duration-fast hover:bg-subtle"
+        >
+          <p className="text-caption font-semibold uppercase tracking-wide text-brand">
+            合规清单 · PIPL Compliance
+          </p>
+          <p className="mt-1 text-xs text-fg-tertiary">2026-10-15</p>
+          <h2 className="mt-1 text-title font-semibold text-fg">
+            个保法下的 PDF 工具要求：八个能当场核对的点
+          </h2>
+          <p className="mt-1 text-sm font-medium text-fg-muted">
+            China PIPL PDF Tools: Eight Requirements to Check
+          </p>
+          <p className="mt-2 text-sm text-fg-secondary">
+            按《个人信息保护法》挑 PDF 工具，判断依据能拆成八个当场可核对的事实：文件里有没有个人信息、有没有敏感个人信息、处理目的是否写明、需不需要单独同意、有没有委托处理协议、能不能转委托、有没有数据出境、保存多久和怎么证明删除。
+          </p>
+        </Link>
+      )}
+      {(!active || active === '合规清单') && (
+        <Link
           href="/blog/hipaa-compliant-pdf-merge"
           className="mt-6 block rounded-xl border border-line bg-surface p-6 shadow-sm transition-colors duration-fast hover:bg-subtle"
         >
@@ -255,7 +275,7 @@ export default function BlogPage() {
         </Link>
       )}
 
-      {posts.filter((p) => p.slug !== 'hipaa-compliant-pdf-merge' && p.slug !== 'gdpr-compliant-pdf-tools' && p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields' && p.slug !== 'pdf-bookmark-merge-keep-outline' && p.slug !== 'compressed-pdf-merge-quality-loss' && p.slug !== 'pdf-merge-quality-before-after-test' && p.slug !== 'pdf-metadata-preservation-merge' && p.slug !== 'pdf-merge-vs-split-when-to-use' && p.slug !== 'pdf-merge-vs-convert-scenarios').map((p) => (
+      {posts.filter((p) => p.slug !== 'china-pipl-pdf-tools-requirements' && p.slug !== 'hipaa-compliant-pdf-merge' && p.slug !== 'gdpr-compliant-pdf-tools' && p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields' && p.slug !== 'pdf-bookmark-merge-keep-outline' && p.slug !== 'compressed-pdf-merge-quality-loss' && p.slug !== 'pdf-merge-quality-before-after-test' && p.slug !== 'pdf-metadata-preservation-merge' && p.slug !== 'pdf-merge-vs-split-when-to-use' && p.slug !== 'pdf-merge-vs-convert-scenarios').map((p) => (
         <Link
           key={p.slug}
           href={`/blog/${p.slug}`}
