@@ -610,5 +610,26 @@
       "敏感个人信息 PDF 处理",
       "PDFMergeNext 个保法"
     ]
+  },
+{
+    "slug": "trade-secret-protection-pdf-merge",
+    "tag": "合规清单 · Trade Secrets",
+    "date": "2026-10-20",
+    "zhTitle": "商业机密保护：合并 PDF 前该先确认的五件事",
+    "enTitle": "Trade Secret Protection: Five Things to Check Before Merging a PDF",
+    "zhDesc": "商业机密 PDF 合并的判断标准不在工具页面上写了什么保密承诺，而在三件事有没有同时成立：信息本身是不是商业秘密、有没有采取相应保密措施、合并这一步有没有把副本交到别人手上。这篇给出五件事检查清单、泄密最容易发生的三个环节，以及当天能跑的本地流程。",
+    "enDesc": "Trade secret protection for a PDF merge comes down to three things holding at once: whether the information qualifies, whether reasonable secrecy measures exist, and whether the merge handed a copy to anyone. Here are five checks, the three stages where leaks actually happen, and a local workflow you can run today.",
+    "keywords": [
+      "trade secret protection pdf",
+      "pdf merge trade secrets",
+      "confidential document merge",
+      "trade secret pdf merger",
+      "merge pdf without upload confidential",
+      "商业机密 PDF 合并",
+      "商业秘密 PDF 工具",
+      "机密文件合并",
+      "PDF 合并保密措施",
+      "PDFMergeNext 商业机密"
+    ]
   }
 ]

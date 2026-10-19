@@ -56,6 +56,26 @@ export default function BlogPage() {
 
       {(!active || active === '合规清单') && (
         <Link
+          href="/blog/trade-secret-protection-pdf-merge"
+          className="mt-6 block rounded-xl border border-line bg-surface p-6 shadow-sm transition-colors duration-fast hover:bg-subtle"
+        >
+          <p className="text-caption font-semibold uppercase tracking-wide text-brand">
+            合规清单 · Trade Secrets
+          </p>
+          <p className="mt-1 text-xs text-fg-tertiary">2026-10-20</p>
+          <h2 className="mt-1 text-title font-semibold text-fg">
+            商业机密保护：合并 PDF 前该先确认的五件事
+          </h2>
+          <p className="mt-1 text-sm font-medium text-fg-muted">
+            Trade Secret Protection: Five Things to Check Before Merging a PDF
+          </p>
+          <p className="mt-2 text-sm text-fg-secondary">
+            商业机密 PDF 合并的判断标准不在工具页面上写了什么，而在三件事：信息本身是不是商业秘密、有没有采取相应保密措施、合并这一步有没有把副本交到别人手上。这篇给出五件事检查清单和三个最容易出问题的环节。
+          </p>
+        </Link>
+      )}
+      {(!active || active === '合规清单') && (
+        <Link
           href="/blog/china-pipl-pdf-tools-requirements"
           className="mt-6 block rounded-xl border border-line bg-surface p-6 shadow-sm transition-colors duration-fast hover:bg-subtle"
         >
@@ -275,7 +295,7 @@ export default function BlogPage() {
         </Link>
       )}
 
-      {posts.filter((p) => p.slug !== 'china-pipl-pdf-tools-requirements' && p.slug !== 'hipaa-compliant-pdf-merge' && p.slug !== 'gdpr-compliant-pdf-tools' && p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields' && p.slug !== 'pdf-bookmark-merge-keep-outline' && p.slug !== 'compressed-pdf-merge-quality-loss' && p.slug !== 'pdf-merge-quality-before-after-test' && p.slug !== 'pdf-metadata-preservation-merge' && p.slug !== 'pdf-merge-vs-split-when-to-use' && p.slug !== 'pdf-merge-vs-convert-scenarios').map((p) => (
+      {posts.filter((p) => p.slug !== 'trade-secret-protection-pdf-merge' && p.slug !== 'china-pipl-pdf-tools-requirements' && p.slug !== 'hipaa-compliant-pdf-merge' && p.slug !== 'gdpr-compliant-pdf-tools' && p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields' && p.slug !== 'pdf-bookmark-merge-keep-outline' && p.slug !== 'compressed-pdf-merge-quality-loss' && p.slug !== 'pdf-merge-quality-before-after-test' && p.slug !== 'pdf-metadata-preservation-merge' && p.slug !== 'pdf-merge-vs-split-when-to-use' && p.slug !== 'pdf-merge-vs-convert-scenarios').map((p) => (
         <Link
           key={p.slug}
           href={`/blog/${p.slug}`}
