@@ -56,6 +56,26 @@ export default function BlogPage() {
 
       {(!active || active === '合规清单') && (
         <Link
+          href="/blog/pdf-file-audit-trail-requirements"
+          className="mt-6 block rounded-xl border border-line bg-surface p-6 shadow-sm transition-colors duration-fast hover:bg-subtle"
+        >
+          <p className="text-caption font-semibold uppercase tracking-wide text-brand">
+            合规清单 · Audit Trail
+          </p>
+          <p className="mt-1 text-xs text-fg-tertiary">2026-10-21</p>
+          <h2 className="mt-1 text-title font-semibold text-fg">
+            文件审计追踪：PDF 工具该留下哪些记录
+          </h2>
+          <p className="mt-1 text-sm font-medium text-fg-muted">
+            File Audit Trail: What a PDF Tool Should Record
+          </p>
+          <p className="mt-2 text-sm text-fg-secondary">
+            审计追踪要回答四件事：谁、什么时间、对哪份文件、做了什么操作。在线服务能给出账号级日志但文件已离机，桌面软件只留文件不留操作，浏览器本地工具两样都不给。这篇给出七条记录线的检查清单和当天能补上的留痕流程。
+          </p>
+        </Link>
+      )}
+      {(!active || active === '合规清单') && (
+        <Link
           href="/blog/trade-secret-protection-pdf-merge"
           className="mt-6 block rounded-xl border border-line bg-surface p-6 shadow-sm transition-colors duration-fast hover:bg-subtle"
         >
@@ -295,7 +315,7 @@ export default function BlogPage() {
         </Link>
       )}
 
-      {posts.filter((p) => p.slug !== 'trade-secret-protection-pdf-merge' && p.slug !== 'china-pipl-pdf-tools-requirements' && p.slug !== 'hipaa-compliant-pdf-merge' && p.slug !== 'gdpr-compliant-pdf-tools' && p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields' && p.slug !== 'pdf-bookmark-merge-keep-outline' && p.slug !== 'compressed-pdf-merge-quality-loss' && p.slug !== 'pdf-merge-quality-before-after-test' && p.slug !== 'pdf-metadata-preservation-merge' && p.slug !== 'pdf-merge-vs-split-when-to-use' && p.slug !== 'pdf-merge-vs-convert-scenarios').map((p) => (
+      {posts.filter((p) => p.slug !== 'pdf-file-audit-trail-requirements' && p.slug !== 'trade-secret-protection-pdf-merge' && p.slug !== 'china-pipl-pdf-tools-requirements' && p.slug !== 'hipaa-compliant-pdf-merge' && p.slug !== 'gdpr-compliant-pdf-tools' && p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields' && p.slug !== 'pdf-bookmark-merge-keep-outline' && p.slug !== 'compressed-pdf-merge-quality-loss' && p.slug !== 'pdf-merge-quality-before-after-test' && p.slug !== 'pdf-metadata-preservation-merge' && p.slug !== 'pdf-merge-vs-split-when-to-use' && p.slug !== 'pdf-merge-vs-convert-scenarios').map((p) => (
         <Link
           key={p.slug}
           href={`/blog/${p.slug}`}

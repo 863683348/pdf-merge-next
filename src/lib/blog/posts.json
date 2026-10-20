@@ -1,5 +1,26 @@
 [
   {
+    "slug": "pdf-file-audit-trail-requirements",
+    "tag": "合规清单 · Audit Trail",
+    "date": "2026-10-21",
+    "zhTitle": "文件审计追踪：PDF 工具该留下哪些记录",
+    "enTitle": "File Audit Trail: What a PDF Tool Should Record",
+    "zhDesc": "审计追踪要回答四件事：谁、什么时间、对哪份文件、做了什么操作。在线服务能给出账号级日志但文件已离机，桌面软件只留文件不留操作，浏览器本地工具两样都不给。这篇给出七条记录线的检查清单和当天能补上的留痕流程。",
+    "enDesc": "An audit trail has to answer four questions: who, when, which file, and what was done. Online services produce account level logs but the file has left the machine, desktop software leaves files and no operations, and browser-local tools give you neither unless you add them. Seven lines to check and a logging workflow you can put in place today.",
+    "keywords": [
+      "pdf audit trail",
+      "file audit trail pdf tools",
+      "pdf merge audit log",
+      "document audit trail requirements",
+      "pdf tool activity logging",
+      "文件审计追踪 PDF",
+      "PDF 审计日志",
+      "合并 PDF 留痕",
+      "PDF 工具操作记录",
+      "PDFMergeNext 审计追踪"
+    ]
+  },
+  {
     "slug": "pdf-metadata-preservation-merge",
     "tag": "元数据 · Metadata",
     "date": "2026-10-09",
@@ -611,7 +632,7 @@
       "PDFMergeNext 个保法"
     ]
   },
-{
+  {
     "slug": "trade-secret-protection-pdf-merge",
     "tag": "合规清单 · Trade Secrets",
     "date": "2026-10-20",
