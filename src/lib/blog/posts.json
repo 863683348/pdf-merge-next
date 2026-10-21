@@ -1,5 +1,27 @@
 [
   {
+    "slug": "strip-pdf-metadata-before-sharing",
+    "tag": "元数据 · Metadata Privacy",
+    "date": "2026-10-22",
+    "zhTitle": "分享前清除 PDF 元数据：一份 PDF 里藏着什么",
+    "enTitle": "How to Remove PDF Metadata Before Sharing: What a PDF Hides",
+    "zhDesc": "作者名、公司名、时间戳、原始文件名，手机扫描件还带坐标。清除 PDF 元数据是发出文件前的最后一步。这篇列出八个字段的外泄风险、三类清理方式各自停在什么地方，以及一套当天能跑完的流程。",
+    "enDesc": "Author name, company, timestamps, the original file name, and on phone scans the coordinates too. Removing PDF metadata is the last step before a file goes out. Eight fields and what each leaks, three cleaning methods and where each one stops, plus a seven step workflow you can run today.",
+    "keywords": [
+      "remove pdf metadata",
+      "pdf metadata privacy",
+      "how to clean pdf metadata",
+      "pdf author name removal",
+      "strip metadata from pdf before sharing",
+      "pdf hidden data removal",
+      "清除 PDF 元数据",
+      "PDF 作者名清除",
+      "PDF 元数据隐私",
+      "PDF 隐藏信息清理",
+      "PDFMergeNext 元数据"
+    ]
+  },
+  {
     "slug": "pdf-file-audit-trail-requirements",
     "tag": "合规清单 · Audit Trail",
     "date": "2026-10-21",

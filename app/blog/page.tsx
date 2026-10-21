@@ -54,6 +54,26 @@ export default function BlogPage() {
         ))}
       </div>
 
+      {(!active || active === '元数据') && (
+        <Link
+          href="/blog/strip-pdf-metadata-before-sharing"
+          className="mt-6 block rounded-xl border border-line bg-surface p-6 shadow-sm transition-colors duration-fast hover:bg-subtle"
+        >
+          <p className="text-caption font-semibold uppercase tracking-wide text-brand">
+            元数据 · Metadata Privacy
+          </p>
+          <p className="mt-1 text-xs text-fg-tertiary">2026-10-22</p>
+          <h2 className="mt-1 text-title font-semibold text-fg">
+            分享前清除 PDF 元数据：一份 PDF 里藏着什么
+          </h2>
+          <p className="mt-1 text-sm font-medium text-fg-muted">
+            How to Remove PDF Metadata Before Sharing: What a PDF Hides
+          </p>
+          <p className="mt-2 text-sm text-fg-secondary">
+            作者名、公司名、时间戳、原始文件名，手机扫描件还带坐标。清除 PDF 元数据是发出文件前的最后一步。这篇列出八个字段的外泄风险、三类清理方式各自停在什么地方，以及一套当天能跑完的流程。
+          </p>
+        </Link>
+      )}
       {(!active || active === '合规清单') && (
         <Link
           href="/blog/pdf-file-audit-trail-requirements"
@@ -315,7 +335,7 @@ export default function BlogPage() {
         </Link>
       )}
 
-      {posts.filter((p) => p.slug !== 'pdf-file-audit-trail-requirements' && p.slug !== 'trade-secret-protection-pdf-merge' && p.slug !== 'china-pipl-pdf-tools-requirements' && p.slug !== 'hipaa-compliant-pdf-merge' && p.slug !== 'gdpr-compliant-pdf-tools' && p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields' && p.slug !== 'pdf-bookmark-merge-keep-outline' && p.slug !== 'compressed-pdf-merge-quality-loss' && p.slug !== 'pdf-merge-quality-before-after-test' && p.slug !== 'pdf-metadata-preservation-merge' && p.slug !== 'pdf-merge-vs-split-when-to-use' && p.slug !== 'pdf-merge-vs-convert-scenarios').map((p) => (
+      {posts.filter((p) => p.slug !== 'pdf-file-audit-trail-requirements' && p.slug !== 'trade-secret-protection-pdf-merge' && p.slug !== 'china-pipl-pdf-tools-requirements' && p.slug !== 'hipaa-compliant-pdf-merge' && p.slug !== 'gdpr-compliant-pdf-tools' && p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields' && p.slug !== 'pdf-bookmark-merge-keep-outline' && p.slug !== 'compressed-pdf-merge-quality-loss' && p.slug !== 'pdf-merge-quality-before-after-test' && p.slug !== 'pdf-metadata-preservation-merge' && p.slug !== 'pdf-merge-vs-split-when-to-use' && p.slug !== 'pdf-merge-vs-convert-scenarios' && p.slug !== 'strip-pdf-metadata-before-sharing').map((p) => (
         <Link
           key={p.slug}
           href={`/blog/${p.slug}`}
