@@ -54,6 +54,26 @@ export default function BlogPage() {
         ))}
       </div>
 
+      {(!active || active === '产品设计') && (
+        <Link
+          href="/blog/privacy-by-design-pdf-tools"
+          className="mt-6 block rounded-xl border border-line bg-surface p-6 shadow-sm transition-colors duration-fast hover:bg-subtle"
+        >
+          <p className="text-caption font-semibold uppercase tracking-wide text-brand">
+            产品设计 · Privacy by Design
+          </p>
+          <p className="mt-1 text-xs text-fg-tertiary">2026-10-24</p>
+          <h2 className="mt-1 text-title font-semibold text-fg">
+            隐私设计 PDF 工具：七条原则怎么逐条核对
+          </h2>
+          <p className="mt-1 text-sm font-medium text-fg-muted">
+            Privacy by Design for PDF Tools: How to Check the Seven Principles
+          </p>
+          <p className="mt-2 text-sm text-fg-secondary">
+            隐私设计的七条原则不是口号，是可以逐条核对的清单。这篇把它们翻成 PDF 工具上能当场验证的动作：默认不上传、默认不留副本、默认最小范围，配一张核对表和五分钟自测。
+          </p>
+        </Link>
+      )}
       {(!active || active === '元数据') && (
         <Link
           href="/blog/strip-pdf-metadata-before-sharing"
@@ -335,7 +355,7 @@ export default function BlogPage() {
         </Link>
       )}
 
-      {posts.filter((p) => p.slug !== 'pdf-file-audit-trail-requirements' && p.slug !== 'trade-secret-protection-pdf-merge' && p.slug !== 'china-pipl-pdf-tools-requirements' && p.slug !== 'hipaa-compliant-pdf-merge' && p.slug !== 'gdpr-compliant-pdf-tools' && p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields' && p.slug !== 'pdf-bookmark-merge-keep-outline' && p.slug !== 'compressed-pdf-merge-quality-loss' && p.slug !== 'pdf-merge-quality-before-after-test' && p.slug !== 'pdf-metadata-preservation-merge' && p.slug !== 'pdf-merge-vs-split-when-to-use' && p.slug !== 'pdf-merge-vs-convert-scenarios' && p.slug !== 'strip-pdf-metadata-before-sharing').map((p) => (
+      {posts.filter((p) => p.slug !== 'privacy-by-design-pdf-tools' && p.slug !== 'pdf-file-audit-trail-requirements' && p.slug !== 'trade-secret-protection-pdf-merge' && p.slug !== 'china-pipl-pdf-tools-requirements' && p.slug !== 'hipaa-compliant-pdf-merge' && p.slug !== 'gdpr-compliant-pdf-tools' && p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields' && p.slug !== 'pdf-bookmark-merge-keep-outline' && p.slug !== 'compressed-pdf-merge-quality-loss' && p.slug !== 'pdf-merge-quality-before-after-test' && p.slug !== 'pdf-metadata-preservation-merge' && p.slug !== 'pdf-merge-vs-split-when-to-use' && p.slug !== 'pdf-merge-vs-convert-scenarios' && p.slug !== 'strip-pdf-metadata-before-sharing').map((p) => (
         <Link
           key={p.slug}
           href={`/blog/${p.slug}`}

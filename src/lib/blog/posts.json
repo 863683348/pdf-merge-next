@@ -1,5 +1,27 @@
 [
   {
+    "slug": "privacy-by-design-pdf-tools",
+    "tag": "产品设计 · Privacy by Design",
+    "date": "2026-10-24",
+    "zhTitle": "隐私设计 PDF 工具：七条原则怎么逐条核对",
+    "enTitle": "Privacy by Design for PDF Tools: How to Check the Seven Principles",
+    "zhDesc": "隐私设计（Privacy by Design）的七条原则不是口号，是可以逐条核对的清单。这篇把它们翻成 PDF 工具上能当场验证的动作：默认不上传、默认不留副本、默认最小范围，以及供应商回答含糊时怎么判断。",
+    "enDesc": "Privacy by Design has seven principles, and each one turns into something you can check on a PDF tool the same day. Here is that translation: no upload by default, no retained copy by default, minimum scope by default, and how to read a vague vendor answer.",
+    "keywords": [
+      "privacy by design pdf tools",
+      "privacy by design principles",
+      "pdf tool privacy checklist",
+      "privacy by default pdf merge",
+      "data minimization pdf tools",
+      "privacy by design seven principles pdf",
+      "隐私设计 PDF",
+      "隐私设计七原则",
+      "PDF 工具隐私核对清单",
+      "默认不上传 PDF",
+      "PDFMergeNext 隐私设计"
+    ]
+  },
+  {
     "slug": "strip-pdf-metadata-before-sharing",
     "tag": "元数据 · Metadata Privacy",
     "date": "2026-10-22",
