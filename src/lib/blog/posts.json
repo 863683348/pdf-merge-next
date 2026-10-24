@@ -1,5 +1,27 @@
 [
   {
+    "slug": "privacy-impact-assessment-pdf-tools",
+    "tag": "合规清单 · Privacy Impact Assessment",
+    "date": "2026-10-25",
+    "zhTitle": "隐私影响评估：引入 PDF 工具前要回答的八个问题",
+    "enTitle": "Privacy Impact Assessment for PDF Tools: Eight Questions to Answer First",
+    "zhDesc": "隐私影响评估（PIA）在 PDF 工具上不需要写成几十页的报告。这篇把评估拆成八个当天能答完的问题：文件里有什么信息、副本有没有离开本机、谁能读到、保存多久，以及结论怎么写才在事后拿得出证据。",
+    "enDesc": "A privacy impact assessment for a PDF tool does not need to run to forty pages. Eight questions get you there: what the file carries, whether a copy leaves the device, who can read it, how long it stays, and how to write a conclusion that holds up later.",
+    "keywords": [
+      "privacy impact assessment pdf tools",
+      "pia pdf tool checklist",
+      "dpia document tool",
+      "pdf merge privacy assessment",
+      "privacy impact assessment template",
+      "pdf tool data flow assessment",
+      "隐私影响评估 PDF 工具",
+      "PIA PDF 合并",
+      "PDF 工具引入评估清单",
+      "隐私影响评估八问",
+      "PDFMergeNext 隐私影响评估"
+    ]
+  },
+  {
     "slug": "privacy-by-design-pdf-tools",
     "tag": "产品设计 · Privacy by Design",
     "date": "2026-10-24",

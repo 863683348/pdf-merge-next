@@ -54,6 +54,26 @@ export default function BlogPage() {
         ))}
       </div>
 
+      {(!active || active === '合规清单') && (
+        <Link
+          href="/blog/privacy-impact-assessment-pdf-tools"
+          className="mt-6 block rounded-xl border border-line bg-surface p-6 shadow-sm transition-colors duration-fast hover:bg-subtle"
+        >
+          <p className="text-caption font-semibold uppercase tracking-wide text-brand">
+            合规清单 · Privacy Impact Assessment
+          </p>
+          <p className="mt-1 text-xs text-fg-tertiary">2026-10-25</p>
+          <h2 className="mt-1 text-title font-semibold text-fg">
+            隐私影响评估：引入 PDF 工具前要回答的八个问题
+          </h2>
+          <p className="mt-1 text-sm font-medium text-fg-muted">
+            Privacy Impact Assessment for PDF Tools: Eight Questions to Answer First
+          </p>
+          <p className="mt-2 text-sm text-fg-secondary">
+            隐私影响评估不需要写成几十页的报告。八个空格：文件里有什么、为什么处理、副本去哪、谁能读到、留多久、怎么留痕、怎么降险、谁签字，最后附一页能归档的结论模板。
+          </p>
+        </Link>
+      )}
       {(!active || active === '产品设计') && (
         <Link
           href="/blog/privacy-by-design-pdf-tools"
@@ -355,7 +375,7 @@ export default function BlogPage() {
         </Link>
       )}
 
-      {posts.filter((p) => p.slug !== 'privacy-by-design-pdf-tools' && p.slug !== 'pdf-file-audit-trail-requirements' && p.slug !== 'trade-secret-protection-pdf-merge' && p.slug !== 'china-pipl-pdf-tools-requirements' && p.slug !== 'hipaa-compliant-pdf-merge' && p.slug !== 'gdpr-compliant-pdf-tools' && p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields' && p.slug !== 'pdf-bookmark-merge-keep-outline' && p.slug !== 'compressed-pdf-merge-quality-loss' && p.slug !== 'pdf-merge-quality-before-after-test' && p.slug !== 'pdf-metadata-preservation-merge' && p.slug !== 'pdf-merge-vs-split-when-to-use' && p.slug !== 'pdf-merge-vs-convert-scenarios' && p.slug !== 'strip-pdf-metadata-before-sharing').map((p) => (
+      {posts.filter((p) => p.slug !== 'privacy-impact-assessment-pdf-tools' && p.slug !== 'privacy-by-design-pdf-tools' && p.slug !== 'pdf-file-audit-trail-requirements' && p.slug !== 'trade-secret-protection-pdf-merge' && p.slug !== 'china-pipl-pdf-tools-requirements' && p.slug !== 'hipaa-compliant-pdf-merge' && p.slug !== 'gdpr-compliant-pdf-tools' && p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields' && p.slug !== 'pdf-bookmark-merge-keep-outline' && p.slug !== 'compressed-pdf-merge-quality-loss' && p.slug !== 'pdf-merge-quality-before-after-test' && p.slug !== 'pdf-metadata-preservation-merge' && p.slug !== 'pdf-merge-vs-split-when-to-use' && p.slug !== 'pdf-merge-vs-convert-scenarios' && p.slug !== 'strip-pdf-metadata-before-sharing').map((p) => (
         <Link
           key={p.slug}
           href={`/blog/${p.slug}`}
