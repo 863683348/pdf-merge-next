@@ -1,5 +1,27 @@
 [
   {
+    "slug": "cross-border-data-transfer-pdf-tools",
+    "tag": "合规清单 · Cross-Border Transfer",
+    "date": "2026-10-26",
+    "zhTitle": "跨境数据传输：PDF 工具合规要点怎么逐条核对",
+    "enTitle": "Cross-Border Data Transfer for PDF Tools: How to Check Each Requirement",
+    "zhDesc": "跨境数据传输不是大公司才要管的事。合并一份带个人信息的 PDF，点下去的那一刻出境就已经发生。这篇给出四个能当场填完的判定位、GDPR 第 5 章与个保法第 38 条各自的口径、四条出境路径的成本对照，以及本地处理为什么能把整节写成不适用。",
+    "enDesc": "A cross-border data transfer does not wait for a large company to become relevant. Merge a PDF carrying personal data with an online tool and the transfer has happened. Four checks you can answer today, how Chapter V of the GDPR and Article 38 of the PIPL read the same file, four transfer routes priced against each other, and why local processing closes the section.",
+    "keywords": [
+      "cross-border data transfer pdf tools",
+      "pdf tool cross-border compliance",
+      "gdpr chapter v pdf transfer",
+      "pipl article 38 cross border pdf",
+      "standard contractual clauses pdf tool",
+      "pdf tool data localization",
+      "跨境数据传输 PDF 工具",
+      "PDF 工具出境合规",
+      "GDPR 第 5 章 PDF 传输",
+      "个保法第三十八条 PDF",
+      "PDFMergeNext 跨境合规"
+    ]
+  },
+  {
     "slug": "privacy-impact-assessment-pdf-tools",
     "tag": "合规清单 · Privacy Impact Assessment",
     "date": "2026-10-25",

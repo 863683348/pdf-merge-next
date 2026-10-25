@@ -56,6 +56,26 @@ export default function BlogPage() {
 
       {(!active || active === '合规清单') && (
         <Link
+          href="/blog/cross-border-data-transfer-pdf-tools"
+          className="mt-6 block rounded-xl border border-line bg-surface p-6 shadow-sm transition-colors duration-fast hover:bg-subtle"
+        >
+          <p className="text-caption font-semibold uppercase tracking-wide text-brand">
+            合规清单 · Cross-Border Transfer
+          </p>
+          <p className="mt-1 text-xs text-fg-tertiary">2026-10-26</p>
+          <h2 className="mt-1 text-title font-semibold text-fg">
+            跨境数据传输：PDF 工具合规要点怎么逐条核对
+          </h2>
+          <p className="mt-1 text-sm font-medium text-fg-muted">
+            Cross-Border Data Transfer for PDF Tools: How to Check Each Requirement
+          </p>
+          <p className="mt-2 text-sm text-fg-secondary">
+            四个判定位：有没有离开本机、接收方在哪个国家、有没有个人信息、适用哪个法域。附 GDPR 第 5 章与个保法第 38 条的对照表、四条出境路径的成本对照，以及本地处理为什么能把整节写成不适用。
+          </p>
+        </Link>
+      )}
+      {(!active || active === '合规清单') && (
+        <Link
           href="/blog/privacy-impact-assessment-pdf-tools"
           className="mt-6 block rounded-xl border border-line bg-surface p-6 shadow-sm transition-colors duration-fast hover:bg-subtle"
         >
