@@ -74,6 +74,26 @@ export default function BlogPage() {
           </p>
         </Link>
       )}
+      {(!active || active === 'Windows 技巧') && (
+        <Link
+          href="/blog/merge-pdf-windows-file-order"
+          className="mt-6 block rounded-xl border border-line bg-surface p-6 shadow-sm transition-colors duration-fast hover:bg-subtle"
+        >
+          <p className="text-caption font-semibold uppercase tracking-wide text-brand">
+            Windows 技巧 · Windows Tips
+          </p>
+          <p className="mt-1 text-xs text-fg-tertiary">2026-10-28</p>
+          <h2 className="mt-1 text-title font-semibold text-fg">
+            Windows 合并 PDF：文件顺序与批量命名
+          </h2>
+          <p className="mt-1 text-sm font-medium text-fg-muted">
+            Windows PDF Merge: Getting the File Order Right
+          </p>
+          <p className="mt-2 text-sm text-fg-secondary">
+            资源管理器按文本排序，1/10/2 会把整份文件排乱。这篇给出改名与显式排序两种解法，以及发出去之前的三步核对。
+          </p>
+        </Link>
+      )}
       {(!active || active === '合规清单') && (
         <Link
           href="/blog/cross-border-data-transfer-pdf-tools"
@@ -415,7 +435,7 @@ export default function BlogPage() {
         </Link>
       )}
 
-      {posts.filter((p) => p.slug !== 'privacy-impact-assessment-pdf-tools' && p.slug !== 'privacy-by-design-pdf-tools' && p.slug !== 'pdf-file-audit-trail-requirements' && p.slug !== 'trade-secret-protection-pdf-merge' && p.slug !== 'china-pipl-pdf-tools-requirements' && p.slug !== 'hipaa-compliant-pdf-merge' && p.slug !== 'gdpr-compliant-pdf-tools' && p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields' && p.slug !== 'pdf-bookmark-merge-keep-outline' && p.slug !== 'compressed-pdf-merge-quality-loss' && p.slug !== 'pdf-merge-quality-before-after-test' && p.slug !== 'pdf-metadata-preservation-merge' && p.slug !== 'pdf-merge-vs-split-when-to-use' && p.slug !== 'pdf-merge-vs-convert-scenarios' && p.slug !== 'strip-pdf-metadata-before-sharing' && p.slug !== 'merge-pdf-linux-open-source').map((p) => (
+      {posts.filter((p) => p.slug !== 'privacy-impact-assessment-pdf-tools' && p.slug !== 'privacy-by-design-pdf-tools' && p.slug !== 'pdf-file-audit-trail-requirements' && p.slug !== 'trade-secret-protection-pdf-merge' && p.slug !== 'china-pipl-pdf-tools-requirements' && p.slug !== 'hipaa-compliant-pdf-merge' && p.slug !== 'gdpr-compliant-pdf-tools' && p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields' && p.slug !== 'pdf-bookmark-merge-keep-outline' && p.slug !== 'compressed-pdf-merge-quality-loss' && p.slug !== 'pdf-merge-quality-before-after-test' && p.slug !== 'pdf-metadata-preservation-merge' && p.slug !== 'pdf-merge-vs-split-when-to-use' && p.slug !== 'pdf-merge-vs-convert-scenarios' && p.slug !== 'strip-pdf-metadata-before-sharing' && p.slug !== 'merge-pdf-windows-file-order' && p.slug !== 'merge-pdf-linux-open-source').map((p) => (
         <Link
           key={p.slug}
           href={`/blog/${p.slug}`}

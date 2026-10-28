@@ -1,5 +1,28 @@
 [
   {
+    "slug": "merge-pdf-windows-file-order",
+    "tag": "Windows 技巧 · Windows Tips",
+    "date": "2026-10-28",
+    "zhTitle": "Windows 合并 PDF：文件顺序与批量命名",
+    "enTitle": "Windows PDF Merge: Getting the File Order Right",
+    "zhDesc": "Windows 上合并 PDF 最常见的翻车不在工具，而在顺序。资源管理器按文本排序，1/10/2 会把整份文件排乱。这篇给出改名、显式排序两种解法，以及发出去之前的三步核对。",
+    "enDesc": "The usual Windows PDF merge failure is the order, not the tool. Explorer sorts names as text, so 1/10/2 scrambles the whole file. Two fixes, plus three checks before it goes out.",
+    "keywords": [
+      "windows 合并 pdf",
+      "merge pdf windows",
+      "windows pdf merge order",
+      "merge pdf windows batch",
+      "windows 11 合并 pdf",
+      "merge pdf windows file order",
+      "batch merge pdf windows",
+      "pdf merge file naming windows",
+      "Windows PDF 合并 顺序",
+      "Windows 批量合并 PDF",
+      "PDF 合并 文件命名",
+      "PDFMergeNext"
+    ]
+  },
+{
     "slug": "merge-pdf-linux-open-source",
     "tag": "Linux 技巧 · Linux Tips",
     "date": "2026-10-29",
