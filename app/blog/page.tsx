@@ -54,6 +54,26 @@ export default function BlogPage() {
         ))}
       </div>
 
+      {(!active || active === 'Linux 技巧') && (
+        <Link
+          href="/blog/merge-pdf-linux-open-source"
+          className="mt-6 block rounded-xl border border-line bg-surface p-6 shadow-sm transition-colors duration-fast hover:bg-subtle"
+        >
+          <p className="text-caption font-semibold uppercase tracking-wide text-brand">
+            Linux 技巧 · Linux Tips
+          </p>
+          <p className="mt-1 text-xs text-fg-tertiary">2026-10-29</p>
+          <h2 className="mt-1 text-title font-semibold text-fg">
+            Linux 合并 PDF：四个开源工具怎么选
+          </h2>
+          <p className="mt-1 text-sm font-medium text-fg-muted">
+            Linux PDF Merge: Open Source Tools
+          </p>
+          <p className="mt-2 text-sm text-fg-secondary">
+            qpdf、pdftk、Ghostscript、pdfunite 各自的边界在哪，哪几个会悄悄丢书签和表单字段，以及合并前该跑的三项检查。
+          </p>
+        </Link>
+      )}
       {(!active || active === '合规清单') && (
         <Link
           href="/blog/cross-border-data-transfer-pdf-tools"
@@ -395,7 +415,7 @@ export default function BlogPage() {
         </Link>
       )}
 
-      {posts.filter((p) => p.slug !== 'privacy-impact-assessment-pdf-tools' && p.slug !== 'privacy-by-design-pdf-tools' && p.slug !== 'pdf-file-audit-trail-requirements' && p.slug !== 'trade-secret-protection-pdf-merge' && p.slug !== 'china-pipl-pdf-tools-requirements' && p.slug !== 'hipaa-compliant-pdf-merge' && p.slug !== 'gdpr-compliant-pdf-tools' && p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields' && p.slug !== 'pdf-bookmark-merge-keep-outline' && p.slug !== 'compressed-pdf-merge-quality-loss' && p.slug !== 'pdf-merge-quality-before-after-test' && p.slug !== 'pdf-metadata-preservation-merge' && p.slug !== 'pdf-merge-vs-split-when-to-use' && p.slug !== 'pdf-merge-vs-convert-scenarios' && p.slug !== 'strip-pdf-metadata-before-sharing').map((p) => (
+      {posts.filter((p) => p.slug !== 'privacy-impact-assessment-pdf-tools' && p.slug !== 'privacy-by-design-pdf-tools' && p.slug !== 'pdf-file-audit-trail-requirements' && p.slug !== 'trade-secret-protection-pdf-merge' && p.slug !== 'china-pipl-pdf-tools-requirements' && p.slug !== 'hipaa-compliant-pdf-merge' && p.slug !== 'gdpr-compliant-pdf-tools' && p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields' && p.slug !== 'pdf-bookmark-merge-keep-outline' && p.slug !== 'compressed-pdf-merge-quality-loss' && p.slug !== 'pdf-merge-quality-before-after-test' && p.slug !== 'pdf-metadata-preservation-merge' && p.slug !== 'pdf-merge-vs-split-when-to-use' && p.slug !== 'pdf-merge-vs-convert-scenarios' && p.slug !== 'strip-pdf-metadata-before-sharing' && p.slug !== 'merge-pdf-linux-open-source').map((p) => (
         <Link
           key={p.slug}
           href={`/blog/${p.slug}`}

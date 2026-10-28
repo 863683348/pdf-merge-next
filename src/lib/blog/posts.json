@@ -1,5 +1,30 @@
 [
   {
+    "slug": "merge-pdf-linux-open-source",
+    "tag": "Linux 技巧 · Linux Tips",
+    "date": "2026-10-29",
+    "zhTitle": "Linux 合并 PDF：四个开源工具怎么选",
+    "enTitle": "Linux PDF Merge: Open Source Tools",
+    "zhDesc": "Linux 上合并 PDF 基本是命令行的事。qpdf、pdftk、Ghostscript、pdfunite 各自的边界在哪，哪几个会悄悄丢书签和表单字段，以及一份合并前该跑的三项检查。",
+    "enDesc": "Merging PDFs on Linux mostly means the command line. Where qpdf, pdftk, Ghostscript and pdfunite each stop, which ones quietly drop bookmarks and form fields, and three checks to run before you send the file.",
+    "keywords": [
+      "linux 合并 pdf",
+      "merge pdf linux",
+      "linux pdf merge",
+      "merge pdf linux command line",
+      "qpdf merge pdf",
+      "pdftk linux",
+      "ghostscript pdf merge",
+      "pdfunite merge pdf",
+      "open source pdf merger linux",
+      "Linux PDF 合并",
+      "Linux 命令行 合并 PDF",
+      "qpdf 合并 PDF",
+      "Linux 开源 PDF 工具",
+      "PDFMergeNext"
+    ]
+  },
+{
     "slug": "cross-border-data-transfer-pdf-tools",
     "tag": "合规清单 · Cross-Border Transfer",
     "date": "2026-10-26",
