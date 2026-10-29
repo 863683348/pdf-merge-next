@@ -1,5 +1,49 @@
 [
   {
+    "slug": "merge-pdf-ipad-touch-optimized",
+    "tag": "iPad 技巧 · iPad Tips",
+    "date": "2026-10-30",
+    "zhTitle": "iPad 合并 PDF：触控优化",
+    "enTitle": "iPad PDF Merge: Touch Optimized",
+    "zhDesc": "iPad 上合并 PDF 真正的难点不在合并，而在用指头给十几个文件排序。这篇给出两条可行路径、一条 15 页硬限制、一张场景对照表，以及发出去之前的三项核对。",
+    "enDesc": "Merging PDFs on an iPad takes seconds; getting the pages in the right order with a fingertip is the slow part. Two working methods, the 15-page cap that trips people up, a comparison table, and three checks to run before the file goes out.",
+    "keywords": [
+      "iPad PDF 合并",
+      "ipad pdf merge",
+      "merge pdf on ipad",
+      "merge pdf ipad files app",
+      "merge pdf on ipad without app",
+      "ipados 合并 pdf",
+      "ipad pdf merge touch",
+      "ipad 合并 pdf 触控",
+      "apple pencil 合并 pdf",
+      "PDFMergeNext"
+    ]
+  },
+
+{
+    "slug": "merge-pdf-mac-3-free-methods",
+    "tag": "Mac 技巧 · Mac Tips",
+    "date": "2026-10-27",
+    "zhTitle": "Mac 合并 PDF：3 个免费方法",
+    "enTitle": "Mac PDF Merge: 3 Free Methods",
+    "zhDesc": "Mac 上合并 PDF 不用装付费软件。Automator 快速操作、终端里的 qpdf、浏览器本地工具，三条路各自适合什么量级的活，以及哪三种情况免费方案就该换掉。",
+    "enDesc": "Merging PDFs on a Mac needs no paid software. An Automator Quick Action, qpdf in Terminal, and a browser-based local tool, what scale each one suits, and three cases where free stops being enough.",
+    "keywords": [
+      "Mac 合并 PDF",
+      "mac pdf merge",
+      "mac 免费合并 pdf",
+      "mac pdf merge free",
+      "merge pdf mac automator",
+      "merge pdf mac terminal",
+      "qpdf mac 合并 pdf",
+      "merge pdf mac without acrobat",
+      "macos 合并 pdf 免费",
+      "PDFMergeNext"
+    ]
+  },
+
+  {
     "slug": "merge-pdf-windows-file-order",
     "tag": "Windows 技巧 · Windows Tips",
     "date": "2026-10-28",

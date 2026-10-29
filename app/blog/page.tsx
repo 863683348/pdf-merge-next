@@ -54,6 +54,26 @@ export default function BlogPage() {
         ))}
       </div>
 
+      {(!active || active === 'iPad 技巧') && (
+        <Link
+          href="/blog/merge-pdf-ipad-touch-optimized"
+          className="mt-6 block rounded-xl border border-line bg-surface p-6 shadow-sm transition-colors duration-fast hover:bg-subtle"
+        >
+          <p className="text-caption font-semibold uppercase tracking-wide text-brand">
+            iPad 技巧 · iPad Tips
+          </p>
+          <p className="mt-1 text-xs text-fg-tertiary">2026-10-30</p>
+          <h2 className="mt-1 text-title font-semibold text-fg">
+            iPad 合并 PDF：触控优化
+          </h2>
+          <p className="mt-1 text-sm font-medium text-fg-muted">
+            iPad PDF Merge: Touch Optimized
+          </p>
+          <p className="mt-2 text-sm text-fg-secondary">
+            iPad 上合并 PDF 真正的难点不在合并，而在用指头给十几个文件排序。这篇给出两条可行路径、一条 15 页硬限制、一张场景对照表，以及发出去之前的三项核对。
+          </p>
+        </Link>
+      )}
       {(!active || active === 'Linux 技巧') && (
         <Link
           href="/blog/merge-pdf-linux-open-source"
@@ -91,6 +111,26 @@ export default function BlogPage() {
           </p>
           <p className="mt-2 text-sm text-fg-secondary">
             资源管理器按文本排序，1/10/2 会把整份文件排乱。这篇给出改名与显式排序两种解法，以及发出去之前的三步核对。
+          </p>
+        </Link>
+      )}
+      {(!active || active === 'Mac 技巧') && (
+        <Link
+          href="/blog/merge-pdf-mac-3-free-methods"
+          className="mt-6 block rounded-xl border border-line bg-surface p-6 shadow-sm transition-colors duration-fast hover:bg-subtle"
+        >
+          <p className="text-caption font-semibold uppercase tracking-wide text-brand">
+            Mac 技巧 · Mac Tips
+          </p>
+          <p className="mt-1 text-xs text-fg-tertiary">2026-10-27</p>
+          <h2 className="mt-1 text-title font-semibold text-fg">
+            Mac 合并 PDF：3 个免费方法
+          </h2>
+          <p className="mt-1 text-sm font-medium text-fg-muted">
+            Mac PDF Merge: 3 Free Methods
+          </p>
+          <p className="mt-2 text-sm text-fg-secondary">
+            Mac 上合并 PDF 不用装付费软件。Automator 快速操作、终端里的 qpdf、浏览器本地工具，三条路各自适合什么量级的活，以及哪三种情况免费方案就该换掉。
           </p>
         </Link>
       )}
@@ -435,7 +475,7 @@ export default function BlogPage() {
         </Link>
       )}
 
-      {posts.filter((p) => p.slug !== 'privacy-impact-assessment-pdf-tools' && p.slug !== 'privacy-by-design-pdf-tools' && p.slug !== 'pdf-file-audit-trail-requirements' && p.slug !== 'trade-secret-protection-pdf-merge' && p.slug !== 'china-pipl-pdf-tools-requirements' && p.slug !== 'hipaa-compliant-pdf-merge' && p.slug !== 'gdpr-compliant-pdf-tools' && p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields' && p.slug !== 'pdf-bookmark-merge-keep-outline' && p.slug !== 'compressed-pdf-merge-quality-loss' && p.slug !== 'pdf-merge-quality-before-after-test' && p.slug !== 'pdf-metadata-preservation-merge' && p.slug !== 'pdf-merge-vs-split-when-to-use' && p.slug !== 'pdf-merge-vs-convert-scenarios' && p.slug !== 'strip-pdf-metadata-before-sharing' && p.slug !== 'merge-pdf-windows-file-order' && p.slug !== 'merge-pdf-linux-open-source').map((p) => (
+      {posts.filter((p) => p.slug !== 'merge-pdf-ipad-touch-optimized' && p.slug !== 'merge-pdf-mac-3-free-methods' && p.slug !== 'privacy-impact-assessment-pdf-tools' && p.slug !== 'privacy-by-design-pdf-tools' && p.slug !== 'pdf-file-audit-trail-requirements' && p.slug !== 'trade-secret-protection-pdf-merge' && p.slug !== 'china-pipl-pdf-tools-requirements' && p.slug !== 'hipaa-compliant-pdf-merge' && p.slug !== 'gdpr-compliant-pdf-tools' && p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields' && p.slug !== 'pdf-bookmark-merge-keep-outline' && p.slug !== 'compressed-pdf-merge-quality-loss' && p.slug !== 'pdf-merge-quality-before-after-test' && p.slug !== 'pdf-metadata-preservation-merge' && p.slug !== 'pdf-merge-vs-split-when-to-use' && p.slug !== 'pdf-merge-vs-convert-scenarios' && p.slug !== 'strip-pdf-metadata-before-sharing' && p.slug !== 'merge-pdf-windows-file-order' && p.slug !== 'merge-pdf-linux-open-source').map((p) => (
         <Link
           key={p.slug}
           href={`/blog/${p.slug}`}
