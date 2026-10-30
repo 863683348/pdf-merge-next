@@ -54,6 +54,26 @@ export default function BlogPage() {
         ))}
       </div>
 
+      {(!active || active === 'iPhone 技巧') && (
+        <Link
+          href="/blog/merge-pdf-iphone-safari-tool"
+          className="mt-6 block rounded-xl border border-line bg-surface p-6 shadow-sm transition-colors duration-fast hover:bg-subtle"
+        >
+          <p className="text-caption font-semibold uppercase tracking-wide text-brand">
+            iPhone 技巧 · iOS Tips
+          </p>
+          <p className="mt-1 text-xs text-fg-tertiary">2026-10-31</p>
+          <h2 className="mt-1 text-title font-semibold text-fg">
+            iPhone 合并 PDF：Safari 工具
+          </h2>
+          <p className="mt-1 text-sm font-medium text-fg-muted">
+            iPhone PDF Merge: Safari Tool
+          </p>
+          <p className="mt-2 text-sm text-fg-secondary">
+            iPhone 上合并 PDF 不装 App 有两条路：系统「文件」应用和 Safari 里的本地工具。这篇给出两者的页数上限、能否重排、挑页支持对照表，以及发出去之前的三项核对。
+          </p>
+        </Link>
+      )}
       {(!active || active === 'iPad 技巧') && (
         <Link
           href="/blog/merge-pdf-ipad-touch-optimized"
