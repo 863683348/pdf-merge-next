@@ -54,6 +54,26 @@ export default function BlogPage() {
         ))}
       </div>
 
+      {(!active || active === 'Android 技巧') && (
+        <Link
+          href="/blog/merge-pdf-android-chrome-tool"
+          className="mt-6 block rounded-xl border border-line bg-surface p-6 shadow-sm transition-colors duration-fast hover:bg-subtle"
+        >
+          <p className="text-caption font-semibold uppercase tracking-wide text-brand">
+            Android 技巧 · Chrome Tips
+          </p>
+          <p className="mt-1 text-xs text-fg-tertiary">2026-11-01</p>
+          <h2 className="mt-1 text-title font-semibold text-fg">
+            Android PDF 合并：Chrome 教程
+          </h2>
+          <p className="mt-1 text-sm font-medium text-fg-muted">
+            Android PDF Merge: Chrome Tutorial
+          </p>
+          <p className="mt-2 text-sm text-fg-secondary">
+            Android 上合并 PDF 用 Chrome 就够了。这篇给出 Chrome 本地工具与厂商文件应用两条路、各自的页数上限与能否重排对照表、挑页与排序这两步最省时间的做法，以及发出去之前的三项核对。
+          </p>
+        </Link>
+      )}
       {(!active || active === 'iPhone 技巧') && (
         <Link
           href="/blog/merge-pdf-iphone-safari-tool"
@@ -495,7 +515,7 @@ export default function BlogPage() {
         </Link>
       )}
 
-      {posts.filter((p) => p.slug !== 'merge-pdf-ipad-touch-optimized' && p.slug !== 'merge-pdf-mac-3-free-methods' && p.slug !== 'privacy-impact-assessment-pdf-tools' && p.slug !== 'privacy-by-design-pdf-tools' && p.slug !== 'pdf-file-audit-trail-requirements' && p.slug !== 'trade-secret-protection-pdf-merge' && p.slug !== 'china-pipl-pdf-tools-requirements' && p.slug !== 'hipaa-compliant-pdf-merge' && p.slug !== 'gdpr-compliant-pdf-tools' && p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields' && p.slug !== 'pdf-bookmark-merge-keep-outline' && p.slug !== 'compressed-pdf-merge-quality-loss' && p.slug !== 'pdf-merge-quality-before-after-test' && p.slug !== 'pdf-metadata-preservation-merge' && p.slug !== 'pdf-merge-vs-split-when-to-use' && p.slug !== 'pdf-merge-vs-convert-scenarios' && p.slug !== 'strip-pdf-metadata-before-sharing' && p.slug !== 'merge-pdf-windows-file-order' && p.slug !== 'merge-pdf-linux-open-source').map((p) => (
+      {posts.filter((p) => p.slug !== 'merge-pdf-ipad-touch-optimized' && p.slug !== 'merge-pdf-mac-3-free-methods' && p.slug !== 'privacy-impact-assessment-pdf-tools' && p.slug !== 'privacy-by-design-pdf-tools' && p.slug !== 'pdf-file-audit-trail-requirements' && p.slug !== 'trade-secret-protection-pdf-merge' && p.slug !== 'china-pipl-pdf-tools-requirements' && p.slug !== 'hipaa-compliant-pdf-merge' && p.slug !== 'gdpr-compliant-pdf-tools' && p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields' && p.slug !== 'pdf-bookmark-merge-keep-outline' && p.slug !== 'compressed-pdf-merge-quality-loss' && p.slug !== 'pdf-merge-quality-before-after-test' && p.slug !== 'pdf-metadata-preservation-merge' && p.slug !== 'pdf-merge-vs-split-when-to-use' && p.slug !== 'pdf-merge-vs-convert-scenarios' && p.slug !== 'strip-pdf-metadata-before-sharing' && p.slug !== 'merge-pdf-windows-file-order' && p.slug !== 'merge-pdf-linux-open-source' && p.slug !== 'merge-pdf-android-chrome-tool').map((p) => (
         <Link
           key={p.slug}
           href={`/blog/${p.slug}`}

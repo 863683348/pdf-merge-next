@@ -20,8 +20,7 @@
       "PDFMergeNext"
     ]
   },
-
-{
+  {
     "slug": "merge-pdf-mac-3-free-methods",
     "tag": "Mac 技巧 · Mac Tips",
     "date": "2026-10-27",
@@ -42,7 +41,6 @@
       "PDFMergeNext"
     ]
   },
-
   {
     "slug": "merge-pdf-windows-file-order",
     "tag": "Windows 技巧 · Windows Tips",
@@ -66,7 +64,7 @@
       "PDFMergeNext"
     ]
   },
-{
+  {
     "slug": "merge-pdf-linux-open-source",
     "tag": "Linux 技巧 · Linux Tips",
     "date": "2026-10-29",
@@ -91,7 +89,7 @@
       "PDFMergeNext"
     ]
   },
-{
+  {
     "slug": "cross-border-data-transfer-pdf-tools",
     "tag": "合规清单 · Cross-Border Transfer",
     "date": "2026-10-26",
@@ -851,6 +849,27 @@
       "iphone pdf merge free",
       "ios 合并 pdf",
       "iphone 合并 pdf 无 app",
+      "PDFMergeNext"
+    ]
+  },
+  {
+    "slug": "merge-pdf-android-chrome-tool",
+    "tag": "Android 技巧 · Chrome Tips",
+    "date": "2026-11-01",
+    "zhTitle": "Android PDF 合并：Chrome 教程",
+    "enTitle": "Android PDF Merge: Chrome Tutorial",
+    "zhDesc": "Android 上合并 PDF 用 Chrome 就够了。这篇给出 Chrome 本地工具与厂商文件应用两条路、各自的页数上限与能否重排对照表、挑页与排序这两步最省时间的做法，以及发出去之前的三项核对。",
+    "enDesc": "Merging PDFs on Android needs no app from Play Store. Two routes that skip the upload, a comparison of page limits and reordering, the two steps that save the most time, and three checks before the file goes out.",
+    "keywords": [
+      "Android PDF 合并",
+      "android pdf merge",
+      "merge pdf on android",
+      "merge pdf android chrome",
+      "android pdf merge without app",
+      "merge pdf android free",
+      "android 合并 pdf chrome",
+      "chrome 合并 pdf",
+      "android pdf merge offline",
       "PDFMergeNext"
     ]
   }
