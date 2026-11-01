@@ -54,6 +54,27 @@ export default function BlogPage() {
         ))}
       </div>
 
+      {(!active || active === 'Chrome 扩展') && (
+        <Link
+          href="/blog/best-chrome-extensions-for-pdf"
+          className="mt-6 block rounded-xl border border-line bg-surface p-6 shadow-sm transition-colors duration-fast hover:bg-subtle"
+        >
+          <p className="text-caption font-semibold uppercase tracking-wide text-brand">
+            Chrome 扩展 · Chrome Extensions
+          </p>
+          <p className="mt-1 text-xs text-fg-tertiary">2026-11-02</p>
+          <h2 className="mt-1 text-title font-semibold text-fg">
+            Chrome 扩展推荐：最佳 PDF 工具
+          </h2>
+          <p className="mt-1 text-sm font-medium text-fg-muted">
+            Best Chrome Extensions for PDF
+          </p>
+          <p className="mt-2 text-sm text-fg-secondary">
+            Chrome 自带阅读器只能看不能改。这份清单把常见 PDF 扩展按本地处理和上传处理分成两组，逐条写明权限要求与实测短板，并给出装之前的三步自查法。
+          </p>
+        </Link>
+      )}
+
       {(!active || active === 'Android 技巧') && (
         <Link
           href="/blog/merge-pdf-android-chrome-tool"
@@ -515,7 +536,7 @@ export default function BlogPage() {
         </Link>
       )}
 
-      {posts.filter((p) => p.slug !== 'merge-pdf-ipad-touch-optimized' && p.slug !== 'merge-pdf-mac-3-free-methods' && p.slug !== 'privacy-impact-assessment-pdf-tools' && p.slug !== 'privacy-by-design-pdf-tools' && p.slug !== 'pdf-file-audit-trail-requirements' && p.slug !== 'trade-secret-protection-pdf-merge' && p.slug !== 'china-pipl-pdf-tools-requirements' && p.slug !== 'hipaa-compliant-pdf-merge' && p.slug !== 'gdpr-compliant-pdf-tools' && p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields' && p.slug !== 'pdf-bookmark-merge-keep-outline' && p.slug !== 'compressed-pdf-merge-quality-loss' && p.slug !== 'pdf-merge-quality-before-after-test' && p.slug !== 'pdf-metadata-preservation-merge' && p.slug !== 'pdf-merge-vs-split-when-to-use' && p.slug !== 'pdf-merge-vs-convert-scenarios' && p.slug !== 'strip-pdf-metadata-before-sharing' && p.slug !== 'merge-pdf-windows-file-order' && p.slug !== 'merge-pdf-linux-open-source' && p.slug !== 'merge-pdf-android-chrome-tool').map((p) => (
+      {posts.filter((p) => p.slug !== 'merge-pdf-ipad-touch-optimized' && p.slug !== 'merge-pdf-mac-3-free-methods' && p.slug !== 'privacy-impact-assessment-pdf-tools' && p.slug !== 'privacy-by-design-pdf-tools' && p.slug !== 'pdf-file-audit-trail-requirements' && p.slug !== 'trade-secret-protection-pdf-merge' && p.slug !== 'china-pipl-pdf-tools-requirements' && p.slug !== 'hipaa-compliant-pdf-merge' && p.slug !== 'gdpr-compliant-pdf-tools' && p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields' && p.slug !== 'pdf-bookmark-merge-keep-outline' && p.slug !== 'compressed-pdf-merge-quality-loss' && p.slug !== 'pdf-merge-quality-before-after-test' && p.slug !== 'pdf-metadata-preservation-merge' && p.slug !== 'pdf-merge-vs-split-when-to-use' && p.slug !== 'pdf-merge-vs-convert-scenarios' && p.slug !== 'strip-pdf-metadata-before-sharing' && p.slug !== 'merge-pdf-windows-file-order' && p.slug !== 'merge-pdf-linux-open-source' && p.slug !== 'merge-pdf-android-chrome-tool' && p.slug !== 'best-chrome-extensions-for-pdf').map((p) => (
         <Link
           key={p.slug}
           href={`/blog/${p.slug}`}
