@@ -892,5 +892,25 @@
       "android pdf merge offline",
       "PDFMergeNext"
     ]
+  },
+{
+    "slug": "edge-browser-pdf-merge",
+    "tag": "Edge 技巧 · Edge Tips",
+    "date": "2026-11-03",
+    "zhTitle": "Edge 浏览器合并 PDF 教程",
+    "enTitle": "Edge Browser PDF Merge Tutorial",
+    "zhDesc": "Edge PDF 合并有三种做法：打开在线工具、用 Edge 打印到 PDF、或用浏览器本地工具。这篇给出每一步操作、页数与体积限制、保留书签与表单的差异对照，以及不上传文件的做法。",
+    "enDesc": "Three ways to merge PDFs in Edge: an online tool, print-to-PDF, or a local browser tool. Each step, the page and size limits, what happens to bookmarks and form fields, and the option that keeps files off any remote server.",
+    "keywords": [
+      "Edge PDF 合并",
+      "edge browser pdf merge",
+      "merge pdf in edge",
+      "edge pdf merge tool",
+      "edge 合并 pdf",
+      "microsoft edge pdf merge",
+      "merge pdf edge browser free",
+      "edge 浏览器 合并 pdf",
+      "PDFMergeNext"
+    ]
   }
 ]

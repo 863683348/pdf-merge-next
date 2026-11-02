@@ -54,6 +54,27 @@ export default function BlogPage() {
         ))}
       </div>
 
+      {(!active || active === 'Edge 技巧') && (
+        <Link
+          href="/blog/edge-browser-pdf-merge"
+          className="mt-6 block rounded-xl border border-line bg-surface p-6 shadow-sm transition-colors duration-fast hover:bg-subtle"
+        >
+          <p className="text-caption font-semibold uppercase tracking-wide text-brand">
+            Edge 技巧 · Edge Tips
+          </p>
+          <p className="mt-1 text-xs text-fg-tertiary">2026-11-03</p>
+          <h2 className="mt-1 text-title font-semibold text-fg">
+            Edge 浏览器合并 PDF 教程
+          </h2>
+          <p className="mt-1 text-sm font-medium text-fg-muted">
+            Edge Browser PDF Merge Tutorial
+          </p>
+          <p className="mt-2 text-sm text-fg-secondary">
+            Edge PDF 合并有三种做法：打开在线工具、用 Edge 打印到 PDF、或用浏览器本地工具。这篇给出每一步操作、页数与体积限制、保留书签与表单的差异对照，以及不上传文件的做法。
+          </p>
+        </Link>
+      )}
+
       {(!active || active === 'Chrome 扩展') && (
         <Link
           href="/blog/best-chrome-extensions-for-pdf"
@@ -536,7 +557,7 @@ export default function BlogPage() {
         </Link>
       )}
 
-      {posts.filter((p) => p.slug !== 'merge-pdf-ipad-touch-optimized' && p.slug !== 'merge-pdf-mac-3-free-methods' && p.slug !== 'privacy-impact-assessment-pdf-tools' && p.slug !== 'privacy-by-design-pdf-tools' && p.slug !== 'pdf-file-audit-trail-requirements' && p.slug !== 'trade-secret-protection-pdf-merge' && p.slug !== 'china-pipl-pdf-tools-requirements' && p.slug !== 'hipaa-compliant-pdf-merge' && p.slug !== 'gdpr-compliant-pdf-tools' && p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields' && p.slug !== 'pdf-bookmark-merge-keep-outline' && p.slug !== 'compressed-pdf-merge-quality-loss' && p.slug !== 'pdf-merge-quality-before-after-test' && p.slug !== 'pdf-metadata-preservation-merge' && p.slug !== 'pdf-merge-vs-split-when-to-use' && p.slug !== 'pdf-merge-vs-convert-scenarios' && p.slug !== 'strip-pdf-metadata-before-sharing' && p.slug !== 'merge-pdf-windows-file-order' && p.slug !== 'merge-pdf-linux-open-source' && p.slug !== 'merge-pdf-android-chrome-tool' && p.slug !== 'best-chrome-extensions-for-pdf').map((p) => (
+      {posts.filter((p) => p.slug !== 'merge-pdf-ipad-touch-optimized' && p.slug !== 'edge-browser-pdf-merge' && p.slug !== 'merge-pdf-mac-3-free-methods' && p.slug !== 'privacy-impact-assessment-pdf-tools' && p.slug !== 'privacy-by-design-pdf-tools' && p.slug !== 'pdf-file-audit-trail-requirements' && p.slug !== 'trade-secret-protection-pdf-merge' && p.slug !== 'china-pipl-pdf-tools-requirements' && p.slug !== 'hipaa-compliant-pdf-merge' && p.slug !== 'gdpr-compliant-pdf-tools' && p.slug !== 'encrypted-pdf-can-you-merge' && p.slug !== 'pdf-form-merge-keep-fields' && p.slug !== 'pdf-bookmark-merge-keep-outline' && p.slug !== 'compressed-pdf-merge-quality-loss' && p.slug !== 'pdf-merge-quality-before-after-test' && p.slug !== 'pdf-metadata-preservation-merge' && p.slug !== 'pdf-merge-vs-split-when-to-use' && p.slug !== 'pdf-merge-vs-convert-scenarios' && p.slug !== 'strip-pdf-metadata-before-sharing' && p.slug !== 'merge-pdf-windows-file-order' && p.slug !== 'merge-pdf-linux-open-source' && p.slug !== 'merge-pdf-android-chrome-tool' && p.slug !== 'best-chrome-extensions-for-pdf').map((p) => (
         <Link
           key={p.slug}
           href={`/blog/${p.slug}`}
