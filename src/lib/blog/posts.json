@@ -1,5 +1,5 @@
 [
-{
+  {
     "slug": "best-chrome-extensions-for-pdf",
     "tag": "Chrome 扩展 · Chrome Extensions",
     "date": "2026-11-02",
@@ -893,7 +893,7 @@
       "PDFMergeNext"
     ]
   },
-{
+  {
     "slug": "edge-browser-pdf-merge",
     "tag": "Edge 技巧 · Edge Tips",
     "date": "2026-11-03",
@@ -910,6 +910,26 @@
       "microsoft edge pdf merge",
       "merge pdf edge browser free",
       "edge 浏览器 合并 pdf",
+      "PDFMergeNext"
+    ]
+  },
+  {
+    "slug": "pdf-merge-tool-benchmark",
+    "tag": "性能基准 · Benchmark",
+    "date": "2026-11-06",
+    "zhTitle": "PDF 合并工具性能基准测试",
+    "enTitle": "PDF Merge Tool Benchmark: Which One Is Fastest?",
+    "zhDesc": "同一组文件，四类合并工具的耗时差距能到一个数量级。这篇给出可复现的测试方法、实测数字、影响速度的四个因素，以及按场景选工具的建议。",
+    "enDesc": "One file set, four tool types, and gaps up to an order of magnitude. A reproducible test method, measured numbers, four factors that move merge pdf performance, and which tool fits which scenario.",
+    "keywords": [
+      "pdf merge benchmark",
+      "PDF 合并 性能",
+      "pdf merge speed test",
+      "merge pdf performance",
+      "fastest pdf merge tool",
+      "pdf 合并 工具 对比",
+      "pdf merge performance comparison",
+      "PDF 合并工具 基准测试",
       "PDFMergeNext"
     ]
   }
