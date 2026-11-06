@@ -932,5 +932,24 @@
       "PDF 合并工具 基准测试",
       "PDFMergeNext"
     ]
-  }
+  },
+{
+  "slug": "browser-extensions-pdf-tools",
+  "tag": "Chrome 扩展 · Chrome Extensions",
+  "date": "2026-11-07",
+  "zhTitle": "浏览器 PDF 扩展：权限、风险与什么时候别装",
+  "enTitle": "Browser Extensions: PDF Tools — Permissions, Risks, and When to Skip Them",
+  "zhDesc": "装一个浏览器 PDF 扩展等于用常驻权限换便利。这篇拆开 permissions 与 host permissions 的区别、三类隐私风险、扩展与网页版工具的逐项对照，以及四种不该装扩展的场景。",
+  "enDesc": "A browser pdf extension trades standing permissions for convenience. The permission model, three privacy risks, a side-by-side comparison with web tools, and four situations where you should skip the install.",
+  "keywords": [
+    "浏览器 PDF 扩展",
+    "browser pdf extension",
+    "pdf extension permissions",
+    "chrome extension privacy risk",
+    "pdf extension vs online tool",
+    "when not to use browser extension",
+    "MV3 host permissions",
+    "PDFMergeNext"
+  ]
+}
 ]
